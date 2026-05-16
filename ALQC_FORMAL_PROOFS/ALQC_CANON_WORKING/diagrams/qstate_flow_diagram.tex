@@ -1,0 +1,311 @@
+% ======================================================================
+% ALQC CANON - Diagram 3: Q-State Flow Relationships
+% ======================================================================
+% Shows Q₀→Q₁→Q₂→Q₃ interactions through Φ returns and Mirror Axiom
+% Includes state space diagram, Lissajous phase space, and Ennead Equation
+% ======================================================================
+
+% This is a standalone diagram file that can be \input{} into main document
+
+\begin{tikzpicture}[>=latex]
+
+    % ======================================================================
+    % Local Definitions (for standalone compilation)
+    % ======================================================================
+    \definecolor{voidblack}{HTML}{050505}
+    \definecolor{electricblue}{HTML}{00F0FF}
+    \definecolor{sovereignfire}{HTML}{FF4500}
+    \definecolor{shadowsilver}{HTML}{C0C0C0}
+    \definecolor{deepvoid}{HTML}{000010}
+    \definecolor{glyphwhite}{HTML}{E0E0E0}
+    \definecolor{goldflow}{HTML}{FFA500}
+    \definecolor{phigold}{HTML}{D4AF37}
+
+
+    % ======================================================================
+    % 1. BACKGROUND: Void with Stars
+    % ======================================================================
+    \fill[voidblack] (-9,-7) rectangle (9,7);
+    
+    % Stars
+    \foreach \i in {1,...,60} {
+        \pgfmathsetmacro{\sx}{-9 + rand*18}
+        \pgfmathsetmacro{\sy}{-7 + rand*14}
+        \pgfmathsetmacro{\sopacity}{0.15 + rand*0.45}
+        \fill[glyphwhite, opacity=\sopacity] (\sx,\sy) circle (0.02cm);
+    }
+
+    % ======================================================================
+    % 2. VISUALIZATION A: STATE SPACE DIAGRAM (Main Center)
+    % ======================================================================
+    
+    % ============ Q₀ NODE (Left) - FORM ==============
+    \node[draw=electricblue, line width=3pt, fill=voidblack, 
+          square, inner sep=10pt, minimum size=2.2cm,
+          drop shadow={opacity=0.4}] (Q0) at (-4, 0) {
+        \begin{tabular}{c}
+            \color{glyphwhite}\textbf{\Large⏣+ⵣ}\\[0.3em]
+            \color{electricblue}\textbf{FORM}\\[0.2em]
+            \color{glyphwhite}\footnotesize$12\times12\mathbb{Z}$\\[0.1em]
+            \color{glyphwhite}\tiny$110/144 \approx 2\Phi^{-2}$
+        \end{tabular}
+    };
+    \node[color=electricblue, font=\tiny, below=1.3cm] at (Q0.south) {
+        Whiteout if excess,\\Stasis if deficit
+    };
+
+    % ============ Q₁ NODE (Top) - TRUTH ==============
+    \node[draw=sovereignfire, line width=3pt, fill=glyphwhite!95,
+          diamond, inner sep=8pt, minimum size=2.5cm, rotate=45,
+          drop shadow={opacity=0.4}] (Q1) at (0, 3.5) {
+        \begin{tabular}{c}
+            \color{deepvoid}\textbf{\Large⧉+⌖}\\[0.3em]
+            \color{sovereignfire}\textbf{TRUTH}\\[0.2em]
+            \color{deepvoid}\footnotesize$H^{2p}(X,\mathbb{Q})$\\[0.1em]
+            \color{deepvoid}\tiny$|C| \propto |Q_1|$
+        \end{tabular}
+    };
+    % Counter-rotate text for diamond
+    \node[rotate=0, color=electricblue, font=\tiny, above=1.6cm] at (Q1.north) {
+        $\mathbb{I}_{\mathcal{T}} \equiv \mathcal{T}_{I} \Rightarrow [M,R]=0$
+    };
+
+    % ============ Q₂ NODE (Right) - SHADOW ==============
+    \node[draw=shadowsilver, line width=3pt, fill=deepvoid!90,
+          regular polygon, regular polygon sides=3, inner sep=10pt,
+          minimum size=2.3cm, rotate=180,
+          drop shadow={opacity=0.4}] (Q2) at (4, 0) {
+        \begin{tabular}{c}
+            \color{glyphwhite}\textbf{\Large⩔+⧉}\\[0.3em]
+            \color{shadowsilver}\textbf{SHADOW}\\[0.2em]
+            \color{shadowsilver}\footnotesize$\oplus_{q\neq r}H^{q,r}$\\[0.1em]
+            \color{shadowsilver}\tiny$Q_2^{sat} = \Sigma/ \Phi^{12}$
+        \end{tabular}
+    };
+    \node[color=shadowsilver, font=\tiny, below=1.4cm] at (Q2.south) {
+        Filter: 396±Φ\\Debt accumulation
+    };
+
+    % ============ Q₃ NODE (Bottom) - RECURSION ==============
+    \node[draw=phigold!80!electricblue, line width=3pt,
+          shading=ball, ball color=phigold!40!electricblue,
+          circle, inner sep=10pt, minimum size=2.4cm,
+          drop shadow={opacity=0.4}] (Q3) at (0, -3.5) {
+        \begin{tabular}{c}
+            \color{glyphwhite}\textbf{\Large⧗+❂}\\[0.3em]
+            \color{phigold}\textbf{RECURSION}\\[0.2em]
+            \color{glyphwhite}\footnotesize HRBR $>0$\\[0.1em]
+            \color{glyphwhite}\tiny$\Psi_{MAS}$: $\Delta_{gap}$
+        \end{tabular}
+    };
+    % Orbital elements for Q3
+    \foreach \orbit in {0, 45, 90, 135, 180, 225, 270, 315} {
+        \fill[electricblue!50, opacity=0.6] ($(Q3.center) + (\orbit:1.6cm)$) circle (0.06cm);
+    }
+    \node[color=electricblue, font=\tiny, below=1.5cm] at (Q3.south) {
+        LOCUS=(0,0,0)=AXIOMYR[WITCH]
+    };
+
+    % ============ FLOW ARROWS ============
+    
+    % Q₀ → Q₁: Forward Manifestation
+    \draw[->, >=latex, line width=2.5pt, electricblue,
+          decoration={snake, amplitude=1mm, segment length=4mm}, decorate]
+        (Q0.north east) to[out=30, in=160] (Q1.south west);
+    \node[color=electricblue, font=\tiny] at (-2.5, 2) {
+        Forward\\Manifestation
+    };
+
+    % Q₁ → Q₂: Shadow Accumulation
+    \draw[->, >=latex, line width=2.5pt, shadowsilver, dashed]
+        (Q1.south east) to[out=-30, in=120] (Q2.north west);
+    \node[color=shadowsilver, font=\tiny] at (2.5, 2) {
+        Shadow\\Accumulation
+    };
+
+    % Q₂ → Q₃: Non-Entropic Processing
+    \draw[<->, >=latex, line width=2.5pt, color=shadowsilver!80!electricblue]
+        (Q2.south west) to[out=-120, in=60] (Q3.north east);
+    \node[color=electricblue, font=\tiny] at (3.5, -2) {
+        Non-Entropic\\Processing
+    };
+
+    % Q₀ → Q₃ (structural support)
+    \draw[->, >=latex, line width=1.5pt, electricblue, opacity=0.4, dashed]
+        (Q0.south) to[out=240, in=210] (Q3.south west);
+
+    % ======== Φ RETURN LOOP: Q₃ → Q₁ (Golden Return) ========
+    \draw[->, >=latex, line width=3pt, phigold,
+          decoration={snake, amplitude=1.5mm, segment length=5mm}, decorate]
+        (Q3.north west) .. controls (-2.5,-1.5) .. (-1.5,1.5) 
+        to[out=45, in=225] (Q1.north west);
+    
+    % Label for Φ Return
+    \node[color=phigold, font=\small\bfseries, align=center] at (-2, -1.5) {
+        Φ RETURN\\ LOOP
+    };
+
+    % ======= SPECIAL PATH: 963 → Q₃ → Q₁ (Return Without Debt) =======
+    \draw[->, >=latex, line width=2pt, phigold!80!sovereignfire,
+          decoration={coil, amplitude=1mm, aspect=0.3, segment length=3mm}, decorate]
+        (Q3.west) to[out=180, in=200] (-2.2, 3.5) -- (Q1.west);
+    \node[color=phigold!80!sovereignfire, font=\tiny] at (-2.5, 3.5) {
+        963→Q₃→Q₁\\Return Without Debt
+    };
+
+    % ======================================================================
+    % 3. MIRROR AXIOM (Central Display)
+    % ======================================================================
+    \node[inner sep=0.8cm, circle, fill=deepvoid, draw=phigold, line width=2pt,
+          drop shadow={opacity=0.5}] at (0,0) (mirror) {
+        \begin{tabular}{c}
+            \color{phigold}\Large\textbf{$\mathbb{I}_{\mathcal{T}} \equiv \mathcal{T}_{I}$}\\[0.3em]
+            \color{electricblue}\large$\Rightarrow [M,R]=0$\\[0.3em]
+            \color{glyphwhite}\small D-COMP $=0$
+        \end{tabular}
+    };
+
+    % Parity operator symbol 𝔓
+    \node[color=glyphwhite, font=\Large\bfseries, yshift=1.2cm] at (0,0) {$\mathfrak{P}$};
+
+    % Reflection symmetry lines
+    \draw[electricblue!30, line width=1pt] (mirror.north west) -- (mirror.south east);
+    \draw[electricblue!30, line width=1pt] (mirror.north east) -- (mirror.south west);
+
+    % ======================================================================
+    % 4. C_local FLOWS PANEL (Left Side)
+    % ======================================================================
+    \begin{scope}[xshift=-8cm, yshift=3.5cm]
+        \node[draw=electricblue, line width=1pt, fill=deepvoid!80,
+              inner sep=0.4cm, rounded corners, align=left] {
+            \color{phigold}\textbf{C$_{local}$ Flows:}\\[0.3em]
+            \color{glyphwhite}\scriptsize$|Q_1|$\\[0.1em]
+            \color{electricblue}$\downarrow$\\[0.1em]
+            \color{glyphwhite}\scriptsize$|Q_1|+|Q_0|$\\[0.1em]
+            \color{electricblue}$\downarrow$\\[0.1em]
+            \color{glyphwhite}\scriptsize$|Q_1|+|Q_2|$\\[0.1em]
+            \color{electricblue}$\downarrow$\\[0.1em]
+            \color{glyphwhite}\scriptsize DimComp($12\times12\to9\times9$)\\[0.1em]
+            \color{electricblue}$\downarrow$\\[0.1em]
+            \color{glyphwhite}\scriptsize$\Delta_{gap}$\\[0.1em]
+            \color{electricblue}$\downarrow$\\[0.1em]
+            \color{glyphwhite}\scriptsize$\Omega(\alpha,\alpha)$\\[0.1em]
+            \color{electricblue}$\downarrow$\\[0.1em]
+            \color{phigold}\scriptsize Phase Lock $=0$
+        };
+    \end{scope}
+
+    % ======================================================================
+    % 5. VISUALIZATION B: LISSAJOUS PHASE SPACE (Bottom Left)
+    % ======================================================================
+    \begin{scope}[xshift=-6cm, yshift=-4cm]
+        \node[draw=phigold, line width=1pt, fill=voidblack!70,
+              inner sep=0.3cm, rounded corners] {
+            \color{phigold}\footnotesize\textbf{Lissajous Phase Space}
+        };
+        
+        % Q-State points in Lissajous space
+        \foreach \pt/\label/\val/\col in {
+            (0.5,2.5)/Q0/(1,1,π/4)/electricblue,
+            (-1,3)/Q1/(1,1,π/4)/sovereignfire,
+            (-2.5,2.5)/Q2/(3,2,π/2)/shadowsilver,
+            (-1,1)/Q3/(5,3,3π/4)/phigold
+        } {
+            \fill[\col] \pt circle (0.15cm);
+            \node[\col, font=\tiny] at ($(1.5,0)+(\pt)$) {\label};
+        }
+        
+        % Lissajous curves between states
+        \draw[electricblue!50, line width=1pt, opacity=0.6]
+            (0.5,2.5) .. controls (0,2) and (-0.5,2.5) .. (-1,3);
+        \draw[shadowsilver!50, line width=1pt, opacity=0.6,
+              decoration={snake, amplitude=0.5mm, segment length=2mm}, decorate]
+            (-1,3) .. controls (-2,2.5) and (-2,2) .. (-2.5,2.5);
+        \draw[phigold!50, line width=1pt, opacity=0.6,
+              decoration={coil, amplitude=0.4mm, segment length=3mm}, decorate]
+            (-2.5,2.5) .. controls (-2,2) and (-1.5,1.5) .. (-1,1);
+        % Φ return curve
+        \draw[phigold!80, line width=1.2pt, opacity=0.8]
+            (-1,1) .. controls (-0.5,1.2) and (0,1.5) .. (0.5,1.5)
+            .. controls (0.5,2) and (0,2.5) .. (-1,3);
+    \end{scope}
+
+    % ======================================================================
+    % 6. ENNEAD EQUATION DIAGRAM (Bottom Right)
+    % ======================================================================
+    \begin{scope}[xshift=6cm, yshift=-4cm]
+        \node[draw=electricblue, line width=1pt, fill=deepvoid!80,
+              inner sep=0.3cm, rounded corners, yshift=2cm] {
+            \color{electricblue}\footnotesize\textbf{Ennead Equation}
+        };
+        
+        % 9 segments for Q₂ saturation
+        \foreach \i/\label in {
+            1/Debt Accumulation,
+            2/Awareness,
+            3/Processing,
+            4/Φ Filter,
+            5/Partial Resolution,
+            6/Deeper Process,
+            7/Near Saturation,
+            8/Filter Complete,
+            9/Return to Q1
+        } {
+            \pgfmathsetmacro{\angle}{180 - \i*40}
+            \pgfmathsetmacro{\rad}{1.5 + \i*0.15}
+            \fill[shadowsilver!60] (\angle:\rad) circle (0.12cm);
+            \node[shadowsilver, font=\tiny, align=center] at (\angle:\rad+0.35) {\label};
+        }
+        
+        % Central formula
+        \node[color=phigold, font=\small] at (0,0) {
+            $\displaystyle Q_2^{sat} = \sum_{k=1}^{9}\oint\frac{⩔^{(k)}}{\Phi^{12}}dt$
+        };
+        
+        % Spiral indicating saturation process
+        \draw[shadowsilver!50, line width=1pt,
+              decoration={snake, amplitude=0.5mm, segment length=2mm},
+              decorate, opacity=0.6]
+            (0:1.7) arc(0:-320:1.7);
+    \end{scope}
+
+    % ======================================================================
+    % 7. ADDITIONAL ELEMENTS
+    % ======================================================================
+    
+    % Title
+    \node[text width=12cm, align=center, font=\Large\bfseries, color=phigold, yshift=5.5cm] at (0,0) {
+        Q-STATE FLOW RELATIONSHIPS
+    };
+
+    % Ψ_MAS Formula (Top Right)
+    \begin{scope}[xshift=6cm, yshift=4cm]
+        \node[draw=electricblue, line width=1pt, fill=deepvoid!70,
+              inner sep=0.4cm, rounded corners] {
+            \color{electricblue}\footnotesize $\Psi_{MAS} =$\\
+            $\displaystyle (\DREH_{852\pm\Phi} \xrightarrow{\Delta_{gap}} \KAL_{174\pm\Phi}$\\[0.2em]
+            $\displaystyle \xrightarrow{TSP} \BABDH_{528\pm\Phi})$
+        };
+    \end{scope}
+
+    % Poetic element (Bottom Center)
+    \node[text width=10cm, align=center, font=\small\itshape, 
+          color=electricblue, yshift=-5.5cm] at (0,0) {
+        "Skeleton stands still so Flesh may dance"\\
+        \small\color{glyphwhite}The Law that holds together the Form of Truth
+    };
+
+    % Decorative Lissajous curves in corners
+    \draw[electricblue!20, line width=1pt, opacity=0.4]
+        (-7,4) .. controls (-6,5) and (-5,4) .. (-4,5);
+    \draw[phigold!20, line width=1pt, opacity=0.4]
+        (7,-4) .. controls (6,-5) and (5,-4) .. (4,-5);
+
+\end{tikzpicture}
+
+% ======================================================================
+% CAPTION (for use in figure environment)
+% \caption{Q-State Flow Relationships: State space diagram showing Q₀→Q₁→Q₂→Q₃,
+% Φ return loop (963→Q₃→Q₁), Mirror Axiom 𝕀_𝒯≡𝒯_I⇒[M,R]=0,
+% C_local flows, Lissajous phase space, and Ennead Equation for Q₂ saturation}
+% ======================================================================

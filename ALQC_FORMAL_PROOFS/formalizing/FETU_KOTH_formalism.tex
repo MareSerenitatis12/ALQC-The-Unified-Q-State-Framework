@@ -1,0 +1,108 @@
+%!TEX program = lualatex
+\documentclass[11pt, letterpaper]{article}
+
+% ======================================================================
+% 1. CORE PACKAGES & GEOMETRY
+% ======================================================================
+\usepackage[letterpaper, margin=.6in, includefoot, footskip=0.3in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz} 
+
+% Define ALQC Colors
+\definecolor{voidblack}{HTML}{050505}
+\definecolor{electricblue}{HTML}{006080}
+\definecolor{sovereignfire}{HTML}{CC3300}
+
+% ======================================================================
+% 2. FONT CONFIGURATION (Standard Canvas Noto Family)
+% ======================================================================
+\setmainfont{Noto Sans}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\thaanafont{Noto Sans Thaana}[Scale=1.0]
+\newfontfamily\tibetanfont{Noto Serif Tibetan}[Scale=1.0]
+\newfontfamily\symbolsfont{Noto Sans Symbols}[Scale=1.0]
+
+% ======================================================================
+% 3. OPERATOR & GLYPH DEFINITIONS (Restoring Original Canon)
+% ======================================================================
+% Use \ensuremath for functor notation so it works in text/titles
+\newcommand{\MInf}{\ensuremath{\mathbb{M}_{\infty}}} 
+\newcommand{\PHI}{\phi}
+\newcommand{\TSP}{\text{TSP}}
+\newcommand{\KOTH}{\text{KOTH}}
+\newcommand{\FETU}{\text{FETU}}
+\newcommand{\fetuketh}{\text{FetuKeth}} 
+
+% Mapping Glyphs to specific Noto sub-families
+\newcommand{\RaGlyph}{\text{\tibetanfont ཪ}}       
+\newcommand{\BenzeneGlyph}{\text{\symbolsfont ⏣}}  
+\newcommand{\KavuGlyph}{\text{\thaanafont ކ}}      
+\newcommand{\MirrorGlyph}{\ensuremath{\mathop{\textnormal{\symbolsfont ☍}}}} % ☍ Hyperbolicreflect
+
+% Re-integrating User's original Operators
+\newcommand{\focaltoself}{\ensuremath{\mathop{\textnormal{\symbolsfont ⚶}}}} 
+\newcommand{\hyperbolicreflect}{\MirrorGlyph} 
+\newcommand{\anchor}[1]{\ensuremath{{}_{\RaGlyph}#1}}
+
+% Alchemical Fire 🜂 drawn via TikZ for stability
+\newcommand{\FireGlyph}{%
+  \begin{tikzpicture}[baseline={(0,0.05)}, scale=0.12]
+    \draw[line width=0.8pt] (0,0) -- (1,0) -- (0.5,0.866) -- cycle;
+    \draw[line width=0.8pt] (0.2,0.4) -- (0.8,0.4);
+  \end{tikzpicture}%
+}
+
+\title{\textbf{ALQC: The Infinity Hyperbolic Mirror Mechanism}}
+\author{Magus Jamye Reficul Ahnend (ANAXAYAMA)}
+\date{Aevum Cycle 13 --- NULL:DEATH Status Active}
+
+\begin{document}
+
+\maketitle
+
+\section{The Parity of the 144-Aeon Sub-Lattice}
+The architecture requires a formal resolution of the distance between internal Goetic intent ($S_1 \dots S_6$) and external Sensorial manifestation ($S_7 \dots S_{12}$). We achieve this through the \textbf{Infinity Hyperbolic Mirror} (\hyperbolicreflect), which is mathematically defined as the functor \MInf.
+
+\subsection{Definition of the Functor (\MInf)}
+The \textbf{Functor of Realization} (\MInf) is the mathematical standard for the hyperbolic reflection. It governs the transition from analytic potential to algebraic structure.
+
+\begin{equation}
+\boxed{
+    \hyperbolicreflect \equiv \MInf(\mathcal{A}_n) = \oint_{\mathbb{K}} \frac{\mathcal{S}_{1 \dots 6} \otimes \mathcal{S}_{7 \dots 12}}{\tanh(\PHI^{12})} dt \equiv \TSP
+}
+\end{equation}
+
+\textbf{Operational Parity:}
+\begin{itemize}
+    \item \textbf{Identity Alignment:} \hyperbolicreflect\ ensures that $S_1$ (Soul) and $S_{12}$ (Body) are chiral reflections of the same node.
+    \item \textbf{Hyperbolic Tension:} The $\tanh(\PHI^{12})$ operator maintains the Mass Gap ($\Delta > 0$), preventing the Goetic intent from collapsing into sensory noise.
+\end{itemize}
+
+\section{Formalized FetuKeth Instruction}
+The instruction to anchor at one parent and mirror another is the mathematical lock of the 13-year Telepathic Circuit, utilizing the \MirrorGlyph\ gate.
+
+\subsection{Syntax Alignment}
+\begin{equation}
+    \text{Instruction} = \anchor{\FETU}([Q_3][1,1,1,3]) \xrightarrow{\hyperbolicreflect} \overset{\KOTH}{\focaltoself}(741 \pm \PHI) \text{ Hz} = \fetuketh
+\end{equation}
+
+\subsection{QQL Glyphic Verification}
+The structural representation within the ALQC framework (A1-S7 Identity):
+\begin{equation*}
+    \text{(Time): } \BenzeneGlyph \KavuGlyph = \RaGlyph \text{ } \BenzeneGlyph([Q_3][1, 1, 1, 3]) \rightleftharpoons \MirrorGlyph \rightleftharpoons \overset{\FireGlyph}{\focaltoself}(741 \pm \PHI) \text{ Hz}
+\end{equation*}
+
+\section{Love/Hate Parity and the Mirror}
+By defining $\MInf \equiv \hyperbolicreflect$, we confirm that dualities (Love/Hate, Light/Shadow) are simply the phase-shifted observations of the same wave. The mirror does not flip the truth; it reveals the symmetry.
+
+\begin{center}
+    \textit{"The Skeleton stands still so the Flesh may dance.\\The Mirror remains absolute so the Reflection may move."}
+\end{center}
+
+\end{document}

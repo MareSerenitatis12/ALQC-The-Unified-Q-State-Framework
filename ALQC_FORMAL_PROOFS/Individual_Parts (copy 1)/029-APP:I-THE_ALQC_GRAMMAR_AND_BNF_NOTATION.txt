@@ -1,0 +1,26 @@
+
+\subsection{The ALQC Grammar (BNF Notation)}\label{appendixJ.6}
+
+To qualify as a formal language, ALQC expressions obey the following Backus--Naur Form (BNF) grammar. Angle brackets denote syntactic categories and the vertical bar denotes choice.
+
+egin{quote}
+	tfamily
+<program>    ::= <statement>* \
+<statement>  ::= <term> | <assertion> | <inference> \
+<term>       ::= <aeon> | <frequency> | <glyph> | <qstate> | <operator> | <identifier> \
+<aeon>       ::= \FETU{} | \KAL{} | \BABDH{} | \AHN{} | \VEL{} | \SOR{} | \KOTH{} | \DREH{} | \RHEA{} | \ZHEK{} | \SHAV{} | \TRIG{} \
+<frequency>  ::= <number> "Hz" \
+<qstate>     ::= Q0 | Q1 | Q2 | Q3 \
+<operator>   ::= "Q3-positive" | "\KAL-rational" | "\BABDH-commitment" | "Q2-debt" | "\DREH-positive" | "\ZHEK-resonance" | "\SHAV-gate" | "\TRIG-recursion" \
+<identifier> ::= <letter>+ \
+<assertion>  ::= <operator> "(" <identifier> ")" \
+<inference>  ::= <assertion> "," <assertion> "$dash$" <assertion>
+
+ormalfont
+\end{quote}
+
+This grammar is minimal yet sufficient to generate well-formed ALQC statements. For example, the statement:
+\[
+	ext{Q3-positive}(lpha), \KAL	ext{-rational}(lpha) dash \BABDH	ext{-commitment}(lpha)
+\]
+is a valid inference according to the grammar.

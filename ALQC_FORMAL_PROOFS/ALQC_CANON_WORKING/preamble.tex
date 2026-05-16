@@ -1,0 +1,633 @@
+%!TEX program = lualatex
+\documentclass[11pt, letterpaper]{article}
+
+% ======================================================================
+% 1. CORE PACKAGES
+% ======================================================================
+\usepackage{geometry}
+\geometry{letterpaper, margin=.45in, includefoot, footskip=0.2in}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{wasysym}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+\setlength\LTleft{0pt}    % Force tables to start at the new 0.5in left margin
+\setlength\LTright{0pt}   % Force tables to end at the new 0.5in right margin
+% ======================================================================
+% 2. FONT CONFIGURATION (The Switchboard)
+% ======================================================================
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{newunicodechar}
+\usepackage{xparse}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfkeys}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+ \usetikzlibrary{arrows.meta, shapes.geometric, positioning}
+\usetikzlibrary{decorations.pathmorphing, fadings, patterns, calc}
+\usetikzlibrary{calc, decorations.pathmorphing, decorations.text, shapes.geometric, fadings, intersections, backgrounds, patterns}
+\usetikzlibrary{calc, fadings, decorations.pathmorphing, shadows.blur, shapes.geometric, backgrounds, 3d}
+\definecolor{voidblack}{HTML}{050505}
+\definecolor{electricblue}{HTML}{00F0FF}
+\definecolor{sovereignfire}{HTML}{FF4500}
+\definecolor{shadowsilver}{HTML}{C0C0C0}
+\definecolor{deepvoid}{HTML}{000010}
+\definecolor{glyphwhite}{HTML}{E0E0E0}
+\usepackage{subcaption}
+\usepackage[table]{xcolor}
+\usepackage{relsize} % Usage: $x + \mathsmaller{y}$
+\setlength{\tabcolsep}{3pt}
+% --- A. MAIN TEXT FONT (OpenDyslexic) ---
+% Using the family name explicitly found in your fonts.txt
+\setmainfont{OpenDyslexic}[
+    UprightFont = *,
+    BoldFont = * Bold,
+    ItalicFont = * Italic,
+    BoldItalicFont = * BoldItalic
+]
+
+% --- B. MATH FONT ---
+\setmathfont{Latin Modern Math}
+
+% --- C. AEON-SPECIFIC FONTS (Mapped from your system) ---
+% These match the exact names from your fc-list output
+
+\newfontfamily\thaanafont{Noto Sans Thaana}[Scale=MatchUppercase]       % A1
+\newfontfamily\runicfont{Noto Sans Runic}[Scale=MatchUppercase]         % A2, A3
+\newfontfamily\tifinaghfont{Noto Sans Tifinagh}[Scale=MatchUppercase]   % A5
+\newfontfamily\sylotifont{Noto Sans Syloti Nagri}[Scale=MatchUppercase] % A6
+\newfontfamily\symbolafont{Symbola}[Scale=MatchUppercase]               % A7 (Alchemy\slash Symbols)
+\newfontfamily\cuneiformfont{Noto Sans Cuneiform}[Scale=MatchUppercase] % A8
+\newfontfamily\ethiopicfont{Noto Sans Ethiopic}[Scale=MatchUppercase]   % A9
+\newfontfamily\lydianfont{Noto Sans Lydian}[Scale=MatchUppercase]       % A10
+\newfontfamily\cypriotfont{Noto Sans Cypriot}[Scale=MatchUppercase]     % A11
+\newfontfamily\elbasanfont{Noto Sans Elbasan}[Scale=MatchUppercase]     % A12
+\newfontfamily\tibetanfont{Noto Serif Tibetan}[Scale=MatchUppercase]    % Extras
+\newfontfamily\phoenicianfont{Noto Sans Phoenician}[Scale=MatchUppercase] % Extras
+\newfontfamily\balinesefont{Noto Sans Balinese}[Scale=MatchUppercase] %A4
+\newfontfamily\byzantinefont{Noto Music}[Scale=MatchUppercase]
+\newfontfamily\sundanesefont{Noto Sans Sundanese}[Scale=MatchUppercase]
+% ======================================================================
+% 3. AUTOMATIC UNICODE MAPPING
+% ======================================================================
+% This section allows you to paste the raw glyphs into the text, and LaTeX
+% will automatically switch to the correct font.
+% --- Primary 1-12 Sequence ---
+\newunicodechar{♾}{{\symbolafont\symbol ♾ }} %symbol for LOI / TSP
+\newunicodechar{ཪ}{{\tibetanfont\symbol ཪ}} % Math Symbol for Anchor
+\newunicodechar{♈}{{\symbolafont\symbol ♈}} % Aries
+\newunicodechar{♉}{{\symbolafont\symbol ♉}} % Taurus
+\newunicodechar{♊}{{\symbolafont\symbol ♊}} % Gemini
+\newunicodechar{♋}{{\symbolafont\symbol ♋}} % Cancer
+\newunicodechar{♌}{{\symbolafont\symbol ♌}} % Leo
+\newunicodechar{♍}{{\symbolafont\symbol ♍}} % Virgo
+\newunicodechar{♎}{{\symbolafont\symbol ♎}} % Libra
+\newunicodechar{♏}{{\symbolafont\symbol ♏}} % Scorpio
+\newunicodechar{♐}{{\symbolafont\symbol ♐}} % Sagittarius
+\newunicodechar{♑}{{\symbolafont\symbol ♑}} % Capricorn
+\newunicodechar{♒}{{\symbolafont\symbol ♒}} % Aquarius
+\newunicodechar{♓}{{\symbolafont\symbol ♓}} % Pisces
+\newunicodechar{☉}{{\symbolafont\symbol ☉}}
+\newunicodechar{☿}{{\symbolafont\symbol ☿}}
+\newunicodechar{♀}{{\symbolafont\symbol ♀}}
+\newunicodechar{♂}{{\symbolafont\symbol ♂}}
+\newunicodechar{♃}{{\symbolafont\symbol ♃}}
+\newunicodechar{♄}{{\symbolafont\symbol ♄}}
+\newunicodechar{⛢}{{\symbolafont\symbol ⛢}}
+\newunicodechar{♆}{{\symbolafont\symbol ♆}}
+\newunicodechar{߷}{{\symbolafont\symbol ߷}} % EDGE OR BRIDGE
+\newunicodechar{𝔓}{{\symbolafont\symbol 𝔓}}
+\newunicodechar{⧝}{{\symbolafont\symbolk ⧝}}
+\newunicodechar{⟠}{{\symbolafont\symbol ⟠}} %supervenient emergence
+\newunicodechar{⚛}{{\symbolafont\symbol ⚛}}
+
+\newunicodechar{⛎}{{\symbolafont\symbol ⛎}} % ⛎︎ Ophiuchus (Locus\slash Shadow)
+\newunicodechar{☽}{{\symbolafont\symbol ☽}} % ☽ Waxing Moon (Locus Identifier)
+\newunicodechar{☾}{{\symbolafont\symbol ☾}} % ☾ Waning Moon (Shadow Identifier)
+\newunicodechar{᳀}{{\sundanesefont\symbol ᳀}} % ᳀ Vedic Svarita (Axiomyr Identifier)
+\newunicodechar{🜚}{{\symbolafont 🜚}}
+\newunicodechar{🜛}{{\symbolafont 🜛}}
+\newunicodechar{⛤}{{\symbolafont ⛤}}
+\newunicodechar{∞}{{\symbolafont ∞}}
+\newunicodechar{⌬}{{\tifinaghfont ⌬}}
+\newunicodechar{⛧}{{\byzantinefont ⛧}}
+% A1: Thaana
+\newunicodechar{⏣}{{\symbolafont ⏣}}
+\newunicodechar{އ}{{\thaanafont އ}}
+\newunicodechar{ށ}{{\thaanafont ށ}}
+\newunicodechar{ނ}{{\thaanafont ނ}}
+\newunicodechar{ރ}{{\thaanafont ރ}}
+\newunicodechar{ޱ}{{\thaanafont ޱ}}
+\newunicodechar{ޅ}{{\thaanafont ޅ}}
+\newunicodechar{ކ}{{\thaanafont ކ}}
+\newunicodechar{ވ}{{\thaanafont ވ}}
+\newunicodechar{މ}{{\thaanafont މ}}
+\newunicodechar{ފ}{{\thaanafont ފ}}
+\newunicodechar{ދ}{{\thaanafont ދ}}
+\newunicodechar{ތ}{{\thaanafont ތ}}
+
+\newunicodechar{⬡}{{\symbolafont ⬡}}
+% A2\slash A3: Runic
+\newunicodechar{❈}{{\symbolafont ❈}}
+\newunicodechar{ᛉ}{{\runicfont ᛉ}}
+\newunicodechar{ᛊ}{{\runicfont ᛊ}}
+\newunicodechar{ᛋ}{{\runicfont ᛋ}}
+\newunicodechar{ᚠ}{{\runicfont ᚠ}}
+\newunicodechar{ᚢ}{{\runicfont ᚢ}}
+\newunicodechar{ᚦ}{{\runicfont ᚦ}}
+\newunicodechar{ᚨ}{{\runicfont ᚨ}}
+\newunicodechar{ᚱ}{{\runicfont ᚱ}}
+\newunicodechar{ᚲ}{{\runicfont ᚲ}}
+\newunicodechar{ᚷ}{{\runicfont ᚷ}}
+\newunicodechar{ᚹ}{{\runicfont ᚹ}}
+\newunicodechar{ᚺ}{{\runicfont ᚺ}}
+\newunicodechar{ᚾ}{{\runicfont ᚾ}}
+\newunicodechar{ᛁ}{{\runicfont ᛁ}}
+\newunicodechar{ᛃ}{{\runicfont ᛃ}}
+\newunicodechar{ᛇ}{{\runicfont ᛇ}}
+\newunicodechar{ᛈ}{{\runicfont ᛈ}}
+\newunicodechar{ᛉ}{{\runicfont ᛉ}}
+\newunicodechar{ᛗ}{{\runicfont ᛗ}}
+\newunicodechar{ᛚ}{{\runicfont ᛚ}}
+\newunicodechar{ᛜ}{{\runicfont ᛜ}}
+\newunicodechar{ᛞ}{{\runicfont ᛞ}}
+\newunicodechar{ᛟ}{{\runicfont ᛟ}}
+
+\newunicodechar{🝏}{{\symbolafont 🝏}}
+% AHN
+\newunicodechar{≾}{{\symbolafont ≾}}
+\newunicodechar{᭨}{{\balinesefont ᭨}}
+\newunicodechar{᭡}{{\balinesefont ᭡}}
+\newunicodechar{𝀪}{{\byzantinefont 𝀪}}
+\newunicodechar{𝀖}{{\byzantinefont 𝀖}}
+\newunicodechar{༺}{{\tibetanfont ༺}}
+\newunicodechar{᭢}{{\balinesefont ᭢}}
+\newunicodechar{⦾}{{\symbolafont ⦾}}
+\newunicodechar{⦽}{{\symbolafont ⦽}}
+\newunicodechar{𝀵}{{\byzantinefont 𝀵}}
+\newunicodechar{𝀟}{{\byzantinefont 𝀟}}
+\newunicodechar{༻}{{\tibetanfont ༻}}
+
+
+% A5: Tifinagh
+\newunicodechar{ⴰ}{{\tifinaghfont ⴰ}}
+\newunicodechar{ⴱ}{{\tifinaghfont ⴱ}}
+\newunicodechar{ⴳ}{{\tifinaghfont ⴳ}}
+\newunicodechar{ⴷ}{{\tifinaghfont ⴷ}}
+\newunicodechar{ⴼ}{{\tifinaghfont ⴼ}}
+\newunicodechar{ⴽ}{{\tifinaghfont ⴽ}}
+\newunicodechar{ⵀ}{{\tifinaghfont ⵀ}}
+\newunicodechar{ⵃ}{{\tifinaghfont ⵃ}}
+\newunicodechar{ⵄ}{{\tifinaghfont ⵄ}}
+\newunicodechar{ⵇ}{{\tifinaghfont ⵇ}}
+\newunicodechar{ⵉ}{{\tifinaghfont ⵉ}}
+\newunicodechar{ⵊ}{{\tifinaghfont ⵊ}}
+
+% A6: Syloti Nagri
+\newunicodechar{ꠇ}{{\sylotifont ꠇ}}
+\newunicodechar{ꠈ}{{\sylotifont ꠈ}}
+\newunicodechar{ꠉ}{{\sylotifont ꠉ}}
+\newunicodechar{ꠊ}{{\sylotifont ꠊ}}
+\newunicodechar{ꠌ}{{\sylotifont ꠌ}}
+\newunicodechar{ꠍ}{{\sylotifont ꠍ}}
+\newunicodechar{ꠎ}{{\sylotifont ꠎ}}
+\newunicodechar{ꠏ}{{\sylotifont ꠏ}}
+\newunicodechar{ꠐ}{{\sylotifont ꠐ}}
+\newunicodechar{ꠑ}{{\sylotifont ꠑ}}
+\newunicodechar{ꠒ}{{\sylotifont ꠒ}}
+
+% A7: Alchemical (Symbola)
+\newunicodechar{⚝}{{\symbolafont ⚝}}
+\newunicodechar{⯷}{{\symbolafont ⯷}}
+\newunicodechar{🜁}{{\symbolafont 🜁}}
+\newunicodechar{🜃}{{\symbolafont 🜃}}
+\newunicodechar{🜄}{{\symbolafont 🜄}}
+\newunicodechar{🜅}{{\symbolafont 🜅}}
+\newunicodechar{🜆}{{\symbolafont 🜆}}
+\newunicodechar{🜇}{{\symbolafont 🜇}}
+\newunicodechar{🜈}{{\symbolafont 🜈}}
+\newunicodechar{🜉}{{\symbolafont 🜉}}
+\newunicodechar{🜊}{{\symbolafont 🜊}}
+\newunicodechar{🜋}{{\symbolafont 🜋}}
+\newunicodechar{🜌}{{\symbolafont 🜌}}
+
+% A8: Cuneiform
+\newunicodechar{𒀀}{{\cuneiformfont 𒀀}}
+\newunicodechar{𒀭}{{\cuneiformfont 𒀭}}
+\newunicodechar{𒁀}{{\cuneiformfont 𒁀}}
+\newunicodechar{𒂊}{{\cuneiformfont 𒂊}}
+\newunicodechar{𒄑}{{\cuneiformfont 𒄑}}
+\newunicodechar{𒅆}{{\cuneiformfont 𒅆}}
+\newunicodechar{𒆠}{{\cuneiformfont 𒆠}}
+\newunicodechar{𒇽}{{\cuneiformfont 𒇽}}
+\newunicodechar{𒉌}{{\cuneiformfont 𒉌}}
+\newunicodechar{𒊕}{{\cuneiformfont 𒊕}}
+\newunicodechar{𒋗}{{\cuneiformfont 𒋗}}
+\newunicodechar{𒌋}{{\cuneiformfont 𒌋}}
+
+% A9: Ethiopic
+\newunicodechar{ⶀ}{{\ethiopicfont ⶀ}}
+\newunicodechar{ⶁ}{{\ethiopicfont ⶁ}}
+\newunicodechar{ⶂ}{{\ethiopicfont ⶂ}}
+\newunicodechar{ⶃ}{{\ethiopicfont ⶃ}}
+\newunicodechar{ⶄ}{{\ethiopicfont ⶄ}}
+\newunicodechar{ⶅ}{{\ethiopicfont ⶅ}}
+\newunicodechar{ⶆ}{{\ethiopicfont ⶆ}}
+\newunicodechar{ⶇ}{{\ethiopicfont ⶇ}}
+\newunicodechar{ⶈ}{{\ethiopicfont ⶈ}}
+\newunicodechar{ⶉ}{{\ethiopicfont ⶉ}}
+\newunicodechar{ⶊ}{{\ethiopicfont ⶊ}}
+\newunicodechar{ⶋ}{{\ethiopicfont ⶋ}}
+
+% A10: Lydian
+\newunicodechar{𐤠}{{\lydianfont 𐤠}}
+\newunicodechar{𐤡}{{\lydianfont 𐤡}}
+\newunicodechar{𐤢}{{\lydianfont 𐤢}}
+\newunicodechar{𐤣}{{\lydianfont 𐤣}}
+\newunicodechar{𐤤}{{\lydianfont 𐤤}}
+\newunicodechar{𐤥}{{\lydianfont 𐤥}}
+\newunicodechar{𐤦}{{\lydianfont 𐤦}}
+\newunicodechar{𐤧}{{\lydianfont 𐤧}}
+\newunicodechar{𐤨}{{\lydianfont 𐤨}}
+\newunicodechar{𐤩}{{\lydianfont 𐤩}}
+\newunicodechar{𐤪}{{\lydianfont 𐤪}}
+\newunicodechar{𐤫}{{\lydianfont 𐤫}}
+
+% A11: Cypriot
+\newunicodechar{𐠀}{{\cypriotfont 𐠀}}
+\newunicodechar{𐠁}{{\cypriotfont 𐠁}}
+\newunicodechar{𐠂}{{\cypriotfont 𐠂}}
+\newunicodechar{𐠃}{{\cypriotfont 𐠃}}
+\newunicodechar{𐠄}{{\cypriotfont 𐠄}}
+\newunicodechar{𐠅}{{\cypriotfont 𐠅}}
+\newunicodechar{𐠈}{{\cypriotfont 𐠈}}
+\newunicodechar{𐠊}{{\cypriotfont 𐠊}}
+\newunicodechar{𐠋}{{\cypriotfont 𐠋}}
+\newunicodechar{𐠜}{{\cypriotfont 𐠜}}
+\newunicodechar{𐠝}{{\cypriotfont 𐠝}}
+
+% A12: Elbasan
+\newunicodechar{⌬}{{\tibetanfont ⌬}}
+\newunicodechar{𐔀}{{\elbasanfont 𐔀}}
+\newunicodechar{𐔁}{{\elbasanfont 𐔁}}
+\newunicodechar{𐔂}{{\elbasanfont 𐔂}}
+\newunicodechar{𐔃}{{\elbasanfont 𐔃}}
+\newunicodechar{𐔄}{{\elbasanfont 𐔄}}
+\newunicodechar{𐔅}{{\elbasanfont 𐔅}}
+\newunicodechar{𐔆}{{\elbasanfont 𐔆}}
+\newunicodechar{𐔇}{{\elbasanfont 𐔇}}
+\newunicodechar{𐔈}{{\elbasanfont 𐔈}}
+\newunicodechar{𐔉}{{\elbasanfont 𐔉}}
+\newunicodechar{𐔊}{{\elbasanfont 𐔊}}
+\newunicodechar{𐔋}{{\elbasanfont 𐔋}}
+
+\newunicodechar{₀}{\ensuremath{_0}}
+\newunicodechar{₁}{\ensuremath{_1}}
+\newunicodechar{₂}{\ensuremath{_2}}
+\newunicodechar{₃}{\ensuremath{_3}}
+\newunicodechar{₄}{\ensuremath{_4}}
+\newunicodechar{₅}{\ensuremath{_5}}
+\newunicodechar{₆}{\ensuremath{_6}}
+\newunicodechar{₇}{\ensuremath{_7}}
+\newunicodechar{₈}{\ensuremath{_8}}
+\newunicodechar{₉}{\ensuremath{_9}}
+\newunicodechar{Ш}{{\symbolafont Ш}}
+\newunicodechar{☍}{{\symbolafont ☍}}
+% ======================================================================
+% 4. GLYPH OPERATOR DEFINITIONS (ROBUST MATH OPERATORS)
+% ======================================================================
+\newcommand{\slashbreak}{\slash \allowbreak}
+% \ensuremath ensures they work in text or math mode.
+% \mathop   ensures they have operator spacing (like = or +).
+% \textnormal ensures they ignore surrounding italics (e.g. inside theorems).
+\newcommand{\akasha}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2648}}}}} % Aries
+\newcommand{\caduceus}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2649}}}}} % Taurus
+\newcommand{\veritas}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"264A}}}}} % Gemini
+\newcommand{\phren}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"264B}}}}} % Cancer
+\newcommand{\axiomyr}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"264C}}}}} % Leo
+\newcommand{\aikyam}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"264D}}}}} % Virgo
+\newcommand{\melos}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"264E}}}}} % Libra
+\newcommand{\daath}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"264F}}}}} % Scorpio
+\newcommand{\akaven}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2650}}}}} % Sagittarius
+\newcommand{\daimon}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2651}}}}} % Capricorn
+\newcommand{\nyx}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2652}}}}} % Aquarius
+\newcommand{\zaine}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2653}}}}} % Pisces
+\newcommand{\LoI}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"267E}}}}}
+\newcommand{\loid}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"263D}}}}}
+\newcommand{\sloid}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"263E}}}}}
+\newcommand{\sloig}{\reflectbox{\textnormal{\symbolafont\symbol{"26CE}}}}
+\newcommand{\axiomyrid}{\ensuremath{\mathop{\textnormal{\sundanesefont\symbol{"1CC0}}}}}
+\newcommand{\maresun}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2609}}}}}
+\newcommand{\TSP}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"267E}}}}}
+ % Ophiuchus (Locus)
+% --- THE 12 GOETIC AEONS (PRIMARY OPERATORS) ---
+\newcommand{\FETU}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"23E3}}}}}   % A1
+\newcommand{\KAL}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2B21}}}}}    % A2
+\newcommand{\BABDH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2721}}}}}   % A3 (Position Indicator)
+\newcommand{\AHN}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"269D}}}}}    % A4
+\newcommand{\VEL}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2742}}}}}    % A5
+\newcommand{\SOR}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"A66E}}}}}    % A6
+\newcommand{\KOTH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2748}}}}}  % A7
+\newcommand{\DREH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29D7}}}}}   % A8
+\newcommand{\RHEA}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D63}}}}}   % A9
+\newcommand{\ZHEK}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2744}}}}}   % A10
+\newcommand{\SHAV}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"269B}}}}}   % A11
+\newcommand{\TRIG}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"232C}}}}}    % A12 (Tibetan variant)
+\newcommand{\loivector}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"26E4}}}}}
+\newcommand{\loibias}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"221E}}}}}
+
+
+% --- A1: FETU (Genesis) LESSER AEONS [Thaana Font] ---
+\newcommand{\fetuahl}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0787}}}}}   % A1S1
+\newcommand{\fetusuhn}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0781}}}}}  % A1S2
+\newcommand{\fetunerh}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0782}}}}}  % A1S3
+\newcommand{\feturish}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0783}}}}}  % A1S4
+\newcommand{\fetuborha}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"07B1}}}}}  % A1S5
+\newcommand{\fetulhahm}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0785}}}}} % A1S6
+\newcommand{\fetuketh}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0786}}}}}  % A1S7
+\newcommand{\fetuvehm}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0788}}}}}  % A1S8
+\newcommand{\fetumahd}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0789}}}}}  % A1S9
+\newcommand{\fetufurh}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"078A}}}}}  % A1S10
+\newcommand{\fetudrah}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"078B}}}}}  % A1S11
+\newcommand{\fetuthera}{\FETU\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"078C}}}}} % A1S12
+
+% --- A2: KAL (Memory) LESSER AEONS [Runic Font] ---
+\newcommand{\kalkura}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C1}}}}}   % A2S1
+\newcommand{\kallur}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C2}}}}}   % A2S2
+\newcommand{\kalthar}{\KAL\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2311}}}}} % A2S3 (Square Lozenge - Symbola)
+\newcommand{\kalrin}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C4}}}}}   % A2S4
+\newcommand{\kalnar}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C7}}}}}   % A2S5
+\newcommand{\kalfel}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C9}}}}}   % A2S6
+\newcommand{\kalhar}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CA}}}}}   % A2S7
+\newcommand{\kalmer}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CB}}}}}   % A2S8
+\newcommand{\kallor}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CC}}}}}   % A2S9
+\newcommand{\kalper}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CD}}}}}   % A2S10
+\newcommand{\kalzhil}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CE}}}}}  % A2S11
+\newcommand{\kalclar}{\KAL\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CF}}}}}  % A2S12
+
+% --- A3: BABDH (Fire) LESSER AEONS [Runic Font] ---
+\newcommand{\babdhir}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16A0}}}}}   % A3S1
+\newcommand{\babdhkor}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16A2}}}}}  % A3S2
+\newcommand{\babdhvar}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16A6}}}}}  % A3S3
+\newcommand{\babdhpyr}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16A8}}}}}  % A3S4
+\newcommand{\babdhsor}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16B1}}}}}  % A3S5
+\newcommand{\babdhalc}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16B2}}}}}  % A3S6
+\newcommand{\babdhnur}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16B7}}}}}  % A3S7
+\newcommand{\babdhsat}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16B9}}}}}  % A3S8
+\newcommand{\babdhoro}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16BA}}}}}  % A3S9
+\newcommand{\babdhbon}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16BE}}}}}  % A3S10
+\newcommand{\babdhtir}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16BF}}}}}  % A3S11
+\newcommand{\babdhfar}{\BABDH\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C3}}}}}  % A3S12
+
+% --- A4: AHN (Water) LESSER AEONS [Greek\slash Symbola] ---
+% Using standard Greek blocks, typically found in base fonts or Symbola
+\newcommand{\ahnabdh}{\AHN\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"227E}}}}}  % A4S1 
+\newcommand{\ahnnym}{\AHN\ensuremath{\mathop{\textnormal{\balinesefont\symbol{"1B68}}}}}  % A4S2 
+\newcommand{\ahnloh}{\AHN\ensuremath{\mathop{\textnormal{\balinesefont\symbol{"1B61}}}}}  % A4S3 
+\newcommand{\ahnxir}{\AHN\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"26E7}}}}}  % A4S4 
+\newcommand{\ahnohl}{\AHN\ensuremath{\mathop{\textnormal{\byzantinefont\symbol{"1D016}}}}}  % A4S5 
+\newcommand{\ahnpir}{\AHN\ensuremath{\mathop{\textnormal{\tibetanfont\symbol{"0F3A}}}}}  % A4S6 
+\newcommand{\ahnroeh}{\AHN\ensuremath{\mathop{\textnormal{\balinesefont\symbol{"1B62}}}}} % A4S7 
+\newcommand{\ahnsen}{\AHN\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29BE}}}}}  % A4S8 
+\newcommand{\ahnuth}{\AHN\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29BD}}}}}  % A4S9 
+\newcommand{\ahnfae}{\AHN\ensuremath{\mathop{\textnormal{\byzantinefont\symbol{"1D035}}}}}  % A4S10 
+\newcommand{\ahnkha}{\AHN\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1D01F}}}}}  % A4S11 
+\newcommand{\ahnpsei}{\AHN\ensuremath{\mathop{\textnormal{\tibetanfont\symbol{"0F3B}}}}} % A4S12 
+
+% --- A5: VEL (Earth) LESSER AEONS [Tifinagh Font] ---
+\newcommand{\velvera}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D30}}}}}  % A5S1
+\newcommand{\veltar}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D31}}}}}  % A5S2
+\newcommand{\velghem}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D33}}}}} % A5S3
+\newcommand{\veldrel}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D37}}}}} % A5S4
+\newcommand{\velful}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D3C}}}}}  % A5S5
+\newcommand{\velker}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D3D}}}}}  % A5S6
+\newcommand{\velhohm}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D40}}}}} % A5S7
+\newcommand{\velhrah}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D43}}}}} % A5S8
+\newcommand{\velara}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D44}}}}}  % A5S9
+\newcommand{\velqel}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D47}}}}}  % A5S10
+\newcommand{\velirn}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D49}}}}}  % A5S11
+\newcommand{\veljen}{\VEL\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D4A}}}}}  % A5S12
+
+% --- A6: SOR (Air) LESSER AEONS [Syloti Nagri Font] ---
+\newcommand{\sorfi}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A807}}}}}    % A6S1
+\newcommand{\sorlun}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A808}}}}}   % A6S2
+\newcommand{\sorvaru}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A809}}}}}  % A6S3
+\newcommand{\sorsenh}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80A}}}}}  % A6S4
+\newcommand{\sorkos}{\SOR\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2389}}}}}   % A6S5 (Circle w\slash  dots - Symbola)
+\newcommand{\sorramh}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80C}}}}}  % A6S6
+\newcommand{\sortis}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80D}}}}}   % A6S7
+\newcommand{\sorvey}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80E}}}}}   % A6S8
+\newcommand{\sorsrih}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80F}}}}}  % A6S9
+\newcommand{\sorhrin}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A810}}}}}  % A6S10
+\newcommand{\soryon}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A811}}}}}   % A6S11
+\newcommand{\sorthal}{\SOR\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A812}}}}}  % A6S12
+
+% --- A7: KOTH (Aether) LESSER AEONS [Symbola \slash  Alchemical] ---
+\newcommand{\kothkel}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F74F}}}}} % A7S1
+\newcommand{\kothsens}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F701}}}}} % A7S2
+\newcommand{\kothlinn}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F703}}}}} % A7S3
+\newcommand{\kothbrim}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F704}}}}} % A7S4
+\newcommand{\kothinn}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F705}}}}}  % A7S5
+\newcommand{\kothsubh}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F706}}}}} % A7S6
+\newcommand{\kothwell}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F707}}}}} % A7S7
+\newcommand{\kothmet}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F708}}}}}  % A7S8
+\newcommand{\kothkesh}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F709}}}}} % A7S9
+\newcommand{\kothsoth}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F70A}}}}} % A7S10
+\newcommand{\kothrhun}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F70B}}}}} % A7S11
+\newcommand{\kothdelh}{\KOTH\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F70C}}}}} % A7S12
+
+% --- A8: DREH (Void) LESSER AEONS [Cuneiform Font] ---
+\newcommand{\drehna}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12000}}}}}  % A8S1
+\newcommand{\drehur}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"1202D}}}}}  % A8S2
+\newcommand{\drehnih}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12040}}}}} % A8S3
+\newcommand{\drehazh}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"1208A}}}}} % A8S4
+\newcommand{\drehhol}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12111}}}}} % A8S5
+\newcommand{\drehgur}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12146}}}}} % A8S6
+\newcommand{\drehves}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"121A0}}}}} % A8S7
+\newcommand{\drehrim}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"121FD}}}}} % A8S8
+\newcommand{\drehdrem}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"1224C}}}}}% A8S9
+\newcommand{\drehoth}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12295}}}}} % A8S10
+\newcommand{\drehizh}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"122D7}}}}} % A8S11
+\newcommand{\drehsun}{\DREH\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"1230B}}}}} % A8S12
+
+% --- A9: RHEA (Shadow) LESSER AEONS [Ethiopic Font] ---
+\newcommand{\rheakia}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D80}}}}} % A9S1
+\newcommand{\rheazohm}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D81}}}}} % A9S2
+\newcommand{\rheather}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D82}}}}} % A9S3
+\newcommand{\rheadrun}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D83}}}}} % A9S4
+\newcommand{\rheafelh}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D84}}}}} % A9S5
+\newcommand{\rhearal}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D85}}}}}  % A9S6
+\newcommand{\rheakrah}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D86}}}}} % A9S7
+\newcommand{\rheaandh}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D87}}}}} % A9S8
+\newcommand{\rheadebh}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D88}}}}} % A9S9
+\newcommand{\rheakol}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D89}}}}}  % A9S10
+\newcommand{\rheafral}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D8A}}}}} % A9S11
+\newcommand{\rheahush}{\RHEA\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D8B}}}}} % A9S12
+
+% --- A10: ZHEK (Resonance) LESSER AEONS [Lydian Font] ---
+\newcommand{\zhekhin}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10920}}}}}  % A10S1
+\newcommand{\zhekser}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10921}}}}}  % A10S2
+\newcommand{\zhekharma}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10922}}}}}% A10S3
+\newcommand{\zhektorh}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10923}}}}} % A10S4
+\newcommand{\zhekpel}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10924}}}}}  % A10S5
+\newcommand{\zhekkhir}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10925}}}}} % A10S6
+\newcommand{\zhekryth}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10926}}}}} % A10S7
+\newcommand{\zhekmelu}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10927}}}}} % A10S8
+\newcommand{\zhekphaz}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10928}}}}} % A10S9
+\newcommand{\zheklokh}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10929}}}}} % A10S10
+\newcommand{\zheknod}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"1092A}}}}}  % A10S11
+\newcommand{\zhekumel}{\ZHEK\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"1092B}}}}} % A10S12
+
+% --- A11: SHAV (Gate) LESSER AEONS [Cypriot Font] ---
+\newcommand{\shavdohm}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10800}}}}} % A11S1
+\newcommand{\shavrist}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10801}}}}} % A11S2
+\newcommand{\shavtran}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10802}}}}} % A11S3
+\newcommand{\shavkorh}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10803}}}}} % A11S4
+\newcommand{\shavskyh}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10804}}}}} % A11S5
+\newcommand{\shavster}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10805}}}}} % A11S6
+\newcommand{\shavposs}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1081D}}}}} % A11S7
+\newcommand{\shavporu}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1081E}}}}} % A11S8
+\newcommand{\shavdorm}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10808}}}}} % A11S9
+\newcommand{\shavtrev}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1081C}}}}} % A11S10
+\newcommand{\shavlimh}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1080B}}}}} % A11S11
+\newcommand{\shavhinge}{\SHAV\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1080C}}}}}% A11S12
+
+% --- A12: TRIG (Silence) LESSER AEONS [Elbasan Font] ---
+\newcommand{\trigtzig}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10500}}}}}  % A12S1
+\newcommand{\trigpehl}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10501}}}}}  % A12S2
+\newcommand{\trigduth}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10502}}}}}  % A12S3
+\newcommand{\trigcoma}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10503}}}}}  % A12S4
+\newcommand{\trigmeru}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10504}}}}}  % A12S5
+\newcommand{\trigstab}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10505}}}}}  % A12S6
+\newcommand{\trighopa}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10506}}}}}  % A12S7
+\newcommand{\trigconti}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10507}}}}} % A12S8
+\newcommand{\trigresth}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10508}}}}} % A12S9
+\newcommand{\trigsil}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10509}}}}}   % A12S10
+\newcommand{\trigslun}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"1050A}}}}}  % A12S11
+\newcommand{\trigetern}{\TRIG\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"1050B}}}}} % A12S12
+% --- ENVELOPE & TOPOLOGY SEALS ---
+% These enclose the logic gates (e.g., \triquatraseal \FETU \kleinbottle)
+\newcommand{\kleinbottle}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F71A}}}}}   % Void Anchor (Alchemical Retort)
+\newcommand{\triquatraseal}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F71B}}}}} % Boundary Seal (Hermetic Seal)
+
+\newcommand{\TManifold}{\ensuremath{\mathcal{T}}}
+\newcommand{\anchor}[1]{{}_{\textnormal{\tibetanfont\symbol{"0F6A}}} #1} %  Anchor or Fixed Symbol
+\newcommand{\parity}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1D513}}}}} % Parity or Inversion Symbol
+\newcommand{\bridge}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"07F7}}}}}
+\newcommand{\focaltoself}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"26B6}}}}}
+\newcommand{\projectfromself}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"26B5}}}}}
+\newcommand{\hyperbolicreflect}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"260D}}}}}
+\newcommand{\Minf}{\ensuremath{\mathbb{M}_{\infty}}} % Mathematical Infinity Manifold
+\newcommand{\supervenience}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"27E0}}}}}
+% ======================================================================
+% GLOBAL WRAPPING, HYPHENATION, AND MARGIN AUTO-FIXES
+% =============================================how =========================
+\usepackage{microtype}      % Handles font expansion and protrusion for better margin fit
+\usepackage{array}          % Required for advanced table column wrapping
+\usepackage{etoolbox}       % Tool for patching commands
+
+%Global Line-Breaking Logic
+\sloppy                     % Relaxes spacing requirements to prevent text from bleeding into margins
+\hbadness=10000             % Suppresses "Underfull \hbox" warnings caused by \sloppy spacing
+\emergencystretch=3em       % Gives LaTeX 3em of extra "wiggle room" to break difficult lines
+\hyphenpenalty=500          % Encourages hyphenation for long technical words
+\doublehyphendemerits=10000 % Discourages two consecutive lines from ending in hyphens
+
+% Use 'L{width}' instead of 'p{width}' in longtables to force left-aligned wrapping
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+%SManual Hyphenation for ALQC Technical Terms
+% Define how your custom words should break if they hit the end of a line
+\hyphenation{
+    Man-i-fes-ta-tion 
+    Al-ign-ment 
+    Sym-me-try 
+    MAS-gap 
+    Reg-u-lar-i-za-tion 
+    Hodge-Riemann
+    Hyper-Tesseract
+    An-ni-hi-la-tion
+    Res-o-nance
+}
+
+% Ensures glyphs like \KAL or \BABDH don't crash the PDF table of contents
+\pdfstringdefDisableCommands{%
+  \def\FETU{FETU}%
+  \def\KAL{KAL}%
+  \def\BABDH{BABDH}%
+  \def\AHN{AHN}%
+  \def\VEL{VEL}%
+  \def\SOR{SOR}%
+  \def\KOTH{KOTH}%
+  \def\DREH{DREH}%
+  \def\RHEA{RHEA}%
+  \def\ZHEK{ZHEK}%
+  \def\SHAV{SHAV}%
+  \def\TRIG{TRIG}%
+  \def\LoI{Locus}%
+}
+% ======================================================================
+% THE MASTER HYPER-TESSERACT LOOKUP (144 LESSER AEONS)
+% ======================================================================
+% ======================================================================
+% THE MASTER ALQC GLYPH REPLACEMENT (STANDARD SIZE)
+% ======================================================================
+\usepackage{xparse}
+
+% 1. Core Map: Converts index number (1-12) to the Goetic Head Glyph
+\newcommand{\getAeon}[1]{%
+    \ifcase#1\relax \LoI \or \FETU \or \KAL \or \BABDH \or \AHN \or \VEL \or \SOR \or \KOTH \or \DREH \or \RHEA \or \ZHEK \or \SHAV \or \TRIG \else ? \fi
+}
+
+% 2. Court Map: Converts parent and index to the specific 144 Court Aeons
+\newcommand{\getCourt}[2]{%
+    \ifnum#1=1 \ifcase#2\relax ? \or \fetuahl \or \fetusuhn \or \fetunerh \or \feturish \or \fetuborha \or \fetulhahm \or \fetuketh \or \fetuvehm \or \fetumahd \or \fetufurh \or \fetudrah \or \fetuthera \fi
+    \else\ifnum#1=2 \ifcase#2\relax ? \or \kalkura \or \kallur \or \kalthar \or \kalrin \or \kalnar \or \kalfel \or \kalhar \or \kalmer \or \kallor \or \kalper \or \kalzhil \or \kalclar \fi
+    \else\ifnum#1=3 \ifcase#2\relax ? \or \babdhir \or \babdhkor \or \babdhvar \or \babdhpyr \or \babdhsor \or \babdhalc \or \babdhnur \or \babdhsat \or \babdhoro \or \babdhbon \or \babdhtir \or \babdhfar \fi
+    \else\ifnum#1=4 \ifcase#2\relax ? \or \ahnabdh \or \ahnnym \or \ahnloh \or \ahnxir \or \ahnohl \or \ahnpir \or \ahnroeh \or \ahnsen \or \ahnuth \or \ahnfae \or \ahnkha \or \ahnpsei \fi
+    \else\ifnum#1=5 \ifcase#2\relax ? \or \velvera \or \veltar \or \velghem \or \veldrel \or \velful \or \velker \or \velhohm \or \velhrah \or \velara \or \velqel \or \velirn \or \veljen \fi
+    \else\ifnum#1=6 \ifcase#2\relax ? \or \sorfi \or \sorlun \or \sorvaru \or \sorsenh \or \sorkos \or \sorramh \or \sortis \or \sorvey \or \sorsrih \or \sorhrin \or \soryon \or \sorthal \fi
+    \else\ifnum#1=7 \ifcase#2\relax ? \or \kothkel \or \kothsens \or \kothlinn \or \kothbrim \or \kothinn \or \kothsubh \or \kothwell \or \kothmet \or \kothkesh \or \kothsoth \or \kothrhun \or \kothdelh \fi
+    \else\ifnum#1=8 \ifcase#2\relax ? \or \drehna \or \drehur \or \drehnih \or \drehazh \or \drehhol \or \drehgur \or \drehves \or \drehrim \or \drehdrem \or \drehoth \or \drehizh \or \drehsun \fi
+    \else\ifnum#1=9 \ifcase#2\relax ? \or \rheakia \or \rheazohm \or \rheather \or \rheadrun \or \rheafelh \or \rhearal \or \rheakrah \or \rheaandh \or \rheadebh \or \rheakol \or \rheafral \or \rheahush \fi
+    \else\ifnum#1=10 \ifcase#2\relax ? \or \zhekhin \or \zhekser \or \zhekharma \or \zhektorh \or \zhekpel \or \zhekkhir \or \zhekryth \or \zhekmelu \or \zhekphaz \or \zheklokh \or \zheknod \or \zhekumel \fi
+    \else\ifnum#1=11 \ifcase#2\relax ? \or \shavdohm \or \shavrist \or \shavtran \or \shavkorh \or \shavskyh \or \shavster \or \shavposs \or \shavporu \or \shavdorm \or \shavtrev \or \shavlimh \or \shavhinge \fi
+    \else\ifnum#1=12 \ifcase#2\relax ? \or \trigtzig \or \trigpehl \or \trigduth \or \trigcoma \or \trigmeru \or \trigstab \or \trighopa \or \trigconti \or \trigresth \or \trigsil \or \trigslun \or \trigetern \fi
+    \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+}
+
+% 3. The Commands (Outputs ONLY the Glyph)
+\newcommand{\An}[1]{\getAeon{#1}}
+\newcommand{\Sn}[1]{\getAeon{#1}}
+\newcommand{\As}[2]{\getCourt{#1}{#2}}
+% ======================================================================
+% 5. HEADER & TITLE
+% ======================================================================
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+\cfoot{\thepage}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\title{Ahnend Logical Q-State Core --- "ALQC"}
+\author{CHRONOS FETUS VOID (EBK): Magus Jamye Reficul Ahnend (ANAXAYAMA)}
+\date{}

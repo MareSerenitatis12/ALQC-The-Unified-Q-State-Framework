@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ALQC_Canon_Formalized.aux
+The style file: plain.bst
+Database file #1: ALQC_Canon_Formalized.bib
+You've used 38 entries,
+            2118 wiz_defined-function locations,
+            731 strings with 9736 characters,
+and the built_in function-call counts, 9409 in all, are:
+= -- 930
+> -- 335
+< -- 1
++ -- 148
+- -- 100
+* -- 431
+:= -- 1675
+add.period$ -- 152
+call.type$ -- 38
+change.case$ -- 145
+chr.to.int$ -- 0
+cite$ -- 38
+duplicate$ -- 440
+empty$ -- 830
+format.name$ -- 100
+if$ -- 1986
+int.to.chr$ -- 0
+int.to.str$ -- 38
+missing$ -- 61
+newline$ -- 231
+num.names$ -- 77
+pop$ -- 211
+preamble$ -- 1
+purify$ -- 126
+quote$ -- 0
+skip$ -- 254
+stack$ -- 0
+substring$ -- 304
+swap$ -- 47
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 100
+warning$ -- 0
+while$ -- 85
+width$ -- 40
+write$ -- 484

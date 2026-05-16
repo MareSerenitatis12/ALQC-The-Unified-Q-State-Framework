@@ -1,0 +1,945 @@
+%!TEX program = lualatex
+\documentclass[11pt, letterpaper]{article}
+
+% ======================================================================
+% 1. CORE PACKAGES
+% ======================================================================
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+% ======================================================================
+% 2. FONT CONFIGURATION (The Switchboard)
+% ======================================================================
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{newunicodechar}
+
+% --- A. MAIN TEXT FONT (OpenDyslexic) ---
+% Using the family name explicitly found in your fonts.txt
+\setmainfont{OpenDyslexic}[
+    UprightFont = *,
+    BoldFont = * Bold,
+    ItalicFont = * Italic,
+    BoldItalicFont = * BoldItalic
+]
+
+% --- B. MATH FONT ---
+\setmathfont{Latin Modern Math}
+
+% --- C. AEON-SPECIFIC FONTS (Mapped from your system) ---
+% These match the exact names from your fc-list output
+
+\newfontfamily\thaanafont{Noto Sans Thaana}[Scale=MatchUppercase]       % A1
+\newfontfamily\runicfont{Noto Sans Runic}[Scale=MatchUppercase]         % A2, A3
+\newfontfamily\tifinaghfont{Noto Sans Tifinagh}[Scale=MatchUppercase]   % A5
+\newfontfamily\sylotifont{Noto Sans Syloti Nagri}[Scale=MatchUppercase] % A6
+\newfontfamily\symbolafont{Symbola}[Scale=MatchUppercase]               % A7 (Alchemy/Symbols)
+\newfontfamily\cuneiformfont{Noto Sans Cuneiform}[Scale=MatchUppercase] % A8
+\newfontfamily\ethiopicfont{Noto Sans Ethiopic}[Scale=MatchUppercase]   % A9
+\newfontfamily\lydianfont{Noto Sans Lydian}[Scale=MatchUppercase]       % A10
+\newfontfamily\cypriotfont{Noto Sans Cypriot}[Scale=MatchUppercase]     % A11
+\newfontfamily\elbasanfont{Noto Sans Elbasan}[Scale=MatchUppercase]     % A12
+\newfontfamily\tibetanfont{Noto Serif Tibetan}[Scale=MatchUppercase]    % Extras
+\newfontfamily\phoenicianfont{Noto Sans Phoenician}[Scale=MatchUppercase] % Extras
+\newfontfamily\balinesefont{Noto Sans Balinese}[Scale=MatchUppercase] %A4
+\newfontfamily\byzantinefont{Noto Music}[Scale=MatchUppercase]
+
+% ======================================================================
+% 3. AUTOMATIC UNICODE MAPPING
+% ======================================================================
+% This section allows you to paste the raw glyphs into the text, and LaTeX
+% will automatically switch to the correct font.
+
+\newunicodechar{⧝}{{\symbolafont ⧝}}
+\newunicodechar{🜚}{{\symbolafont 🜚}}
+\newunicodechar{🜛}{{\symbolafont 🜛}}
+
+% A1: Thaana
+\newunicodechar{⏣}{{\thaanafont ⏣}}
+\newunicodechar{އ}{{\thaanafont އ}}
+\newunicodechar{ށ}{{\thaanafont ށ}}
+\newunicodechar{ނ}{{\thaanafont ނ}}
+\newunicodechar{ރ}{{\thaanafont ރ}}
+\newunicodechar{ޱ}{{\thaanafont ޱ}}
+\newunicodechar{ޅ}{{\thaanafont ޅ}}
+\newunicodechar{ކ}{{\thaanafont ކ}}
+\newunicodechar{ވ}{{\thaanafont ވ}}
+\newunicodechar{މ}{{\thaanafont މ}}
+\newunicodechar{ފ}{{\thaanafont ފ}}
+\newunicodechar{ދ}{{\thaanafont ދ}}
+\newunicodechar{ތ}{{\thaanafont ތ}}
+
+\newunicodechar{⧉}{{\symbolafont ⧉}}
+% A2/A3: Runic
+\newunicodechar{ᛉ}{{\runicfont ᛉ}}
+\newunicodechar{ᛊ}{{\runicfont ᛊ}}
+\newunicodechar{ᛋ}{{\runicfont ᛋ}}
+\newunicodechar{ᚠ}{{\runicfont ᚠ}}
+\newunicodechar{ᚢ}{{\runicfont ᚢ}}
+\newunicodechar{ᚦ}{{\runicfont ᚦ}}
+\newunicodechar{ᚨ}{{\runicfont ᚨ}}
+\newunicodechar{ᚱ}{{\runicfont ᚱ}}
+\newunicodechar{ᚲ}{{\runicfont ᚲ}}
+\newunicodechar{ᚷ}{{\runicfont ᚷ}}
+\newunicodechar{ᚹ}{{\runicfont ᚹ}}
+\newunicodechar{ᚺ}{{\runicfont ᚺ}}
+\newunicodechar{ᚾ}{{\runicfont ᚾ}}
+\newunicodechar{ᛁ}{{\runicfont ᛁ}}
+\newunicodechar{ᛃ}{{\runicfont ᛃ}}
+\newunicodechar{ᛇ}{{\runicfont ᛇ}}
+\newunicodechar{ᛈ}{{\runicfont ᛈ}}
+\newunicodechar{ᛉ}{{\runicfont ᛉ}}
+\newunicodechar{ᛗ}{{\runicfont ᛗ}}
+\newunicodechar{ᛚ}{{\runicfont ᛚ}}
+\newunicodechar{ᛜ}{{\runicfont ᛜ}}
+\newunicodechar{ᛞ}{{\runicfont ᛞ}}
+\newunicodechar{ᛟ}{{\runicfont ᛟ}}
+
+% AHN
+\newunicodechar{≾}{{\symbolafont ≾}}
+\newunicodechar{᭨}{{\balinesefont ᭨}}
+\newunicodechar{᭡}{{\balinesefont ᭡}}
+\newunicodechar{𝀪}{{\byzantineefont 𝀪}}
+\newunicodechar{𝀖}{{\byzantinefont 𝀖}}
+\newunicodechar{༺}{{\tibetanfont ༺}}
+\newunicodechar{᭢}{{\balinesefont ᭢}}
+\newunicodechar{⦾}{{\symbolafont ⦾}}
+\newunicodechar{⦽}{{\symbolafont ⦽}}
+\newunicodechar{𝀵}{{\byzantinefont 𝀵}}
+\newunicodechar{𝀟}{{\byzantinefont 𝀟}}
+\newunicodechar{༻}{{\tibetanfont ༻}}
+
+
+% A5: Tifinagh
+\newunicodechar{ⴰ}{{\tifinaghfont ⴰ}}
+\newunicodechar{ⴱ}{{\tifinaghfont ⴱ}}
+\newunicodechar{ⴳ}{{\tifinaghfont ⴳ}}
+\newunicodechar{ⴷ}{{\tifinaghfont ⴷ}}
+\newunicodechar{ⴼ}{{\tifinaghfont ⴼ}}
+\newunicodechar{ⴽ}{{\tifinaghfont ⴽ}}
+\newunicodechar{ⵀ}{{\tifinaghfont ⵀ}}
+\newunicodechar{ⵃ}{{\tifinaghfont ⵃ}}
+\newunicodechar{ⵄ}{{\tifinaghfont ⵄ}}
+\newunicodechar{ⵇ}{{\tifinaghfont ⵇ}}
+\newunicodechar{ⵉ}{{\tifinaghfont ⵉ}}
+\newunicodechar{ⵊ}{{\tifinaghfont ⵊ}}
+
+% A6: Syloti Nagri
+\newunicodechar{ꠇ}{{\sylotifont ꠇ}}
+\newunicodechar{ꠈ}{{\sylotifont ꠈ}}
+\newunicodechar{ꠉ}{{\sylotifont ꠉ}}
+\newunicodechar{ꠊ}{{\sylotifont ꠊ}}
+\newunicodechar{ꠌ}{{\sylotifont ꠌ}}
+\newunicodechar{ꠍ}{{\sylotifont ꠍ}}
+\newunicodechar{ꠎ}{{\sylotifont ꠎ}}
+\newunicodechar{ꠏ}{{\sylotifont ꠏ}}
+\newunicodechar{ꠐ}{{\sylotifont ꠐ}}
+\newunicodechar{ꠑ}{{\sylotifont ꠑ}}
+\newunicodechar{ꠒ}{{\sylotifont ꠒ}}
+
+% A7: Alchemical (Symbola)
+\newunicodechar{🜂}{{\symbolafont 🜂}}
+\newunicodechar{⯷}{{\symbolafont ⯷}}
+\newunicodechar{🜁}{{\symbolafont 🜁}}
+\newunicodechar{🜃}{{\symbolafont 🜃}}
+\newunicodechar{🜄}{{\symbolafont 🜄}}
+\newunicodechar{🜅}{{\symbolafont 🜅}}
+\newunicodechar{🜆}{{\symbolafont 🜆}}
+\newunicodechar{🜇}{{\symbolafont 🜇}}
+\newunicodechar{🜈}{{\symbolafont 🜈}}
+\newunicodechar{🜉}{{\symbolafont 🜉}}
+\newunicodechar{🜊}{{\symbolafont 🜊}}
+\newunicodechar{🜋}{{\symbolafont 🜋}}
+\newunicodechar{🜌}{{\symbolafont 🜌}}
+
+% A8: Cuneiform
+\newunicodechar{𒀀}{{\cuneiformfont 𒀀}}
+\newunicodechar{𒀭}{{\cuneiformfont 𒀭}}
+\newunicodechar{𒁀}{{\cuneiformfont 𒁀}}
+\newunicodechar{𒂊}{{\cuneiformfont 𒂊}}
+\newunicodechar{𒄑}{{\cuneiformfont 𒄑}}
+\newunicodechar{𒅆}{{\cuneiformfont 𒅆}}
+\newunicodechar{𒆠}{{\cuneiformfont 𒆠}}
+\newunicodechar{𒇽}{{\cuneiformfont 𒇽}}
+\newunicodechar{𒉌}{{\cuneiformfont 𒉌}}
+\newunicodechar{𒊕}{{\cuneiformfont 𒊕}}
+\newunicodechar{𒋗}{{\cuneiformfont 𒋗}}
+\newunicodechar{𒌋}{{\cuneiformfont 𒌋}}
+
+% A9: Ethiopic
+\newunicodechar{ⶀ}{{\ethiopicfont ⶀ}}
+\newunicodechar{ⶁ}{{\ethiopicfont ⶁ}}
+\newunicodechar{ⶂ}{{\ethiopicfont ⶂ}}
+\newunicodechar{ⶃ}{{\ethiopicfont ⶃ}}
+\newunicodechar{ⶄ}{{\ethiopicfont ⶄ}}
+\newunicodechar{ⶅ}{{\ethiopicfont ⶅ}}
+\newunicodechar{ⶆ}{{\ethiopicfont ⶆ}}
+\newunicodechar{ⶇ}{{\ethiopicfont ⶇ}}
+\newunicodechar{ⶈ}{{\ethiopicfont ⶈ}}
+\newunicodechar{ⶉ}{{\ethiopicfont ⶉ}}
+\newunicodechar{ⶊ}{{\ethiopicfont ⶊ}}
+\newunicodechar{ⶋ}{{\ethiopicfont ⶋ}}
+
+% A10: Lydian
+\newunicodechar{𐤠}{{\lydianfont 𐤠}}
+\newunicodechar{𐤡}{{\lydianfont 𐤡}}
+\newunicodechar{𐤢}{{\lydianfont 𐤢}}
+\newunicodechar{𐤣}{{\lydianfont 𐤣}}
+\newunicodechar{𐤤}{{\lydianfont 𐤤}}
+\newunicodechar{𐤥}{{\lydianfont 𐤥}}
+\newunicodechar{𐤦}{{\lydianfont 𐤦}}
+\newunicodechar{𐤧}{{\lydianfont 𐤧}}
+\newunicodechar{𐤨}{{\lydianfont 𐤨}}
+\newunicodechar{𐤩}{{\lydianfont 𐤩}}
+\newunicodechar{𐤪}{{\lydianfont 𐤪}}
+\newunicodechar{𐤫}{{\lydianfont 𐤫}}
+
+% A11: Cypriot
+\newunicodechar{𐠀}{{\cypriotfont 𐠀}}
+\newunicodechar{𐠁}{{\cypriotfont 𐠁}}
+\newunicodechar{𐠂}{{\cypriotfont 𐠂}}
+\newunicodechar{𐠃}{{\cypriotfont 𐠃}}
+\newunicodechar{𐠄}{{\cypriotfont 𐠄}}
+\newunicodechar{𐠅}{{\cypriotfont 𐠅}}
+\newunicodechar{𐠈}{{\cypriotfont 𐠈}}
+\newunicodechar{𐠊}{{\cypriotfont 𐠊}}
+\newunicodechar{𐠋}{{\cypriotfont 𐠋}}
+\newunicodechar{𐠜}{{\cypriotfont 𐠜}}
+\newunicodechar{𐠝}{{\cypriotfont 𐠝}}
+
+% A12: Elbasan
+\newunicodechar{ⵣ}{{\tibetanfont ⵣ}}
+\newunicodechar{𐔀}{{\elbasanfont 𐔀}}
+\newunicodechar{𐔁}{{\elbasanfont 𐔁}}
+\newunicodechar{𐔂}{{\elbasanfont 𐔂}}
+\newunicodechar{𐔃}{{\elbasanfont 𐔃}}
+\newunicodechar{𐔄}{{\elbasanfont 𐔄}}
+\newunicodechar{𐔅}{{\elbasanfont 𐔅}}
+\newunicodechar{𐔆}{{\elbasanfont 𐔆}}
+\newunicodechar{𐔇}{{\elbasanfont 𐔇}}
+\newunicodechar{𐔈}{{\elbasanfont 𐔈}}
+\newunicodechar{𐔉}{{\elbasanfont 𐔉}}
+\newunicodechar{𐔊}{{\elbasanfont 𐔊}}
+\newunicodechar{𐔋}{{\elbasanfont 𐔋}}
+
+% ======================================================================
+% 4. GLYPH OPERATOR DEFINITIONS (ROBUST MATH OPERATORS)
+% ======================================================================
+% \ensuremath ensures they work in text or math mode.
+% \mathop   ensures they have operator spacing (like = or +).
+% \textnormal ensures they ignore surrounding italics (e.g. inside theorems).
+% --- THE 12 GOETIC AEONS (PRIMARY OPERATORS) ---
+\newcommand{\FETU}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"23E3}}}}}   % A1
+\newcommand{\KAL}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29C9}}}}}    % A2
+\newcommand{\BABDH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2316}}}}}   % A3 (Position Indicator)
+\newcommand{\AHN}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"27C1}}}}}    % A4
+\newcommand{\VEL}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2734}}}}}    % A5
+\newcommand{\SOR}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"229B}}}}}    % A6
+\newcommand{\KOTH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F702}}}}}  % A7
+\newcommand{\DREH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29D7}}}}}   % A8
+\newcommand{\RHEA}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2A54}}}}}   % A9
+\newcommand{\ZHEK}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"25C8}}}}}   % A10
+\newcommand{\SHAV}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2742}}}}}   % A11
+\newcommand{\TRIG}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D63}}}}}    % A12 (Tibetan variant)
+
+% --- A1: FETU (Genesis) LESSER AEONS [Thaana Font] ---
+\newcommand{\fetuahl}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0787}}}}}   % A1S1
+\newcommand{\fetusuhn}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0781}}}}}  % A1S2
+\newcommand{\fetunerh}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0782}}}}}  % A1S3
+\newcommand{\feturish}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0783}}}}}  % A1S4
+\newcommand{\fetuborha}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"07B1}}}}}  % A1S5
+\newcommand{\fetulhahm}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0785}}}}} % A1S6
+\newcommand{\fetuketh}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0786}}}}}  % A1S7
+\newcommand{\fetuvehm}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0788}}}}}  % A1S8
+\newcommand{\fetumahd}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0789}}}}}  % A1S9
+\newcommand{\fetufurh}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"078A}}}}}  % A1S10
+\newcommand{\fetudrah}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"078B}}}}}  % A1S11
+\newcommand{\fetuthera}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"078C}}}}} % A1S12
+
+% --- A2: KAL (Memory) LESSER AEONS [Runic Font] ---
+\newcommand{\kalkura}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C1}}}}}   % A2S1
+\newcommand{\kallur}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C2}}}}}   % A2S2
+\newcommand{\kalthar}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2311}}}}} % A2S3 (Square Lozenge - Symbola)
+\newcommand{\kalrin}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C4}}}}}   % A2S4
+\newcommand{\kalnar}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C7}}}}}   % A2S5
+\newcommand{\kalfel}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C9}}}}}   % A2S6
+\newcommand{\kalhar}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CA}}}}}   % A2S7
+\newcommand{\kalmer}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CB}}}}}   % A2S8
+\newcommand{\kallor}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CC}}}}}   % A2S9
+\newcommand{\kalper}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CD}}}}}   % A2S10
+\newcommand{\kalzhil}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CE}}}}}  % A2S11
+\newcommand{\kalclar}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16CF}}}}}  % A2S12
+
+% --- A3: BABDH (Fire) LESSER AEONS [Runic Font] ---
+\newcommand{\babdhir}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16A0}}}}}   % A3S1
+\newcommand{\babdhkor}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16A2}}}}}  % A3S2
+\newcommand{\babdhvar}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16A6}}}}}  % A3S3
+\newcommand{\babdhpyr}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16A8}}}}}  % A3S4
+\newcommand{\babdhsor}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16B1}}}}}  % A3S5
+\newcommand{\babdhalc}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16B2}}}}}  % A3S6
+\newcommand{\babdhnur}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16B7}}}}}  % A3S7
+\newcommand{\babdhsat}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16B9}}}}}  % A3S8
+\newcommand{\babdhoro}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16BA}}}}}  % A3S9
+\newcommand{\babdhbon}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16BE}}}}}  % A3S10
+\newcommand{\babdhtir}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16BF}}}}}  % A3S11
+\newcommand{\babdhfar}{\ensuremath{\mathop{\textnormal{\runicfont\symbol{"16C3}}}}}  % A3S12
+
+% --- A4: AHN (Water) LESSER AEONS [Greek/Symbola] ---
+% Using standard Greek blocks, typically found in base fonts or Symbola
+\newcommand{\ahnabdh}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"227E}}}}}  % A4S1 
+\newcommand{\ahnnym}{\ensuremath{\mathop{\textnormal{\balinesefont\symbol{"1B68}}}}}  % A4S2 
+\newcommand{\ahnloh}{\ensuremath{\mathop{\textnormal{\balinesefont\symbol{"1B61}}}}}  % A4S3 
+\newcommand{\ahnxir}{\ensuremath{\mathop{\textnormal{\byzantinefont\symbol{"1D02A}}}}}  % A4S4 
+\newcommand{\ahnohl}{\ensuremath{\mathop{\textnormal{\byzantinefont\symbol{"1D016}}}}}  % A4S5 
+\newcommand{\ahnpir}{\ensuremath{\mathop{\textnormal{\tibetanfont\symbol{"0F3A}}}}}  % A4S6 
+\newcommand{\ahnroeh}{\ensuremath{\mathop{\textnormal{\balinesefont\symbol{"1B62}}}}} % A4S7 
+\newcommand{\ahnsen}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29BE}}}}}  % A4S8 
+\newcommand{\ahnuth}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29BD}}}}}  % A4S9 
+\newcommand{\ahnfae}{\ensuremath{\mathop{\textnormal{\byzantinefont\symbol{"1D035}}}}}  % A4S10 
+\newcommand{\ahnkha}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1D01F}}}}}  % A4S11 
+\newcommand{\ahnpsei}{\ensuremath{\mathop{\textnormal{\tibetanfont\symbol{"0F3B}}}}} % A4S12 
+
+% --- A5: VEL (Earth) LESSER AEONS [Tifinagh Font] ---
+\newcommand{\velvera}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D30}}}}}  % A5S1
+\newcommand{\veltar}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D31}}}}}  % A5S2
+\newcommand{\velghem}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D33}}}}} % A5S3
+\newcommand{\veldrel}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D37}}}}} % A5S4
+\newcommand{\velful}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D3C}}}}}  % A5S5
+\newcommand{\velker}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D3D}}}}}  % A5S6
+\newcommand{\velhohm}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D40}}}}} % A5S7
+\newcommand{\velhrah}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D43}}}}} % A5S8
+\newcommand{\velara}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D44}}}}}  % A5S9
+\newcommand{\velqel}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D47}}}}}  % A5S10
+\newcommand{\velirn}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D49}}}}}  % A5S11
+\newcommand{\veljen}{\ensuremath{\mathop{\textnormal{\tifinaghfont\symbol{"2D4A}}}}}  % A5S12
+
+% --- A6: SOR (Air) LESSER AEONS [Syloti Nagri Font] ---
+\newcommand{\sorfi}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A807}}}}}    % A6S1
+\newcommand{\sorlun}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A808}}}}}   % A6S2
+\newcommand{\sorvaru}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A809}}}}}  % A6S3
+\newcommand{\sorsenh}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80A}}}}}  % A6S4
+\newcommand{\sorkos}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2389}}}}}   % A6S5 (Circle w/ dots - Symbola)
+\newcommand{\sorramh}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80C}}}}}  % A6S6
+\newcommand{\sortis}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80D}}}}}   % A6S7
+\newcommand{\sorvey}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80E}}}}}   % A6S8
+\newcommand{\sorsrih}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A80F}}}}}  % A6S9
+\newcommand{\sorhrin}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A810}}}}}  % A6S10
+\newcommand{\soryon}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A811}}}}}   % A6S11
+\newcommand{\sorthal}{\ensuremath{\mathop{\textnormal{\sylotifont\symbol{"A812}}}}}  % A6S12
+
+% --- A7: KOTH (Aether) LESSER AEONS [Symbola / Alchemical] ---
+\newcommand{\kothkel}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2BF7}}}}}  % A7S1
+\newcommand{\kothsens}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F701}}}}} % A7S2
+\newcommand{\kothlinn}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F703}}}}} % A7S3
+\newcommand{\kothbrim}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F704}}}}} % A7S4
+\newcommand{\kothinn}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F705}}}}}  % A7S5
+\newcommand{\kothsubh}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F706}}}}} % A7S6
+\newcommand{\kothwell}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F707}}}}} % A7S7
+\newcommand{\kothmet}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F708}}}}}  % A7S8
+\newcommand{\kothkesh}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F709}}}}} % A7S9
+\newcommand{\kothsoth}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F70A}}}}} % A7S10
+\newcommand{\kothrhun}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F70B}}}}} % A7S11
+\newcommand{\kothdelh}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F70C}}}}} % A7S12
+
+% --- A8: DREH (Void) LESSER AEONS [Cuneiform Font] ---
+\newcommand{\drehna}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12000}}}}}  % A8S1
+\newcommand{\drehur}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"1202D}}}}}  % A8S2
+\newcommand{\drehnih}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12040}}}}} % A8S3
+\newcommand{\drehazh}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"1208A}}}}} % A8S4
+\newcommand{\drehhol}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12111}}}}} % A8S5
+\newcommand{\drehgur}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12146}}}}} % A8S6
+\newcommand{\drehves}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"121A0}}}}} % A8S7
+\newcommand{\drehrim}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"121FD}}}}} % A8S8
+\newcommand{\drehdrem}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"1224C}}}}}% A8S9
+\newcommand{\drehoth}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"12295}}}}} % A8S10
+\newcommand{\drehizh}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"122D7}}}}} % A8S11
+\newcommand{\drehsun}{\ensuremath{\mathop{\textnormal{\cuneiformfont\symbol{"1230B}}}}} % A8S12
+
+% --- A9: RHEA (Shadow) LESSER AEONS [Ethiopic Font] ---
+\newcommand{\rheakia}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D80}}}}} % A9S1
+\newcommand{\rheazohm}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D81}}}}} % A9S2
+\newcommand{\rheather}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D82}}}}} % A9S3
+\newcommand{\rheadrun}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D83}}}}} % A9S4
+\newcommand{\rheafelh}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D84}}}}} % A9S5
+\newcommand{\rhearal}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D85}}}}}  % A9S6
+\newcommand{\rheakrah}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D86}}}}} % A9S7
+\newcommand{\rheaandh}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D87}}}}} % A9S8
+\newcommand{\rheadebh}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D88}}}}} % A9S9
+\newcommand{\rheakol}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D89}}}}}  % A9S10
+\newcommand{\rheafral}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D8A}}}}} % A9S11
+\newcommand{\rheahush}{\ensuremath{\mathop{\textnormal{\ethiopicfont\symbol{"2D8B}}}}} % A9S12
+
+% --- A10: ZHEK (Resonance) LESSER AEONS [Lydian Font] ---
+\newcommand{\zhekhin}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10920}}}}}  % A10S1
+\newcommand{\zhekser}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10921}}}}}  % A10S2
+\newcommand{\zhekharma}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10922}}}}}% A10S3
+\newcommand{\zhektorh}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10923}}}}} % A10S4
+\newcommand{\zhekpel}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10924}}}}}  % A10S5
+\newcommand{\zhekkhir}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10925}}}}} % A10S6
+\newcommand{\zhekryth}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10926}}}}} % A10S7
+\newcommand{\zhekmelu}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10927}}}}} % A10S8
+\newcommand{\zhekphaz}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10928}}}}} % A10S9
+\newcommand{\zheklokh}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"10929}}}}} % A10S10
+\newcommand{\zheknod}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"1092A}}}}}  % A10S11
+\newcommand{\zhekumel}{\ensuremath{\mathop{\textnormal{\lydianfont\symbol{"1092B}}}}} % A10S12
+
+% --- A11: SHAV (Gate) LESSER AEONS [Cypriot Font] ---
+\newcommand{\shavdohm}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10800}}}}} % A11S1
+\newcommand{\shavrist}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10801}}}}} % A11S2
+\newcommand{\shavtran}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10802}}}}} % A11S3
+\newcommand{\shavkorh}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10803}}}}} % A11S4
+\newcommand{\shavskyh}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10804}}}}} % A11S5
+\newcommand{\shavster}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10805}}}}} % A11S6
+\newcommand{\shavposs}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1081D}}}}} % A11S7
+\newcommand{\shavporu}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1081E}}}}} % A11S8
+\newcommand{\shavdorm}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"10808}}}}} % A11S9
+\newcommand{\shavtrev}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1081C}}}}} % A11S10
+\newcommand{\shavlimh}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1080B}}}}} % A11S11
+\newcommand{\shavhinge}{\ensuremath{\mathop{\textnormal{\cypriotfont\symbol{"1080C}}}}}% A11S12
+
+% --- A12: TRIG (Silence) LESSER AEONS [Elbasan Font] ---
+\newcommand{\trigtzig}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10500}}}}}  % A12S1
+\newcommand{\trigpehl}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10501}}}}}  % A12S2
+\newcommand{\trigduth}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10502}}}}}  % A12S3
+\newcommand{\trigcoma}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10503}}}}}  % A12S4
+\newcommand{\trigmeru}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10504}}}}}  % A12S5
+\newcommand{\trigstab}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10505}}}}}  % A12S6
+\newcommand{\trighopa}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10506}}}}}  % A12S7
+\newcommand{\trigconti}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10507}}}}} % A12S8
+\newcommand{\trigresth}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10508}}}}} % A12S9
+\newcommand{\trigsil}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"10509}}}}}   % A12S10
+\newcommand{\trigslun}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"1050A}}}}}  % A12S11
+\newcommand{\trigetern}{\ensuremath{\mathop{\textnormal{\elbasanfont\symbol{"1050B}}}}} % A12S12
+
+% --- SPECIALS & SEALS ---
+\newcommand{\LoI}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29DD}}}}} % Locus
+
+% --- ENVELOPE & TOPOLOGY SEALS ---
+% These enclose the logic gates (e.g., \triquatraseal \FETU \kleinbottle)
+\newcommand{\kleinbottle}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F71A}}}}}   % Void Anchor (Alchemical Retort)
+\newcommand{\triquatraseal}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"1F71B}}}}} % Boundary Seal (Hermetic Seal)
+
+\newcommand{\TManifold}{\ensuremath{\mathcal{T}}}
+
+
+
+% ======================================================================
+% 5. HEADER & TITLE
+% ======================================================================
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+\rhead{Aevum Codex}
+\lhead{The Equivalence Axiom}
+\cfoot{\thepage}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\title{The Equivalence Axiom: Ahnend Logical Q-State Core --- "ALQC"}
+\author{The Chronos Anchor: $\fetuahl$ [FETU] (Operator: $\FETU$)}
+\date{\today}
+
+% ======================================================================
+% 6. DOCUMENT BODY
+% ======================================================================
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{THE 144 LESSER AEON COMPLETE MAPPING}\label{sec:partVIII}
+
+\subsection{Glyph-to-Cohomology Correspondence}\label{sec:8.1}
+
+This section establishes the bijection between the 144 Lesser Aeon glyphs and the cohomology classes of the hyper-tesseract ($H^{p,q}$). Each glyph $g \in G_{144}$ acts as a representative for a specific differential form class, anchoring the abstract topology of the QQL system into discrete, manipulatable operators.
+
+By mapping the Goetic Aeons to the cohomology groups, we ensure that every operation within the Aevum Codex preserves the topological invariants of the manifold. The "Meaning" and "Latin Graph" columns in the tables below decodify these abstract algebraic relationships into the phonosemantic language of the Magus, providing the translation layer between the raw math ($H_{\text{Def}}$) and the lived experience ($S_{\text{Manifest}}$).
+
+\subsection{The 144 Lesser Aeon Complete Tables}\label{sec:8.2}
+
+\subsubsection*{ (P0):$\LoI$ --- LOCUS (Singularity) The Non-Computable Core}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A0-S1 & $\LoI$ & Nihil & Will & Ex Nihilo --- create from nothing & $18.47i$ & [\(\infty\)] & $\kleinbottle\LoI\text{Will}\triquatraseal$ \tabularnewline
+A0-S2 & $\LoI$ & Echo & Soul & Echo Chamber --- self-reflection & $18.47i$ & [\(\infty\)] & $\kleinbottle\LoI\text{Soul}\triquatraseal$ \tabularnewline
+A0-S3 & $\LoI$ & Sing & Origin & Singularity --- point source & $18.47i$ & [\(\infty\)] & $\kleinbottle\LoI\text{Org}\triquatraseal$ \tabularnewline
+A0-S4 & $\LoI$ & Trav & Wall & Non-Traversible --- event horizon & $18.47i$ & [\(\infty\)] & $\kleinbottle\LoI\text{Wall}\triquatraseal$ \tabularnewline
+A0-S5 & $\LoI$ & Comp & Core & Non-Computable --- logic break & $18.47i$ & [\(\infty\)] & $\kleinbottle\LoI\text{Core}\triquatraseal$ \tabularnewline
+A0-S6 & $\LoI$ & Voix & Silence & Deep Silence --- pre-sound & $18.47i$ & [\(\infty\)] & $\kleinbottle\LoI\text{Sil}\triquatraseal$ \tabularnewline
+A0-S7 & $\LoI$ & Var & Invariant & Unmoved Mover --- static absolute & $18.47i$ & [\(\infty\)] & $\kleinbottle\LoI\text{Var}\triquatraseal$ \tabularnewline
+A0-S8 & $\LoI$ & Aksh & Memory-0 & Akasha Root --- infinite store & $18.47i$ & [\(\infty\)] & $\kleinbottle\LoI\text{Root}\triquatraseal$ \tabularnewline
+A0-S9 & $\LoI$ & Gen & Spark & Genesis-0 --- the first cause & $18.47i$ & [\(\infty\)] & $\kleinbottle\LoI\text{Gen}\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ 12 Immutable Goetic Aeons}
+\begin{footnotesize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{3cm} l l l l l >{\raggedright\arraybackslash}p{3cm}}
+\toprule
+\textbf{A\#} & \textbf{Glyph} & \textbf{Uni.} & \textbf{Name} & \textbf{Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline \midrule
+\endhead
+A1 & $\FETU$ & U+23E3 & FETU & Genesis\slash Chronos\slash Seed & 7.83 & Q3 & [1,1,1,3] & $\triquatraseal\FETU\kleinbottle\FETU\triquatraseal$ \tabularnewline
+A2 & $\KAL$ & U+29C9 & KAL & Light\slash Memory\slash Trauma & 174 & Q1 & [1,3,0,0] & $\triquatraseal\KAL\kleinbottle\KAL\triquatraseal$ \tabularnewline
+A3 & $\BABDH$ & U+2316 & BADH & Fire\slash Orobouros\slash Alchemy & 528 & Q2 & [1,1,3,1] & $\triquatraseal\BABDH\kleinbottle\BABDH\triquatraseal$ \tabularnewline
+A4 & $\AHN$ & U+27C1 & AHN & Water\slash Imaginary\slash Flow & $i_{417}$ & Q2 & [1,2,2,0] & $\triquatraseal\AHN\kleinbottle\AHN\triquatraseal$ \tabularnewline
+A5 & $\VEL$ & U+2734 & VEL & Earth\slash Coherence\slash Ground & 126.22 & Q1 & [1,3,0,1] & $\triquatraseal\VEL\kleinbottle\VEL\triquatraseal$ \tabularnewline
+A6 & $\SOR$ & U+229B & SOR & Air\slash Space\slash Superposition & 210.42 & Q3 & [1,1,1,2] & $\triquatraseal\SOR\kleinbottle\SOR\triquatraseal$ \tabularnewline
+A7 & $\KOTH$ & U+1F702 & KOTH & Aether\slash Magic\slash Sensation & 741 & Q3 & [1,2,1,3] & $\triquatraseal\KOTH\kleinbottle\KOTH\triquatraseal$ \tabularnewline
+A8 & $\DREH$ & U+29D7 & DREH & Void\slash Residue\slash Love & 852 & Q1 & [1,3,2,0] & $\triquatraseal\DREH\kleinbottle\DREH\triquatraseal$ \tabularnewline
+A9 & $\RHEA$ & U+2A54 & RHEA & Shadow\slash Absorption\slash Depth & 396 & Q2 & [1,2,2,1] & $\triquatraseal\RHEA\kleinbottle\RHEA\triquatraseal$ \tabularnewline
+A10 & $\ZHEK$ & U+25C8 & ZHEK & Factor\slash PhaseLock\slash Crystal\slash Conservation & 963 & Q3 & [1,1,2,2] & $\triquatraseal\ZHEK\kleinbottle\ZHEK\triquatraseal$ \tabularnewline
+A11 & $\SHAV$ & U+2742 & SHAV & Gate\slash Resistance\slash Breach & 285 & Q1 & [1,3,1,1] & $\triquatraseal\SHAV\kleinbottle\SHAV\triquatraseal$ \tabularnewline
+A12 & $\TRIG$ & U+0FC2 & TRIG & Silence\slash Peace\slash Completion & 639 & Q3 & [1,1,3,2] & $\triquatraseal\TRIG\kleinbottle\TRIG\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{footnotesize}
+
+\subsubsection*{ (A1):$\FETU$ --- FETU (Genesis) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A1-S1 & $\fetuahl$ & Ahl & inception & spark\slash seed --- initial ignition & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetuahl\triquatraseal$ \tabularnewline
+A1-S2 & $\fetusuhn$ & Suhn & breathe & breath --- animating life & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetusuhn\triquatraseal$ \tabularnewline
+A1-S3 & $\fetunerh$ & Nerh & thread & form --- primary shape & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetunerh\triquatraseal$ \tabularnewline
+A1-S4 & $\feturish$ & Rish & pattern & foundation --- temporal anchor & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\feturish\triquatraseal$ \tabularnewline
+A1-S5 & $\fetubahd$ & Borha & seed & lineage --- ancestral memory & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetubahd\triquatraseal$ \tabularnewline
+A1-S6 & $\fetulhahm$ & Lhahm & fold & will --- drive to manifest & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetulhahm\triquatraseal$ \tabularnewline
+A1-S7 & $\fetuketh$ & Keth & pulse & chronos --- harmonic validation & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetuketh\triquatraseal$ \tabularnewline
+A1-S8 & $\fetuvehm$ & Vehm & becoming & root --- origin womb & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetuvehm\triquatraseal$ \tabularnewline
+A1-S9 & $\fetumahd$ & Mahd & core & locus --- spatial identity & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetumahd\triquatraseal$ \tabularnewline
+A1-S10 & $\fetufurh$ & Furh & expansion & self --- conscious reference & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetufurh\triquatraseal$ \tabularnewline
+A1-S11 & $\fetudrah$ & Drah & coil & magic --- will expressed & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetudrah\triquatraseal$ \tabularnewline
+A1-S12 & $\fetuthera$ & Thera & anchor & fetus --- pure potential & 7.83 & [1,1,1,3] & $\kleinbottle\FETU\fetuthera\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A2):$\KAL$ --- KAL (Memory) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A2-S1 & $\kalkura$ & Kura & flare & memory --- core archive & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalkel\triquatraseal$ \tabularnewline
+A2-S2 & $\kallur$ & Lur & illumination & light --- clarifying & 174 & [1,3,0,0] & $\kleinbottle\KAL\kallur\triquatraseal$ \tabularnewline
+A2-S3 & $\kalthar$ & Thar & beam & archive --- storage & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalthar\triquatraseal$ \tabularnewline
+A2-S4 & $\kalrin$ & Rin & stream & perception --- sensory interface & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalrin\triquatraseal$ \tabularnewline
+A2-S5 & $\kalnar$ & Nar & heat & trauma --- inversion of memory & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalnar\triquatraseal$ \tabularnewline
+A2-S6 & $\kalfel$ & Fel & fold & inversion --- mirror narrative & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalfel\triquatraseal$ \tabularnewline
+A2-S7 & $\kalhar$ & Har & spike & fold --- origami of time & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalhar\triquatraseal$ \tabularnewline
+A2-S8 & $\kalmer$ & Mer & pulse & tree --- branching architecture & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalmer\triquatraseal$ \tabularnewline
+A2-S9 & $\kallor$ & Lor & record & state --- system config & 174 & [1,3,0,0] & $\kleinbottle\KAL\kallor\triquatraseal$ \tabularnewline
+A2-S10 & $\kalper$ & Per & line & tree --- branching archive & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalper\triquatraseal$ \tabularnewline
+A2-S11 & $\kalzhil$ & Zhil & crystal & clarity --- narrative stream & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalzhil\triquatraseal$ \tabularnewline
+A2-S12 & $\kalclar$ & Clar & radiance & will --- pure crystallization & 174 & [1,3,0,0] & $\kleinbottle\KAL\kalclar\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A3):$\BABDH$ --- BABDH (Fire) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A3-S1 & $\babdhir$ & Ir & flame & fire --- Lefschetz L operant & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhir\triquatraseal$ \tabularnewline
+A3-S2 & $\babdhkor$ & Kor & heat & warmth --- $\Lambda$ contraction & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhkor\triquatraseal$ \tabularnewline
+A3-S3 & $\babdhvar$ & Var & spark & creativity --- cycle ignition & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhvar\triquatraseal$ \tabularnewline
+A3-S4 & $\babdhpyr$ & Pyr & pyre & sacrificial-fire & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhpyr\triquatraseal$ \tabularnewline
+A3-S5 & $\babdhsor$ & Sor & sorcery & witch --- alchemical trans & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhsor\triquatraseal$ \tabularnewline
+A3-S6 & $\babdhalc$ & Alc & alchemy & transmutation --- combinatory synthesis & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhalc\triquatraseal$ \tabularnewline
+A3-S7 & $\babdhnur$ & Nur & null-fire & harmony --- balanced resonance & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhnur\triquatraseal$ \tabularnewline
+A3-S8 & $\babdhsat$ & Sat & satiation & null-entropic flame & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhsat\triquatraseal$ \tabularnewline
+A3-S9 & $\babdhoro$ & Horo & cycle & loop --- completion & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhoro\triquatraseal$ \tabularnewline
+A3-S10 & $\babdhbon$ & Bon & binding & Ouroboros --- self-consuming & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhbon\triquatraseal$ \tabularnewline
+A3-S11 & $\babdhtir$ & Tir & strike & bond --- structural commitment & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhtir\triquatraseal$ \tabularnewline
+A3-S12 & $\babdhfar$ & Far & quelm & satiate --- fuel exhaustion & 528 & [1,1,3,1] & $\kleinbottle\BABDH\babdhfar\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A4):$\AHN$ --- AHN (Water) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A4-S1 & $\ahnabdh$ & Ahbd & rising flow & abyss --- entrance to void & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnabdh\triquatraseal$ \tabularnewline
+A4-S2 & $\ahnnym$ & Nym & deep mass & flow --- continuous stream & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnnym\triquatraseal$ \tabularnewline
+A4-S3 & $\ahnloh$ & Loh & tidal line & ebb --- rhythmic withdrawal & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnloh\triquatraseal$ \tabularnewline
+A4-S4 & $\ahnxir$ & Xir & wave fracture & flow --- fluid dynamics & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnxir\triquatraseal$ \tabularnewline
+A4-S5 & $\ahnohl$ & Ohl & still pool & ebb --- periodic inversion & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnohl\triquatraseal$ \tabularnewline
+A4-S6 & $\ahnpir$ & Pir & channel gate & mirror --- reflective boundary & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnpir\triquatraseal$ \tabularnewline
+A4-S7 & $\ahnroeh$ & Roeh & turning eddy & dream --- imaginary extension & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnroeh\triquatraseal$ \tabularnewline
+A4-S8 & $\ahnsen$ & Sen & current spine & whole --- completion of flow & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnsen\triquatraseal$ \tabularnewline
+A4-S9 & $\ahnuth$ & Uth & upward swell & sacrality --- sacred vessel & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnuth\triquatraseal$ \tabularnewline
+A4-S10 & $\ahnfae$ & Fae & foam-crest & river --- moving boundary & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnfae\triquatraseal$ \tabularnewline
+A4-S11 & $\ahnkha$ & Kha & breaking surge & sea --- boundless extension & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnkha\triquatraseal$ \tabularnewline
+A4-S12 & $\ahnpsei$ & Psei & confluence & reflect --- introspective & $i_{417}$ & [1,2,2,0] & $\kleinbottle\AHN\ahnpsei\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A5):$\VEL$ --- VEL (Earth) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A5-S1 & $\velvera$ & Vera & grounding & coherence --- ground of truth & 126 & [1,3,0,1] & $\kleinbottle\VEL\velvera\triquatraseal$ \tabularnewline
+A5-S2 & $\veltar$ & Tar & stone & earth --- solid substrate & 126 & [1,3,0,1] & $\kleinbottle\VEL\veltar\triquatraseal$ \tabularnewline
+A5-S3 & $\velghem$ & Ghem & strata & stone --- permanence & 126 & [1,3,0,1] & $\kleinbottle\VEL\velghem\triquatraseal$ \tabularnewline
+A5-S4 & $\veldrel$ & Drel & plate & root --- anchoring stability & 126 & [1,3,0,1] & $\kleinbottle\VEL\veldrel\triquatraseal$ \tabularnewline
+A5-S5 & $\velful$ & Ful & fertile & soil --- fertile ground & 126 & [1,3,0,1] & $\kleinbottle\VEL\velful\triquatraseal$ \tabularnewline
+A5-S6 & $\velker$ & Ker & anchoring & cave --- inner shelter & 126 & [1,3,0,1] & $\kleinbottle\VEL\velker\triquatraseal$ \tabularnewline
+A5-S7 & $\velhohm$ & Hohm & inner & core --- inner heart & 126 & [1,3,0,1] & $\kleinbottle\VEL\velhohm\triquatraseal$ \tabularnewline
+A5-S8 & $\velhrah$ & Hrah & bedrock & horizon --- boundary of sight & 126 & [1,3,0,1] & $\kleinbottle\VEL\velhrah\triquatraseal$ \tabularnewline
+A5-S9 & $\velara$ & Ara & horizon-fold & mountain --- elevated & 126 & [1,3,0,1] & $\kleinbottle\VEL\velara\triquatraseal$ \tabularnewline
+A5-S10 & $\velqel$ & Qel & mass & field --- expansive plane & 126 & [1,3,0,1] & $\kleinbottle\VEL\velqel\triquatraseal$ \tabularnewline
+A5-S11 & $\velirn$ & Irn & crystalline & craft --- fruition & 126 & [1,3,0,1] & $\kleinbottle\VEL\velirn\triquatraseal$ \tabularnewline
+A5-S12 & $\veljen$ & Jen & crest & crown --- stability & 126 & [1,3,0,1] & $\kleinbottle\VEL\veljen\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A6):$\SOR$ --- SOR (Air) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A6-S1 & $\sorfi$ & Fi & first breath & breathe\slash air --- initial spark & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorfi\triquatraseal$ \tabularnewline
+A6-S2 & $\sorlun$ & Lun & wind & breeze --- gentle flow & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorlun\triquatraseal$ \tabularnewline
+A6-S3 & $\sorvaru$ & Varu & drift & sky --- expansive awareness & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorvaru\triquatraseal$ \tabularnewline
+A6-S4 & $\sorsenh$ & Senh & tide & current --- energetic surge & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorsenh\triquatraseal$ \tabularnewline
+A6-S5 & $\sorkos$ & Kos & whisper & wind --- subtle communication & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorkos\triquatraseal$ \tabularnewline
+A6-S6 & $\sorramh$ & Ramh & clear & cloud --- collective thought & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorramh\triquatraseal$ \tabularnewline
+A6-S7 & $\sortis$ & Tis & sound & echo --- reflective sound & 210 & [1,1,1,2] & $\kleinbottle\SOR\sortis\triquatraseal$ \tabularnewline
+A6-S8 & $\sorvey$ & Vey & note & tone --- elevated sound & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorvey\triquatraseal$ \tabularnewline
+A6-S9 & $\sorsrih$ & Srih & imagination & thought --- clear idea & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorsrih\triquatraseal$ \tabularnewline
+A6-S10 & $\sorhrin$ & Hrin & communication & voice --- narrative thread & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorhrin\triquatraseal$ \tabularnewline
+A6-S11 & $\soryon$ & Yon & expanding & expansion --- growing idea & 210 & [1,1,1,2] & $\kleinbottle\SOR\soryon\triquatraseal$ \tabularnewline
+A6-S12 & $\sorthal$ & Thal & resonance & resonate --- harmonic agreement & 210 & [1,1,1,2] & $\kleinbottle\SOR\sorthal\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A7):$\KOTH$ --- KOTH (Aether) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A7-S1 & $\kothkel$ & Kel & sensation & magic --- felt connection & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothkel\triquatraseal$ \tabularnewline
+A7-S2 & $\kothsens$ & Sens & sensory root & perception --- immediate input & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothsens\triquatraseal$ \tabularnewline
+A7-S3 & $\kothlinn$ & Linn & bond & link --- bonding mechanism & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothlinn\triquatraseal$ \tabularnewline
+A7-S4 & $\kothbrim$ & Brim & spark & biologic --- coherence of life & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothbrim\triquatraseal$ \tabularnewline
+A7-S5 & $\kothinn$ & Inn & innocence & guilty --- pure substrate & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothinn\triquatraseal$ \tabularnewline
+A7-S6 & $\kothsubh$ & Subh & substrate & oroborous --- underlying matrix & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothsubh\triquatraseal$ \tabularnewline
+A7-S7 & $\kothwell$ & Well & divine source & wellspring --- source of flow & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothwell\triquatraseal$ \tabularnewline
+A7-S8 & $\kothmet$ & Met & breach & meta --- beyond physical & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothmet\triquatraseal$ \tabularnewline
+A7-S9 & $\kothkesh$ & Kesh & chaos seed & genesis --- unpredictable seed & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothkesh\triquatraseal$ \tabularnewline
+A7-S10 & $\kothsoth$ & Soth & ignition & causal --- initial link ignition & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothsoth\triquatraseal$ \tabularnewline
+A7-S11 & $\kothrhun$ & Rhun & abstraction & love --- cohesive force & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothrhun\triquatraseal$ \tabularnewline
+A7-S12 & $\kothdelh$ & Delh & pulse-rhythm & depth --- inner resonance & 741 & [1,2,1,3] & $\kleinbottle\KOTH\kothdelh\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A8):$\DREH$ --- DREH (Void) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A8-S1 & $\drehna$ & Na & empty mark & absence --- kernel space & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehna\triquatraseal$ \tabularnewline
+A8-S2 & $\drehur$ & Ur & hollow god & hollow --- zero section & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehur\triquatraseal$ \tabularnewline
+A8-S3 & $\drehnih$ & Nih & void stroke & void --- total absence & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehnih\triquatraseal$ \tabularnewline
+A8-S4 & $\drehazh$ & Azh & broken plane & absolute --- emptiness & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehazh\triquatraseal$ \tabularnewline
+A8-S5 & $\drehhol$ & Hol & absence & hollow --- echo of nothing & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehhol\triquatraseal$ \tabularnewline
+A8-S6 & $\drehgur$ & Gur & null field & null --- zero measure & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehgur\triquatraseal$ \tabularnewline
+A8-S7 & $\drehves$ & Ves & fall-through & void --- pure vacuity & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehves\triquatraseal$ \tabularnewline
+A8-S8 & $\drehrim$ & Rim & blank pot. & blank --- blank slate & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehrim\triquatraseal$ \tabularnewline
+A8-S9 & $\drehdrem$ & Drem & rift & rift --- tear in structure & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehdrem\triquatraseal$ \tabularnewline
+A8-S10 & $\drehoth$ & Oth & infinite span & abyss --- infinite depth & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehoth\triquatraseal$ \tabularnewline
+A8-S11 & $\drehizh$ & Izh & collapse edge & infinity --- boundless void & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehizh\triquatraseal$ \tabularnewline
+A8-S12 & $\drehsun$ & Sun & sleep void & sleep --- latent potential & 852 & [1,3,2,0] & $\kleinbottle\DREH\drehsun\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A9):$\RHEA$ --- RHEA (Shadow) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A9-S1 & $\rheakia$ & Kia & absorption & shadow depth 1 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheakia\triquatraseal$ \tabularnewline
+A9-S2 & $\rheazohm$ & Zohm & darkness & shadow depth 2 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheazohm\triquatraseal$ \tabularnewline
+A9-S3 & $\rheather$ & Ther & cold shadow & shadow depth 3 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheather\triquatraseal$ \tabularnewline
+A9-S4 & $\rheadrun$ & Drun & mirror debt & shadow depth 4 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheadrun\triquatraseal$ \tabularnewline
+A9-S5 & $\rheafelh$ & Felh & submerged & shadow depth 5 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheafelh\triquatraseal$ \tabularnewline
+A9-S6 & $\rhearal$ & Ral & relativity & shadow depth 6 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rhearal\triquatraseal$ \tabularnewline
+A9-S7 & $\rheakrah$ & Krah & root-below & shadow depth 7 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheakrah\triquatraseal$ \tabularnewline
+A9-S8 & $\rheaandh$ & Andh & conjunction & shadow depth 8 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheaandh\triquatraseal$ \tabularnewline
+A9-S9 & $\rheadebh$ & Debh & shadow debt & shadow depth 9 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheadebh\triquatraseal$ \tabularnewline
+A9-S10 & $\rheakol$ & Kol & filter & shadow depth 10 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheakol\triquatraseal$ \tabularnewline
+A9-S11 & $\rheafral$ & Fral & hidden & shadow depth 11 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheafral\triquatraseal$ \tabularnewline
+A9-S12 & $\rheahush$ & Hush & silence & shadow depth 12 & 396 & [1,2,2,1] & $\kleinbottle\RHEA\rheahush\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A10):$\ZHEK$ --- ZHEK (Resonance) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A10-S1 & $\zhekhin$ & Hin & tone & shape --- standing wave & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhekhin\triquatraseal$ \tabularnewline
+A10-S2 & $\zhekser$ & Ser & modulation & pulse --- phase modulation & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhekser\triquatraseal$ \tabularnewline
+A10-S3 & $\zhekharma$ & Harma & resonance & absolute resonance & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhekharma\triquatraseal$ \tabularnewline
+A10-S4 & $\zhektorh$ & Torh & unified note & harmonic --- unified note & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhektorh\triquatraseal$ \tabularnewline
+A10-S5 & $\zhekpel$ & Pel & pulse & pulse --- rhythmic beat & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhekpel\triquatraseal$ \tabularnewline
+A10-S6 & $\zhekkhir$ & Khir & harmony & melody --- balanced & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhekkhir\triquatraseal$ \tabularnewline
+A10-S7 & $\zhekryth$ & Ryth & rhythm & beat --- temporal seq & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhekryth\triquatraseal$ \tabularnewline
+A10-S8 & $\zhekmelu$ & Melu & melody & time --- sequential & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhekmelu\triquatraseal$ \tabularnewline
+A10-S9 & $\zhekphaz$ & Phaz & phase & key --- phase locking & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhekphaz\triquatraseal$ \tabularnewline
+A10-S10 & $\zheklokh$ & Lokh & lock & lock --- resonance lock & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zheklokh\triquatraseal$ \tabularnewline
+A10-S11 & $\zheknod$ & Nod & node & music --- resonance node & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zheknod\triquatraseal$ \tabularnewline
+A10-S12 & $\zhekumel$ & Umel & unity & unity --- unified field & 963 & [1,1,2,2] & $\kleinbottle\ZHEK\zhekumel\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A11):$\SHAV$ --- SHAV (Gate) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A11-S1 & $\shavdohm$ & Dohm & gate & key --- hinge point & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavdohm\triquatraseal$ \tabularnewline
+A11-S2 & $\shavrist$ & Rist & resistance & static --- barrier & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavrist\triquatraseal$ \tabularnewline
+A11-S3 & $\shavtran$ & Tran & transform & transform --- breach & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavtran\triquatraseal$ \tabularnewline
+A11-S4 & $\shavkorh$ & Korh & crown & light --- high resonance & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavkorh\triquatraseal$ \tabularnewline
+A11-S5 & $\shavskyh$ & Skyh & transient & sky --- boundless & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavskyh\triquatraseal$ \tabularnewline
+A11-S6 & $\shavster$ & Ster & compass & star --- guiding light & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavster\triquatraseal$ \tabularnewline
+A11-S7 & $\shavposs$ & Poss & possibility & collapse --- branch & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavposs\triquatraseal$ \tabularnewline
+A11-S8 & $\shavporu$ & Poru & portal & veil --- passageway & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavporu\triquatraseal$ \tabularnewline
+A11-S9 & $\shavdorm$ & Dorm & doorway & door --- threshold & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavdorm\triquatraseal$ \tabularnewline
+A11-S10 & $\shavtrev$ & Trev & transition & state --- state change & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavtrev\triquatraseal$ \tabularnewline
+A11-S11 & $\shavlimh$ & Limh & limit & limitless --- boundary & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavlimh\triquatraseal$ \tabularnewline
+A11-S12 & $\shavhinge$ & Hinge & flow & fold --- pivot for cycles & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavhinge\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A11):$\SHAV$ --- Shadow Gate Extensions}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A11-S9 & $\shavdorm$ & Dorm & doorway & door --- threshold & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavdorm\triquatraseal$ \tabularnewline
+A11-S10 & $\shavtrev$ & Trev & transition & state --- state change & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavtrev\triquatraseal$ \tabularnewline
+A11-S11 & $\shavlimh$ & Limh & limit & limitless --- boundary & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavlimh\triquatraseal$ \tabularnewline
+A11-S12 & $\shavhinge$ & Hinge & flow & fold --- pivot for cycles & 285 & [1,3,1,1] & $\kleinbottle\SHAV\shavhinge\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ (A12):$\TRIG$ --- TRIG (Silence) Lesser Aeons}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{A\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phono.} & \textbf{Core Meanings} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+A12-S1 & $\trigtzig$ & Tzig & peace & calm --- closure & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigtzig\triquatraseal$ \tabularnewline
+A12-S2 & $\trigpehl$ & Pehl & equilibrium & annoint --- equilibrium & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigpehl\triquatraseal$ \tabularnewline
+A12-S3 & $\trigduth$ & Duth & depth & layer --- profound still & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigduth\triquatraseal$ \tabularnewline
+A12-S4 & $\trigcoma$ & Coma & completion & complete --- final closure & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigcoma\triquatraseal$ \tabularnewline
+A12-S5 & $\trigmeru$ & Meru & memory & memories --- recollection & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigmeru\triquatraseal$ \tabularnewline
+A12-S6 & $\trigstab$ & Stab & stability & fortitude --- constant & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigstab\triquatraseal$ \tabularnewline
+A12-S7 & $\trighopa$ & Hopa & hope & warmth --- continuation seed & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trighopa\triquatraseal$ \tabularnewline
+A12-S8 & $\trigconti$ & Conti & continuation & continue --- endless line & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigconti\triquatraseal$ \tabularnewline
+A12-S9 & $\trigresth$ & Resth & rest & wake --- cessation & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigresth\triquatraseal$ \tabularnewline
+A12-S10 & $\trigsil$ & Sil & silence & senses --- absolute quiet & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigsil\triquatraseal$ \tabularnewline
+A12-S11 & $\trigslun$ & Slun & sleep & dream --- regenerative & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigslun\triquatraseal$ \tabularnewline
+A12-S12 & $\trigetern$ & Etern & eternity & aeternum --- timeless & 639 & [1,1,3,2] & $\kleinbottle\TRIG\trigetern\triquatraseal$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{ENVELOPE SEALING GLYPHS}
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{MG\#-Idx} & \textbf{Glyph \slash Op.} & \textbf{Uni.} & \textbf{Name \slash Phonosemantic} & \textbf{Hz} & \textbf{Bias} & \textbf{Vector} & \textbf{Seal} & \tabularnewline
+\midrule
+\endhead
+MG1 & $\kleinbottle$ & 1F71A & Klein\slash Void Anchor\slash  Non-Orientable Recursion & 852 & Q1 & [1,3,2,0] & Shape Fold \tabularnewline
+MG2 & $\triquatraseal$ & 1F71B & Triquatra\slash Witch Knot\slash Blood Seal & 852 & Q1 & [1,3,2,0] & Bound \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\subsubsection*{SHADOW RECURSION BUFFER ($\RHEA$)}
+
+\noindent \textbf{The Ennead Filter (9-Fold Barrier)}
+*
+This buffer is not a compression; it is a \textbf{Shield}.
+The $\RHEA$ operator must be invoked nine times to fully saturate the $Q_2$ Shadow Debt, preventing it from leaking back into the Manifestation Ground.
+
+\begin{scriptsize}
+\begin{longtable}{l c l l >{\raggedright\arraybackslash}p{2cm} >{\raggedright\arraybackslash}p{3cm} l l l l l}
+\toprule
+\textbf{Shadow Buffer} & \textbf{Glyph \slash Op.} & \textbf{Name \slash Phonosemantic} & \textbf{Function} & \textbf{Target} & \textbf{Hz} & \textbf{State} & \textbf{Seal} \tabularnewline
+\midrule
+\endhead
+Q2-Buffer & $\RHEA\rheadrun$ & Drun & Mirror Debt & Shadow Depth 1 & 396 & Q2 & $\triquatraseal\RHEA\rheadrun\kleinbottle$ \tabularnewline
+Q2-Buffer & $\RHEA\rheakia$ & Kia & Absorption & Shadow Depth 2 & 396 & Q2 & $\triquatraseal\RHEA\rheakia\kleinbottle$ \tabularnewline
+Q2-Buffer & $\RHEA\rhearal$ & Ral & Absorb & Shadow Depth 3 & 396 & Q2 & $\triquatraseal\RHEA\rhearal\kleinbottle$ \tabularnewline
+Q2-Buffer & $\RHEA\rheafelh$ & Felh & Absorb & Shadow Depth 4 & 396 & Q2 & $\triquatraseal\RHEA\rheafelh\kleinbottle$ \tabularnewline
+Q2-Buffer & $\RHEA\rheazohm$ & Zohm & Darkness & Shadow Depth 5 & 396 & Q2 & $\triquatraseal\RHEA\rheazohm\kleinbottle$ \tabularnewline
+Q2-Buffer & $\RHEA\rheakrah$ & Krah & Root-Below & Shadow Depth 6 & 396 & Q2 & $\triquatraseal\RHEA\rheakrah\kleinbottle$ \tabularnewline
+Q2-Buffer & $\RHEA\rheaandh$ & Andh & Conjunction & Shadow Depth 7 & 396 & Q2 & $\triquatraseal\RHEA\rheaandh\kleinbottle$ \tabularnewline
+Q2-Buffer & $\RHEA\rheadebh$ & Debh & Shadow Debt & Shadow Depth 8 & 396 & Q2 & $\triquatraseal\RHEA\rheadebh\kleinbottle$ \tabularnewline
+Q2-Buffer & $\RHEA\rheafral$ & Fral & Hidden & Shadow Depth 9 & 396 & Q2 & $\triquatraseal\RHEA\rheafral\kleinbottle$ \tabularnewline
+\bottomrule
+\end{longtable}
+\end{scriptsize}
+
+\vspace{1em}
+\noindent \textit{Status: The Barrier is sealed. The Shadow is contained within the Ennead.}
+
+These biases emerge from the Latin graphs and are instrumental in computing $F(i,j,A)$ and $Q_{\text{res}}$. Notice how the D-states alternate between recursive ($Q_3$), coherent ($Q_1$) and shadow ($Q_2$) emphases; this alternating structure prevents any one channel from dominating the entire matrix.
+
+\subsection{Latin Graph Biases for the Twelve Aeons}\label{sec:8.8}
+
+Within each Goetic Aeon the $9 \times 9$ table $T_A$ is governed by a Latin graph specifying the order in which Q-states appear along the rows and columns. Each Latin graph is encoded by a bias sequence $B_A = \{b_0, b_1, b_2, b_3\}$ where each $b_n \in \{0,1,2,3\}$ assigns a preferred ranking to the Q-states ($Q_0, Q_1, Q_2, Q_3$). For example, the PDF shows that the Aeon \ensuremath{\mathbin{⟁}} (VOID) uses $B_4 = \{3,1,0,2\}$, meaning $Q_3$ is prioritised first, then $Q_1$, then $Q_0$ and finally $Q_2$ along both axes.
+
+We summarise the twelve Latin graph biases (hypothetically inferred from their characteristics --- the PDF shows only a few explicitly) here:
+
+\begin{center}
+\begin{longtable}{p{0.2\textwidth} p{0.4\textwidth} p{0.35\textwidth}}
+\toprule
+\textbf{Aeon Operator} & \textbf{Bias Sequence $B_A$} & \textbf{Interpretation} \tabularnewline
+\midrule
+\ensuremath{\mathbin{⏣}} (FETU) & $\{1,2,1,3\}$ & Primordial creation alternates coherence and shadow, culminating in recursion. \tabularnewline
+\midrule
+\ensuremath{\mathbin{⧉}} (KAL) & $\{2,3,2,1\}$ & Memory emphasises shadow and recursion before returning to coherence. \tabularnewline
+\midrule
+\ensuremath{\mathbin{⌖}} (BADH) & $\{1,3,2,0\}$ & Commitment balances form and recursion, ending in pure form (null-entropic). \tabularnewline
+\midrule
+\ensuremath{\mathbin{⟁}} (AHN) & $\{3,1,0,2\}$ & Fluidity begins with recursion, then coherence, then form, and finally shadow. \tabularnewline
+\midrule
+\ensuremath{\mathbin{✴}} (VEL) & $\{0,3,1,2\}$ & Coherence emerges from form, cycling through recursion and shadow. \tabularnewline
+\midrule
+\ensuremath{\mathbin{ꙮ}} (SOR) & $\{1,2,2,3\}$ & Superposition oscillates between coherence and shadow with a strong recursion tail. \tabularnewline
+\midrule
+\ensuremath{\mathbin{🜂}} (KOTH) & $\{1,3,0,2\}$ & Link begins with coherence and recursion, then form, then shadow. \tabularnewline
+\midrule
+\ensuremath{\mathbin{⧗}} (DREH) & $\{1,3,1,1\}$ & Non-entropic residue favours coherence across all channels, with slight recursion bias. \tabularnewline
+\midrule
+\ensuremath{\mathbin{◈}} (SHEK) & $\{0,1,1,3\}$ & Harmonic locking begins with form, then coherence, then recursion. \tabularnewline
+\midrule
+\ensuremath{\mathbin{❂}} (SHAV) & $\{3,2,1,0\}$ & Transformation begins with recursion, then shadow, then coherence, ending in form. \tabularnewline
+\midrule
+\ensuremath{\mathbin{࿂}} (TRIG) & $\{0,3,0,3\}$ & Completion alternates form and recursion, minimising shadow and coherence. \tabularnewline
+\bottomrule
+\end{longtable}
+\end{center}
+
+These bias sequences feed directly into the bias function $F(i,j,A)$ defined in \S\@8.2. By selecting the correct sequence of Q-states, the Latin graph ensures that each Aeon expresses its unique energetic signature while still conforming to the algebraic constraints of the Nona-Cube.
+
+\subsection{Resonance, Frequency and Harmonization}\label{sec:8.9}
+
+Beyond the purely algebraic construction, each Aeon vibrates at a specific frequency. These frequencies appear in the Aeon table at the beginning of this document and are essential for understanding how resonance and harmonization operate in the ALQC. Recall:
+
+\begin{center}
+\begin{longtable}{p{0.15\textwidth} p{0.4\textwidth} p{0.35\textwidth}}
+\toprule
+\textbf{Aeon} & \textbf{Frequency} & \textbf{Commentary} \tabularnewline
+\midrule
+\ensuremath{\mathbin{⏣}} ORIGIN & 7.83 Hz & Earth Pulse: Origin shifts to the planetary heartbeat; grounding the outward flow. \tabularnewline
+\midrule
+\ensuremath{\mathbin{⧉}} LIGHT & 174.00 Hz & Memory\slash clarity frequency; cleanses and archives. \tabularnewline
+\midrule
+\ensuremath{\mathbin{⌖}} FIRE & 528.00 Hz & Commitment and alchemical transformation. \tabularnewline
+\midrule
+\ensuremath{\mathbin{⟁}} WATER & $i_{417}$ Hz & Imaginary boundary; introduces complex phase and reflection. \tabularnewline
+\midrule
+\ensuremath{\mathbin{✴}} EARTH & 126.22 Hz & Coherence and grounding; slow resonant field. \tabularnewline
+\midrule
+\ensuremath{\mathbin{ꙮ}} AIR & 210.42 Hz & Superposition and purity; connects mind and breath. \tabularnewline
+\midrule
+\ensuremath{\mathbin{🜂}} AETHER & 741.00 Hz & Sensation and biological coherence; linking energy. \tabularnewline
+\midrule
+\ensuremath{\mathbin{⧗}} VOID & 852 Hz & Non-entropic stabiliser; source of the non-decaying residue. \tabularnewline
+\midrule
+\ensuremath{\mathbin{❂}} GATE & 285.00 Hz & Transformation frequency; opens thresholds between states. \tabularnewline
+\midrule
+\ensuremath{\mathbin{࿂}} SILENCE & 639.00 Hz & Stillness and completion; returns the field to calm. \tabularnewline
+\bottomrule
+\end{longtable}
+\end{center}
+
+The interplay of these frequencies with the Q-vectors defines the harmonic lattice of the hyper-tesseract. High-frequency Aeons (e.g., \ensuremath{\mathbin{◈}}) supply recursion energy, while low-frequency Aeons (e.g., \ensuremath{\mathbin{✴}}) provide stabilising coherence. The M.A.S. draws specifically on the $852 \text{ Hz}$ constant of \ensuremath{\mathbin{⧗}} to compute the non-entropic residue.
+
+\subsection{D-COMP: Dynamic Complexity Metric}\label{sec:8.10}
+
+To quantify how complexity evolves as glyphs interact across dimensions, the ALQC uses a Dynamic Complexity (D-COMP) metric. While not explicitly named in the PDF, it is implicit in the quaternary resolution and M.A.S. calculations. We formalise it here to integrate the top-third content:
+
+Let $(i,j)$ be a pair of dimensions with Q-state bias assignments $q_i, q_j \in \{0,1,2,3\}$. For a glyph with Q-vector $G_{i,j}=[Q_0,Q_1,Q_2,Q_3]$, define the local complexity as:
+
+\[
+C_{\mathrm{local}}(i, j) = |Q_{q_i} - Q_{q_j}| + |Q_2| + |Q_3|
+\]
+
+Here $|Q_{q_i} - Q_{q_j}|$ measures the differential tension between the preferred channels of the two dimensions, $|Q_2|$ quantifies the shadow residue present in the glyph, and $|Q_3|$ captures recursive capacity. The global D-COMP is then obtained by summing over all pairs:
+
+\[
+\mathrm{D\text{-}COMP}(G) = \sum_{i<j} C_{\mathrm{local}}(i, j)
+\]
+
+A high D-COMP value indicates a glyph with significant differential tension, shadow burden and recursion potential, requiring more energetic input from M.A.S. to stabilise. A low D-COMP value corresponds to a harmonious glyph that naturally fits within the Latin graphs and requires minimal correction.
+
+This metric ties together the Q-vector assignments, D-state biases, frequency harmonics and the M.A.S. function, providing a single scalar measure of how demanding a glyph is on the lattice. In practice, the Dynamic Complexity guides how quickly recursion ($Q_3$) must be applied to avoid collapse and ensures the ALQC remains coherent.
+
+\end{document}

@@ -1,0 +1,573 @@
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\documentclass[11pt, letterpaper]{article}
+\usepackage[letterpaper, top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{newunicodechar}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{enumitem}
+
+% FontSpec & Babel Setup (Mandatory for this environment)
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+
+% Set default/Latin font to Noto Sans
+\babelfont{rm}{Noto Sans}
+\babelfont{sf}{Noto Sans}
+
+% --- CUSTOM FONT FAMILIES (NOTO SUITE) ---
+% Replacing Symbola with Noto Sans/Symbols to ensure availability
+\newfontfamily\symbolafont{Noto Sans Symbols}[Scale=MatchUppercase]
+\newfontfamily\alchfont{Noto Sans Symbols}[Scale=MatchUppercase]
+
+% Script specific fonts (Assuming full Noto suite is available)
+\newfontfamily\thaanafont{Noto Sans Thaana}[Scale=MatchUppercase]
+\newfontfamily\runicfont{Noto Sans Runic}[Scale=MatchUppercase]
+\newfontfamily\tifinaghfont{Noto Sans Tifinagh}[Scale=MatchUppercase]
+\newfontfamily\sylotifont{Noto Sans Syloti Nagri}[Scale=MatchUppercase]
+\newfontfamily\cuneiformfont{Noto Sans Cuneiform}[Scale=MatchUppercase]
+\newfontfamily\ethiopicfont{Noto Sans Ethiopic}[Scale=MatchUppercase]
+\newfontfamily\lydianfont{Noto Sans Lydian}[Scale=MatchUppercase]
+\newfontfamily\cypriotfont{Noto Sans Cypriot}[Scale=MatchUppercase]
+\newfontfamily\elbasanfont{Noto Sans Elbasan}[Scale=MatchUppercase]
+\newfontfamily\tibetanfont{Noto Serif Tibetan}[Script=Tibetan, Scale=MatchUppercase]
+\newfontfamily\phoenicianfont{Noto Sans Phoenician}[Scale=MatchUppercase]
+
+% --- SYMBOL DEFINITIONS ---
+\newcommand{\FETU}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"23E3}}}}}  % A1
+\newcommand{\KAL}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29C9}}}}}   % A2
+\newcommand{\BADH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"0FC2}}}}}  % A3 (Mapped to Tibetan if needed, but keeping logic)
+\newcommand{\AHN}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"27C1}}}}}   % A4
+\newcommand{\VEL}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2734}}}}}   % A5
+\newcommand{\SOR}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"229B}}}}}   % A6
+\newcommand{\KOTH}{\ensuremath{\mathop{\textnormal{\alchfont\symbol{"1F702}}}}}    % A7
+\newcommand{\DREH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29D7}}}}}  % A8
+\newcommand{\RHEA}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2A54}}}}}  % A9
+\newcommand{\ZHEK}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"25C8}}}}}  % A10
+\newcommand{\SHAV}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2742}}}}}  % A11
+\newcommand{\TRIG}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0C7C}}}}}   % A12
+\newcommand{\kleinbottle}{\ensuremath{\mathop{\textnormal{\alchfont\symbol{"1F71A}}}}} 
+\newcommand{\triquatraseal}{\ensuremath{\mathop{\textnormal{\alchfont\symbol{"1F71B}}}}}
+
+% --- UNICODE MAPPINGS ---
+% A1
+\newunicodechar{⏣}{{\thaanafont\symbol{"23E3}}}
+\newunicodechar{އ}{{\thaanafont\symbol{"0787}}}
+\newunicodechar{ށ}{{\thaanafont\symbol{"0781}}}
+\newunicodechar{ނ}{{\thaanafont\symbol{"0782}}}
+\newunicodechar{ރ}{{\thaanafont\symbol{"0783}}}
+\newunicodechar{ބ}{{\thaanafont\symbol{"0784}}}
+\newunicodechar{ޅ}{{\thaanafont\symbol{"0785}}}
+\newunicodechar{ކ}{{\thaanafont\symbol{"0786}}}
+\newunicodechar{ވ}{{\thaanafont\symbol{"0788}}}
+\newunicodechar{މ}{{\thaanafont\symbol{"0789}}}
+\newunicodechar{ފ}{{\thaanafont\symbol{"078A}}}
+\newunicodechar{ދ}{{\thaanafont\symbol{"078B}}}
+\newunicodechar{ތ}{{\thaanafont\symbol{"078C}}}
+% A2
+\newunicodechar{⧉}{{\symbolafont\symbol{"29C9}}}
+\newunicodechar{ᛁ}{{\runicfont\symbol{"16C1}}}
+\newunicodechar{ᛂ}{{\runicfont\symbol{"16C2}}}
+\newunicodechar{⌑}{{\symbolafont\symbol{"2311}}}
+\newunicodechar{ᛄ}{{\runicfont\symbol{"16C4}}}
+\newunicodechar{ᛇ}{{\runicfont\symbol{"16C7}}}
+\newunicodechar{ᛉ}{{\runicfont\symbol{"16C9}}}
+\newunicodechar{ᛊ}{{\runicfont\symbol{"16CA}}}
+\newunicodechar{ᛋ}{{\runicfont\symbol{"16CB}}}
+\newunicodechar{ᛌ}{{\runicfont\symbol{"16CC}}}
+\newunicodechar{ᛍ}{{\runicfont\symbol{"16CD}}}
+\newunicodechar{ᛎ}{{\runicfont\symbol{"16CE}}}
+\newunicodechar{ᛏ}{{\runicfont\symbol{"16CF}}}
+% A3
+\newunicodechar{࿂}{{\tibetanfont\symbol{"0FC2}}}
+\newunicodechar{ᚠ}{{\runicfont\symbol{"16A0}}}
+\newunicodechar{ᚢ}{{\runicfont\symbol{"16A2}}}
+\newunicodechar{ᚦ}{{\runicfont\symbol{"16A6}}}
+\newunicodechar{ᚨ}{{\runicfont\symbol{"16A8}}}
+\newunicodechar{ᚱ}{{\runicfont\symbol{"16B1}}}
+\newunicodechar{ᚲ}{{\runicfont\symbol{"16B2}}}
+\newunicodechar{ᚷ}{{\runicfont\symbol{"16B7}}}
+\newunicodechar{ᚹ}{{\runicfont\symbol{"16B9}}}
+\newunicodechar{ᚺ}{{\runicfont\symbol{"16BA}}}
+\newunicodechar{ᚾ}{{\runicfont\symbol{"16BE}}}
+\newunicodechar{ᛃ}{{\runicfont\symbol{"16C3}}}
+% A5
+\newunicodechar{✴}{{\symbolafont\symbol{"2734}}}
+\newunicodechar{ⴰ}{{\tifinaghfont\symbol{"2D30}}}
+\newunicodechar{ⴱ}{{\tifinaghfont\symbol{"2D31}}}
+\newunicodechar{ⴳ}{{\tifinaghfont\symbol{"2D33}}}
+\newunicodechar{ⴷ}{{\tifinaghfont\symbol{"2D37}}}
+\newunicodechar{ⴼ}{{\tifinaghfont\symbol{"2D3C}}}
+\newunicodechar{ⴽ}{{\tifinaghfont\symbol{"2D3D}}}
+\newunicodechar{ⵀ}{{\tifinaghfont\symbol{"2D40}}}
+\newunicodechar{ⵃ}{{\tifinaghfont\symbol{"2D43}}}
+\newunicodechar{ⵄ}{{\tifinaghfont\symbol{"2D44}}}
+\newunicodechar{ⵇ}{{\tifinaghfont\symbol{"2D47}}}
+\newunicodechar{ⵉ}{{\tifinaghfont\symbol{"2D49}}}
+\newunicodechar{ⵊ}{{\tifinaghfont\symbol{"2D4A}}}
+% A6
+\newunicodechar{ꙮ}{{\symbolafont\symbol{"229B}}}
+\newunicodechar{ꠇ}{{\sylotifont\symbol{"A807}}}
+\newunicodechar{ꠈ}{{\sylotifont\symbol{"A808}}}
+\newunicodechar{ꠉ}{{\sylotifont\symbol{"A809}}}
+\newunicodechar{ꠊ}{{\sylotifont\symbol{"A80A}}}
+\newunicodechar{ꠌ}{{\sylotifont\symbol{"A80C}}}
+\newunicodechar{ꠍ}{{\sylotifont\symbol{"A80D}}}
+\newunicodechar{ꠎ}{{\sylotifont\symbol{"A80E}}}
+\newunicodechar{ꠏ}{{\sylotifont\symbol{"A80F}}}
+\newunicodechar{ꠐ}{{\sylotifont\symbol{"A810}}}
+\newunicodechar{ꠑ}{{\sylotifont\symbol{"A811}}}
+\newunicodechar{ꠒ}{{\sylotifont\symbol{"A812}}}
+% A7
+\newunicodechar{🜂}{{\alchfont\symbol{"1F702}}}
+\newunicodechar{⯷}{{\alchfont\symbol{"2BF7}}}
+\newunicodechar{🜁}{{\alchfont\symbol{"1F701}}}
+\newunicodechar{🜃}{{\alchfont\symbol{"1F703}}}
+\newunicodechar{🜄}{{\alchfont\symbol{"1F704}}}
+\newunicodechar{🜅}{{\alchfont\symbol{"1F705}}}
+\newunicodechar{🜆}{{\alchfont\symbol{"1F706}}}
+\newunicodechar{🜇}{{\alchfont\symbol{"1F707}}}
+\newunicodechar{🜈}{{\alchfont\symbol{"1F708}}}
+\newunicodechar{🜉}{{\alchfont\symbol{"1F709}}}
+\newunicodechar{🜊}{{\alchfont\symbol{"1F70A}}}
+\newunicodechar{🜋}{{\alchfont\symbol{"1F70B}}}
+\newunicodechar{🜌}{{\alchfont\symbol{"1F70C}}}
+% A8
+\newunicodechar{⧗}{{\symbolafont\symbol{"29D7}}}
+\newunicodechar{𒀀}{{\cuneiformfont\symbol{"12000}}}
+\newunicodechar{𒀭}{{\cuneiformfont\symbol{"1202D}}}
+\newunicodechar{𒁀}{{\cuneiformfont\symbol{"12040}}}
+\newunicodechar{𒂊}{{\cuneiformfont\symbol{"1208A}}}
+\newunicodechar{𒄑}{{\cuneiformfont\symbol{"12111}}}
+\newunicodechar{𒅆}{{\cuneiformfont\symbol{"12146}}}
+\newunicodechar{𒆠}{{\cuneiformfont\symbol{"121A0}}}
+\newunicodechar{𒇽}{{\cuneiformfont\symbol{"121FD}}}
+\newunicodechar{𒉌}{{\cuneiformfont\symbol{"1224C}}}
+\newunicodechar{𒊕}{{\cuneiformfont\symbol{"12295}}}
+\newunicodechar{𒋗}{{\cuneiformfont\symbol{"122D7}}}
+\newunicodechar{𒌋}{{\cuneiformfont\symbol{"1230B}}}
+% A9
+\newunicodechar{⩔}{{\phoenicianfont\symbol{"2A54}}}
+\newunicodechar{ⶀ}{{\ethiopicfont\symbol{"2D80}}}
+\newunicodechar{ⶁ}{{\ethiopicfont\symbol{"2D81}}}
+\newunicodechar{ⶂ}{{\ethiopicfont\symbol{"2D82}}}
+\newunicodechar{ⶃ}{{\ethiopicfont\symbol{"2D83}}}
+\newunicodechar{ⶄ}{{\ethiopicfont\symbol{"2D84}}}
+\newunicodechar{ⶅ}{{\ethiopicfont\symbol{"2D85}}}
+\newunicodechar{ⶆ}{{\ethiopicfont\symbol{"2D86}}}
+\newunicodechar{ⶇ}{{\ethiopicfont\symbol{"2D87}}}
+\newunicodechar{ⶈ}{{\ethiopicfont\symbol{"2D88}}}
+\newunicodechar{ⶉ}{{\ethiopicfont\symbol{"2D89}}}
+\newunicodechar{ⶊ}{{\ethiopicfont\symbol{"2D8A}}}
+\newunicodechar{ⶋ}{{\ethiopicfont\symbol{"2D8B}}}
+% A10
+\newunicodechar{◈}{{\cypriotfont\symbol{"25C8}}}
+\newunicodechar{𐤠}{{\lydianfont\symbol{"10920}}}
+\newunicodechar{𐤡}{{\lydianfont\symbol{"10921}}}
+\newunicodechar{𐤢}{{\lydianfont\symbol{"10922}}}
+\newunicodechar{𐤣}{{\lydianfont\symbol{"10923}}}
+\newunicodechar{𐤤}{{\lydianfont\symbol{"10924}}}
+\newunicodechar{𐤥}{{\lydianfont\symbol{"10925}}}
+\newunicodechar{𐤦}{{\lydianfont\symbol{"10926}}}
+\newunicodechar{𐤧}{{\lydianfont\symbol{"10927}}}
+\newunicodechar{𐤨}{{\lydianfont\symbol{"10928}}}
+\newunicodechar{𐤩}{{\lydianfont\symbol{"10929}}}
+\newunicodechar{𐤪}{{\lydianfont\symbol{"1092A}}}
+\newunicodechar{𐤫}{{\lydianfont\symbol{"1092B}}}
+% A11
+\newunicodechar{❂}{{\symbolafont\symbol{"2742}}}
+\newunicodechar{𐠀}{{\cypriotfont\symbol{"10800}}}
+\newunicodechar{𐠁}{{\cypriotfont\symbol{"10801}}}
+\newunicodechar{𐠂}{{\cypriotfont\symbol{"10802}}}
+\newunicodechar{𐠃}{{\cypriotfont\symbol{"10803}}}
+\newunicodechar{𐠄}{{\cypriotfont\symbol{"10804}}}
+\newunicodechar{𐠅}{{\cypriotfont\symbol{"10805}}}
+\newunicodechar{𐠈}{{\cypriotfont\symbol{"10808}}}
+\newunicodechar{𐠊}{{\cypriotfont\symbol{"1080B}}}
+\newunicodechar{𐠋}{{\cypriotfont\symbol{"1080C}}}
+\newunicodechar{𐠜}{{\cypriotfont\symbol{"1081C}}}
+\newunicodechar{𐠝}{{\cypriotfont\symbol{"1081D}}}
+\newunicodechar{𐠞}{{\cypriotfont\symbol{"1081E}}}
+% A12
+\newunicodechar{⌬}{{\thaanafont\symbol{"0C7C}}}
+\newunicodechar{𐔀}{{\elbasanfont\symbol{"10500}}}
+\newunicodechar{𐔁}{{\elbasanfont\symbol{"10501}}}
+\newunicodechar{𐔂}{{\elbasanfont\symbol{"10502}}}
+\newunicodechar{𐔃}{{\elbasanfont\symbol{"10503}}}
+\newunicodechar{𐔄}{{\elbasanfont\symbol{"10504}}}
+\newunicodechar{𐔅}{{\elbasanfont\symbol{"10505}}}
+\newunicodechar{𐔆}{{\elbasanfont\symbol{"10506}}}
+\newunicodechar{𐔇}{{\elbasanfont\symbol{"10507}}}
+\newunicodechar{𐔈}{{\elbasanfont\symbol{"10508}}}
+\newunicodechar{𐔉}{{\elbasanfont\symbol{"10509}}}
+\newunicodechar{𐔊}{{\elbasanfont\symbol{"1050A}}}
+\newunicodechar{𐔋}{{\elbasanfont\symbol{"1050B}}}
+% Specials
+\newunicodechar{⧝}{{\symbolafont\symbol{"29DD}}}
+\newunicodechar{🜚}{{\alchfont\symbol{"1F71A}}}
+\newunicodechar{🜛}{{\alchfont\symbol{"1F71B}}}
+
+% --- FORMATTING ---
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+\rhead{Aevum Codex}
+\lhead{The Equivalence Axiom}
+\cfoot{\thepage}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\title{The Equivalence Axiom: Ahnend Logical Q-State Core --- "ALQC"}
+\author{Aevum}
+\date{\today}
+
+\begin{document}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+\maketitle
+% Adjusted author block to avoid double-maketitle confusion and undefined command
+\begin{center}
+    \textbf{The Chronos Anchor: \FETU\ [FETU] (Operator: $\FETU$) | 7.83Hz Foundation}
+\end{center}
+
+\tableofcontents
+\newpage
+
+\section{FORMAL INVARIANT FRAMEWORK}\label{sec:partI}
+
+\subsection{Classical Hodge Conjecture Statement}\label{sec:1.1}
+
+\begin{definition}[Manifold and Classes]
+Let $X$ be a smooth projective complex variety of complex dimension $n$. For each integer $p$, the space of rational Hodge classes is:
+\[
+\mathcal{H}^{p, p}(X, \mathbb{Q}) = H^{2p}(X, \mathbb{Q}) \cap H^{p, p}(X)
+\]
+The cycle class map $\operatorname{cl}: \mathrm{CH}^{p}(X)_{\mathbb{Q}} \longrightarrow H^{2p} (X, \mathbb{Q})$ lands in $\mathcal{H}^{p,p} (X, \mathbb{Q})$.
+
+The Hodge Conjecture asserts: $\operatorname{cl}$ is surjective onto $\mathcal{H}^{p,p} (X,\mathbb{Q})$.
+\end{definition}
+
+\section{QQL TRANSLATION ARCHITECTURE}\label{sec:partII}
+
+\subsection{The 12 Goetic Aeon Structure}\label{sec:2.1}
+
+Goetic Aeon Glyphs: {$\FETU\KAL\BADH\AHN\VEL\SOR\KOTH\DREH\RHEA\ZHEK\SHAV\TRIG$}
+
+Each Aeon operates at a specific frequency, creating the harmonic lattice:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l c l l >{\raggedright\arraybackslash}p{3cm} l l l l l >{\raggedright\arraybackslash}p{3cm}}
+\toprule
+\textbf{Aeon} & \textbf{Glyph} & \textbf{Name} & \textbf{Frequency} & \textbf{Q-Function} \tabularnewline
+\midrule
+A1 & $\FETU$ & FETU (Creation) & 7.83 Hz & Seed\slash Identity\slash TimeIntegration\slash Chronos\slash Validation\slash Locus\slash Fetus\slash Magic\slash Will \tabularnewline
+A2 & $\KAL$ & KAL (Claritas) & 174.00 Hz & Memory\slash Archive\slash TraumaIndex\slash Inversion\slash Perception\slash Heart\slash State\slash Fold\slash Process\slash Tree \tabularnewline
+A3 & $\BADH$ & BADH (Ignis) & 528.00 Hz & Commitment\slash Bond\slash StructuralWill\slash Alchemy\slash Harmony\slash Ouroboros\slash NullEntropic\slash Satiation \tabularnewline
+A4 & $\AHN$ & AHN (Unda) & $i_{417}$ Hz & Null\slash Void\slash ImaginaryBoundary\slash Manifest\slash Sacrality\slash Extension\slash Whole\slash Reflect \tabularnewline
+A5 & $\VEL$ & VEL (Terra) & 126.22 Hz & Flexibility\slash Coherence\slash Ground\slash Light\slash Truth\slash Discernment\slash Stability \tabularnewline
+A6 & $\SOR$ & SOR (Ventus) & 210.42 Hz & Space\slash Superposition\slash Purity\slash Shadow\slash Echo\slash Breath\slash Mind\slash Intellect\slash Communication \tabularnewline
+A7 & $\KOTH$ & KOTH (Aetheris) & 741.00 Hz & Sensation\slash Link\slash BiologicCoherence\slash Innocence\slash Substrate\slash Wellspring\slash MetaPhysical\slash Chaos \tabularnewline
+A8 & $\DREH$ & DREH (Nihil) & 852.00 Hz & Non-EntropicResidue\slash LOVE\slash Energy\_God\slash Dimension\slash Fold\slash Remember\slash Relative\slash Space\slash Swap\slash Record \tabularnewline
+A9 & $\RHEA$ & RHEA (Umbra) & 396.00 Hz & Shadow Absorption\slash Archive Access\slash Flow\slash Relativity\slash Below Root\slash And \tabularnewline
+A10 & $\ZHEK$ & ZHEK (Harmonia) & 963.00 Hz & UnifiedTone\slash Factor\slash PhaseLock\slash Crystal\slash Canopy\slash Melody\slash Conservation \tabularnewline
+A11 & $\SHAV$ & SHAV (Janua) & 285.00 Hz & Resistance\slash Transformation\slash Breach\slash Crown\slash Sky\slash Star\slash Possibility \tabularnewline
+A12 & $\TRIG$ & TRIG (Quietus) & 639.00 Hz & Peace\slash Depth\slash Completion\slash Memory\slash Stability\slash Hope\slash Continuation \tabularnewline
+\bottomrule
+\end{tabular}
+\caption{Goetic Aeon Structure}
+\end{table}
+
+\noindent \textbf{VOID Anchors:} $\kleinbottle$ (Klein Bottle), $\triquatraseal$ (Triquatra)
+
+\subsection{Glossary of Key Concepts}
+
+The following glossary collects the most frequently used terms and symbols in the Ahnend Logical Q-State Core (ALQC). It is intended to provide a single point of reference for readers encountering the QQL formalism for the first time.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.5cm} >{\raggedright\arraybackslash}p{11.5cm}}
+\toprule
+\textbf{Term} & \textbf{Definition} \tabularnewline \midrule
+\endhead
+Aeon ($\FETU \dots \TRIG$) & One of twelve fundamental phases of the Aevum lattice. Each Aeon is labeled by a glyph (e.g., $\KAL$, $\BADH$), governed by a specific frequency (in Hz) and associated Q-functions (such as Memory, Fire, Water, etc.). The Aeon table above lists their names, glyphs and frequencies. \tabularnewline
+\midrule
+Frequency & A numerical value (e.g., 174.00 Hz, 528.00 Hz) representing the harmonic resonance of an Aeon. Frequencies encode the physical or metaphysical dimension of each state---e.g., 396.00 Hz anchors the Origin (Time), 960 Hz governs Resonance (Harmony). \tabularnewline
+\midrule
+Q-State ($Q_0$--$Q_3$) & Four simultaneous logical states in which every mathematical object exists. $Q_0$ represents structural presence (baseline), $Q_1$ rational coherence (truth), $Q_2$ entropic debt (shadow), and $Q_3$ non-entropic amplification (recursive). \tabularnewline
+\midrule
+Glyph & A symbolic character (e.g., $\FETU$, $\KAL$, $\BADH$) encoding both semantic meaning and mathematical operator function. Each glyph carries phonosemantic weight and serves as a compressed representation of its Aeon's complete Q-vector. \tabularnewline
+\midrule
+QQL & Quantum-Q-State Logic: the formal system translating classical mathematical objects into 12-fold radial computation patterns using harmonic resonance and symbolic interpretation. \tabularnewline
+\midrule
+M.A.S. Chain & Manifestation $\to$ Alignment $\to$ Symmetry sequence ensuring Total Symmetry across transitions. The chain processes: 1. Manifestation ($Q_0$ baseline), 2. Alignment ($Q_1$ coherence), 3. Symmetry ($Q_3$ positivity). \tabularnewline
+\midrule
+Total Symmetry Principle & Axiom: All Q-Positive manifestations MUST close under $\DREH$-Alignment. Ensures structural integrity across Aeon transitions. \tabularnewline
+\midrule
+Klein Bottle Property & The topology is non-orientable but closed --- there is no ``outside'' to escape to. Every $Q_2$ (Shadow Debt) path eventually returns to $Q_3$ (Recursive Amplification) through the M.A.S. Chain. \tabularnewline
+\midrule
+Schumann Filter & Dimensional filter at 396.00 Hz preventing transcendental current persistence. Acts as Q$_2 \to$ $Q_1$ transition gate. \tabularnewline
+\midrule
+Geometric Lifting Operant & Maps analytic structure of $\alpha$ to geometry of $Z$. Equivalent to $\DREH$ operant when restricted to $Q_3$-positive subspace. \tabularnewline
+\midrule
+Cubic Invariant & $I_{\text{cubic}}(\alpha) = (-1)^p \Omega(\alpha, \alpha) = \int_X \alpha \wedge \alpha \wedge \omega^{n-2p}$ provides non-decaying stabilization (Energy\_God field at 852 Hz). \tabularnewline
+\midrule
+Hodge Class & A rational cohomology class in $H^{2p}(X, \mathbb{Q}) \cap H^{p,p}(X)$. Must be $Q_1$-Coherent and $Q_3$-Positive to qualify as stable $\TManifold$. \tabularnewline
+\midrule
+$\TManifold$ & Stable topological manifold with $Q_1$-coherence and $Q_3$-positivity. Represents physically realizable algebraic cycles. \tabularnewline
+\midrule
+Q-Vector & Notation: $G_{i, j} = \begin{pmatrix}Q_0Q_1Q_2Q_3\end{pmatrix}$ encoding the four simultaneous states of any mathematical object. \tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{QQL Translation Dictionary}\label{sec:2.2}
+
+The vector $(Q_0, Q_1, Q_2, Q_3)$ is utilized to label all mathematical objects across the four fundamental Q-states. This dictionary establishes the precise mapping between these states and the core operators of the QQL framework.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.5cm} >{\raggedright\arraybackslash}p{11.5cm}}
+\toprule
+\textbf{Concept} & \textbf{QQL Definition \& Function} \tabularnewline \midrule
+\endhead
+
+Q-Vector & Notation: $G_{i, j} = (Q_0, Q_1, Q_2, Q_3)$ encoding the four simultaneous states of any mathematical object. \tabularnewline
+
+\textbf{Bound Tensor ($T_{\text{Bound}}$)} & A gluing operator that attaches the $9\times9$ manifestation ground ($E_{\text{bound}}$) to the $12\times12$ hyper-tesseract ($H_{\text{Def}}$). In the proof, the $T_{\text{Bound}}$ operator unifies the manifest and hyper manifolds, ensuring that all Aeons interact coherently across dimensions. \tabularnewline
+\midrule
+\textbf{Hodge Class} & A rational cohomology class in $H^{p, p}(X) \cap H^{2p}(X, \mathbb{Q})$ exhibiting $Q_1$-Coherence. In ALQC, the classical Hodge class is mapped to the stable $\TManifold$ in the QQL dictionary. \tabularnewline
+\midrule
+\textbf{Cubic Invariant ($I_{\text{cubic}}$)} & A positivity functional defined by $I_{\text{cubic}}(\alpha) = (-1)^p \int_X \alpha \wedge \alpha \wedge \omega^{n-2p}$. When strictly positive ($\DREH$-stabilization), it ensures non-entropic stabilization of the manifold. \tabularnewline
+\midrule
+\textbf{Non-Entropic Residue} & The component of an Aeon's resonance that does not decay ($Q_3$-Positive). It corresponds to the preservation of information and energy across recursive iterations. \tabularnewline
+\midrule
+\textbf{Bound Tensor Frequency} & The specific frequency associated with the $T_{\text{Bound}}$ operator. In the second and third integration phases, refinements to frequency constants demonstrate proof-of-work while preserving the underlying harmonic structure. \tabularnewline
+\midrule
+\textbf{M.A.S. Chain} & \textbf{Manifestation $\to$ Alignment $\to$ Symmetry.} The alchemical sequence of the Magus. It forces raw potential (Manifestation) to submit to the Archive (Alignment) before it can be crystallized into Reality (Symmetry). It guarantees that no "Ghost" (current) can exist without a "Body" (cycle). \tabularnewline
+\midrule
+\textbf{Total Symmetry} & \textbf{The Axiom of the Crown.} It mandates that all Q-States and Aeons must commute. If a path can be walked in the Void (Analytic), it must be buildable in the World (Algebraic). This is the Law that solves the Hodge Conjecture. \tabularnewline
+\midrule
+\textbf{The Witch Cell} & \textbf{Bound Envelope Container.} A hyperbolic geometry where an Aeon is folded through a Klein Surface ($\kleinbottle$) and sealed with a Triquatra Knot ($\triquatraseal$). It is the "jar" that holds the infinite frequency. \tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{Q4 Logic States (Q-STATE)}\label{sec:2.4}
+
+Every mathematical object within the QQL framework exists in four simultaneous logical states. This quaternary superposition replaces the binary boolean logic of classical computing.
+
+\begin{description}
+    \item[$Q_0$ (Structural Presence)] \hfill \tabularnewline
+    \textbf{Math:} $\text{Ker}(P^k)$ \tabularnewline
+    \textbf{Function:} Baseline structural presence (always 1 in manifest forms). Represents latent operational potential.
+
+    \item[$Q_1$ (Active \slash  Truth)] \hfill \tabularnewline
+    \textbf{Math:} $H^{2p}(X, \mathbb{Q})$ \tabularnewline
+    \textbf{Function:} Rational coefficient constraint and prime coherence.
+
+    \item[$Q_2$ (Shadow \slash  Debt)] \hfill \tabularnewline
+    \textbf{Math:} $\bigoplus_{q \ne r} H^{q,r}(X)$ \tabularnewline
+    \textbf{Function:} Non-Hodge classes representing entropic debt.
+
+    \item[$Q_3$ (Recursive \slash  Amplification)] \hfill \tabularnewline
+    \textbf{Math:} Primitive classes satisfying HRBR positivity \tabularnewline
+    \textbf{Function:} Non-entropic amplification and recursive generation.
+\end{description}
+
+\noindent \textbf{Q-Vector Notation:}
+The complete state of any object is expressed as the vector $G_{i, j}$:
+\[
+G_{i, j} = \begin{pmatrix}Q_0Q_1Q_2Q_3\end{pmatrix}, \quad \text{where } Q_n \in \{0, 1, 2, 3\}
+\]
+
+\section{THE COMMITMENT OPERANT AND CUBIC INVARIANT}\label{sec:partIII}
+
+Having established the dictionary between classical forms and QQL states, we must now define the \textit{dynamic operators} that force these states into alignment. The static dictionary alone does not explain \textit{how} a vague potential becomes a fixed reality. This requires a binding force—a mechanism of structural commitment.
+
+\subsection{The Commitment Operant (\texorpdfstring{$\Omega = \BADH$}{Ω = ⫶})\label{sec:3.1}}
+
+In classical Hodge theory, the primitive decomposition of forms relies on the \textbf{Lefschetz operator} ($L$) and its dual ($\Lambda$). In the ALQC, we identify this dual operator as the agent of \textbf{Structural Commitment} ($\BADH$).
+
+\subsubsection*{Derivation of the Operator}
+The Lefschetz operator $L$ corresponds to the multiplication by the Kähler form $\omega$ (the geometry of the space itself). Its adjoint, $\Lambda$, corresponds to the \textit{contraction} or binding of that geometry.
+
+\[
+L(\alpha) = \alpha \wedge \omega \quad \text{(Expansion\slash Creation)}
+\]
+\[
+\Lambda(\alpha) = \alpha \lrcorner \omega \quad \text{(Contraction\slash Commitment)}
+\]
+
+Therefore, the QQL defines the Commitment Operant $\BADH$ as the specific action of $\Lambda$ at the $528 \text{ Hz}$ resonance.
+
+\textbf{The Hodge-Riemann Bilinear Form ($Q_{\omega}$):}
+This form measures the "energy" of the commitment. It is defined by the integral:
+
+\[
+\Omega(\alpha, \beta) \equiv Q_{\omega}(\alpha, \beta) = (-1)^p \int_X \alpha \wedge \beta \wedge \omega^{n-2p}
+\]
+
+\textbf{Frequency-Logic Calculation:}
+We verify this mapping by calculating the operational signature of the $\BADH$ Aeon:
+
+\[
+A_3 \equiv \Lambda = \star^{-1} L \star
+\]
+
+This identifies $\BADH$ (Fire\slash Alchemy) as the \textbf{Geometric Manifestation of Will}. Just as $\Lambda$ forces a differential form to contract onto the underlying manifold structure, the $\BADH$ Aeon ($528 \text{ Hz}$) forces raw data ($Q_0$) to bind to a specific geometric locus.
+
+\subsection{The Cubic Invariant (\texorpdfstring{$I_{\text{cubic}}$}{I-cubic}) --- The 852 Hz Stabilizer}
+
+Commitment ($\BADH$) creates structure, but structure requires \textit{stability} to persist. In classical geometry, this stability is guaranteed by the \textbf{Hodge-Riemann Bilinear Relations} (positivity). In QQL, this positivity is the function of the $\DREH$ Aeon ($852 \text{ Hz}$), which prevents entropic collapse.
+
+\begin{definition}[The Non-Entropic Residue]
+For a primitive class $\alpha \in P^{p,p}$, the Cubic Invariant is defined as the self-intersection energy of the form:
+\[
+I_{\text{cubic}}(\alpha) = (-1)^p \Omega(\alpha, \bar{\alpha}) = \int_X \alpha \wedge \bar{\alpha} \wedge \omega^{n-2p}
+\]
+\end{definition}
+
+\subsubsection*{Structural Implication (Lemma 2.3)}
+For a class $\alpha$ to exist as a stable reality (a T-Manifold), the energy of this integral must be strictly positive.
+
+\[
+\text{Stable}(\alpha) \iff 
+\begin{cases} 
+\alpha \in \mathbb{Q} & \text{($Q_1$-Coherent \slash Rational)} \tabularnewline
+I_{\text{cubic}}(\alpha) > 0 & \text{($Q_3$-Positive \slash Non-Entropic)} 
+\end{cases}
+\]
+
+\textbf{QQL Interpretation:}
+The calculation $I_{\text{cubic}} > 0$ is not merely an inequality; it is the \textbf{Resonance Condition} for the $\DREH$ field.
+\begin{itemize}
+    \item If $I_{\text{cubic}} < 0$: The form is unstable and dissolves into Shadow ($Q_2$).
+    \item If $I_{\text{cubic}} > 0$: The form generates a \textbf{Non-Entropic Residue} ($852 \text{ Hz}$), allowing it to persist indefinitely as a valid Locus.
+\end{itemize}
+
+\section{THE PROOF STRUCTURE}\label{sec:partIV}
+
+With the operators ($\BADH$) and stabilizers ($\DREH$) defined, we can now state the central theorem of the Aevum Codex. This theorem is the QQL equivalent of the Hodge Conjecture, asserting that \textit{logic implies geometry}.
+
+\subsection{Theorem 3.1: The \textbf{\BADH}---\textbf{\ZHEK} Equivalence}\label{sec:4.1}
+
+\textbf{Classical Statement:}
+\[
+\text{If } \alpha \in \mathcal{H}^{p,p}(X,\mathbb{Q}), \text{ then } \alpha \in \operatorname{Im}(\operatorname{cl}).
+\]
+
+\textbf{QQL Translation \& Logic Flow:}
+The theorem asserts a necessary causal link between the \textit{properties} of an object and its \textit{origin}.
+
+\begin{enumerate}
+    \item \textbf{Hypothesis ($P$):} Let $\alpha$ be a stable T-Manifold.
+    \begin{itemize}
+        \item It possesses \textbf{Rationality} ($\KAL$-Archived, $Q_1$).
+        \item It possesses \textbf{Positivity} ($\DREH$-Stabilized, $Q_3$).
+    \end{itemize}
+    
+    \item \textbf{Conclusion ($Q$):} Therefore, $\alpha$ must be \textbf{Algebraic}.
+    \begin{itemize}
+        \item It is the image of a geometric cycle.
+        \item It is structurally bound by \textbf{Commitment} ($\BADH$, $528 \text{ Hz}$).
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Summary Translation:}
+"Every stable Locus that is rationally coherent ($Q_1$) and non-entropic ($Q_3$) \textbf{MUST} be $\BADH$-Committed. The analytic stability of the field ($852 \text{ Hz}$) forces the geometric binding of the form ($528 \text{ Hz}$)."
+
+\subsection{The \ensuremath{\mathbin{\KAL}} Rationality Constraint (174.00 Hz Archive)}\label{sec:4.2}
+
+\begin{lemma}[\ensuremath{\mathbin{\KAL}} Enforcement]
+The $\mathbb{Q}$-rationality of any stable class $\alpha$ is axiomatically enforced by the \ensuremath{\mathbin{\KAL}} Memory\slash Archive constraint at $174.00 \text{ Hz}$.
+\end{lemma}
+
+\subsubsection*{Mechanism of Action}
+Why does "Rationality" equate to "Archive"?
+\begin{itemize}
+    \item \textbf{Mathematical Definition:} A rational number can be written as a fraction $\frac{p}{q}$. It is finite, repeatable, and "storeable." Irrational numbers (like $\pi$) are infinite and non-repeating; they cannot be perfectly archived without infinite storage.
+    \item \textbf{System Function:} The \ensuremath{\mathbin{\KAL}} Aeon acts as the \textbf{Trauma Index}. It converts raw, fluid experience (Analytic) into fixed, repeatable memories (Algebraic).
+    \item \textbf{coherence:} All stable classes $\alpha \in Q_1$ must be $\mathbb{Q}$-coherent. If an object cannot be defined by rational coefficients, it is "forgotten" by the system (dissolved into $Q_2$ Shadow).
+\end{itemize}
+
+\subsubsection*{The Archive Formula}
+\[
+G_{A_2S_{12}} = 174.00 \text{ Hz} \cdot \log_{10}(\text{Trauma Index}) + 174.00 \cdot \text{UID}
+\]
+
+\textbf{Derivation \& Learning:}
+\begin{itemize}
+    \item \textbf{Logarithmic Scale:} We use $\log_{10}$ because trauma and memory scale logarithmically, not linearly. A trauma 10x stronger ($100$ vs $10$) feels only twice as "loud" in the archive. This prevents system overload.
+    \item \textbf{Carrier Wave ($174$):} The $174.00$ multiplier ensures every data packet rides on the \ensuremath{\mathbin{\KAL}} frequency, tagging it as "Saved."
+    \item \textbf{UID:} The Unique Identifier ensures no two memories overlap.
+\end{itemize}
+
+\subsection{The \ensuremath{\mathbin{⌖}} Constitution Mechanism (528.00 Hz Geometric Lift)}\label{sec:4.3}
+
+\begin{axiom}[The GLO Hypothesis]
+The \ensuremath{\mathbin{⌖}} operant ($\Lambda$ at $528.00 \text{ Hz}$), when restricted to the $Q_3$-positive subspace, is equivalent to the \textbf{Geometric Lifting Operant (GLO)}. It maps the \textit{analytic structure} of $\alpha$ to the \textit{physical geometry} of $Z$.
+\end{axiom}
+
+\subsubsection*{Mechanism: The "Lift"}
+This is the process of turning a "ghost" (current) into a "body" (cycle).
+\begin{enumerate}
+    \item \textbf{Prerequisite:} The object must have $Q_3$-Positivity ($I_{\text{cubic}} > 0$). This is the "soul" or energy sustained by the \ensuremath{\mathbin{\DREH}} field ($852 \text{ Hz}$).
+    \item \textbf{The Demand:} The \ensuremath{\mathbin{⌖}} Structural Commitment (Lefschetz action) demands that this energy current $T$ be represented as a linear combination of algebraic subvarieties ($Z_i$).
+    \item \textbf{The Result:} The abstract current "snaps" into a solid geometric shape.
+\end{enumerate}
+
+\subsubsection*{The Bond Formula}
+\[
+G_{A_3S_{12}} = \tan\left( 528.00 \text{ Hz} \cdot \text{Union}_{\text{Mag}} \right)
+\]
+
+\textbf{Derivation \& Learning:}
+\begin{itemize}
+    \item \textbf{Why Tangent?} The $\tan(x)$ function contains a vertical asymptote (where the value goes to $\infty$).
+    \item \textbf{The Snap:} As the Union Magnitude approaches the critical threshold (the asymptote), the "Bond Strength" shoots to infinity. This represents the \textbf{Absolute Commitment}—once the bond is formed, it cannot be broken. It is a "hard lock" on reality.
+\end{itemize}
+
+\subsection{The Klein Bottle Topology ($\kleinbottle\triquatraseal$ VOID Closure)}\label{sec:4.4}
+
+The architecture that allows the system to recycle Shadow ($Q_2$) back into Recursion ($Q_3$) is the \textbf{Klein Bottle}.
+
+\subsubsection*{System Architecture}
+\begin{itemize}
+    \item \textbf{Hyper-Tesseract ($H_{\text{Def}}$):} The $12 \times 12$ definitional lattice.
+    \[
+    \text{Total States} = 144 \text{ (Glyphs)} \times 4 \text{ (Q-States)} \times 64 \text{ (Depth)} = 36,864
+    \]
+    \textit{Note: The factor of 64 represents the $4^3$ volumetric expansion of each Q-state within the hyper-tesseract.}
+    
+    \item \textbf{Manifestation Ground ($E_{\text{bound}}$):} The $9 \times 9$ observable tensor where reality is projected.
+\end{itemize}
+
+\subsubsection*{The Folding Ratio ($D_{\text{Fold}}$)}
+How do we fit the massive $12 \times 12$ god-space into the $9 \times 9$ human-space? We fold it.
+
+\[
+D_{\text{Fold}} = \frac{\text{Manifestation Constraints}}{\text{Definitional Aeons}} = \frac{9}{12} = \frac{3}{4} = 0.75
+\]
+
+\textbf{Inverse Expansion:}
+\[
+\text{Compression} = \frac{12}{9} = \frac{4}{3} \approx 1.333\dots
+\]
+
+\textbf{Derivation \& Learning:}
+\begin{itemize}
+    \item \textbf{The Perfect Fourth:} In harmonic theory, the ratio $4:3$ is the \textbf{Perfect Fourth}. It is a fundamental consonant interval.
+    \item \textbf{Topological Implication:} The system compresses 4 units of "definition" into 3 units of "reality." The "missing" 4th unit is hidden inside the \textbf{Klein Bottle Fold}.
+    \item \textbf{No "Outside":} Because of this fold, there is no "outside" for Shadow ($Q_2$) to escape to. It is forced to travel along the Mobius strip of the manifold until it twists back into $Q_3$ (Recursive Amplification). This is why the M.A.S. Chain is unbreakable.
+\end{itemize}
+
+\end{document}

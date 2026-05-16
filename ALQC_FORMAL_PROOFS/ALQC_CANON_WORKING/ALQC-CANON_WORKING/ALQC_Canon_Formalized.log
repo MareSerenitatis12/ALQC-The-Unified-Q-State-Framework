@@ -1,0 +1,4622 @@
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.2.9)  9 FEB 2026 15:57
+ restricted system commands enabled.
+**ALQC_Canon_Formalized
+(./ALQC_Canon_Formalized.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended c
+ollection.
+luaotfload | conf : Root cache directory is "/home/avgui/.texlive2023/texmf-var/
+luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-08-19.lua" from kpse-res
+olved path "/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader-2023-
+08-19.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.133
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/home/avgui/.texlive2023/texmf-var/
+luatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'. (/usr/share/texlive/tex
+mf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /home/avgui/.texlive2023/texmf
+-var/luatex-cache/generic/names/luaotfload-names.luc.gz)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen139
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
+\Gm@bindingoffset=\dimen140
+\Gm@wd@mp=\dimen141
+\Gm@odd@mp=\dimen142
+\Gm@even@mp=\dimen143
+\Gm@layoutwidth=\dimen144
+\Gm@layoutheight=\dimen145
+\Gm@layouthoffset=\dimen146
+\Gm@layoutvoffset=\dimen147
+\Gm@dimlist=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen148
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen149
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count196
+LaTeX Info: Redefining \frac on input line 236.
+\uproot@=\count197
+\leftroot@=\count198
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count199
+\DOTSCASE@=\count266
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen150
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count267
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count268
+\dotsspace@=\muskip16
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
+\tag@help=\toks20
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
+\andhelp@=\toks21
+\eqnshift@=\dimen151
+\alignsep@=\dimen152
+\tagshift@=\dimen153
+\tagwidth@=\dimen154
+\totwidth@=\dimen155
+\lineht@=\dimen156
+\@envbody=\toks22
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count274
+\calc@Bcount=\count275
+\calc@Adimen=\dimen157
+\calc@Bdimen=\dimen158
+\calc@Askip=\skip56
+\calc@Bskip=\skip57
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count276
+\calc@Cskip=\skip58
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count277
+\l_MT_multwidth_dim=\dimen159
+\origjot=\skip59
+\l_MT_shortvdotswithinadjustabove_dim=\dimen160
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen161
+\l_MT_above_intertext_sep=\dimen162
+\l_MT_below_intertext_sep=\dimen163
+\l_MT_above_shortintertext_sep=\dimen164
+\l_MT_below_shortintertext_sep=\dimen165
+\xmathstrut@box=\box53
+\xmathstrut@dim=\dimen166
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip60
+\f@nch@O@elh=\skip61
+\f@nch@O@erh=\skip62
+\f@nch@O@olh=\skip63
+\f@nch@O@orh=\skip64
+\f@nch@O@elf=\skip65
+\f@nch@O@erf=\skip66
+\f@nch@O@olf=\skip67
+\f@nch@O@orf=\skip68
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
+\bbl@readstream=\read2
+\l@dumylang=\language2
+Package babel Info: Non-standard hyphenation setup on input line 118.
+\l@nohyphenation=\language3
+\l@vietnamese=\language4
+\l@hebrew=\language5
+\l@german=\language6
+\l@macedonian=\language7
+\l@russian=\language8
+\l@telugu=\language9
+\l@portuguese=\language10
+\l@slovenian=\language11
+\l@croatian=\language12
+\l@ancientgreek=\language13
+\l@classiclatin=\language14
+\l@occitan=\language15
+\l@dutch=\language16
+\l@lithuanian=\language17
+\l@schoolfinnish=\language18
+\l@ukrainian=\language19
+\l@friulan=\language20
+\l@latvian=\language21
+\l@kurmanji=\language22
+\l@monogreek=\language23
+\l@basque=\language24
+\l@polish=\language25
+\l@liturgicallatin=\language26
+\l@icelandic=\language27
+\l@kannada=\language28
+\l@swissgerman=\language29
+\l@finnish=\language30
+\l@nynorsk=\language31
+\l@danish=\language32
+\l@sanskrit=\language33
+\l@italian=\language34
+\l@catalan=\language35
+\l@hindi=\language36
+\l@panjabi=\language37
+\l@gujarati=\language38
+\l@ngerman-x-2023-03-06=\language39
+\l@bengali=\language40
+\l@irish=\language41
+\l@esperanto=\language42
+\l@assamese=\language43
+\l@piedmontese=\language44
+\l@belarusian=\language45
+\l@churchslavonic=\language46
+\l@latin=\language47
+\l@afrikaans=\language48
+\l@indonesian=\language49
+\l@pinyin=\language50
+\l@serbianc=\language51
+\l@turkish=\language52
+\l@hungarian=\language53
+\l@estonian=\language54
+\l@thai=\language55
+\l@swedish=\language56
+\l@armenian=\language57
+\l@usenglishmax=\language58
+\l@mongolian=\language59
+\l@interlingua=\language60
+\l@ukenglish=\language61
+\l@farsi=\language62
+\l@serbian=\language63
+\l@romanian=\language64
+\l@german-x-2023-03-06=\language65
+\l@french=\language66
+\l@welsh=\language67
+\l@romansh=\language68
+\l@turkmen=\language69
+\l@arabic=\language70
+\l@georgian=\language71
+\l@mongolianlmc=\language72
+\l@czech=\language73
+\l@ethiopic=\language74
+\l@oriya=\language75
+\l@pali=\language76
+\l@bulgarian=\language77
+\l@tamil=\language78
+\l@slovak=\language79
+\l@coptic=\language80
+\l@spanish=\language81
+\l@ngerman=\language82
+\l@ibycus=\language83
+\l@greek=\language84
+\l@uppersorbian=\language85
+\l@marathi=\language86
+\l@malayalam=\language87
+\l@bokmal=\language88
+\l@galician=\language89
+\babelcatcodetablenum=\catcodetable14
+\bbl@pattcodes=\catcodetable15
+)
+\babel@savecnt=\count278
+\U@D=\dimen167
+\l@unhyphenated=\language90
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
+\bbl@attr@locale=\attribute4
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language61). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language61). Reported on input line 108.
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 274.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen168
+\lightrulewidth=\dimen169
+\cmidrulewidth=\dimen170
+\belowrulesep=\dimen171
+\belowbottomsep=\dimen172
+\aboverulesep=\dimen173
+\abovetopsep=\dimen174
+\cmidrulesep=\dimen175
+\cmidrulekern=\dimen176
+\defaultaddspace=\dimen177
+\@cmidla=\count279
+\@cmidlb=\count280
+\@aboverulesep=\dimen178
+\@belowrulesep=\dimen179
+\@thisruleclass=\count281
+\@lastruleclass=\count282
+\@thisrulewidth=\dimen180
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip69
+\LTright=\skip70
+\LTpre=\skip71
+\LTpost=\skip72
+\LTchunksize=\count283
+\LTcapwidth=\dimen181
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count284
+\LT@rows=\count285
+\c@LT@tables=\count286
+\c@LT@chunks=\count287
+\LT@p@ftn=\toks30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 107.
+)
+\Gin@req@height=\dimen182
+\Gin@req@width=\dimen183
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks31
+))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count288
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count289
+)
+\@linkdim=\dimen184
+\Hy@linkcounter=\count290
+\Hy@pagecounter=\count291
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count292
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count293
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen185
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count294
+\Field@Width=\dimen186
+\Fld@charsize=\dimen187
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count295
+\c@Item=\count296
+\c@Hfootnote=\count297
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2024-01-20 v7.01h Hyperref driver for luaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count298
+\c@bookmark@seq@number=\count299
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip73
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 19.
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-01-22 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2024-01-04 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count300
+Inserting `l3color' in `luaotfload.parse_color'.
+\l__pdf_internal_box=\box59
+))
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2022/01/15 2.8a Font selection for XeLaTeX and LuaLaTeX
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+Package: fontspec-luatex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaT
+eX
+\l__fontspec_script_int=\count301
+\l__fontspec_language_int=\count302
+\l__fontspec_strnum_int=\count303
+\l__fontspec_tmp_int=\count304
+\l__fontspec_tmpa_int=\count305
+\l__fontspec_tmpb_int=\count306
+\l__fontspec_tmpc_int=\count307
+\l__fontspec_em_int=\count308
+\l__fontspec_emdef_int=\count309
+\l__fontspec_strong_int=\count310
+\l__fontspec_strongdef_int=\count311
+\l__fontspec_tmpa_dim=\dimen188
+\l__fontspec_tmpb_dim=\dimen189
+\l__fontspec_tmpc_dim=\dimen190
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
+Package: unicode-math-luatex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaL
+aTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+(/usr/share/texlive/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
+Package: lualatex-math 2022/01/01 v1.12 Patches for mathematics typesetting wit
+h LuaLaTeX
+Lua module: lualatex-math 2013/08/03 1.3 Patches for mathematics typesetting wit
+h LuaLaTeX)
+\g__um_fam_int=\count312
+\g__um_fonts_used_int=\count313
+\l__um_primecount_int=\count314
+\g__um_primekern_muskip=\muskip18
+
+(/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex))) (/usr/share/texlive/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty
+Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+\symboldwasy=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count315
+\lst@gtempboxa=\box60
+\lst@token=\toks32
+\lst@length=\count316
+\lst@currlwidth=\dimen191
+\lst@column=\count317
+\lst@pos=\count318
+\lst@lostspace=\dimen192
+\lst@width=\dimen193
+\lst@newlines=\count319
+\lst@lineno=\count320
+\lst@maxwidth=\dimen194
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count321
+\lst@skipnumbers=\count322
+\lst@framebox=\box61
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks33
+\pgfutil@tempdima=\dimen195
+\pgfutil@tempdimb=\dimen196
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box62
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex
+\pgfkeys@tmptoks=\toks36
+))
+\pgf@x=\dimen197
+\pgf@y=\dimen198
+\pgf@xa=\dimen199
+\pgf@ya=\dimen256
+\pgf@xb=\dimen257
+\pgf@yb=\dimen258
+\pgf@xc=\dimen259
+\pgf@yc=\dimen260
+\pgf@xd=\dimen261
+\pgf@yd=\dimen262
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count323
+\c@pgf@countb=\count324
+\c@pgf@countc=\count325
+\c@pgf@countd=\count326
+\t@pgf@toka=\toks37
+\t@pgf@tokb=\toks38
+\t@pgf@tokc=\toks39
+\pgf@sys@id@count=\count327
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-luatex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+File: pgfsys-luatex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count328
+\pgfsyssoftpath@bigbuffer@items=\count329
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen263
+\pgfmath@count=\count330
+\pgfmath@box=\box63
+\pgfmath@toks=\toks40
+\pgfmath@stack@operand=\toks41
+\pgfmath@stack@operation=\toks42
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count331
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen264
+\pgf@picmaxx=\dimen265
+\pgf@picminy=\dimen266
+\pgf@picmaxy=\dimen267
+\pgf@pathminx=\dimen268
+\pgf@pathmaxx=\dimen269
+\pgf@pathminy=\dimen270
+\pgf@pathmaxy=\dimen271
+\pgf@xx=\dimen272
+\pgf@xy=\dimen273
+\pgf@yx=\dimen274
+\pgf@yy=\dimen275
+\pgf@zx=\dimen276
+\pgf@zy=\dimen277
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen278
+\pgf@path@lasty=\dimen279
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen280
+\pgf@shorten@start@additional=\dimen281
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box64
+\pgf@hbox=\box65
+\pgf@layerbox@main=\box66
+\pgf@picture@serial@count=\count332
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen282
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen283
+\pgf@pt@y=\dimen284
+\pgf@pt@temp=\dimen285
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen286
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen287
+\pgf@sys@shading@range@num=\count333
+\pgf@shadingcount=\count334
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box67
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box68
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen288
+\pgf@nodesepend=\dimen289
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen290
+\pgffor@skip=\dimen291
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count335
+\pgfplotmarksize=\dimen292
+)
+\tikz@lastx=\dimen293
+\tikz@lasty=\dimen294
+\tikz@lastxsaved=\dimen295
+\tikz@lastysaved=\dimen296
+\tikz@lastmovetox=\dimen297
+\tikz@lastmovetoy=\dimen298
+\tikzleveldistance=\dimen299
+\tikzsiblingdistance=\dimen300
+\tikz@figbox=\box69
+\tikz@figbox@bg=\box70
+\tikz@tempbox=\box71
+\tikz@tempbox@bg=\box72
+\tikztreelevel=\count336
+\tikznumberofchildren=\count337
+\tikznumberofcurrentchild=\count338
+\tikz@fig@count=\count339
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count340
+\pgfmatrixcurrentcolumn=\count341
+\pgf@matrix@numberofcolumns=\count342
+)
+\tikz@expandcount=\count343
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
+\pgfplots@luabackend@table=\catcodetable16
+\t@pgfplots@toka=\toks45
+\t@pgfplots@tokb=\toks46
+\t@pgfplots@tokc=\toks47
+\pgfplots@tmpa=\dimen301
+\c@pgfplots@coordindex=\count344
+\c@pgfplots@scanlineindex=\count345
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks48
+\t@pgf@tokb=\toks49
+\t@pgf@tokc=\toks50
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfutil-common-lists.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/luamath/pgflibraryluam
+ath.code.tex)
+Package pgfplots info on input line 290: luamath library shipped with pgf 3.1.1
+0 is up-to-date
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+Package pgfplots info on input line 82: Found new luatex: initializing lua comm
+ands instead of write18 (shell-escape)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex
+\c@pgfplotsarray@tmp=\count346
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex
+\c@pgfplotstable@counta=\count347
+\t@pgfplotstable@a=\toks51
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
+\c@pgfplotslibrarysurf@no=\count348
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-luatex.def)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
+tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex
+\pgfdecoratedcompleteddistance=\dimen302
+\pgfdecoratedremainingdistance=\dimen303
+\pgfdecoratedinputsegmentcompleteddistance=\dimen304
+\pgfdecoratedinputsegmentremainingdistance=\dimen305
+\pgf@decorate@distancetomove=\dimen306
+\pgf@decorate@repeatstate=\count349
+\pgfdecorationsegmentamplitude=\dimen307
+\pgfdecorationsegmentlength=\dimen308
+)
+\tikz@lib@dec@box=\box73
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathreplacing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathreplacing.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.co
+ntourlua.code.tex)
+\pgfplots@numplots=\count350
+\pgfplots@xmin@reg=\dimen309
+\pgfplots@xmax@reg=\dimen310
+\pgfplots@ymin@reg=\dimen311
+\pgfplots@ymax@reg=\dimen312
+\pgfplots@zmin@reg=\dimen313
+\pgfplots@zmax@reg=\dimen314
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
+de.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen315
+\pgfarrowlength=\dimen316
+\pgfarrowwidth=\dimen317
+\pgfarrowlinewidth=\dimen318
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.cod
+e.tex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.text.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.text.code.tex
+\pgf@lib@dec@text@box=\box74
+)
+\tikz@lib@dec@te@box=\box75
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryintersections.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersection
+s.code.tex
+\pgf@intersect@solutions=\count351
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box76
+\pgf@layerboxsaved@background=\box77
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf-blur/tikzlibraryshadows.blur.code.
+tex  v1.02, 2012/12/09
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfbs@fading@count=\count352
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrary3d.code.tex
+File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen319
+\captionmargin=\dimen320
+\caption@leftmargin=\dimen321
+\caption@rightmargin=\dimen322
+\caption@width=\dimen323
+\caption@indent=\dimen324
+\caption@parindent=\dimen325
+\caption@hangindent=\dimen326
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count353
+\c@continuedfloat=\count354
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+))
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count355
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count356
+)
+(/usr/share/texlive/texmf-dist/tex/generic/alphalph/alphalph.sty
+Package: alphalph 2019/12/09 v2.6 Convert numbers to letters (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen327
+\ar@mcellbox=\box78
+\extrarowheight=\dimen328
+\NC@list=\toks52
+\extratabsurround=\skip74
+\backup@length=\skip75
+\ar@cellbox=\box79
+)
+\everycr=\toks53
+\minrowclearance=\skip76
+\rownum=\count357
+)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+luaotfload | aux : font no 19 (nil) does not define feature smcp for script latn
+ with language dflt
+luaotfload | aux : font no 20 (nil) does not define feature smcp for script latn
+ with language dflt
+luaotfload | aux : font no 19 (nil) does not define feature smcp for script latn
+ with language dflt
+luaotfload | aux : font no 20 (nil) does not define feature smcp for script latn
+ with language dflt
+
+Package fontspec Info: Font family 'Lexend-Regular.ttf(0)' created for font
+(fontspec)             'Lexend-Regular.ttf' with options [Ligatures=TeX,Path =
+(fontspec)             /home/avgui/.local/share/fonts/Lexend/static/,BoldFont
+(fontspec)             = Lexend-Bold.ttf,ItalicFont =
+(fontspec)             Lexend-Regular.ttf,ItalicFeatures =
+(fontspec)             {FakeSlant=0.2},BoldItalicFont =
+(fontspec)             Lexend-Bold.ttf,BoldItalicFeatures =
+(fontspec)             {FakeSlant=0.2},Scale = 1.05,LetterSpace = 1.5].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.05]"[/home/avgui/.local/share/fonts/Lexend/stati
+c/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;letterspace=1.5;+tlig
+;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.05]"[/home/avgui/.local/share/fonts/Lexend/stati
+c/Lexend-Bold.ttf]:mode=node;script=latn;language=dflt;letterspace=1.5;+tlig;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1.05]"[/home/avgui/.local/share/fonts/Lexend/stati
+c/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;letterspace=1.5;slant
+=0.2;+tlig;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1.05]"[/home/avgui/.local/share/fonts/Lexend/stati
+c/Lexend-Bold.ttf]:mode=node;script=latn;language=dflt;letterspace=1.5;slant=0.
+2;+tlig;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+luaotfload | aux : font no 23 (nil) does not define feature smcp for script latn
+ with language dflt
+luaotfload | aux : font no 24 (nil) does not define feature smcp for script latn
+ with language dflt
+luaotfload | aux : font no 23 (nil) does not define feature smcp for script latn
+ with language dflt
+luaotfload | aux : font no 24 (nil) does not define feature smcp for script latn
+ with language dflt
+
+Package fontspec Info: Font family 'Lexend-Regular.ttf(1)' created for font
+(fontspec)             'Lexend-Regular.ttf' with options [Renderer=Basic,Path
+(fontspec)             =
+(fontspec)             /home/avgui/.local/share/fonts/Lexend/static/,BoldFont
+(fontspec)             = Lexend-Bold.ttf,ItalicFont =
+(fontspec)             Lexend-Regular.ttf,ItalicFeatures =
+(fontspec)             {FakeSlant=0.2},BoldItalicFont =
+(fontspec)             Lexend-Bold.ttf,BoldItalicFeatures =
+(fontspec)             {FakeSlant=0.2},Scale = 1.05,LetterSpace = 1.5].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.05]"[/home/avgui/.local/share/fonts/Lexend/stati
+c/Lexend-Regular.ttf]:mode=base;script=latn;language=dflt;letterspace=1.5;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.05]"[/home/avgui/.local/share/fonts/Lexend/stati
+c/Lexend-Bold.ttf]:mode=base;script=latn;language=dflt;letterspace=1.5;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1.05]"[/home/avgui/.local/share/fonts/Lexend/stati
+c/Lexend-Regular.ttf]:mode=base;script=latn;language=dflt;letterspace=1.5;slant
+=0.2;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1.05]"[/home/avgui/.local/share/fonts/Lexend/stati
+c/Lexend-Bold.ttf]:mode=base;script=latn;language=dflt;letterspace=1.5;slant=0.
+2;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/Lexend-Regular.ttf(1)/m/n on input l
+ine 91.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/Lexend-Regular.ttf(1)/m/it on input
+ line 91.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/Lexend-Regular.ttf(1)/b/n on input 
+line 91.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 11.49753pt on input line 91.
+Inserting `luaotfload.letterspace' in `pre_linebreak_filter'.
+Inserting `luaotfload.letterspace' in `hpack_filter'.
+luaotfload | cache : Lookup cache loaded from /home/avgui/.texlive2023/texmf-var
+/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
+
+Package fontspec Info: Could not resolve font "LatinModernMath/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'LatinModernMath(0)' created for font
+(fontspec)             'Latin Modern Math' with options
+(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
+sFont={},Script=Math,RawFeature={mathfontdimen=xetex}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"LatinModernMath:mode=base;script=math;language=dflt;
+mathfontdimen=xetex;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Package fontspec Info: Could not resolve font "LatinModernMath/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'LatinModernMath(1)' created for font
+(fontspec)             'Latin Modern Math' with options
+(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
+sFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=Latin
+(fontspec)             Modern Math,Style=MathScript},{Size=-6.57,Font=Latin
+(fontspec)             Modern
+(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
+xetex}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <9.3075->"LatinModernMath:mode=base;script=math;language
+=dflt;mathfontdimen=xetex;"<6.57-9.3075>"LatinModernMath:mode=base;script=math;
+language=dflt;mathfontdimen=xetex;+ssty=0;"<-6.57>"LatinModernMath:mode=base;sc
+ript=math;language=dflt;mathfontdimen=xetex;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 94.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/LatinModernMath(1)/m/n on input line
+ 94.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 94.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/LatinModernMath(1)/b/n on input lin
+e 94.
+
+Package fontspec Info: Could not resolve font "LatinModernMath/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'LatinModernMath(2)' created for font
+(fontspec)             'Latin Modern Math' with options
+(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
+sFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=Latin
+(fontspec)             Modern Math,Style=MathScript},{Size=-6.57,Font=Latin
+(fontspec)             Modern
+(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
+xetex},RawFeature={mathfontdimen=tex2}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <9.3075->"LatinModernMath:mode=base;script=math;language
+=dflt;mathfontdimen=xetex;mathfontdimen=tex2;"<6.57-9.3075>"LatinModernMath:mod
+e=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=0
+;"<-6.57>"LatinModernMath:mode=base;script=math;language=dflt;mathfontdimen=xet
+ex;mathfontdimen=tex2;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 94.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> TU/LatinModernMath(2)/m/n on input lin
+e 94.
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 94.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> TU/LatinModernMath(2)/b/n on input lin
+e 94.
+
+Package fontspec Info: Could not resolve font "LatinModernMath/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'LatinModernMath(3)' created for font
+(fontspec)             'Latin Modern Math' with options
+(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
+sFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=Latin
+(fontspec)             Modern Math,Style=MathScript},{Size=-6.57,Font=Latin
+(fontspec)             Modern
+(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
+xetex},RawFeature={mathfontdimen=tex3}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <9.3075->"LatinModernMath:mode=base;script=math;language
+=dflt;mathfontdimen=xetex;mathfontdimen=tex3;"<6.57-9.3075>"LatinModernMath:mod
+e=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=0
+;"<-6.57>"LatinModernMath:mode=base;script=math;language=dflt;mathfontdimen=xet
+ex;mathfontdimen=tex3;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 9
+4.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/m/n on input lin
+e 94.
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 94.
+
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/b/n on input lin
+e 94.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 94.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 94.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 94
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <5.475> not available
+(Font)              size <5> substituted on input line 94.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7.665> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 94.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5.475> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 94.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <5.475> not available
+(Font)              size <5> substituted on input line 94.
+
+luaotfload | aux : font no 64 (nil) defines no feature for script latn
+luaotfload | aux : font no 64 (nil) defines no feature for script dflt
+
+Package fontspec Info: NotoSansThaana scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoSansThaana/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansThaana/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: NotoSansThaana scale = 1.029411707303745.
+
+
+Package fontspec Info: NotoSansThaana/B scale = 1.029411707303745.
+
+
+Package fontspec Info: Font family 'NotoSansThaana(0)' created for font 'Noto
+(fontspec)             Sans Thaana' with options [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansThaana:mode=node;langua
+ge=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansThaana/B:mode=node;lang
+uage=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 69 (nil) defines no feature for script latn
+luaotfload | aux : font no 69 (nil) defines no feature for script dflt
+
+Package fontspec Info: NotoSansRunic scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoSansRunic/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansRunic/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansRunic/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: NotoSansRunic scale = 1.029411707303745.
+
+
+Package fontspec Info: Font family 'NotoSansRunic(0)' created for font 'Noto
+(fontspec)             Sans Runic' with options [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansRunic:mode=node;languag
+e=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 72 (nil) defines no feature for script latn
+
+Package fontspec Info: NotoSansTifinagh scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoSansTifinagh/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansTifinagh/B" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansTifinagh/I" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: NotoSansTifinagh scale = 1.029411707303745.
+
+luaotfload | aux : font no 72 (nil) does not define feature smcp for script dflt
+ with language dflt
+
+Package fontspec Info: Font family 'NotoSansTifinagh(0)' created for font
+(fontspec)             'Noto Sans Tifinagh' with options
+(fontspec)             [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansTifinagh:mode=node;scri
+pt=DFLT;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 75 (nil) defines no feature for script latn
+luaotfload | aux : font no 75 (nil) defines no feature for script dflt
+
+Package fontspec Info: NotoSansSylotiNagri scale = 1.082472576524068.
+
+
+Package fontspec Info: Could not resolve font "NotoSansSylotiNagri/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansSylotiNagri/B" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansSylotiNagri/I" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: NotoSansSylotiNagri scale = 1.082472576524068.
+
+
+Package fontspec Info: Font family 'NotoSansSylotiNagri(0)' created for font
+(fontspec)             'Noto Sans Syloti Nagri' with options
+(fontspec)             [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.082472576524068]"NotoSansSylotiNagri:mode=node;l
+anguage=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Package fontspec Info: Symbola scale = 1.118333898736324.
+
+
+Package fontspec Info: Could not resolve font "Symbola/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "Symbola/B" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: Could not resolve font "Symbola/I" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: Symbola scale = 1.118333898736324.
+
+
+Package fontspec Info: Symbola scale = 1.118333898736324.
+
+
+Package fontspec Info: Font family 'Symbola(0)' created for font 'Symbola'
+(fontspec)             with options [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.118333898736324]"Symbola:mode=node;script=latn;l
+anguage=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1.118333898736324]"Symbola:mode=node;script=latn;l
+anguage=dflt;+smcp;"
+
+luaotfload | aux : font no 82 (nil) defines no feature for script latn
+luaotfload | aux : font no 82 (nil) defines no feature for script dflt
+
+Package fontspec Info: NotoSansCuneiform scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoSansCuneiform/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansCuneiform/B" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansCuneiform/I" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: NotoSansCuneiform scale = 1.029411707303745.
+
+
+Package fontspec Info: Font family 'NotoSansCuneiform(0)' created for font
+(fontspec)             'Noto Sans Cuneiform' with options
+(fontspec)             [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansCuneiform:mode=node;lan
+guage=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 85 (nil) defines no feature for script latn
+
+Package fontspec Info: NotoSansEthiopic scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoSansEthiopic/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansEthiopic/I" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: NotoSansEthiopic scale = 1.029411707303745.
+
+luaotfload | aux : font no 85 (nil) does not define feature smcp for script dflt
+ with language dflt
+
+Package fontspec Info: NotoSansEthiopic/B scale = 1.029411707303745.
+
+luaotfload | aux : font no 88 (nil) does not define feature smcp for script dflt
+ with language dflt
+
+Package fontspec Info: Font family 'NotoSansEthiopic(0)' created for font
+(fontspec)             'Noto Sans Ethiopic' with options
+(fontspec)             [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansEthiopic:mode=node;scri
+pt=DFLT;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansEthiopic/B:mode=node;sc
+ript=DFLT;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 90 (nil) defines no feature for script latn
+luaotfload | aux : font no 90 (nil) defines no feature for script dflt
+
+Package fontspec Info: NotoSansLydian scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoSansLydian/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansLydian/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansLydian/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: NotoSansLydian scale = 1.029411707303745.
+
+
+Package fontspec Info: Font family 'NotoSansLydian(0)' created for font 'Noto
+(fontspec)             Sans Lydian' with options [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansLydian:mode=node;langua
+ge=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 93 (nil) defines no feature for script latn
+luaotfload | aux : font no 93 (nil) defines no feature for script dflt
+
+Package fontspec Info: NotoSansCypriot scale = 0.9986405866304158.
+
+
+Package fontspec Info: Could not resolve font "NotoSansCypriot/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansCypriot/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansCypriot/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: NotoSansCypriot scale = 0.9986405866304158.
+
+
+Package fontspec Info: Font family 'NotoSansCypriot(0)' created for font 'Noto
+(fontspec)             Sans Cypriot' with options [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.9986405866304158]"NotoSansCypriot:mode=node;lang
+uage=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 96 (nil) defines no feature for script latn
+luaotfload | aux : font no 96 (nil) defines no feature for script dflt
+
+Package fontspec Info: NotoSansElbasan scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoSansElbasan/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansElbasan/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansElbasan/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: NotoSansElbasan scale = 1.029411707303745.
+
+
+Package fontspec Info: Font family 'NotoSansElbasan(0)' created for font 'Noto
+(fontspec)             Sans Elbasan' with options [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansElbasan:mode=node;langu
+age=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Package fontspec Info: NotoSerifTibetan scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoSerifTibetan/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSerifTibetan/I" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: NotoSerifTibetan scale = 1.029411707303745.
+
+luaotfload | aux : font no 102 (nil) does not define feature smcp for script lat
+n with language dflt
+
+Package fontspec Info: NotoSerifTibetan/B scale = 1.029411707303745.
+
+luaotfload | aux : font no 103 (nil) does not define feature smcp for script lat
+n with language dflt
+
+Package fontspec Info: Font family 'NotoSerifTibetan(0)' created for font
+(fontspec)             'Noto Serif Tibetan' with options
+(fontspec)             [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSerifTibetan:mode=node;scri
+pt=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSerifTibetan/B:mode=node;sc
+ript=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 105 (nil) defines no feature for script latn
+luaotfload | aux : font no 105 (nil) defines no feature for script dflt
+
+Package fontspec Info: NotoSansPhoenician scale = 1.022253274906051.
+
+
+Package fontspec Info: Could not resolve font "NotoSansPhoenician/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansPhoenician/B" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansPhoenician/I" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: NotoSansPhoenician scale = 1.022253274906051.
+
+
+Package fontspec Info: Font family 'NotoSansPhoenician(0)' created for font
+(fontspec)             'Noto Sans Phoenician' with options
+(fontspec)             [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.022253274906051]"NotoSansPhoenician:mode=node;la
+nguage=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 108 (nil) defines no feature for script latn
+
+Package fontspec Info: NotoSansBalinese scale = 1.049998506972439.
+
+
+Package fontspec Info: Could not resolve font "NotoSansBalinese/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansBalinese/I" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: NotoSansBalinese scale = 1.049998506972439.
+
+luaotfload | aux : font no 108 (nil) does not define feature smcp for script dfl
+t with language dflt
+
+Package fontspec Info: NotoSansBalinese/B scale = 1.049998506972439.
+
+luaotfload | aux : font no 111 (nil) does not define feature smcp for script dfl
+t with language dflt
+
+Package fontspec Info: Font family 'NotoSansBalinese(0)' created for font
+(fontspec)             'Noto Sans Balinese' with options
+(fontspec)             [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.049998506972439]"NotoSansBalinese:mode=node;scri
+pt=DFLT;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.049998506972439]"NotoSansBalinese/B:mode=node;sc
+ript=DFLT;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+
+Package fontspec Info: NotoMusic scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoMusic/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoMusic/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoMusic/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: NotoMusic scale = 1.029411707303745.
+
+luaotfload | aux : font no 115 (nil) does not define feature smcp for script lat
+n with language dflt
+
+Package fontspec Info: Font family 'NotoMusic(0)' created for font 'Noto
+(fontspec)             Music' with options [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoMusic:mode=node;script=latn
+;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+luaotfload | aux : font no 117 (nil) defines no feature for script latn
+luaotfload | aux : font no 117 (nil) defines no feature for script dflt
+
+Package fontspec Info: NotoSansSundanese scale = 1.029411707303745.
+
+
+Package fontspec Info: Could not resolve font "NotoSansSundanese/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "NotoSansSundanese/I" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: NotoSansSundanese scale = 1.029411707303745.
+
+
+Package fontspec Info: NotoSansSundanese/B scale = 1.029411707303745.
+
+
+Package fontspec Info: Font family 'NotoSansSundanese(0)' created for font
+(fontspec)             'Noto Sans Sundanese' with options
+(fontspec)             [Scale=MatchUppercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansSundanese:mode=node;lan
+guage=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.029411707303745]"NotoSansSundanese/B:mode=node;l
+anguage=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box80
+\beforetitleunit=\skip77
+\aftertitleunit=\skip78
+\ttl@plus=\dimen329
+\ttl@minus=\dimen330
+\ttl@toksa=\toks54
+\titlewidth=\dimen331
+\titlewidthlast=\dimen332
+\titlewidthfirst=\dimen333
+)
+\c@theorem=\count358
+
+No file ALQC_Canon_Formalized.aux.
+
+\openout1 = ALQC_Canon_Formalized.aux
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 672.
+LaTeX Font Info:    ... okay on input line 672.
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+*geometry* verbose mode - [ preamble ] result:
+* driver: luatex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includefoot 
+* h-part:(L,W,R)=(32.52127pt, 549.25246pt, 32.52127pt)
+* v-part:(T,H,B)=(32.52127pt, 729.92744pt, 32.52127pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=549.25246pt
+* \textheight=715.47368pt
+* \oddsidemargin=-39.74872pt
+* \evensidemargin=-39.74872pt
+* \topmargin=-76.74872pt
+* \headheight=14.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=14.45377pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count359
+\scratchdimen=\dimen334
+\scratchbox=\box81
+\nofMPsegments=\count360
+\nofMParguments=\count361
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count362
+\MPscratchDim=\dimen335
+\MPnumerator=\count363
+\makeMPintoPDFobject=\count364
+\everyMPtoPDFconversion=\toks56
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package hyperref Info: Link coloring ON on input line 672.
+\@outlinefile=\write4
+
+\openout4 = ALQC_Canon_Formalized.out
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 672.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 672.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 672.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 672.
+
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
+\c@lstlisting=\count365
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 26.12407pt on input line 679.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 26.12407pt on input line 679.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 15.12003pt on input line 681.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/it' will be
+(Font)              scaled to size 15.12003pt on input line 681.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 12.60004pt on input line 688.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/it' will be
+(Font)              scaled to size 12.60004pt on input line 688.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 12.60004pt on input line 691.
+
+Underfull \hbox (badness 2772) in paragraph at lines 704--705
+[]\TU/Lexend-Regular.ttf(0)/b/n/12 The Ax-iomatic Seal (2026): \TU/Lexend-Regul
+ar.ttf(0)/m/n/12 The for-mal-iza-tion of the \TU/Lexend-Regular.ttf(0)/b/n/12 NU
+LL:DEATH
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 11.49753pt on input line 717.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/it' will be
+(Font)              scaled to size 11.49753pt on input line 720.
+ [2]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 10.50003pt on input line 781.
+
+
+LaTeX Font Warning: Font shape `TU/Lexend-Regular.ttf(0)/m/sc' undefined
+(Font)              using `TU/Lexend-Regular.ttf(0)/m/n' instead on input line 
+781.
+
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 6.30002pt on input line 782.
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 782.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 782.
+
+[3] [4]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 8.40002pt on input line 882.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/sc' will be
+(Font)              scaled to size 8.40002pt on input line 882.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/it' will be
+(Font)              scaled to size 10.50003pt on input line 897.
+ [5]
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 931.
+
+LaTeX Font Info:    Font shape `TU/Symbola(0)/m/n' will be
+(Font)              scaled to size 11.18332pt on input line 945.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 7.35002pt on input line 945.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 5.25002pt on input line 945.
+LaTeX Font Info:    Font shape `TU/NotoSansLydian(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 945.
+LaTeX Font Info:    Font shape `TU/NotoSansRunic(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 945.
+LaTeX Font Info:    Font shape `TU/NotoSansCuneiform(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 945.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 10.50003pt on input line 949.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 15.12003pt on input line 952.
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 953.
+
+LaTeX Font Info:    Font shape `TU/Symbola(0)/m/n' will be
+(Font)              scaled to size 13.41998pt on input line 953.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 8.40002pt on input line 953.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 6.30002pt on input line 953.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 953.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 953.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 953.
+
+LaTeX Font Info:    Font shape `TU/Symbola(0)/m/n' will be
+(Font)              scaled to size 12.24573pt on input line 965.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 8.04826pt on input line 965.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 5.74876pt on input line 965.
+<frame_00050.png, id=59, 1003.75pt x 1003.75pt>
+File: frame_00050.png Graphic file (type png)
+<use frame_00050.png>
+Package luatex.def Info: frame_00050.png  used on input line 969.
+(luatex.def)             Requested size: 411.93933pt x 411.93839pt.
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 970.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 970
+.
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 970.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 970
+.
+
+[6
+Missing character: There is no → (U+2192) in font [/home/avgui/.local/share/fo
+nts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;letter
+space=1.5;+tlig;!
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 978.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 978.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 978.
+
+[7<./frame_00050.png>]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/it' will be
+(Font)              scaled to size 10.50003pt on input line 1008.
+
+
+LaTeX Warning: Reference `sec:appendixR' on page 8 undefined on input line 1008
+.
+
+<frame_00023.png, id=80, 1003.75pt x 1003.75pt>
+File: frame_00023.png Graphic file (type png)
+<use frame_00023.png>
+Package luatex.def Info: frame_00023.png  used on input line 1012.
+(luatex.def)             Requested size: 384.47504pt x 384.47684pt.
+[8
+Missing character: There is no → (U+2192) in font [/home/avgui/.local/share/fo
+nts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;letter
+space=1.5;+tlig;!
+] [9<./frame_00023.png>]
+LaTeX Font Info:    Font shape `TU/Symbola(0)/m/n' will be
+(Font)              scaled to size 27.8241pt on input line 1130.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 21.77705pt on input line 1130.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 18.14404pt on input line 1130.
+LaTeX Font Info:    Font shape `TU/NotoSansSundanese(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 1130.
+
+Overfull \hbox (21.91469pt too wide) in paragraph at lines 1024--1132
+ [][] 
+ []
+
+[10] [11] (./ALQC_Canon_Formalized.toc)
+\tf@toc=\write5
+
+\openout5 = ALQC_Canon_Formalized.toc
+ [12]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 8.04826pt on input line 1146.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 5.74876pt on input line 1146.
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 1146.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1146.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1146.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1161.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\reflectbox' on input line 1161.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbolafont' on input line 1161.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 1161.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1161.
+
+[13]
+LaTeX Font Info:    Font shape `TU/NotoSansSundanese(0)/m/n' will be
+(Font)              scaled to size 11.27213pt on input line 1176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 1176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sundanesefont' on input line 1176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 1176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1176.
+
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 7.35002pt on input line 1184.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 5.25002pt on input line 1184.
+[14]
+<frame_00612.png, id=120, 1003.75pt x 1003.75pt>
+File: frame_00612.png Graphic file (type png)
+<use frame_00612.png>
+Package luatex.def Info: frame_00612.png  used on input line 1239.
+(luatex.def)             Requested size: 439.40364pt x 439.41524pt.
+ [15<./frame_00612.png>] [16]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 10.50003pt on input line 1293.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 7.35002pt on input line 1293.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 5.25002pt on input line 1293.
+LaTeX Font Info:    Font shape `TU/NotoSerifTibetan(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 1297.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/it' will be
+(Font)              scaled to size 7.35002pt on input line 1297.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/it' will be
+(Font)              scaled to size 5.25002pt on input line 1297.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1322--1322
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Topo-log-i-cal Ac-tion
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1320--1324
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 8.40002pt on input line 1326.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 6.30002pt on input line 1326.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/it' will be
+(Font)              scaled to size 8.40002pt on input line 1326.
+
+Underfull \hbox (badness 3364) in paragraph at lines 1326--1326
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Non-Orientable Re-
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 1326--1326
+\TU/Lexend-Regular.ttf(0)/m/it/8 Force: Map to All
+ []
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 1326--1326
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Phase in-ver-sion ($\TU/LatinModernMath(1)/
+m/n/8 𝜃 ↦
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 1328--1328
+\TU/Lexend-Regular.ttf(0)/m/it/8 Force: Blood Seal,
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1324--1331
+[][][][][][][][]
+ []
+
+[17]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 1 on input line 1331.
+
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 12.60004pt on input line 1334.
+[18] [19]
+Underfull \hbox (badness 10000) in alignment at lines 1413--1417
+[][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSerifTibetan(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 1422.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1423--1424
+\TU/Lexend-Regular.ttf(0)/m/sc/8 (Eigenvector
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1433--1433
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Com-mu-ta-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1434--1434
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Global In-vari-ance/Order In-de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1442--1442
+\TU/Lexend-Regular.ttf(0)/m/sc/8 (Emergent Per-son-al-ity
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 1450--1451
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Warped Re-flec-
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 1453--1453
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Com-plex Pro-jec-
+ []
+
+
+Underfull \hbox (badness 8000) in paragraph at lines 1467--1467
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Ra-tio-nal Co-ef-fi-
+ []
+
+
+Underfull \hbox (badness 6032) in paragraph at lines 1474--1474
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Struc-tural Com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1481--1481
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Non-Entropic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1495--1495
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Al-ge-braic Cy-cle
+ []
+
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/it' will be
+(Font)              scaled to size 8.40002pt on input line 1509.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1517--1517
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Lo-cus of In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1517--1517
+\TU/Lexend-Regular.ttf(0)/m/sc/8 vari-abil-ity (The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1525--1525
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Shadow Lo-cus
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1527--1527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1529--1530
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 MET-RIC DE-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1533--1533
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Ax-iomyr (The
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansSundanese(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 1535.
+
+Underfull \hbox (badness 10000) in alignment at lines 1417--1540
+[][][][][]
+ []
+
+[20] [21]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 11.49753pt on input line 1570.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 8.04826pt on input line 1570.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 5.74876pt on input line 1570.
+ [22] [23]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 10.50003pt on input line 1659.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 7.35002pt on input line 1659.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 5.25002pt on input line 1659.
+ [24]
+LaTeX Font Info:    Font shape `TU/NotoSansThaana(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 1689.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 12.60004pt on input line 1712.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 8.40002pt on input line 1712.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 6.30002pt on input line 1712.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 1712.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbolafont' on input line 1712.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 1712.
+
+[25] [26] [27] [28] [29]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 11.49753pt on input line 1868.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 8.04826pt on input line 1868.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 5.74876pt on input line 1868.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1868.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1868.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\to' on input line 1868.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1868.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1868.
+
+[30] [31]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1907.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1907.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1907.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1917.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symfrak' on input line 1917.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1917.
+
+[32]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1953.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symfrak' on input line 1953.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1953.
+
+[33] [34] [35] [36]
+<frame_00417.png, id=306, 1003.75pt x 1003.75pt>
+File: frame_00417.png Graphic file (type png)
+<use frame_00417.png>
+Package luatex.def Info: frame_00417.png  used on input line 2053.
+(luatex.def)             Requested size: 175.7648pt x 175.76608pt.
+<frame_00423.png, id=307, 1003.75pt x 1003.75pt>
+File: frame_00423.png Graphic file (type png)
+<use frame_00423.png>
+Package luatex.def Info: frame_00423.png  used on input line 2058.
+(luatex.def)             Requested size: 175.7648pt x 175.76608pt.
+<frame_00432.png, id=308, 1003.75pt x 1003.75pt>
+File: frame_00432.png Graphic file (type png)
+<use frame_00432.png>
+Package luatex.def Info: frame_00432.png  used on input line 2063.
+(luatex.def)             Requested size: 175.7648pt x 175.76608pt.
+ [37<./frame_00417.png><./frame_00423.png><./frame_00432.png>] [38]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 15.12003pt on input line 2127.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 15.12003pt on input line 2127.
+LaTeX Font Info:    Font shape `TU/Symbola(0)/m/n' will be
+(Font)              scaled to size 16.10396pt on input line 2127.
+ [39]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2152.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symfrak' on input line 2152.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2152.
+
+[40] [41]
+Underfull \hbox (badness 4479) in paragraph at lines 2185--2185
+[]|\TU/Lexend-Regular.ttf(0)/b/n/10 Clas-si-cal Math
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2185--2185
+[]|\TU/Lexend-Regular.ttf(0)/b/n/10 Aeon
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2185--2186
+[]|\TU/Lexend-Regular.ttf(0)/b/n/10 Op-er-a-tional
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 2183--2187
+[][][][][]
+ []
+
+
+Underfull \hbox (badness 3209) in paragraph at lines 2197--2197
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 Har-monic $\TU/LatinModernMath(1)/m/n/10 (
+𝑝, 𝑝)$\TU/Lexend-Regular.ttf(0)/m/n/10 -form $\TU/LatinModernMath(1)/m/n/
+10 𝛼 ∈
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2199--2199
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 963.00 Hz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2205--2205
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 174.00 Hz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2211--2211
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 528.00 Hz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2211--2211
+\TU/Lexend-Regular.ttf(0)/m/n/10 (Bond-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2213--2213
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 Non-Entropic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2214--2214
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 Q$[][]$ Vec-tor ($[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2217--2217
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 852.00
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2217--2217
+\TU/Lexend-Regular.ttf(0)/m/n/10 Hz (En-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2221--2221
+[]|$[]$ \TU/Lexend-Regular.ttf(0)/m/n/10 (In-vari-abil-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2222--2222
+[]|\TU/Lexend-Regular.ttf(0)/b/n/10 The Ax-iom (Non-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2224--2224
+[]|\TU/Lexend-Regular.ttf(0)/b/n/10 NON-
+ []
+
+
+Underfull \hbox (badness 5756) in paragraph at lines 2228--2228
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 Käh-ler form $\TU/LatinModernMath(1)/m/n/1
+0 𝜔$ \TU/Lexend-Regular.ttf(0)/m/n/10 (Stand-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2230--2230
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 963.00 Hz
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 2232--2232
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 Al-ge-braic Cy-cle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2233--2233
+[]|$[]$\TU/Lexend-Regular.ttf(0)/m/n/10 -Committed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2236--2236
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 528.00 Hz
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 2187--2245
+[][][][][]
+ []
+
+[42] [43] [44]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symcal' on input line 2359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2359.
+
+[45] [46] [47]
+
+LaTeX Warning: Reference `appendixA.3' on page 48 undefined on input line 2442.
+
+
+[48] [49] [50]
+LaTeX Font Info:    Font shape `TU/NotoSansSylotiNagri(0)/m/n' will be
+(Font)              scaled to size 10.82474pt on input line 2562.
+LaTeX Font Info:    Font shape `TU/NotoSansEthiopic(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 2564.
+
+
+LaTeX Warning: Reference `appendixA.2' on page 51 undefined on input line 2577.
+
+
+[51] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 2603.
+ [52]
+
+LaTeX Warning: Reference `appendixA.4' on page 53 undefined on input line 2624.
+
+
+[53]
+
+LaTeX Warning: Reference `appendixA.5' on page 54 undefined on input line 2667.
+
+
+
+LaTeX Warning: Reference `appendixA.6' on page 54 undefined on input line 2693.
+
+
+[54]
+
+LaTeX Warning: Reference `appendixA.7' on page 55 undefined on input line 2730.
+
+
+[55]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2748.
+
+[56]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 2809.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbolafont' on input line 2809.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 2809.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 2809.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbolafont' on input line 2809.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 2809.
+
+[57] [58]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2863.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\to' on input line 2863.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2863.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2863.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\to' on input line 2863.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2863.
+
+[59]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 9.45003pt on input line 2912.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/m/n' will be
+(Font)              scaled to size 9.45003pt on input line 2912.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(1)/b/n' will be
+(Font)              scaled to size 9.45003pt on input line 2912.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <9> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 2912.
+
+[60] [61] [62]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 3005.
+
+[63]
+LaTeX Font Info:    Font shape `TU/NotoSansElbasan(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 3085.
+ [64]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3096.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbb' on input line 3096.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 3096.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3096.
+
+[65] [66] [67] [68]
+LaTeX Font Info:    Font shape `TU/NotoSansSundanese(0)/m/n' will be
+(Font)              scaled to size 12.35303pt on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbolafont' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sundanesefont' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbolafont' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbolafont' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sundanesefont' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbolafont' on input line 3238.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 3238.
+
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/n' will be
+(Font)              scaled to size 9.45003pt on input line 3245.
+
+Underfull \hbox (badness 10000) in alignment at lines 3243--3247
+[][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/Symbola(0)/m/n' will be
+(Font)              scaled to size 10.06499pt on input line 3249.
+LaTeX Font Info:    Font shape `TU/NotoSansSundanese(0)/m/n' will be
+(Font)              scaled to size 9.26477pt on input line 3255.
+
+Underfull \hbox (badness 10000) in alignment at lines 3247--3257
+[][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3278--3282
+[][][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3282--3303
+[][][][][]
+ []
+
+[69]
+Underfull \hbox (badness 10000) in alignment at lines 3320--3324
+[][][][][][]
+ []
+
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Bold.ttf]:mode=base;script=latn;language=dflt;letters
+pace=1.5;!
+
+Underfull \hbox (badness 10000) in alignment at lines 3324--3374
+[][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 8 on input line 3374.
+
+[70]
+
+LaTeX Warning: Reference `sec:7.3' on page 71 undefined on input line 3381.
+
+[71] [72]
+Overfull \hbox (549.25246pt too wide) detected at line 3451
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3450--3455
+[][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3455--3459
+[][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3459--3462
+[][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3462--3464
+[][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3464--3511
+[][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 9 on input line 3511.
+
+[73] [74]
+Underfull \hbox (badness 10000) in paragraph at lines 3534--3534
+[]|\TU/Lexend-Regular.ttf(0)/b/n/9 Struc-tural
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3532--3535
+[][][][][][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3536--3536
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Gen-e-sis/
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSerifTibetan(0)/m/n' will be
+(Font)              scaled to size 9.26477pt on input line 3536.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3537--3537
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Light/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3537--3537
+\TU/Lexend-Regular.ttf(0)/m/n/9 Memory/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3538--3538
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Fire/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3538--3538
+\TU/Lexend-Regular.ttf(0)/m/n/9 Orobouros/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3539--3539
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Wa-ter/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3539--3539
+\TU/Lexend-Regular.ttf(0)/m/n/9 Imaginary/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3540--3540
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Earth/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3540--3540
+\TU/Lexend-Regular.ttf(0)/m/n/9 Coherence/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3541--3541
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Air/Space/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3542--3542
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Aether/Magic/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3543--3543
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Void/Residue/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3544--3544
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Shad-ow/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3544--3544
+\TU/Lexend-Regular.ttf(0)/m/n/9 Absorption/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3545--3545
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Fac-tor/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3545--3545
+\TU/Lexend-Regular.ttf(0)/m/n/9 PhaseLock/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3546--3546
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Gate/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3546--3546
+\TU/Lexend-Regular.ttf(0)/m/n/9 Resistance/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3547--3547
+[]|\TU/Lexend-Regular.ttf(0)/m/n/9 Si-lence/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3547--3547
+\TU/Lexend-Regular.ttf(0)/m/n/9 Peace/
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3535--3549
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 10 on input line 3549.
+
+LaTeX Font Info:    Font shape `TU/NotoSerifTibetan(0)/m/n' will be
+(Font)              scaled to size 11.27213pt on input line 3552.
+
+Underfull \hbox (badness 1521) in paragraph at lines 3557--3557
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3555--3559
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansThaana(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 3560.
+
+Underfull \hbox (badness 10000) in alignment at lines 3559--3573
+[][][][][][][][]
+ []
+
+[75]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 11 on input line 3573.
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 3581--3581
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3579--3583
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansRunic(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 3584.
+
+Underfull \hbox (badness 10000) in alignment at lines 3583--3597
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 12 on input line 3597.
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 3606--3606
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3604--3608
+[][][][][][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3608--3622
+[][][][][][][][]
+ []
+
+[76]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 13 on input line 3622.
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 3630--3630
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3628--3632
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansBalinese(0)/m/n' will be
+(Font)              scaled to size 8.40002pt on input line 3634.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3636--3636
+[]|$[][]\TU/LatinModernMath(1)/m/n/8 ([] ± 𝜙) ≡
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoMusic(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 3637.
+
+Underfull \hbox (badness 10000) in alignment at lines 3632--3646
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 14 on input line 3646.
+
+[77]
+Underfull \hbox (badness 1521) in paragraph at lines 3654--3654
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3652--3656
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansTifinagh(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 3657.
+
+Underfull \hbox (badness 10000) in alignment at lines 3656--3670
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 15 on input line 3670.
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 3678--3678
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3676--3680
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansSylotiNagri(0)/m/n' will be
+(Font)              scaled to size 8.65979pt on input line 3681.
+
+Underfull \hbox (badness 10000) in alignment at lines 3680--3694
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 16 on input line 3694.
+
+[78]
+Underfull \hbox (badness 1521) in paragraph at lines 3702--3702
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3700--3704
+[][][][][][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3704--3718
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 17 on input line 3718.
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 3726--3726
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3724--3728
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansCuneiform(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 3729.
+
+Underfull \hbox (badness 6725) in paragraph at lines 3730--3730
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Hol-low En-fe-meral $\TU/LatinModernMath(1)
+/m/n/8 ↔$ \TU/Lexend-Regular.ttf(0)/m/sc/8 Zero
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3738--3738
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 In-fi-nite Span $\TU/LatinModernMath(1)/m/n
+/8 ↔$ \TU/Lexend-Regular.ttf(0)/m/sc/8 In-fi-nite
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3728--3741
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 18 on input line 3741.
+
+[79]
+Underfull \hbox (badness 1521) in paragraph at lines 3749--3749
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3747--3751
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansEthiopic(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 3752.
+
+Underfull \hbox (badness 10000) in alignment at lines 3751--3765
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 19 on input line 3765.
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 3773--3773
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3771--3775
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansLydian(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 3776.
+
+Underfull \hbox (badness 10000) in alignment at lines 3775--3789
+[][][][][][][][]
+ []
+
+[80]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 20 on input line 3789.
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 3797--3797
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3795--3799
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansCypriot(0)/m/n' will be
+(Font)              scaled to size 7.98914pt on input line 3800.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3803--3803
+\TU/Lexend-Regular.ttf(0)/m/it/8 Force: High Res-o-nance
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3799--3813
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 21 on input line 3813.
+
+[81]
+Underfull \hbox (badness 1521) in paragraph at lines 3821--3821
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Hy-per-bolic Bi-fur-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3819--3823
+[][][][][][][][]
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansElbasan(0)/m/n' will be
+(Font)              scaled to size 8.23535pt on input line 3824.
+
+Underfull \hbox (badness 10000) in alignment at lines 3823--3837
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 22 on input line 3837.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3845--3845
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Topo-log-i-cal Ac-tion
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3843--3847
+[][][][][][][][]
+ []
+
+
+Underfull \hbox (badness 3364) in paragraph at lines 3848--3848
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Non-Orientable Re-
+ []
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 3848--3848
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Phase in-ver-sion ($\TU/LatinModernMath(1)/
+m/n/8 𝜃 ↦
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 3849--3849
+\TU/Lexend-Regular.ttf(0)/m/it/8 Force: Blood Seal,
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3847--3851
+[][][][][][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 23 on input line 3851.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3863--3867
+[][][][][][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 3867--3878
+[][][][][][][][]
+ []
+
+[82]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 24 on input line 3878.
+
+LaTeX Font Info:    Font shape `TU/NotoSansTifinagh(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 3903.
+[83]
+Overfull \hbox (12.41563pt too wide) in paragraph at lines 3915--3918
+\TU/Lexend-Regular.ttf(0)/m/it/10 D-COMP Logic: $\TU/LatinModernMath(1)/m/n/10 
+𝐶[] ∝ [](𝑆[])$\TU/Lexend-Regular.ttf(0)/m/n/10 . \TU/Lexend-Regular.ttf
+(0)/m/it/10 D-COMP Logic: $\TU/LatinModernMath(1)/m/n/10 𝐶[] ∝ [](𝑆[])$
+\TU/Lexend-Regular.ttf(0)/m/n/10 . 
+ []
+
+LaTeX Font Info:    Font shape `TU/NotoSansCypriot(0)/m/n' will be
+(Font)              scaled to size 9.98642pt on input line 3932.
+[84] [85]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3976.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 3976.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3976.
+
+[86]
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Bold.ttf]:mode=base;script=latn;language=dflt;letters
+pace=1.5;!
+[87]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4064.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 4064.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbolafont' on input line 4064.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\char' on input line 4064.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4064.
+
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Bold.ttf]:mode=base;script=latn;language=dflt;letters
+pace=1.5;!
+[88] [89] [90] [91]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4176.
+
+
+LaTeX Warning: Reference `ax:bifurcation' on page 92 undefined on input line 41
+79.
+
+[92]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4224.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4224.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4224.
+
+
+LaTeX Warning: Reference `ax:bifurcation' on page 93 undefined on input line 42
+27.
+
+LaTeX Font Info:    Font shape `TU/NotoSansBalinese(0)/m/n' will be
+(Font)              scaled to size 10.50003pt on input line 4236.
+[93]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4271.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4271.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4271.
+
+
+LaTeX Warning: Reference `ax:bifurcation' on page 94 undefined on input line 42
+75.
+
+[94]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4319.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4319.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4319.
+
+
+LaTeX Warning: Reference `ax:bifurcation' on page 95 undefined on input line 43
+22.
+
+[95]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4366.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4366.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4366.
+
+[96]
+LaTeX Font Info:    Font shape `TU/NotoMusic(0)/m/n' will be
+(Font)              scaled to size 10.29419pt on input line 4383.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4417.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4417.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4417.
+
+[97] [98] [99]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4472.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4472.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4472.
+
+[100] [101]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4564.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4564.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4564.
+
+[102] [103]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4656.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4656.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4656.
+
+[104] [105]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4748.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4748.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4748.
+
+[106] [107]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4840.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4840.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4840.
+
+[108] [109]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4932.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4932.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4932.
+
+[110] [111] [112] [113] [114] [115] [116] [117] [118] [119]
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Bold.ttf]:mode=base;script=latn;language=dflt;letters
+pace=1.5;!
+[120]
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Bold.ttf]:mode=base;script=latn;language=dflt;letters
+pace=1.5;!
+
+LaTeX Warning: Reference `sec:11.4' on page 121 undefined on input line 5403.
+
+
+LaTeX Warning: Reference `sec:11.6' on page 121 undefined on input line 5404.
+
+[121] [122] [123] [124] [125]
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Bold.ttf]:mode=base;script=latn;language=dflt;letters
+pace=1.5;!
+[126] [127] [128] [129]
+
+LaTeX Warning: Reference `sec:9.2' on page 130 undefined on input line 5850.
+
+[130
+Missing character: There is no → (U+2192) in font [/home/avgui/.local/share/fo
+nts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;letter
+space=1.5;+tlig;!
+] [131
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;lett
+erspace=1.5;+tlig;!
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;lett
+erspace=1.5;+tlig;!
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;lett
+erspace=1.5;+tlig;!
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;lett
+erspace=1.5;+tlig;!
+] [132
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;lett
+erspace=1.5;+tlig;!
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;lett
+erspace=1.5;+tlig;!
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;lett
+erspace=1.5;+tlig;!
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;lett
+erspace=1.5;+tlig;!
+] [133]
+
+LaTeX Font Warning: Font shape `TU/LatinModernMath(1)/b/n' undefined
+(Font)              using `TU/LatinModernMath(1)/m/n' instead on input line 600
+3.
+
+
+LaTeX Font Warning: Font shape `TU/LatinModernMath(2)/b/n' undefined
+(Font)              using `TU/LatinModernMath(2)/m/n' instead on input line 600
+3.
+
+
+LaTeX Font Warning: Font shape `TU/LatinModernMath(3)/b/n' undefined
+(Font)              using `TU/LatinModernMath(3)/m/n' instead on input line 600
+3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6003.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbb' on input line 6003.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6003.
+
+[134] [135] [136]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6083.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symfrak' on input line 6083.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6083.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6096.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 6096.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6096.
+
+[137] [138] [139] [140]
+Underfull \hbox (badness 10000) in paragraph at lines 6216--6216
+[]\TU/lmtt/m/n/10 <operator> ::= "Q3-positive" | "$[]$-rational" | "$[]$-commitm
+ent" | "Q2-debt" | "$[]$-positive" |
+ []
+
+[141] [142] [143]
+Underfull \hbox (badness 1515) in paragraph at lines 6352--6352
+[]|\TU/Lexend-Regular.ttf(0)/b/n/10 Quan-tum Me-chan-ics In-ter-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 6350--6354
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6362--6362
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 Mixed state or de-co-hered
+ []
+
+
+Underfull \hbox (badness 5637) in paragraph at lines 6362--6362
+\TU/Lexend-Regular.ttf(0)/m/n/10 com-po-nent de-scribed by a
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 6362--6362
+\TU/Lexend-Regular.ttf(0)/m/n/10 den-sity op-er-a-tor $\TU/LatinModernMath(1)/m
+/n/10 𝜌$\TU/Lexend-Regular.ttf(0)/m/n/10 ; en-tropic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6365--6365
+[]|\TU/Lexend-Regular.ttf(0)/m/n/10 Non-classical am-pli-fi-ca-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6365--6366
+\TU/Lexend-Regular.ttf(0)/m/n/10 Recursive en-ergy in-jec-tion
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 6354--6368
+[][][]
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6371.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symcal' on input line 6371.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6371.
+
+[144]
+
+LaTeX Warning: Reference `sec:freq_bifurcation' on page 145 undefined on input 
+line 6384.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6395.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 6395.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6395.
+
+
+LaTeX Warning: Reference `sec:7.3' on page 145 undefined on input line 6405.
+
+[145] [146] [147]
+Underfull \hbox (badness 10000) in alignment at lines 6519--6523
+[][][][]
+ []
+
+
+Underfull \hbox (badness 4479) in paragraph at lines 6525--6526
+\TU/Lexend-Regular.ttf(0)/m/sc/8 fil-ter that re-moves high-frequency
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6531--6532
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 En-tropy Sink. \TU/Lexend-Regular.ttf(0)/m/s
+c/8 A math-e-mat-i-cal
+ []
+
+Missing character: There is no 𝜙 (U+1D719) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Bold.ttf]:mode=base;script=latn;language=dflt;letters
+pace=1.5;!
+
+Underfull \hbox (badness 10000) in alignment at lines 6523--6552
+[][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 26 on input line 6552.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6555.
+
+[148]
+Underfull \hbox (badness 10000) in alignment at lines 6575--6579
+[][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 6579--6829
+[][][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 27 on input line 6829.
+
+[149] [150] [151] [152] [153] [154] [155] [156] [157] [158]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <6> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 7088.
+ [159
+Missing character: There is no ⊛ (U+229B) in font [lmmono8-regular]:!
+] [160] [161] [162] [163] [164] [165] [166] [167] [168] [169]
+Underfull \hbox (badness 10000) in alignment at lines 8111--8115
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8117--8117
+[]|\TU/Lexend-Regular.ttf(0)/b/n/10 To-tal Sym-me-try Prin-ci-ple
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8119--8120
+[]|\TU/lmtt/m/n/10 inv = (R0*R0)/(r2+EPS) *
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8121--8122
+[]|\TU/lmtt/m/n/10 stress * (1.0 +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8131--8132
+[]|\TU/lmtt/m/n/10 if R < 0.04: _identity_seam_apply(e,
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 8115--8133
+[][][]
+ []
+
+[170]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 8137.
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) [171]
+[172] [173] [174] [175] [176] [177] [178] [179] [180] [181] [182]
+Underfull \hbox (badness 10000) in alignment at lines 9096--9100
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9102--9102
+[]|\TU/Lexend-Regular.ttf(0)/b/n/10 To-tal Sym-me-try Prin-ci-ple
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9104--9105
+[]|\TU/lmtt/m/n/10 inv = (R0*R0)/(r2+EPS) *
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9106--9107
+[]|\TU/lmtt/m/n/10 stress / (MAX_KINETIC_STRESS + 1e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9108--9109
+[]|\TU/lmtt/m/n/10 combined * (1.0f - (396.00f /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9110--9111
+[]|\TU/lmtt/m/n/10 *out_c = 4.0f * fabsf(t - 0.5f) -
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 9100--9116
+[][][]
+ []
+
+[183]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 9128.
+ [184]
+Underfull \hbox (badness 10000) in paragraph at lines 9204--9204
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 Clas-si-cal Math
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 9202--9206
+[][][][][]
+ []
+
+
+Underfull \hbox (badness 6316) in paragraph at lines 9208--9208
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Com-plex Pro-jec-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9208--9208
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Smooth Com-plex Pro-jec-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9210--9210
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Har-monic $\TU/LatinModernMath(1)/m/n/8 (
+𝑝, 𝑝)$\TU/Lexend-Regular.ttf(0)/m/sc/8 -form
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9212--9212
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Ra-tio-nal Co-ef-fi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9214--9214
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Struc-tural Com-mit-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9216--9216
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Non-Entropic
+ []
+
+
+Underfull \hbox (badness 1796) in paragraph at lines 9220--9220
+[]|\TU/Lexend-Regular.ttf(0)/m/sc/8 Sub-va-ri-ety with fun-da-men-tal
+ []
+
+
+Underfull \hbox (badness 4819) in paragraph at lines 9227--9227
+[]|\TU/Lexend-Regular.ttf(0)/b/n/8 The Ax-iom (Non-Traverse).
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 9206--9229
+[][][][][]
+ []
+
+[185]
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/it' will be
+(Font)              scaled to size 7.35002pt on input line 9238.
+LaTeX Font Info:    Font shape `TU/Lexend-Regular.ttf(0)/b/it' will be
+(Font)              scaled to size 5.25002pt on input line 9238.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[186
+Missing character: There is no ᛏ (U+16CF) in font [/home/avgui/.local/share/fo
+nts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;letter
+space=1.5;+tlig;!
+] [187]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 9356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9356.
+
+File: frame_00417.png Graphic file (type png)
+<use frame_00417.png>
+Package luatex.def Info: frame_00417.png  used on input line 9376.
+(luatex.def)             Requested size: 175.7648pt x 175.76608pt.
+File: frame_00423.png Graphic file (type png)
+<use frame_00423.png>
+Package luatex.def Info: frame_00423.png  used on input line 9381.
+(luatex.def)             Requested size: 175.7648pt x 175.76608pt.
+File: frame_00432.png Graphic file (type png)
+<use frame_00432.png>
+Package luatex.def Info: frame_00432.png  used on input line 9386.
+(luatex.def)             Requested size: 175.7648pt x 175.76608pt.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9393.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 9393.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9393.
+
+[188]
+<frame_00598.png, id=3387, 1003.75pt x 1003.75pt>
+File: frame_00598.png Graphic file (type png)
+<use frame_00598.png>
+Package luatex.def Info: frame_00598.png  used on input line 9412.
+(luatex.def)             Requested size: 439.40364pt x 439.41524pt.
+File: frame_00612.png Graphic file (type png)
+<use frame_00612.png>
+Package luatex.def Info: frame_00612.png  used on input line 9419.
+(luatex.def)             Requested size: 439.40364pt x 439.41524pt.
+ [189] [190<./frame_00598.png>] [191]
+<frame_00596.png, id=3405, 1003.75pt x 1003.75pt>
+File: frame_00596.png Graphic file (type png)
+<use frame_00596.png>
+Package luatex.def Info: frame_00596.png  used on input line 9435.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00597.png, id=3406, 1003.75pt x 1003.75pt>
+File: frame_00597.png Graphic file (type png)
+<use frame_00597.png>
+Package luatex.def Info: frame_00597.png  used on input line 9439.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+File: frame_00598.png Graphic file (type png)
+<use frame_00598.png>
+Package luatex.def Info: frame_00598.png  used on input line 9443.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00599.png, id=3407, 1003.75pt x 1003.75pt>
+File: frame_00599.png Graphic file (type png)
+<use frame_00599.png>
+Package luatex.def Info: frame_00599.png  used on input line 9447.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00600.png, id=3408, 1003.75pt x 1003.75pt>
+File: frame_00600.png Graphic file (type png)
+<use frame_00600.png>
+Package luatex.def Info: frame_00600.png  used on input line 9455.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00601.png, id=3409, 1003.75pt x 1003.75pt>
+File: frame_00601.png Graphic file (type png)
+<use frame_00601.png>
+Package luatex.def Info: frame_00601.png  used on input line 9459.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00602.png, id=3410, 1003.75pt x 1003.75pt>
+File: frame_00602.png Graphic file (type png)
+<use frame_00602.png>
+Package luatex.def Info: frame_00602.png  used on input line 9463.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00603.png, id=3411, 1003.75pt x 1003.75pt>
+File: frame_00603.png Graphic file (type png)
+<use frame_00603.png>
+Package luatex.def Info: frame_00603.png  used on input line 9467.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00604.png, id=3412, 1003.75pt x 1003.75pt>
+File: frame_00604.png Graphic file (type png)
+<use frame_00604.png>
+Package luatex.def Info: frame_00604.png  used on input line 9475.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00605.png, id=3413, 1003.75pt x 1003.75pt>
+File: frame_00605.png Graphic file (type png)
+<use frame_00605.png>
+Package luatex.def Info: frame_00605.png  used on input line 9479.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00606.png, id=3414, 1003.75pt x 1003.75pt>
+File: frame_00606.png Graphic file (type png)
+<use frame_00606.png>
+Package luatex.def Info: frame_00606.png  used on input line 9483.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00607.png, id=3415, 1003.75pt x 1003.75pt>
+File: frame_00607.png Graphic file (type png)
+<use frame_00607.png>
+Package luatex.def Info: frame_00607.png  used on input line 9487.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00608.png, id=3416, 1003.75pt x 1003.75pt>
+File: frame_00608.png Graphic file (type png)
+<use frame_00608.png>
+Package luatex.def Info: frame_00608.png  used on input line 9494.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00609.png, id=3417, 1003.75pt x 1003.75pt>
+File: frame_00609.png Graphic file (type png)
+<use frame_00609.png>
+Package luatex.def Info: frame_00609.png  used on input line 9498.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00610.png, id=3418, 1003.75pt x 1003.75pt>
+File: frame_00610.png Graphic file (type png)
+<use frame_00610.png>
+Package luatex.def Info: frame_00610.png  used on input line 9501.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00611.png, id=3419, 1003.75pt x 1003.75pt>
+File: frame_00611.png Graphic file (type png)
+<use frame_00611.png>
+Package luatex.def Info: frame_00611.png  used on input line 9504.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+ [192] [193<./frame_00596.png><./frame_00597.png><./frame_00599.png><./frame_006
+00.png><./frame_00601.png><./frame_00602.png><./frame_00603.png><./frame_00604.p
+ng><./frame_00605.png><./frame_00606.png><./frame_00607.png><./frame_00608.png><
+./frame_00609.png><./frame_00610.png><./frame_00611.png>]
+File: frame_00612.png Graphic file (type png)
+<use frame_00612.png>
+Package luatex.def Info: frame_00612.png  used on input line 9516.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+<frame_00613.png, id=3429, 1003.75pt x 1003.75pt>
+File: frame_00613.png Graphic file (type png)
+<use frame_00613.png>
+Package luatex.def Info: frame_00613.png  used on input line 9520.
+(luatex.def)             Requested size: 131.8236pt x 131.82457pt.
+ [194<./frame_00613.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 9535--9536
+[]$[]$ \TU/Lexend-Regular.ttf(0)/m/n/10 Akasha$[]$ Regalia$[]$, $[]$Margot$[]$ 
+Vandall$[]$,
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 9535--9536
+[]$\TU/Lexend-Regular.ttf(0)/m/n/10 Smokey, The Shadow of Love$[]$, $[]$Emily$[
+]$ Weddle$[]$, $[]$ Rose$[]$ Clack$[]$, $[]$ Duffle$[]$ Powell$[]$,
+ []
+
+[195] [196] [197]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9620.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 9620.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9620.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9620.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9620.
+
+
+LaTeX Warning: Citation `ahnend2026alqc' on page 198 undefined on input line 96
+21.
+
+
+LaTeX Warning: Citation `ruiz1997four' on page 198 undefined on input line 9621
+.
+
+
+LaTeX Warning: Citation `buckland1986complete' on page 198 undefined on input l
+ine 9621.
+
+
+LaTeX Warning: Citation `cavendish1967dark' on page 198 undefined on input line
+ 9621.
+
+
+LaTeX Warning: Citation `misner1973gravitation' on page 198 undefined on input 
+line 9621.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9624.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9624.
+
+
+LaTeX Warning: Citation `deligne2000hodge' on page 198 undefined on input line 
+9625.
+
+
+LaTeX Warning: Citation `hartshorne1977algebraic' on page 198 undefined on inpu
+t line 9625.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9627.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 9627.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9627.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9627.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9627.
+
+
+LaTeX Warning: Citation `jaffe2000yangmills' on page 198 undefined on input lin
+e 9628.
+
+
+LaTeX Warning: Citation `schumann1952resonanz' on page 198 undefined on input l
+ine 9628.
+
+
+LaTeX Warning: Citation `oster1973auditory' on page 198 undefined on input line
+ 9628.
+
+
+LaTeX Warning: Citation `griffiths2018quantum' on page 198 undefined on input l
+ine 9628.
+
+
+LaTeX Warning: Citation `cook2000pnp' on page 198 undefined on input line 9631.
+
+
+
+LaTeX Warning: Citation `bombieri2000riemann' on page 198 undefined on input li
+ne 9631.
+
+
+LaTeX Warning: Citation `ahlfors1979complex' on page 198 undefined on input lin
+e 9631.
+
+
+LaTeX Warning: Citation `milnor2000poincare' on page 198 undefined on input lin
+e 9634.
+
+
+LaTeX Warning: Citation `fefferman2000navier' on page 198 undefined on input li
+ne 9634.
+
+
+LaTeX Warning: Citation `birch2000bsd' on page 198 undefined on input line 9634
+.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9636.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 9636.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9636.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\slash' on input line 9636.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9636.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 9636.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9636.
+
+
+LaTeX Warning: Citation `torah1962jps' on page 198 undefined on input line 9637
+.
+
+
+LaTeX Warning: Citation `bible1611kjv' on page 198 undefined on input line 9637
+.
+
+
+LaTeX Warning: Citation `oshea1985hounds' on page 198 undefined on input line 9
+637.
+
+
+LaTeX Warning: Citation `guiley2004angels' on page 198 undefined on input line 
+9637.
+
+
+LaTeX Warning: Citation `illes2009spirits' on page 198 undefined on input line 
+9637.
+
+
+LaTeX Warning: Citation `guiley2009demons' on page 198 undefined on input line 
+9637.
+
+
+! LaTeX Error: Counter too large.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9639 ...n{Numerical and Ritual Completion $\ZHEK$}
+                                                  
+? r
+OK, entering \nonstopmode...
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9639.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9639.
+
+
+LaTeX Warning: Citation `press2007numerical' on page 198 undefined on input lin
+e 9640.
+
+
+LaTeX Warning: Citation `crowley1944thoth' on page 198 undefined on input line 
+9640.
+
+
+LaTeX Warning: Citation `ford2007adversary' on page 198 undefined on input line
+ 9640.
+
+
+LaTeX Warning: Citation `serith2002pagan' on page 198 undefined on input line 9
+640.
+
+[198]
+
+! LaTeX Error: Counter too large.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9642 \section{Conclusion: NULL:DEATH}
+                                     
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Citation `serway2018physics' on page 199 undefined on input line
+ 9643.
+
+
+LaTeX Warning: Citation `strang2016linear' on page 199 undefined on input line 
+9643.
+
+
+LaTeX Warning: Citation `rudin1976analysis' on page 199 undefined on input line
+ 9643.
+
+
+LaTeX Warning: Citation `munkres2000topology' on page 199 undefined on input li
+ne 9643.
+
+[199] (./ALQC_Canon_Formalized.bbl [200
+Missing character: There is no ⧉ (U+29C9) in font [/home/avgui/.local/share/fo
+nts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;letter
+space=1.5;+tlig;!
+]
+! Missing $ inserted.
+<inserted text> 
+$
+l.229 ...ock Mirror symmetry correspondence to 𝕀_
+                                                  𝒯 ≡ 𝒯_I ⇒ [M,R] ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.230 
+    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.230 
+    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.230 
+    
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+) [201
+Missing character: There is no ⫀ (U+2AC0) in font [/home/avgui/.local/share/fo
+nts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;letter
+space=1.5;+tlig;!
+Missing character: There is no 𝕀 (U+1D540) in font [/home/avgui/.local/share/
+fonts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;lett
+erspace=1.5;+tlig;!
+Missing character: There is no ❂ (U+2742) in font [/home/avgui/.local/share/fo
+nts/Lexend/static/Lexend-Regular.ttf]:mode=node;script=latn;language=dflt;letter
+space=1.5;+tlig;!
+]
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+(./ALQC_Canon_Formalized.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.475pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `ALQC_Canon_Formalized.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ALQC_Canon_Formalized.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  DBB4CB3F301B22A0FF130AEA74A0FAFB;82451.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 52405 strings out of 476553
+ 1165553,2373549 words of node,token memory allocated
+ 2792 words of node memory still in use:
+   23 hlist, 2 vlist, 10 rule, 5 glue, 4 kern, 2 glyph, 608 attribute, 70 glue_s
+pec, 329 attribute_list, 2 write, 16 pdf_literal, 16 pdf_colorstack nodes
+   avail lists: 1:2,2:23034,3:1843,4:251,5:30016,6:190,7:50209,8:172,9:60531,10:
+81,11:3155
+ 70460 multiletter control sequences out of 65536+600000
+ 398 fonts using 92259911 bytes
+ 84i,18n,119p,1137b,1040s stack positions out of 50000i,1000n,20000p,200000b,500000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
+</usr/share/texmf/fonts/opentype/public/lm/lmmonolt10-bold.otf></usr/share/texmf
+/fonts/opentype/public/lm/lmmono10-italic.otf></usr/share/texmf/fonts/opentype/p
+ublic/lm/lmmono8-regular.otf></usr/share/fonts/truetype/noto/NotoSansCypriot-Reg
+ular.ttf></usr/share/fonts/truetype/noto/NotoSansTifinagh-Regular.ttf></home/avg
+ui/.local/share/fonts/noto-music/NotoMusic-Regular.ttf></usr/share/fonts/truetyp
+e/noto/NotoSansBalinese-Regular.ttf></usr/share/fonts/truetype/noto/NotoSansElba
+san-Regular.ttf></usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf>
+</usr/share/fonts/truetype/noto/NotoSansEthiopic-Regular.ttf></usr/share/fonts/t
+ruetype/noto/NotoSansSylotiNagri-Regular.ttf></usr/share/fonts/truetype/noto/Not
+oSansThaana-Regular.ttf></home/avgui/.local/share/fonts/Lexend/static/Lexend-Bol
+d.ttf></usr/share/fonts/truetype/noto/NotoSerifTibetan-Regular.ttf></home/avgui/
+.local/share/fonts/Lexend/static/Lexend-Regular.ttf></usr/share/fonts/truetype/n
+oto/NotoSansSundanese-Regular.ttf></usr/share/fonts/truetype/noto/NotoSansCuneif
+orm-Regular.ttf></usr/share/fonts/truetype/noto/NotoSansRunic-Regular.ttf></usr/
+share/fonts/truetype/noto/NotoSansLydian-Regular.ttf></usr/share/fonts/truetype/
+ancient-scripts/Symbola_hint.ttf></usr/share/texmf/fonts/opentype/public/lm-math
+/latinmodern-math.otf></usr/share/texmf/fonts/opentype/public/lm-math/latinmoder
+n-math.otf></usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf>
+</home/avgui/.local/share/fonts/Lexend/static/Lexend-Regular.ttf></home/avgui/.l
+ocal/share/fonts/Lexend/static/Lexend-Bold.ttf></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/wasy-type1/wasy9.pfb>
+Output written on ALQC_Canon_Formalized.pdf (201 pages, 8817430 bytes).
+
+PDF statistics: 3772 PDF objects out of 4296 (max. 8388607)
+ 3417 compressed objects within 35 object streams
+ 2774 named destinations out of 2984 (max. 131072)
+ 186 words of extra memory for PDF output out of 10000 (max. 100000000)
+

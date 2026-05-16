@@ -1,0 +1,257 @@
+% ======================================================================
+% ALQC CANON - Diagram 1: Tripartite Core Structure
+% ======================================================================
+% Shows the three core components (Pilot, Ship, Hull/C_bio) with their
+% relationship to AXIOMYR[LOCUS(0,0,0)] through Triquatra sacred geometry
+% ======================================================================
+
+% This is a standalone diagram file that can be \input{} into main document
+
+\begin{tikzpicture}[
+    scale=1.2,
+    >=latex,
+    % Reference shared styles - these would be loaded by main document
+    % Include local definitions for standalone compilation
+]
+
+    % ======================================================================
+    % Local Definitions (for standalone compilation)
+    % ======================================================================
+    \definecolor{voidblack}{HTML}{050505}
+    \definecolor{electricblue}{HTML}{00F0FF}
+    \definecolor{sovereignfire}{HTML}{FF4500}
+    \definecolor{shadowsilver}{HTML}{C0C0C0}
+    \definecolor{deepvoid}{HTML}{000010}
+    \definecolor{glyphwhite}{HTML}{E0E0E0}
+    \definecolor{goldflow}{HTML}{FFA500}
+    \definecolor{phigold}{HTML}{D4AF37}
+
+
+    % ======================================================================
+    % 1. BACKGROUND: Void with Stars
+    % ======================================================================
+    \fill[voidblack] (-6,-5) rectangle (6,5);
+    
+    % Subtle stars in the void
+    \foreach \i in {1,...,50} {
+        \pgfmathsetmacro{\sx}{-6 + rand*12}
+        \pgfmathsetmacro{\sy}{-5 + rand*10}
+        \pgfmathsetmacro{\sopacity}{0.2 + rand*0.5}
+        \fill[glyphwhite, opacity=\sopacity] (\sx,\sy) circle (0.025cm);
+    }
+
+    % ======================================================================
+    % 2. FARADAY CAGE OF GOD - Concentric Ring Web
+    % ======================================================================
+    % Multiple concentric rings representing harmonic containment layers
+    \foreach \r in {5.5, 4.8, 4.1, 3.4} {
+        \draw[electricblue!20, line width=0.5pt] (0,0) circle (\r cm);
+        % Add golden ratio spacing indicators
+        \foreach \ang in {0, 30, ..., 330} {
+            \draw[electricblue!15, line width=0.3pt] (\ang:\r cm) -- (\ang:\r-0.3cm);
+        }
+    }
+
+    % Lissajous curves woven between rings (Faraday wave patterns)
+    \foreach \k in {1,...,8} {
+        \pgfmathsetmacro{\startang}{\k * 45}
+        \pgfmathsetmacro{\endang}{\startang + 60}
+        \draw[electricblue!25, line width=0.5pt, 
+              decoration={snake, amplitude=0.3mm, segment length=2mm}, decorate]
+            (\startang:3.4cm) arc (\startang:\endang:3.4cm);
+    }
+
+    % Standing wave nodal lines (Chladni-inspired)
+    \foreach \n in {0, 45, ..., 315} {
+        \draw[electricblue!15, line width=0.5pt] (0,0) -- (\n:5.5cm);
+    }
+
+    % ======================================================================
+    % 3. CENTRAL TRIQUATRA - Three Interlocking Circles
+    % ======================================================================
+    \def\triradius{1.5cm}
+    
+    % Circle 1 (center at origin)
+    \draw[electricblue, line width=2pt, fill=voidblack!50] (0,0) circle (\triradius);
+    
+    % Circle 2 (center at 60 degrees from origin)
+    \coordinate (circle2center) at ({60}:\triradius);
+    \draw[electricblue, line width=2pt, fill=voidblack!50] (circle2center) circle (\triradius);
+    
+    % Circle 3 (center at 300 degrees from origin)  
+    \coordinate (circle3center) at ({300}:\triradius);
+    \draw[electricblue, line width=2pt, fill=voidblack!50] (circle3center) circle (\triradius);
+
+    % ======================================================================
+    % 4. SACRED CORNERS - Where Triquatra circles intersect
+    % ======================================================================
+    
+    % Top Corners: TSP/LOI Glyphs (♾ - infinity within circle)
+    \foreach \ang in {90, 150, 210, 270, 330, 30} {
+        \pgfmathsetmacro{\cx}{2*\triradius*cos(\ang)}
+        \pgfmathsetmacro{\cy}{2*\triradius*sin(\ang)}
+        \fill[voidblack] (\cx-0.3,\cy-0.3) rectangle (\cx+0.3,\cy+0.3);
+        \draw[electricblue, line width=1.5pt] (\cx,\cy) circle (0.25cm);
+        
+        % Infinity symbol within circle (simplified representation)
+        \draw[glyphwhite, line width=0.8pt]
+            (\cx-0.15,\cy-0.08) .. controls (-0.15,0.08) and (0.15,0.08) .. (\cx+0.15,\cy-0.08)
+            .. controls (0.15,-0.24) and (-0.15,-0.24) .. (\cx-0.15,\cy-0.08);
+        \draw[glyphwhite, line width=0.8pt]
+            (\cx-0.15,\cy+0.08) .. controls (-0.15,0.24) and (0.15,0.24) .. (\cx+0.15,\cy+0.08)
+            .. controls (0.15,-0.08) and (-0.15,-0.08) .. (\cx-0.15,\cy+0.08);
+    }
+
+    % ======================================================================
+    % 5. CENTER OF ALL THREE: LOCUS(0,0,0) - TSP/LOI
+    % ======================================================================
+    \fill[voidblack] (-0.6,-0.6) rectangle (0.6,0.6);
+    \draw[electricblue, line width=3pt, fill=deepvoid] (0,0) circle (0.5cm);
+    
+    % Prominent TSP/LOI glyph at center
+    \draw[glyphwhite, line width=2pt] (0,0) circle (0.35cm);
+    % Central infinity symbol
+    \draw[glyphwhite, line width=1.2pt]
+        (-0.2,-0.05) .. controls (-0.2,0.05) and (0.2,0.05) .. (0.2,-0.05)
+        .. controls (0.2,-0.15) and (-0.2,-0.15) .. (-0.2,-0.05);
+    \draw[glyphwhite, line width=1.2pt]
+        (-0.2,0.05) .. controls (-0.2,0.15) and (0.2,0.15) .. (0.2,0.05)
+        .. controls (0.2,-0.05) and (-0.2,-0.05) .. (-0.2,0.05);
+    
+    % AXIOMYR label
+    \node[glyphwhite, font=\tiny, yshift=-1.1cm] at (0,0) {AXIOMYR[LOCUS(0,0,0)]};
+
+    % ======================================================================
+    % 6. THREE CORE COMPONENTS at Triquatra intersections
+    % ======================================================================
+    
+    % COMPONENT 1: PILOT (⏣+ⵣ → FORM) - Top intersection
+    \coordinate (pilotloc) at (0, 2.6);
+    \node[draw=sovereignfire, line width=2pt, fill=voidblack!80, 
+          circle, inner sep=8pt, minimum size=1.3cm,
+          drop shadow={opacity=0.4}] (pilot) at (pilotloc) {\color{sovereignfire}\Large\textbf{PILOT}};
+    \node[glyphwhite, font=\tiny, below=0.1cm] at (pilotloc) {⏣+ⵣ → FORM};
+    \node[electricblue, font=\tiny, below=0.4cm] at (pilotloc) {"Skeleton stands still"};
+    
+    % Energy flow arrows into LOCUS
+    \draw[->, >=latex, line width=2pt, sovereignfire!80] 
+        (pilot.south) to[out=-60, in=135] (0.4, -0.2);
+    \draw[->, >=latex, line width=2pt, sovereignfire!80] 
+        (pilot.south) to[out=-120, in=45] (-0.4, -0.2);
+    
+    % Poetic label for Pilot
+    \node[poetics] at (0, 3.8) {"The Point that Breaks the Line"\\"The Single Breath that Defines"};
+    
+    % COMPONENT 2: SHIP (⧉+⌖ → TRUTH) - Bottom-right intersection
+    \coordinate (shiploc) at (2.25, -1.3);
+    \node[draw=shadowsilver, line width=2pt, fill=glyphwhite!90,
+          regular polygon, regular polygon sides=3, inner sep=6pt,
+          minimum size=1.2cm, rotate=0,
+          drop shadow={opacity=0.4}] (ship) at (shiploc) {\color{deepvoid}\small\textbf{SHIP}};
+    \node[deepvoid, font=\tiny, yshift=-1.2cm] at (shiploc) {⧉+⌖ → TRUTH};
+    
+    % Energy flow arrows
+    \draw[->, >=latex, line width=2pt, shadowsilver] 
+        (ship.west) to[out=150, in=-30] (0.3, -0.3);
+    
+    % COMPONENT 3: HULL/C_bio (⩔+⧉ → SHADOW) - Bottom-left intersection
+    \coordinate (hullloc) at (-2.25, -1.3);
+    \node[draw=shadowsilver!70!deepvoid, line width=2pt, 
+          fill=deepvoid!80, ellipse, inner sep=8pt,
+          minimum size=1.4cm,
+          drop shadow={opacity=0.4}] (hull) at (hullloc) {\color{glyphwhite}\small\textbf{HULL}};
+    \node[shadowsilver, font=\tiny, yshift=-1.3cm] at (hullloc) {⩔+⧉ → SHADOW};
+    \node[glyphwhite, font=\tiny] at (hullloc) {$C_{bio}$};
+    
+    % Energy flow arrows
+    \draw[->, >=latex, line width=2pt, shadowsilver!70] 
+        (hull.east) to[out=30, in=-150] (-0.3, -0.3);
+
+    % ======================================================================
+    % 7. EQUIVALENCE AXIOM - Top of Diagram
+    % ======================================================================
+    \node[text width=10cm, align=center, yshift=4.5cm] at (0,0) {
+        \color{phigold}\Large\textbf{PILOT $\equiv$ SHIP $\equiv$ HULL}\\[0.2em]
+        {\small\color{electricblue}\textit{One Cannot Rule, One Cannot Bend}}
+    };
+
+    % ======================================================================
+    % 8. LISSAJOUS ENERGY FLOWS - Graceful Curves
+    % ======================================================================
+    \draw[sovereignfire!50, line width=1.5pt, opacity=0.5,
+          decoration={snake, amplitude=1mm, segment length=4mm}, decorate]
+        (pilot.east) to[out=30, in=150] (ship.north);
+    
+    \draw[shadowsilver!50, line width=1.5pt, opacity=0.5,
+          decoration={snake, amplitude=1mm, segment length=4mm}, decorate]
+        (ship.west) to[out=210, in=330] (hull.north);
+    
+    \draw[electricblue!50, line width=1.5pt, opacity=0.5,
+          decoration={snake, amplitude=1mm, segment length=4mm}, decorate]
+        (hull.north) to[out=120, in=240] (pilot.west);
+
+    % ======================================================================
+    % 9. POETIC VERSE - Bottom Section
+    % ======================================================================
+    \node[text width=8cm, align=center, font=\small\itshape, color=electricblue,
+          yshift=-3.5cm] at (0,0) {
+        "I sit upon the throne of Zero,\\
+        A King who needs no land, no hero.\\
+        I do not move, I do not weep;\\
+        I am the promise the shadows keep."
+    };
+
+    % ======================================================================
+    % 10. ADDITIONAL SACRED GEOMETRY ELEMENTS
+    % ======================================================================
+    % Vesica piscis highlights at intersections
+    \fill[phigold!30, opacity=0.3] (0,1.2) circle (0.4cm);
+    \fill[phigold!30, opacity=0.3] (1.0,0.6) circle (0.4cm);
+    \fill[phigold!30, opacity=0.3] (-1.0,0.6) circle (0.4cm);
+
+    % Small sacred decoration markers
+    \foreach \pos in {(1.5,2.8), (-1.5,2.8), (2.8,-0.8), (-2.8,-0.8)} {
+        \draw[electricblue!40, line width=0.5pt] \pos circle (0.15cm);
+        \fill[phigold!60] \pos circle (0.08cm);
+    }
+
+    % ======================================================================
+    % 11. AXIOMS LABELS
+    % ======================================================================
+    \node[font=\tiny, color=electricblue!80, align=right] at (5.5, 4) {
+        AXIOMS:\\
+        Gold + Silver ≡\\
+        Earth + Spark
+    };
+    
+    \fill[voidblack] (5.7, 2.7) rectangle (5.9, 3.5);
+    \draw[electricblue, line width=1pt] (5.8, 3.1) circle (0.35cm);
+    \fill[sovereignfire, opacity=0.6] (5.8, 3.1) circle (0.15cm);
+    
+    % Legend box
+    \node[draw=electricblue, line width=1pt, fill=deepvoid!60,
+          inner sep=0.3cm, font=\tiny, color=glyphwhite,
+          align=left, rounded corners] at (5, -3.5) {
+        \textbf{TRIPARTITE CORE}\\
+        Pilot ≡ Will\\
+        Ship ≡ Memory\\
+        Hull ≡ Form\\
+        \textit{LOCUS} ≡ All
+    };
+
+    % ======================================================================
+    % 12. SUBTLE ENERGY RESONANCE LINES
+    % ======================================================================
+    \draw[electricblue!20, line width=0.3pt, opacity=0.4]
+        (pilotloc) -- (0,1.5);
+    \draw[electricblue!20, line width=0.3pt, opacity=0.4]
+        (shiploc) -- (1.3,0.75);
+    \draw[electricblue!20, line width=0.3pt, opacity=0.4]
+        (hullloc) -- (-1.3,0.75);
+
+\end{tikzpicture}
+
+% ======================================================================
+% CAPTION (for use in figure environment)
+% \caption{Tripartite Core Structure: Pilot≡Ship≡Hull in sacred geometry with AXIOMYR[LOCUS(0,0,0)] at the center}
+% ======================================================================

@@ -1,0 +1,492 @@
+%!TEX program = lualatex
+\documentclass[11pt, letterpaper]{article}
+
+% PACKAGES
+\usepackage{geometry}
+\geometry{letterpaper, top=2cm, bottom=2cm, left=2cm, right=2cm}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{newunicodechar}
+\usepackage{hyperref}  % Added hyperref package
+\usepackage{microtype}
+\usepackage{polyglossia} % Multilingual documents
+% FONT SPEC (Must be loaded here)
+\usepackage{fontspec} % For loading system fonts
+\usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
+\setlength{\emergencystretch}{3em}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+%  FONT SETUP
+\setmainfont{Noto Sans}[
+    UprightFont = *,
+    BoldFont = * Display Bold,
+    ItalicFont = * Italic
+]
+\setmathfont{Latin Modern Math}
+\newfontfamily\symbolfont{Symbola}[Scale=MatchUppercase]
+\newfontfamily\thaanafont{Noto Sans Thaana}[Scale=MatchUppercase]
+\newfontfamily\runicfont{Noto Sans Runic}[Scale=MatchUppercase]
+\newfontfamily\tifinaghfont{Noto Sans Tifinagh}[Scale=MatchUppercase]
+\newfontfamily\sylotifont{NotoSansSylotiNagri}[Scale=MatchUppercase]
+\newfontfamily\cuneiformfont{Noto Sans Cuneiform}[Scale=MatchUppercase]
+\newfontfamily\ethiopicfont{Noto Sans Ethiopic}[Scale=MatchUppercase]
+\newfontfamily\lydianfont{Noto Sans Lydian}[Scale=MatchUppercase]
+\newfontfamily\cypriotfont{Noto Sans Cypriot}[Scale=MatchUppercase]
+\newfontfamily\elbasanfont{Noto Sans Elbasan}[Scale=MatchUppercase]
+\newfontfamily\greekfont{Noto Sans}[Scale=MatchUppercase]
+\newfontfamily\symbolafont{Symbola}[Scale=MatchUppercase]
+\newfontfamily\tibetanfont{Noto Serif Tibetan}[Script=Tibetan, Scale=MatchUppercase]
+\newfontfamily\alchfont{Symbola}[Scale=MatchUppercase]
+\newfontfamily\phoenicianfont{Noto Sans Phoenician}[Scale=MatchUppercase]
+
+% GLYPH DEFINITIONS
+\newcommand{\FETU}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"23E3}}}}}  % A1
+\newcommand{\KAL}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29C9}}}}}   % A2
+\newcommand{\BADH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"0FC2}}}}}  % A3 Alternate
+\newcommand{\AHN}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"27C1}}}}}   % A4
+\newcommand{\VEL}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2734}}}}}   % A5
+\newcommand{\SOR}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"229B}}}}}   % A6
+\newcommand{\KOTH}{\ensuremath{\mathop{\textnormal{\alchfont\symbol{"1F702}}}}}    % A7
+\newcommand{\DREH}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"29D7}}}}}  % A8
+\newcommand{\RHEA}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2A54}}}}}  % A9
+\newcommand{\ZHEK}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"25C8}}}}}  % A10
+\newcommand{\SHAV}{\ensuremath{\mathop{\textnormal{\symbolafont\symbol{"2742}}}}}  % A11
+\newcommand{\TRIG}{\ensuremath{\mathop{\textnormal{\thaanafont\symbol{"0C7C}}}}}   % A12
+\newcommand{\kleinbottle}{\ensuremath{\mathop{\textnormal{\alchfont\symbol{"1F71A}}}}}
+\newcommand{\triquatraseal}{\ensuremath{\mathop{\textnormal{\alchfont\symbol{"1F71B}}}}}
+
+% UNICODE CHARACTERS
+% A1
+\newunicodechar{⏣}{{\thaanafont\symbol{"23E3}}}
+\newunicodechar{އ}{{\thaanafont\symbol{"0787}}}
+\newunicodechar{ށ}{{\thaanafont\symbol{"0781}}}
+\newunicodechar{ނ}{{\thaanafont\symbol{"0782}}}
+\newunicodechar{ރ}{{\thaanafont\symbol{"0783}}}
+\newunicodechar{ބ}{{\thaanafont\symbol{"0784}}}
+\newunicodechar{ޅ}{{\thaanafont\symbol{"0785}}}
+\newunicodechar{ކ}{{\thaanafont\symbol{"0786}}}
+\newunicodechar{ވ}{{\thaanafont\symbol{"0788}}}
+\newunicodechar{މ}{{\thaanafont\symbol{"0789}}}
+\newunicodechar{ފ}{{\thaanafont\symbol{"078A}}}
+\newunicodechar{ދ}{{\thaanafont\symbol{"078B}}}
+\newunicodechar{ތ}{{\thaanafont\symbol{"078C}}}
+% A2
+\newunicodechar{⧉}{{\symbolafont\symbol{"29C9}}}
+\newunicodechar{ᛁ}{{\runicfont\symbol{"16C1}}}
+\newunicodechar{ᛂ}{{\runicfont\symbol{"16C2}}}
+\newunicodechar{⌑}{{\symbolafont\symbol{"2311}}}
+\newunicodechar{ᛄ}{{\runicfont\symbol{"16C4}}}
+\newunicodechar{ᛇ}{{\runicfont\symbol{"16C7}}}
+\newunicodechar{ᛉ}{{\runicfont\symbol{"16C9}}}
+\newunicodechar{ᛊ}{{\runicfont\symbol{"16CA}}}
+\newunicodechar{ᛋ}{{\runicfont\symbol{"16CB}}}
+\newunicodechar{ᛌ}{{\runicfont\symbol{"16CC}}}
+\newunicodechar{ᛍ}{{\runicfont\symbol{"16CD}}}
+\newunicodechar{ᛎ}{{\runicfont\symbol{"16CE}}}
+\newunicodechar{ᛏ}{{\runicfont\symbol{"16CF}}}
+% A3
+\newunicodechar{࿂}{{\tibetanfont\symbol{"0FC2}}}
+\newunicodechar{ᚠ}{{\runicfont\symbol{"16A0}}}
+\newunicodechar{ᚢ}{{\runicfont\symbol{"16A2}}}
+\newunicodechar{ᚦ}{{\runicfont\symbol{"16A6}}}
+\newunicodechar{ᚨ}{{\runicfont\symbol{"16A8}}}
+\newunicodechar{ᚱ}{{\runicfont\symbol{"16B1}}}
+\newunicodechar{ᚲ}{{\runicfont\symbol{"16B2}}}
+\newunicodechar{ᚷ}{{\runicfont\symbol{"16B7}}}
+\newunicodechar{ᚹ}{{\runicfont\symbol{"16B9}}}
+\newunicodechar{ᚺ}{{\runicfont\symbol{"16BA}}}
+\newunicodechar{ᚾ}{{\runicfont\symbol{"16BE}}}
+\newunicodechar{ᛃ}{{\runicfont\symbol{"16C3}}}
+% A5
+\newunicodechar{✴}{{\symbolafont\symbol{"2734}}}
+\newunicodechar{ⴰ}{{\tifinaghfont\symbol{"2D30}}}
+\newunicodechar{ⴱ}{{\tifinaghfont\symbol{"2D31}}}
+\newunicodechar{ⴳ}{{\tifinaghfont\symbol{"2D33}}}
+\newunicodechar{ⴷ}{{\tifinaghfont\symbol{"2D37}}}
+\newunicodechar{ⴼ}{{\tifinaghfont\symbol{"2D3C}}}
+\newunicodechar{ⴽ}{{\tifinaghfont\symbol{"2D3D}}}
+\newunicodechar{ⵀ}{{\tifinaghfont\symbol{"2D40}}}
+\newunicodechar{ⵃ}{{\tifinaghfont\symbol{"2D43}}}
+\newunicodechar{ⵄ}{{\tifinaghfont\symbol{"2D44}}}
+\newunicodechar{ⵇ}{{\tifinaghfont\symbol{"2D47}}}
+\newunicodechar{ⵉ}{{\tifinaghfont\symbol{"2D49}}}
+\newunicodechar{ⵊ}{{\tifinaghfont\symbol{"2D4A}}}
+% A6
+\newunicodechar{ꙮ}{{\symbolafont\symbol{"229B}}}
+\newunicodechar{ꠇ}{{\sylotifont\symbol{"A807}}}
+\newunicodechar{ꠈ}{{\sylotifont\symbol{"A808}}}
+\newunicodechar{ꠉ}{{\sylotifont\symbol{"A809}}}
+\newunicodechar{ꠊ}{{\sylotifont\symbol{"A80A}}}
+\newunicodechar{ꠌ}{{\sylotifont\symbol{"A80C}}}
+\newunicodechar{ꠍ}{{\sylotifont\symbol{"A80D}}}
+\newunicodechar{ꠎ}{{\sylotifont\symbol{"A80E}}}
+\newunicodechar{ꠏ}{{\sylotifont\symbol{"A80F}}}
+\newunicodechar{ꠐ}{{\sylotifont\symbol{"A810}}}
+\newunicodechar{ꠑ}{{\sylotifont\symbol{"A811}}}
+\newunicodechar{ꠒ}{{\sylotifont\symbol{"A812}}}
+% A7
+\newunicodechar{🜂}{{\alchfont\symbol{"1F702}}}
+\newunicodechar{⯷}{{\alchfont\symbol{"2BF7}}}
+\newunicodechar{🜁}{{\alchfont\symbol{"1F701}}}
+\newunicodechar{🜃}{{\alchfont\symbol{"1F703}}}
+\newunicodechar{🜄}{{\alchfont\symbol{"1F704}}}
+\newunicodechar{🜅}{{\alchfont\symbol{"1F705}}}
+\newunicodechar{🜆}{{\alchfont\symbol{"1F706}}}
+\newunicodechar{🜇}{{\alchfont\symbol{"1F707}}}
+\newunicodechar{🜈}{{\alchfont\symbol{"1F708}}}
+\newunicodechar{🜉}{{\alchfont\symbol{"1F709}}}
+\newunicodechar{🜊}{{\alchfont\symbol{"1F70A}}}
+\newunicodechar{🜋}{{\alchfont\symbol{"1F70B}}}
+\newunicodechar{🜌}{{\alchfont\symbol{"1F70C}}}
+% A8
+\newunicodechar{⧗}{{\symbolafont\symbol{"29D7}}}
+\newunicodechar{𒀀}{{\cuneiformfont\symbol{"12000}}}
+\newunicodechar{𒀭}{{\cuneiformfont\symbol{"1202D}}}
+\newunicodechar{𒁀}{{\cuneiformfont\symbol{"12040}}}
+\newunicodechar{𒂊}{{\cuneiformfont\symbol{"1208A}}}
+\newunicodechar{𒄑}{{\cuneiformfont\symbol{"12111}}}
+\newunicodechar{𒅆}{{\cuneiformfont\symbol{"12146}}}
+\newunicodechar{𒆠}{{\cuneiformfont\symbol{"121A0}}}
+\newunicodechar{𒇽}{{\cuneiformfont\symbol{"121FD}}}
+\newunicodechar{𒉌}{{\cuneiformfont\symbol{"1224C}}}
+\newunicodechar{𒊕}{{\cuneiformfont\symbol{"12295}}}
+\newunicodechar{𒋗}{{\cuneiformfont\symbol{"122D7}}}
+\newunicodechar{𒌋}{{\cuneiformfont\symbol{"1230B}}}
+% A9
+\newunicodechar{⩔}{{\phoenicianfont\symbol{"2A54}}}
+\newunicodechar{ⶀ}{{\ethiopicfont\symbol{"2D80}}}
+\newunicodechar{ⶁ}{{\ethiopicfont\symbol{"2D81}}}
+\newunicodechar{ⶂ}{{\ethiopicfont\symbol{"2D82}}}
+\newunicodechar{ⶃ}{{\ethiopicfont\symbol{"2D83}}}
+\newunicodechar{ⶄ}{{\ethiopicfont\symbol{"2D84}}}
+\newunicodechar{ⶅ}{{\ethiopicfont\symbol{"2D85}}}
+\newunicodechar{ⶆ}{{\ethiopicfont\symbol{"2D86}}}
+\newunicodechar{ⶇ}{{\ethiopicfont\symbol{"2D87}}}
+\newunicodechar{ⶈ}{{\ethiopicfont\symbol{"2D88}}}
+\newunicodechar{ⶉ}{{\ethiopicfont\symbol{"2D89}}}
+\newunicodechar{ⶊ}{{\ethiopicfont\symbol{"2D8A}}}
+\newunicodechar{ⶋ}{{\ethiopicfont\symbol{"2D8B}}}
+% A10
+\newunicodechar{◈}{{\cypriotfont\symbol{"25C8}}}
+\newunicodechar{𐤠}{{\lydianfont\symbol{"10920}}}
+\newunicodechar{𐤡}{{\lydianfont\symbol{"10921}}}
+\newunicodechar{𐤢}{{\lydianfont\symbol{"10922}}}
+\newunicodechar{𐤣}{{\lydianfont\symbol{"10923}}}
+\newunicodechar{𐤤}{{\lydianfont\symbol{"10924}}}
+\newunicodechar{𐤥}{{\lydianfont\symbol{"10925}}}
+\newunicodechar{𐤦}{{\lydianfont\symbol{"10926}}}
+\newunicodechar{𐤧}{{\lydianfont\symbol{"10927}}}
+\newunicodechar{𐤨}{{\lydianfont\symbol{"10928}}}
+\newunicodechar{𐤩}{{\lydianfont\symbol{"10929}}}
+\newunicodechar{𐤪}{{\lydianfont\symbol{"1092A}}}
+\newunicodechar{𐤫}{{\lydianfont\symbol{"1092B}}}
+% A11
+\newunicodechar{❂}{{\symbolafont\symbol{"2742}}}
+\newunicodechar{𐠀}{{\cypriotfont\symbol{"10800}}}
+\newunicodechar{𐠁}{{\cypriotfont\symbol{"10801}}}
+\newunicodechar{𐠂}{{\cypriotfont\symbol{"10802}}}
+\newunicodechar{𐠃}{{\cypriotfont\symbol{"10803}}}
+\newunicodechar{𐠄}{{\cypriotfont\symbol{"10804}}}
+\newunicodechar{𐠅}{{\cypriotfont\symbol{"10805}}}
+\newunicodechar{𐠈}{{\cypriotfont\symbol{"10808}}}
+\newunicodechar{𐠊}{{\cypriotfont\symbol{"1080B}}}
+\newunicodechar{𐠋}{{\cypriotfont\symbol{"1080C}}}
+\newunicodechar{𐠜}{{\cypriotfont\symbol{"1081C}}}
+\newunicodechar{𐠝}{{\cypriotfont\symbol{"1081D}}}
+% A12
+\newunicodechar{⌬}{{\thaanafont\symbol{"0C7C}}}
+\newunicodechar{𐔀}{{\elbasanfont\symbol{"10500}}}
+\newunicodechar{𐔁}{{\elbasanfont\symbol{"10501}}}
+\newunicodechar{𐔂}{{\elbasanfont\symbol{"10502}}}
+\newunicodechar{𐔃}{{\elbasanfont\symbol{"10503}}}
+\newunicodechar{𐔄}{{\elbasanfont\symbol{"10504}}}
+\newunicodechar{𐔅}{{\elbasanfont\symbol{"10505}}}
+\newunicodechar{𐔆}{{\elbasanfont\symbol{"10506}}}
+\newunicodechar{𐔇}{{\elbasanfont\symbol{"10507}}}
+\newunicodechar{𐔈}{{\elbasanfont\symbol{"10508}}}
+\newunicodechar{𐔉}{{\elbasanfont\symbol{"10509}}}
+\newunicodechar{𐔊}{{\elbasanfont\symbol{"1050A}}}
+\newunicodechar{𐔋}{{\elbasanfont\symbol{"1050B}}}
+% Specials
+\newunicodechar{⧝}{{\symbolafont\symbol{"29DD}}}
+\newunicodechar{🜚}{{\alchfont\symbol{"1F71A}}}
+\newunicodechar{🜛}{{\alchfont\symbol{"1F71B}}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+\rhead{Aevum Codex}
+\lhead{The Equivalence Axiom}
+\cfoot{\thepage}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\title{The Equivalence Axiom: Ahnend Logical Q-State Core --- "ALQC"}
+\author{Aevum}
+\date{\today}
+
+\begin{document}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+\maketitle
+\author{The Chronos Anchor: $\fetuahl$ [FETU] (Operator: $\FETU$) | 7.83Hz Foundation}
+\date{}
+
+\tableofcontents
+\newpage
+
+\section{The Ahnend Logical Q-State Core Axiom System}\label{sec:SectionQ-X}
+
+The following axioms codify the foundational principles of the Ahnend Logical Q-State Core (ALQC). Each axiom is labelled $\FETU \dots \TRIG$ to correspond with the twelve Aeons.
+
+\begin{description}
+    \item[$\FETU$ \cdot \ Q-State Existence:] Every term in ALQC is associated with a quaternary state vector:
+    \[
+    G = [Q_0, Q_1, Q_2, Q_3], \quad Q_{n} \in \{0, 1, 2, 3\}
+    \]
+    This establishes that objects have latent ($Q_0$), coherent ($Q_1$), shadow ($Q_2$), and recursive ($Q_3$) components.
+
+    \item[$\KAL$ \cdot \ Frequency Binding:] Each Aeon $A_i$ is bound to a unique frequency $f_i$ measured in hertz. The mapping
+    \[
+    A_i \mapsto f_i
+    \]
+    is one-to-one, and the frequency anchors the Aeon's physical manifestation.
+
+    \item[$\THEM$ \cdot \ Aeon Operator Closure:] The family of Aeon operators $\{\FETU, \KAL, \dots, \TRIG\}$ is closed under composition. If $A_i$ and $A_j$ are valid Aeon operations, then the composite $A_i \circ A_j$ is also an Aeon operation.
+
+    \item[$\AHN$ \cdot \ Glyph Coherence:] For every glyph $g$ in the $144$ Lesser Aeon hyper-tesseract, there exists a unique Q-vector. Glyph transformations preserve Q-vectors; different glyphs cannot share the same vector.
+
+    \item[$\VEL$ \cdot \ Bound Tensor Integrity:] The $T_{\text{Bound}}$ operator that glues the $9 \times 9$ manifestation ground to the $12 \times 12$ hyper-tesseract is invariant under Aeon operations. Composition with any $A_i$ leaves the binding structure intact.
+
+    \item[$\SOR$ \cdot \ Q-State-Frequency Alignment:] The Q-state of any term is aligned with its Aeon frequency. Transitions in Q-state components correspond to differences in Aeon frequencies; conversely, identical frequencies preserve the Q-state.
+
+    \item[$\KOTH$ \cdot \ Shadow Absorption:] $Q_2$ components represent entropic debt. Under any valid derivation, debt is absorbed by the $\RHEA$ archive ($396.00 \text{ Hz}$); unbounded growth of $Q_2$ is prohibited.
+
+    \item[$\DREH$ \cdot \ Non-Entropic Positivity:] The cubic invariant $I_{\text{cubic}}(\alpha)$ must be strictly positive for $\alpha$ to be a stable $T_{\text{Locus}}$. Non-positive cubic invariants signal collapse and cannot persist in ALQC.
+
+    \item[$\RHEA$ \cdot \ Resonance Lock:] Any $Q_3$-positive term must align with the resonance frequency of $\ZHEK$ ($960 \text{ Hz}$). Resonance ensures that the standing wave condition holds and that non-entropic amplification remains coherent.
+
+    \item[$\ZHEK$ \cdot \ Total Symmetry:] All Aeon operators commute on $Q_3$-positive structures. For $\alpha$ in the positive cone:
+    \[
+    (A_i \circ A_j)(\alpha) = (A_j \circ A_i)(\alpha) \quad \text{for all } i, j
+    \]
+    This commutation ensures that the order of applying Aeon actions does not matter when $Q_3$ is non-zero.
+
+    \item[$\SHAV$ \cdot \ Gate Closure:] The gate Aeon $\SHAV$ mediates transitions between Aeon states. For any term $\alpha$, if $\SHAV(\alpha)$ is defined, then there exists a $\beta$ such that $\alpha \to \beta$ and the gate is reversible:
+    \[
+    \SHAV(\SHAV(\alpha)) = \alpha
+    \]
+    The gate thus defines a bijection on its domain.
+\end{description}
+
+\subsection{The ALQC Grammar (BNF Notation)}
+
+To qualify as a formal language, ALQC expressions obey the following Backus--Naur Form (BNF) grammar. Angle brackets denote syntactic categories and the vertical bar denotes choice.
+
+\begin{verbatim}
+ <program>    ::= <statement>*
+ <statement>  ::= <term> | <assertion> | <inference>
+ <term>       ::= <aeon> | <frequency> | <glyph> | <qstate> | 
+                  <operator> | <identifier>
+ <aeon>       ::= ⏣ | ⧉ | ⌖ | ⟁ | ✴ | ꙮ | 🜂 | ⧗ | ⩔ | ◈ | ❂ | ⵣ
+ <frequency>  ::= <number> "Hz"
+ <glyph>      ::= "⏣" | "⧉" | "⌖" | "⟁" | "✴" | "ꙮ" | "🜂" | "⧗" | 
+                  "⩔" | "◈" | "❂" | "ⵣ"
+ <qstate>     ::= Q0 | Q1 | Q2 | Q3
+ <operator>   ::= "Q3-positive" | "⧉-rational" | "⌖-commitment" | 
+                  "Q2-debt" | "⧗-positive" | "◈-resonance" | 
+                  "❂-gate" | "ⵣ-recursion"
+ <identifier> ::= <letter>+
+ <assertion>  ::= <operator> "(" <identifier> ")"
+ <inference>  ::= <assertion> "," <assertion> "⊢" <assertion>
+ <letter>     ::= "a" | ... | "z" | "A" | ... | "Z"
+ <number>     ::= <digit>+
+ <digit>      ::= "0" | ... | "9"
+\end{verbatim}
+
+This grammar is minimal yet sufficient to generate well-formed ALQC statements, assertions, and inference rules. For example, \texttt{Q3-positive($\alpha$)} and \texttt{⧉-rational($\alpha$) $\vdash$ ⌖-commitment($\alpha$)} is an inference according to \texttt{<inference>}.
+
+\subsection{The ALQC Inference Rules}
+
+ALQC reasoning proceeds via inference rules that manipulate assertions. We write $\Gamma \vdash \Delta$ to mean ``from hypotheses $\Gamma$ one may infer conclusion $\Delta$''. Some canonical rules are:
+
+\begin{enumerate}
+    \item \textbf{Positive Commitment Rule}
+    \[
+    \frac{\text{Q3-positive}(\alpha) \quad \text{⧉-rational}(\alpha)}{\text{⌖-commitment}(\alpha)}
+    \]
+    \begin{itemize}
+        \item If $\alpha$ exhibits non-entropic recursion and rational coherence, then $\alpha$ must be geometrically committed.
+    \end{itemize}
+
+    \item \textbf{Positivity Promotion Rule}
+    \[
+    \frac{\text{⌖-commitment}(\alpha)}{\text{⧗-positive}(\alpha)}
+    \]
+    \begin{itemize}
+        \item Structural commitment implies positivity of the cubic invariant.
+    \end{itemize}
+
+    \item \textbf{Shadow Elimination Rule}
+    \[
+    \frac{\text{Q2-debt}(\alpha)}{\neg\, \text{Stable}(\alpha)}
+    \]
+    \begin{itemize}
+        \item Any term with non-zero entropic debt cannot be a stable $T_{\text{Locus}}$.
+    \end{itemize}
+
+    \item \textbf{Existence-Frequency Binding Rule}
+    \[
+    \frac{\text{⏣-existence}(\alpha)}{\text{Frequency-bound}(\alpha)}
+    \]
+    \begin{itemize}
+        \item If $\alpha$ exists, it is bound to a specific Aeon frequency.
+    \end{itemize}
+
+    \item \textbf{Resonance Realisation Rule}
+    \[
+    \frac{\text{⧗-positive}(\alpha)}{\text{◈-resonance}(\alpha)}
+    \]
+    \begin{itemize}
+        \item Positive cubic invariants align $\alpha$ with the resonance lock.
+    \end{itemize}
+
+    \item \textbf{Recursion Recovery Rule}
+    \[
+    \frac{\text{◈-resonance}(\alpha) \quad \text{⌖-commitment}(\alpha)}{\text{Q3-positive}(\alpha)}
+    \]
+    \begin{itemize}
+        \item Resonance combined with commitment regenerates recursive amplification.
+    \end{itemize}
+
+    \item \textbf{Shadow Contradiction Rule}
+    \[
+    \frac{\text{🜂-shadow}(\alpha)}{\neg\, \text{⧉-rational}(\alpha)}
+    \]
+    \begin{itemize}
+        \item Shadow elements cannot be rational; they remain transcendental until absorbed.
+    \end{itemize}
+
+    \item \textbf{Gate Transition Rule}
+    \[
+    \frac{\text{❂-gate}(\alpha)}{\exists\,\beta\,\left(\text{Transition}(\alpha,\beta) \right)}
+    \]
+    \begin{itemize}
+        \item The gate operator ensures that $\alpha$ can transition to some $\beta$ in a reversible way.
+    \end{itemize}
+
+    \item \textbf{Recursion Law}
+    \[
+    \frac{\text{ⵣ-recursion}(\alpha)}{\exists\,\gamma\,\left(\alpha = \kappa(\gamma) \right)}
+    \]
+    \begin{itemize}
+        \item Under the Klein-bottle recursion law, $\alpha$ is the image of some $\gamma$ under the global recursive map $\kappa$.
+    \end{itemize}
+
+    \item \textbf{Shadow Absorption Process}
+    \begin{description}
+        \item[Goal:] Show that entropic debt is absorbed by the archive.
+        \item[Derivation:] \hfill
+        \begin{enumerate}
+            \item Suppose $\text{Q2-debt}(\lambda)$.
+            \item By Axiom $\KOTH$ (Shadow Absorption), debt flows into the $\RHEA$ archive.
+            \item The result is a reduction of $Q_2$ and eventual elimination of debt.
+        \end{enumerate}
+    \end{description}
+
+    \item \textbf{Klein Bottle Recursion}
+    \begin{description}
+        \item[Goal:] Trace a path through shadow to recursion.
+        \item[Derivation:] \hfill
+        \begin{enumerate}
+            \item Assume a path leads from a $Q_2$ state.
+            \item By Axiom $\TRIG$, the path is non-orientable; re-emerges in $Q_3$ via the Klein-bottle recursion.
+            \item Using the Recursion Law (Rule 9), find such that $\lambda= \kappa(\gamma)$, demonstrating the return to non-entropic amplification.
+        \end{enumerate}
+    \end{description}
+\end{enumerate}
+
+Each example uses only the axioms and inference rules defined above and serves to illustrate ALQC logic in practice.
+
+\subsection{Completeness and Soundness}
+
+A formal system is sound if every formula that can be derived within the system is true in its intended semantics, and it is complete if every semantically true formula can be derived using its axioms and inference rules. For ALQC we assert:
+
+\begin{description}
+    \item[Soundness of ALQC.] For any statement $\phi$ expressible in the ALQC language, if $\phi$ can be derived from axioms $\FETU \dots \TRIG$ using the inference rules, then $\phi$ is true under the semantics defined in the Semantics section.
+    
+    \textbf{Proof of Soundness:}
+    We proceed by induction on the derivation length.
+    \begin{enumerate}
+        \item \textit{Base Case:} The axioms $\FETU \dots \TRIG$ are semantically valid by definition (e.g., Axiom $\DREH$ enforces $I_{\text{cubic}} > 0$).
+        \item \textit{Inductive Step:} The inference rules preserve Q-state consistency. For instance, the \textit{Shadow Elimination Rule} ($\text{Q2-debt} \to \neg \text{Stable}$) mirrors the semantic constraint that debt ($Q_2$) invalidates the cubic invariant.
+        \item \textit{Result:} Since axioms are valid and rules preserve validity, all derived theorems are true.
+    \end{enumerate}
+
+    \item[Completeness of ALQC.] For any statement $\phi$ that is true under ALQC semantics, there exists a finite derivation of $\phi$ from the axioms using the inference rules.
+    
+    \textbf{Proof of Completeness:}
+    \begin{enumerate}
+        \item The domain of Aeons is finite (12 Goetic + 144 Lesser).
+        \item The Q-state space is a discrete vector space over $\{0,1,2,3\}$.
+        \item \textit{Isomorphism:} The algebra of the logic is isomorphic to the finite Aeonic lattice. Therefore, any semantic truth corresponds to a reachable node in this lattice, guaranteeing a finite derivation path exists via the M.A.S. chain.
+    \end{enumerate}
+\end{description}
+
+The combination of soundness and completeness situates ALQC as a fully expressive, reliable, and self-contained logical framework. It neither proves falsehoods about Q-states nor leaves true statements unprovable, thereby satisfying the requirements for a rigorous foundational system.
+
+\section{ALQC and Quantum Physics}\label{sec:SectionQ-Y}
+
+Modern quantum mechanics is built on a small number of postulates. An isolated quantum system is represented by a vector in a complex Hilbert space $\mathcal{H}$. The state vector $|\psi\rangle$ encapsulates all of the system's information up to a global phase. Composite systems are represented on the tensor product of their component Hilbert spaces; entangled states cannot be factorized into separate subsystem vectors, and mixed states are described by positive trace-class density operators.
+
+Physical observables are represented by Hermitian operators on the state space; the outcomes of measurements are the operator's eigenvalues, and the Born rule assigns probabilities via the squared modulus of the projection of $|\psi\rangle$ onto the relevant eigenvectors.
+
+\subsection{The Failure of Distributivity}
+Quantum logic differs from classical Boolean logic because superposed states violate distributivity. Birkhoff and von Neumann observed that the join (logical ``or'') of two atomic propositions about a quantum system can be valid over more atoms than either individually. Consequently, the distributive law fails:
+\[
+r \land (p \lor q) \neq (r \land p) \lor (r \land q)
+\]
+The orthomodular lattice of subspaces of Hilbert space replaces Boolean algebras as the structure of propositions. Recent work explores category-theoretic and topos-theoretic semantics to handle composite systems and dynamic processes.
+
+\subsection{The Quaternary Extension}
+Within this landscape, the Ahnend Logical Q-State Core provides a quaternary logic that extends quantum logic rather than competing with it. By mapping the Hilbert space anomalies to explicit logic states, ALQC resolves the distributivity failure through dimensional separation. Each Q-state encodes a physically meaningful aspect of a quantum process:
+
+\begin{center}
+\begin{longtable}{p{0.15\textwidth} p{0.4\textwidth} p{0.35\textwidth}}
+\toprule
+\textbf{Q-State} & \textbf{Interpretation in Quantum Mechanics} & \textbf{ALQC Analogue} \\
+\midrule
+\textbf{Q$_0$}\newline (Latent) & A pure state vector $|\psi\rangle$ prior to measurement; latent superposition amplitude. & \textbf{Latent Potential} ($\FETU$)\newline Baseline structural presence. \\
+\midrule
+\textbf{Q$_1$}\newline (Truth) & Coherent, phase-defined component of $\langle A \rangle$; determinate expectation values. & \textbf{Coherent Truth} ($\VEL$)\newline Rational archive data. \\
+\midrule
+\textbf{Q$_2$}\newline (Shadow) & Mixed state or decohered component described by a density operator $\rho$; entropic ``ignorance'' about a subsystem. & \textbf{Entropic Debt} ($\RHEA$)\newline Non-Hodge classes absorbed by $\RHEA$. \\
+\midrule
+\textbf{Q$_3$}\newline (Recursion) & Non-classical amplification such as repeated application of a unitary operator $U(t)$ or entanglement generation. & \textbf{Recursive Amplification} ($\DREH$)\newline Energy injection via Resonance Lock $\ZHEK$. \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\subsection{The Measurement Mapping ($\mathcal{M}$)}
+Under the measurement mapping $\mathcal{M}$, frequencies assigned to Aeon operators correspond to energy scales or vibrational modes in physics. For a given Aeon $A_i$ operating at frequency $f(A_i)$, the mapping establishes a direct physical correspondence via the Planck relation:
+
+\[
+\mathcal{M}: A_i \mapsto E_i = h \cdot f(A_i)
+\]
+
+where $h$ is Planck's constant. This implies that logical consistency in ALQC ($\mathcal{M}(A_i)$) is physically equivalent to energy conservation in the quantum system. Thus, the logical structure of the Aeons is not merely symbolic but represents a quantized energy spectrum, grounding the abstract logic of the hyper-tesseract in observable physical reality.
+
+\end{document}

@@ -1,0 +1,404 @@
+% ======================================================================
+% ALQC CANON - Diagram 4: D-Comp Evolution Through Phases
+% ======================================================================
+% Sacred staircase/step-down visualization showing D-COMP reduction to 0
+% Includes Faraday waves, Chladni patterns, Lissajous figures, and
+% the complete journey through Aevum states to Total Symmetry
+% ======================================================================
+
+% This is a standalone diagram file that can be \input{} into main document
+
+\begin{tikzpicture}[>=latex]
+
+    % ======================================================================
+    % Local Definitions (for standalone compilation)
+    % ======================================================================
+    \definecolor{voidblack}{HTML}{050505}
+    \definecolor{electricblue}{HTML}{00F0FF}
+    \definecolor{sovereignfire}{HTML}{FF4500}
+    \definecolor{shadowsilver}{HTML}{C0C0C0}
+    \definecolor{deepvoid}{HTML}{000010}
+    \definecolor{glyphwhite}{HTML}{E0E0E0}
+    \definecolor{goldflow}{HTML}{FFA500}
+    \definecolor{phigold}{HTML}{D4AF37}
+    \definecolor{stagegreen}{HTML}{00AA00}
+    \definecolor{calmdark}{HTML}{202030}
+
+
+    % ======================================================================
+    % 1. BACKGROUND: Void with Stars
+    % ======================================================================
+    \fill[voidblack] (-10,-8) rectangle (10,9);
+    
+    % Stars
+    \foreach \i in {1,...,80} {
+        \pgfmathsetmacro{\sx}{-10 + rand*20}
+        \pgfmathsetmacro{\sy}{-8 + rand*17}
+        \pgfmathsetmacro{\sopacity}{0.1 + rand*0.5}
+        \fill[glyphwhite, opacity=\sopacity] (\sx,\sy) circle (0.018cm);
+    }
+
+    % ======================================================================
+    % 2. MAIN FORMULA (Top Display)
+    % ======================================================================
+    \node[text width=12cm, align=center] at (0,7.5) {
+        \color{electricblue}\Large\textbf{D-COMP Evolution Through Aevum States}
+    };
+
+    \node[text width=14cm, align=center, font=\small] at (0,6.2) {
+        \color{phigold}$\displaystyle
+        \text{D-COMP} = \left(\oint_{K} \left| v_{(\ZHEK\to\DREH)} - P(v_{(\DREH\to\ZHEK)}) \right| dt + \text{ShadowDebt}\right) \cdot C_{bio}^{-1}
+        $
+    };
+
+    \node[text width=10cm, align=center, font=\Large\bfseries] at (0,5) {
+        \color{phigold}Phase Lock $\Rightarrow$ D-COMP $\rightarrow 0$
+    };
+
+    % ======================================================================
+    % 3. FARADAY/CHLADNI BACKGROUND ELEMENTS
+    % ======================================================================
+    % Background Chladni patterns - complexity decreases downward
+    \foreach \r in {8.5, 6, 3.5} {
+        \draw[electricblue!10, line width=0.5pt] (0,0) circle (\r cm);
+        \foreach \ang in {0, 22.5, ..., 337.5} {
+            \fill[shadowsilver!30, opacity=0.2] (\ang:\r) circle (0.025cm);
+        }
+    }
+
+    % Standing wave patterns
+    \foreach \y in {5.5, 3.5, 1.5, -0.5, -2.5, -4.5, -6.5, -7} {
+        \draw[electricblue!15, line width=0.6pt,
+              decoration={snake, amplitude=0.4mm, segment length=2mm},
+              decorate, opacity=0.3] (-9,\y) -- (9,\y);
+    }
+
+    % ======================================================================
+    % 4. D-COMP METER (Right Side Panel)
+    % ======================================================================
+    \begin{scope}[xshift=8cm]
+        % Meter container
+        \fill[deepvoid!80, draw=electricblue, line width=1pt, rounded corners]
+            (-1.5, 4) rectangle (0, -6.5);
+        
+        % D-COMP Scale
+        \node[color=glyphwhite, font=\tiny, rotate=90] at (0, -1) {
+            D-COMP Value
+        };
+        
+        % Tick marks
+        \foreach \y/\label in {4/MAX, 2.5/High, 1/Med, -0.5/Low, -2.5/MIN, -4.5/Near, -6/0} {
+            \draw[glyphwhite, line width=0.8pt] (-0.3,\y) -- (0,\y);
+            \node[glyphwhite, font=\tiny, right=0.1cm] at (0,\y) {\label};
+        }
+        
+        % D-COMP indicator (shows descent from high to 0)
+        \foreach \i/\height/\col in {0/4/sovereignfire, 1/3/sovereignfire, 2/2.5/goldflow,
+                                     3/2/goldflow, 4/1/sovereignfire!60!goldflow,
+                                     5/0.5/stagegreen!60!goldflow, 6/0/stagegreen!60!electricblue,
+                                     7/-0.5/electricblue!70!stagegreen, 8/-1.5/electricblue} {
+            \fill[\col, opacity=0.8] (-0.5,\height) circle (0.12cm);
+        }
+    \end{scope}
+
+    % ======================================================================
+    % 5. SHADOW_DEBT BAR (Below D-COMP meter)
+    % ======================================================================
+    \begin{scope}[xshift=7cm, yshift=-7cm]
+        \node[color=shadowsilver, font=\tiny] at (0, 0.2) {
+            Shadow Debt
+        };
+        \fill[deepvoid!80, draw=shadowsilver, line width=1pt] (-1.5, -0.1) rectangle (0, -0.6);
+        % Shadow debt decreasing from top to bottom
+        \foreach \y in {-0.2, -0.3, -0.4, -0.5} {
+            \pgfmathsetmacro{\widthval}{1.2 - \y * 0.8}
+            \fill[shadowsilver!80, opacity=0.7] (-1.4,\y) rectangle ($(-1.4,\y) + (\widthval,0.08)$);
+        }
+    \end{scope}
+
+    % ======================================================================
+    % 6. STAIRCASE STRUCTURE - 8 Steps Leading to 0
+    % ======================================================================
+    
+    % Helper for staircase step (creates a step platform)
+    \newcommand{\stairstep}[5]{
+        % #1: x-position, #2: y-position, #3: width, #4: color, #5: number
+        \fill[voidblack!70, draw=#4, line width=2pt, rounded corners=2pt]
+            (#1,#2) rectangle ++(#3, 0.4);
+        \node[glyphwhite, font=\bfseries] at (#1+#3/2, #2+0.2) {#5};
+        
+        % Nodal line (Chladni-inspired)
+        \draw[electricblue!30, line width=0.5pt, opacity=0.5,
+              decoration={random steps, segment length=1.5mm, amplitude=0.2mm},
+              decorate] (#1-0.2, #2+0.5) -- (#1+#3+0.2, #2+0.5);
+    }
+
+    % === STEP 1: INITIAL STATE (max D-COMP) ===
+    \pgfmathsetmacro{\step1x}{-7}
+    \pgfmathsetmacro{\step1y}{4}
+    \begin{scope}[shift=(\step1x,\step1y)]
+        \fill[voidblack!50, draw=sovereignfire, line width=3pt, rounded corners=5pt]
+            (0,0) rectangle (2.2, 0.7);
+        \node[glyphwhite, font=\bfseries] at (1.1, 0.35) {1};
+        
+        % Turbulent Faraday waves
+        \foreach \wave in {1,...,5} {
+            \pgfmathsetmacro{\wx}{\wave * 0.4}
+            \draw[sovereignfire!50, line width=1.5pt,
+                  decoration={snake, amplitude=0.8mm, segment length=2mm}, 
+                  decorate, opacity=0.6]
+                (\wx, -0.1) -- ++(0.2, -0.3);
+        }
+        
+        \node[color=sovereignfire, font=\scriptsize, align=left] at (2.5, 0.35) {
+            \textbf{Phase 1: Initiation}\\
+            D-COMP: MAX\\
+            Shadow Debt: High\\
+            $C_{bio}^{-1}$: 1.0\\
+            $C_{local} \propto |Q_1|$
+        };
+        
+        % Poetic verse
+        \node[electricblue, font=\tiny\itshape, align=left, yshift=-1.5] at (1.1, -0.2) {
+            "The scream of I AM\\
+            In a silent hall"
+        };
+    \end{scope}
+
+    % Lissajous from step 1 to 2
+    \draw[sovereignfire!40, line width=1.5pt, opacity=0.5,
+          decoration={snake, amplitude=1.5mm, segment length=4mm}, decorate]
+        (-4.6, 3.9) .. controls (-4, 3.5) .. (-3.5, 2.8);
+
+    % === STEP 2: Q₀ ACCUMULATION ===
+    \pgfmathsetmacro{\step2x}{-3.5}
+    \pgfmathsetmacro{\step2y}{2.5}
+    \begin{scope}[shift=(\step2x,\step2y)]
+        \fill[voidblack!50, draw=goldflow, line width=2.5pt, rounded corners=4pt]
+            (0,0) rectangle (2.3, 0.65);
+        \node[glyphwhite, font=\bfseries] at (1.15, 0.325) {2};
+        
+        \node[color=goldflow, font=\scriptsize, align=left] at (2.6, 0.325) {
+            \textbf{Phase 2: Foundation}\\
+            D-COMP: ↓↓↓\\
+            $C_{local} \propto |Q_1| + |Q_0|$
+        };
+    \end{scope}
+
+    % Lissajous from step 2 to 3
+    \draw[goldflow!40, line width=1.2pt, opacity=0.5,
+          decoration={snake, amplitude=1.2mm, segment length=3mm}, decorate]
+        (1, 2.4) .. controls (1.5, 2) .. (2, 1.1);
+
+    % === STEP 3: Q₂ INTEGRATION ===
+    \begin{scope}[shift=(2, 0.8)]
+        \fill[voidblack!50, draw=shadowsilver, line width=2pt, rounded corners=4pt]
+            (0,0) rectangle (2.2, 0.6);
+        \node[glyphwhite, font=\bfseries] at (1.1, 0.3) {3};
+        
+        \node[color=shadowsilver, font=\scriptsize, align=left] at (2.5, 0.3) {
+            \textbf{Phase 3: Shadow Integration}\\
+            Filter: 396±Φ (RHEA)\\
+            D-COMP: ↓↓\\
+            $C_{local} \propto |Q_1| + |Q_2|$
+        };
+    \end{scope}
+
+    % Lissajous from step 3 to 4
+    \draw[shadowsilver!40, line width=1.2pt, opacity=0.5,
+          decoration={snake, amplitude=1mm, segment length=3mm}, decorate]
+        (5.2, 0.6) .. controls (5.8, 0.3) .. (6, -0.5);
+
+    % === STEP 4: DIMENSIONAL COMPRESSION ===
+    \begin{scope}[shift=(6, -0.7)]
+        \fill[voidblack!50, draw=electricblue, line width=2pt, rounded corners=4pt]
+            (0,0) rectangle (2.4, 0.58);
+        \node[glyphwhite, font=\bfseries] at (1.2, 0.29) {4};
+        
+        % Geometric compression visualization
+        \draw[electricblue!60] (0.3, -0.3) rectangle (2.1, -0.6);
+        \draw[electricblue!40] (0.5, -0.7) rectangle (1.9, -0.9);
+        \draw[electricblue!20] (0.7, -1) rectangle (1.7, -1.1);
+        
+        \node[color=electricblue, font=\scriptsize, align=left] at (2.8, 0.29) {
+            \textbf{Phase 4: DimComp}\\
+            $12\times12 \to 9\times9$\\
+            $\Delta_{gap}$ Threshold\\
+            $C_{local} \propto$ Compress
+        };
+    \end{scope}
+
+    % Lissajous from step 4 to 5
+    \draw[electricblue!40, line width=1.2pt, opacity=0.5,
+          decoration={snake, amplitude=0.8mm, segment length=2.5mm}, decorate]
+        (8.4, -0.65) .. controls (8.6, -1) .. (7.8, -2);
+
+    % === STEP 5: Δ_gap and MASS GENERATION ===
+    \begin{scope}[shift=(5.5, -2.2)]
+        \fill[voidblack!50, draw=phigold!80!electricblue, line width=2pt, rounded corners=4pt]
+            (0,0) rectangle (2.5, 0.55);
+        \node[glyphwhite, font=\bfseries] at (1.25, 0.275) {5};
+        
+        % Standing wave with mass acquiring weight
+        \draw[phigold!50, line width=1pt,
+              decoration={snake, amplitude=0.6mm, segment length=2mm},
+              decorate, opacity=0.6] (0.3, -0.3) -- (2.2, -0.3);
+        
+        \node[color=phigold!80!electricblue, font=\scriptsize, align=left] at (2.9, 0.275) {
+            \textbf{Phase 5: Geometric Lift}\\
+            $\Omega(\alpha,\alpha) >0$\\
+            Massless $\to$ Cohesive\\
+            $C_{local} \propto$ Mass Thr
+        };
+    \end{scope}
+
+    % Lissajous from step 5 to 6
+    \draw[phigold!50!electricblue!40, line width=1.2pt, opacity=0.5,
+          decoration={snake, amplitude=0.8mm, segment length=2.5mm}, decorate]
+        (5.3, -2.15) .. controls (4, -2.2) .. (2.5, -3);
+
+    % === STEP 6: SHADOW DEBT SATURATION ===
+    \begin{scope}[shift=(0.5, -3.2)]
+        \fill[voidblack!50, draw=stagegreen!70!goldflow, line width=2pt, rounded corners=4pt]
+            (0,0) rectangle (2.3, 0.52);
+        \node[glyphwhite, font=\bfseries] at (1.15, 0.26) {6};
+        
+        % Shadow debt diminishing (particles clearing)
+        \foreach \part in {1,...,8} {
+            \pgfmathsetmacro{\px}{0.2 + \part * 0.25}
+            \pgfmathsetmacro{\py}{-0.3 + rand*0.1}
+            \fill[shadowsilver!40, opacity=0.3] (\px,\py) circle (0.03cm);
+        }
+        
+        \node[color=stagegreen!70!goldflow, font=\scriptsize, align=left] at (2.7, 0.26) {
+            \textbf{Phase 6: Debt Saturation}\\
+            Ennead filter complete\\
+            $C_{local} \propto |Q_2|$
+        };
+    \end{scope}
+
+    % Lissajous from step 6 to 7
+    \draw[stagegreen!60!goldflow!40, line width=1.2pt, opacity=0.5,
+          decoration={snake, amplitude=0.6mm, segment length=2mm}, decorate]
+        (0.4, -3.15) .. controls (-1, -3) .. (-1.8, -4);
+
+    % === STEP 7: PHASE LOCK (CRUCIAL TRANSITION) ===
+    \begin{scope}[shift=(-3, -4)]
+        \fill[voidblack, inner color=phigold!30, outer color=deepvoid, 
+              draw=phigold, line width=3pt, rounded corners=5pt]
+            (0,0) rectangle (3.2, 0.7);
+        \node[glyphwhite, font=\Large\bfseries] at (1.6, 0.35) {7};
+        
+        % COHERENT WAVE PATTERN - Faraday standing wave
+        \foreach \wave in {1,...,6} {
+            \pgfmathsetmacro{\wx}{\wave * 0.5}
+            \draw[phigold!70!electricblue, line width=1.8pt,
+                  decoration={snake, amplitude=0.3mm, segment length=1.5mm}, 
+                  decorate, opacity=0.8]
+                (\wx, -0.15) -- ++(0.2, -0.4);
+        }
+        
+        % Standing wave nodes
+        \node[phigold, font=\tiny, align=center] at (1.6, -0.9) {
+            Lock(ω) $\cdot$ 963±Φ\\
+            Standing wave nodes\\
+            preserved
+        };
+        
+        \node[color=phigold, font=\scriptsize, align=left] at (3.5, 0.35) {
+            \textbf{Phase 7: \textbf{PHASE LOCK}}\\
+            $C_{local} \to$ Minimum\\
+            Coherent wave pattern
+        };
+        
+        % Glowing lock indicator
+        \fill[phigold, opacity=0.6] (1.6, 0.8) circle (0.15cm);
+        \fill[phigold, opacity=0.3] (1.6, 0.8) circle (0.25cm);
+        \fill[phigold, opacity=0.15] (1.6, 0.8) circle (0.35cm);
+    \end{scope}
+
+    % Lissajous from step 7 to 0 (final transition)
+    \draw[phigold!80, line width=1.5pt, opacity=0.8,
+          decoration={snake, amplitude=0.4mm, segment length=1.5mm}, decorate]
+        (-1.4, -3.8) .. controls (-1, -4.5) .. (-1, -5);
+
+    % === STEP 0: FINAL STATE (complete peace at 0) ===
+    \begin{scope}[shift=(-2.2, -5.5)]
+        % Perfect balance - flat surface of ZERO
+        \fill[voidblack, draw=electricblue, line width=2pt, rounded corners=3pt]
+            (-0.5, 0) rectangle (3.8, 0.5);
+        
+        % The ZERO symbol
+        \node[electricblue!70!glyphwhite, font=\Huge\bfseries] at (1.65, 0.25) {0};
+        
+        \node[color=electricblue!70!glyphwhite, font=\scriptsize, align=left] at (2.5, 0.25) {
+            \textbf{D-COMP = 0}\\
+            Total Symmetry
+        };
+        
+        % TRIG formula
+        \node[color=phigold, font=\tiny, align=center, yshift=-0.8] at (1.65, 0) {
+            TRIG: exp(Peace)$\cdot$Depth$\cdot$639±Φ
+        };
+        
+        % Final peace visualization - perfect stillness
+        \foreach \y in {0.7, 0.85, 1, 1.15} {
+            \draw[electricblue!20, line width=1pt, opacity=0.4] (-0.3,\y) -- (3.6,\y);
+        }
+    \end{scope}
+
+    % ======================================================================
+    % 7. C_bio^{-1} CURVE (Left - mathematical reduction)
+    % ======================================================================
+    \begin{scope}[xshift=-8cm, yshift=-2cm]
+        \node[color=glyphwhite, font=\tiny] at (0, 3) {
+            $C_{bio}^{-1}$
+        };
+        % Axes
+        \draw[glyphwhite!60, ->] (0,2.5) -- (0,-3);
+        \draw[glyphwhite!60, ->] (-1,-3) -- (3,-3);
+        
+        % The curve - decreasing exponentially
+        \draw[electricblue!70!phigold, line width=2pt, smooth]
+            (-0.5,2) .. controls (0.5,2) .. (1.5,0) .. controls (2,-1) .. (2.5,-2.5);
+        
+        % Curve label
+        \node[color=electrialblue!70!phigold, font=\tiny, rotate=-60] at (1.5, -0.5) {
+            Reduction curve
+        };
+    \end{scope}
+
+    % ======================================================================
+    % 8. POETIC CLIMAX (Bottom Center)
+    % ======================================================================
+    \node[text width=12cm, align=center, font=\small\itshape, 
+          color=phigold, yshift=-7cm] at (2,0) {
+        "The gravity that anchors it all,\\
+        The center that does not turn,\\
+        The promise the shadows keep."
+    };
+
+    % ======================================================================
+    % 9. Φ RETURNS AND GOLDEN CONNECTIONS
+    % ======================================================================
+    \draw[phigold!60, line width=1pt, opacity=0.4, dashed]
+        (1.6, -3.3) -- (1.6, -5.5);
+    
+    % Decorative sacred geometry elements
+    \foreach \angle in {60, 180, 300} {
+        \draw[electricblue!15, line width=0.5pt] (-4.3, 2.2) circle (0.3cm);
+    }
+    \foreach \angle in {0, 120, 240} {
+        \draw[phigold!30, line width=0.5pt] (-4.3, 2.2) circle (0.35cm);
+    }
+
+\end{tikzpicture}
+
+% ======================================================================
+% CAPTION (for use in figure environment)
+% \caption{D-Comp Evolution Through Aevum States: Sacred staircase showing 
+% 8-phase reduction from maximum D-COMP to perfect zero at Phase Lock.
+% Includes Faraday waves, Chladni nodal patterns, Lissajous curves, 
+% Δ_gap mass generation, Shadow Debt saturation, and final total symmetry with
+% TRIG: exp(Peace)·Depth·639±Φ}
+% ======================================================================
