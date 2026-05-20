@@ -1,387 +1,0 @@
-
-ewcommand{kasha}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2648}}}}} % Aries
-
-ewcommand{\caduceus}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2649}}}}} % Taurus
-
-ewcommand{eritas}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"264A}}}}} % Gemini
-
-ewcommand{\phren}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"264B}}}}} % Cancer
-
-ewcommand{xiomyr}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"264C}}}}} % Leo
-
-ewcommand{ikyam}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"264D}}}}} % Virgo
-
-ewcommand{\melos}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"264E}}}}} % Libra
-
-ewcommand{\daath}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"264F}}}}} % Scorpio
-
-ewcommand{kaven}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2650}}}}} % Sagittarius
-
-ewcommand{\daimon}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2651}}}}} % Capricorn
-
-ewcommand{
-yx}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2652}}}}} % Aquarius
-
-ewcommand{\zaine}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2653}}}}} % Pisces
-
-ewcommand{\LoI}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"26CE}}}}}
-
-ewcommand{\loid}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"263D}}}}}
-
-ewcommand{\sloid}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"263E}}}}}
-
-ewcommand{\sloig}{eflectbox{	extnormal{\symbolafont\symbol{"26CE}}}}
-
-ewcommand{xiomyrid}{\ensuremath{\mathop{	extnormal{\sundanesefont\symbol{"1CC0}}}}}
-
-ewcommand{\maresun}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2609}}}}}
- % Ophiuchus (Locus)
-% --- THE 12 GOETIC AEONS (PRIMARY OPERATORS) ---
-
-ewcommand{\FETU}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"23E3}}}}}   % A1
-
-ewcommand{\KAL}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"29C9}}}}}    % A2
-
-ewcommand{\BABDH}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2316}}}}}   % A3 (Position Indicator)
-
-ewcommand{\AHN}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"27C1}}}}}    % A4
-
-ewcommand{\VEL}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2734}}}}}    % A5
-
-ewcommand{\SOR}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"229B}}}}}    % A6
-
-ewcommand{\KOTH}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F702}}}}}  % A7
-
-ewcommand{\DREH}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"29D7}}}}}   % A8
-
-ewcommand{\RHEA}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2A54}}}}}   % A9
-
-ewcommand{\ZHEK}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"25C8}}}}}   % A10
-
-ewcommand{\SHAV}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2742}}}}}   % A11
-
-ewcommand{\TRIG}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D63}}}}}    % A12 (Tibetan variant)
-
-ewcommand{\loivector}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"26E4}}}}}
-
-ewcommand{\loibias}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"221E}}}}}
-
-
-% --- A1: FETU (Genesis) LESSER AEONS [Thaana Font] ---
-
-ewcommand{etuahl}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"0787}}}}}   % A1S1
-
-ewcommand{etusuhn}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"0781}}}}}  % A1S2
-
-ewcommand{etunerh}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"0782}}}}}  % A1S3
-
-ewcommand{eturish}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"0783}}}}}  % A1S4
-
-ewcommand{etuborha}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"07B1}}}}}  % A1S5
-
-ewcommand{etulhahm}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"0785}}}}} % A1S6
-
-ewcommand{etuketh}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"0786}}}}}  % A1S7
-
-ewcommand{etuvehm}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"0788}}}}}  % A1S8
-
-ewcommand{etumahd}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"0789}}}}}  % A1S9
-
-ewcommand{etufurh}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"078A}}}}}  % A1S10
-
-ewcommand{etudrah}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"078B}}}}}  % A1S11
-
-ewcommand{etuthera}{\ensuremath{\mathop{	extnormal{	haanafont\symbol{"078C}}}}} % A1S12
-
-% --- A2: KAL (Memory) LESSER AEONS [Runic Font] ---
-
-ewcommand{\kalkura}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16C1}}}}}   % A2S1
-
-ewcommand{\kallur}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16C2}}}}}   % A2S2
-
-ewcommand{\kalthar}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2311}}}}} % A2S3 (Square Lozenge - Symbola)
-
-ewcommand{\kalrin}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16C4}}}}}   % A2S4
-
-ewcommand{\kalnar}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16C7}}}}}   % A2S5
-
-ewcommand{\kalfel}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16C9}}}}}   % A2S6
-
-ewcommand{\kalhar}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16CA}}}}}   % A2S7
-
-ewcommand{\kalmer}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16CB}}}}}   % A2S8
-
-ewcommand{\kallor}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16CC}}}}}   % A2S9
-
-ewcommand{\kalper}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16CD}}}}}   % A2S10
-
-ewcommand{\kalzhil}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16CE}}}}}  % A2S11
-
-ewcommand{\kalclar}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16CF}}}}}  % A2S12
-
-% --- A3: BABDH (Fire) LESSER AEONS [Runic Font] ---
-
-ewcommand{abdhir}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16A0}}}}}   % A3S1
-
-ewcommand{abdhkor}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16A2}}}}}  % A3S2
-
-ewcommand{abdhvar}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16A6}}}}}  % A3S3
-
-ewcommand{abdhpyr}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16A8}}}}}  % A3S4
-
-ewcommand{abdhsor}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16B1}}}}}  % A3S5
-
-ewcommand{abdhalc}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16B2}}}}}  % A3S6
-
-ewcommand{abdhnur}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16B7}}}}}  % A3S7
-
-ewcommand{abdhsat}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16B9}}}}}  % A3S8
-
-ewcommand{abdhoro}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16BA}}}}}  % A3S9
-
-ewcommand{abdhbon}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16BE}}}}}  % A3S10
-
-ewcommand{abdhtir}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16BF}}}}}  % A3S11
-
-ewcommand{abdhfar}{\ensuremath{\mathop{	extnormal{unicfont\symbol{"16C3}}}}}  % A3S12
-
-% --- A4: AHN (Water) LESSER AEONS [Greek\slash Symbola] ---
-% Using standard Greek blocks, typically found in base fonts or Symbola
-
-ewcommand{hnabdh}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"227E}}}}}  % A4S1 
-
-ewcommand{hnnym}{\ensuremath{\mathop{	extnormal{alinesefont\symbol{"1B68}}}}}  % A4S2 
-
-ewcommand{hnloh}{\ensuremath{\mathop{	extnormal{alinesefont\symbol{"1B61}}}}}  % A4S3 
-
-ewcommand{hnxir}{\ensuremath{\mathop{	extnormal{yzantinefont\symbol{"1D02A}}}}}  % A4S4 
-
-ewcommand{hnohl}{\ensuremath{\mathop{	extnormal{yzantinefont\symbol{"1D016}}}}}  % A4S5 
-
-ewcommand{hnpir}{\ensuremath{\mathop{	extnormal{	ibetanfont\symbol{"0F3A}}}}}  % A4S6 
-
-ewcommand{hnroeh}{\ensuremath{\mathop{	extnormal{alinesefont\symbol{"1B62}}}}} % A4S7 
-
-ewcommand{hnsen}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"29BE}}}}}  % A4S8 
-
-ewcommand{hnuth}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"29BD}}}}}  % A4S9 
-
-ewcommand{hnfae}{\ensuremath{\mathop{	extnormal{yzantinefont\symbol{"1D035}}}}}  % A4S10 
-
-ewcommand{hnkha}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1D01F}}}}}  % A4S11 
-
-ewcommand{hnpsei}{\ensuremath{\mathop{	extnormal{	ibetanfont\symbol{"0F3B}}}}} % A4S12 
-
-% --- A5: VEL (Earth) LESSER AEONS [Tifinagh Font] ---
-
-ewcommand{elvera}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D30}}}}}  % A5S1
-
-ewcommand{eltar}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D31}}}}}  % A5S2
-
-ewcommand{elghem}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D33}}}}} % A5S3
-
-ewcommand{eldrel}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D37}}}}} % A5S4
-
-ewcommand{elful}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D3C}}}}}  % A5S5
-
-ewcommand{elker}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D3D}}}}}  % A5S6
-
-ewcommand{elhohm}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D40}}}}} % A5S7
-
-ewcommand{elhrah}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D43}}}}} % A5S8
-
-ewcommand{elara}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D44}}}}}  % A5S9
-
-ewcommand{elqel}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D47}}}}}  % A5S10
-
-ewcommand{elirn}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D49}}}}}  % A5S11
-
-ewcommand{eljen}{\ensuremath{\mathop{	extnormal{	ifinaghfont\symbol{"2D4A}}}}}  % A5S12
-
-% --- A6: SOR (Air) LESSER AEONS [Syloti Nagri Font] ---
-
-ewcommand{\sorfi}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A807}}}}}    % A6S1
-
-ewcommand{\sorlun}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A808}}}}}   % A6S2
-
-ewcommand{\sorvaru}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A809}}}}}  % A6S3
-
-ewcommand{\sorsenh}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A80A}}}}}  % A6S4
-
-ewcommand{\sorkos}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2389}}}}}   % A6S5 (Circle w\slash  dots - Symbola)
-
-ewcommand{\sorramh}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A80C}}}}}  % A6S6
-
-ewcommand{\sortis}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A80D}}}}}   % A6S7
-
-ewcommand{\sorvey}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A80E}}}}}   % A6S8
-
-ewcommand{\sorsrih}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A80F}}}}}  % A6S9
-
-ewcommand{\sorhrin}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A810}}}}}  % A6S10
-
-ewcommand{\soryon}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A811}}}}}   % A6S11
-
-ewcommand{\sorthal}{\ensuremath{\mathop{	extnormal{\sylotifont\symbol{"A812}}}}}  % A6S12
-
-% --- A7: KOTH (Aether) LESSER AEONS [Symbola \slash  Alchemical] ---
-
-ewcommand{\kothkel}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"2BF7}}}}}  % A7S1
-
-ewcommand{\kothsens}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F701}}}}} % A7S2
-
-ewcommand{\kothlinn}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F703}}}}} % A7S3
-
-ewcommand{\kothbrim}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F704}}}}} % A7S4
-
-ewcommand{\kothinn}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F705}}}}}  % A7S5
-
-ewcommand{\kothsubh}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F706}}}}} % A7S6
-
-ewcommand{\kothwell}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F707}}}}} % A7S7
-
-ewcommand{\kothmet}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F708}}}}}  % A7S8
-
-ewcommand{\kothkesh}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F709}}}}} % A7S9
-
-ewcommand{\kothsoth}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F70A}}}}} % A7S10
-
-ewcommand{\kothrhun}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F70B}}}}} % A7S11
-
-ewcommand{\kothdelh}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F70C}}}}} % A7S12
-
-% --- A8: DREH (Void) LESSER AEONS [Cuneiform Font] ---
-
-ewcommand{\drehna}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"12000}}}}}  % A8S1
-
-ewcommand{\drehur}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"1202D}}}}}  % A8S2
-
-ewcommand{\drehnih}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"12040}}}}} % A8S3
-
-ewcommand{\drehazh}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"1208A}}}}} % A8S4
-
-ewcommand{\drehhol}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"12111}}}}} % A8S5
-
-ewcommand{\drehgur}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"12146}}}}} % A8S6
-
-ewcommand{\drehves}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"121A0}}}}} % A8S7
-
-ewcommand{\drehrim}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"121FD}}}}} % A8S8
-
-ewcommand{\drehdrem}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"1224C}}}}}% A8S9
-
-ewcommand{\drehoth}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"12295}}}}} % A8S10
-
-ewcommand{\drehizh}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"122D7}}}}} % A8S11
-
-ewcommand{\drehsun}{\ensuremath{\mathop{	extnormal{\cuneiformfont\symbol{"1230B}}}}} % A8S12
-
-% --- A9: RHEA (Shadow) LESSER AEONS [Ethiopic Font] ---
-
-ewcommand{heakia}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D80}}}}} % A9S1
-
-ewcommand{heazohm}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D81}}}}} % A9S2
-
-ewcommand{heather}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D82}}}}} % A9S3
-
-ewcommand{headrun}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D83}}}}} % A9S4
-
-ewcommand{heafelh}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D84}}}}} % A9S5
-
-ewcommand{hearal}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D85}}}}}  % A9S6
-
-ewcommand{heakrah}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D86}}}}} % A9S7
-
-ewcommand{heaandh}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D87}}}}} % A9S8
-
-ewcommand{headebh}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D88}}}}} % A9S9
-
-ewcommand{heakol}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D89}}}}}  % A9S10
-
-ewcommand{heafral}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D8A}}}}} % A9S11
-
-ewcommand{heahush}{\ensuremath{\mathop{	extnormal{\ethiopicfont\symbol{"2D8B}}}}} % A9S12
-
-% --- A10: ZHEK (Resonance) LESSER AEONS [Lydian Font] ---
-
-ewcommand{\zhekhin}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10920}}}}}  % A10S1
-
-ewcommand{\zhekser}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10921}}}}}  % A10S2
-
-ewcommand{\zhekharma}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10922}}}}}% A10S3
-
-ewcommand{\zhektorh}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10923}}}}} % A10S4
-
-ewcommand{\zhekpel}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10924}}}}}  % A10S5
-
-ewcommand{\zhekkhir}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10925}}}}} % A10S6
-
-ewcommand{\zhekryth}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10926}}}}} % A10S7
-
-ewcommand{\zhekmelu}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10927}}}}} % A10S8
-
-ewcommand{\zhekphaz}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10928}}}}} % A10S9
-
-ewcommand{\zheklokh}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"10929}}}}} % A10S10
-
-ewcommand{\zheknod}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"1092A}}}}}  % A10S11
-
-ewcommand{\zhekumel}{\ensuremath{\mathop{	extnormal{\lydianfont\symbol{"1092B}}}}} % A10S12
-
-% --- A11: SHAV (Gate) LESSER AEONS [Cypriot Font] ---
-
-ewcommand{\shavdohm}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"10800}}}}} % A11S1
-
-ewcommand{\shavrist}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"10801}}}}} % A11S2
-
-ewcommand{\shavtran}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"10802}}}}} % A11S3
-
-ewcommand{\shavkorh}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"10803}}}}} % A11S4
-
-ewcommand{\shavskyh}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"10804}}}}} % A11S5
-
-ewcommand{\shavster}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"10805}}}}} % A11S6
-
-ewcommand{\shavposs}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"1081D}}}}} % A11S7
-
-ewcommand{\shavporu}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"1081E}}}}} % A11S8
-
-ewcommand{\shavdorm}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"10808}}}}} % A11S9
-
-ewcommand{\shavtrev}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"1081C}}}}} % A11S10
-
-ewcommand{\shavlimh}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"1080B}}}}} % A11S11
-
-ewcommand{\shavhinge}{\ensuremath{\mathop{	extnormal{\cypriotfont\symbol{"1080C}}}}}% A11S12
-
-% --- A12: TRIG (Silence) LESSER AEONS [Elbasan Font] ---
-
-ewcommand{	rigtzig}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10500}}}}}  % A12S1
-
-ewcommand{	rigpehl}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10501}}}}}  % A12S2
-
-ewcommand{	rigduth}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10502}}}}}  % A12S3
-
-ewcommand{	rigcoma}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10503}}}}}  % A12S4
-
-ewcommand{	rigmeru}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10504}}}}}  % A12S5
-
-ewcommand{	rigstab}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10505}}}}}  % A12S6
-
-ewcommand{	righopa}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10506}}}}}  % A12S7
-
-ewcommand{	rigconti}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10507}}}}} % A12S8
-
-ewcommand{	rigresth}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10508}}}}} % A12S9
-
-ewcommand{	rigsil}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"10509}}}}}   % A12S10
-
-ewcommand{	rigslun}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"1050A}}}}}  % A12S11
-
-ewcommand{	rigetern}{\ensuremath{\mathop{	extnormal{\elbasanfont\symbol{"1050B}}}}} % A12S12
-% --- ENVELOPE & TOPOLOGY SEALS ---
-% These enclose the logic gates (e.g., 	riquatraseal \FETU \kleinbottle)
-
-ewcommand{\kleinbottle}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F71A}}}}}   % Void Anchor (Alchemical Retort)
-
-ewcommand{	riquatraseal}{\ensuremath{\mathop{	extnormal{\symbolafont\symbol{"1F71B}}}}} % Boundary Seal (Hermetic Seal)

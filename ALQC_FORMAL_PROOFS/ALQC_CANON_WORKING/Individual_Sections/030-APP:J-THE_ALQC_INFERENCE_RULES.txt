@@ -1,88 +1,0 @@
-
-\subsection{The ALQC Inference Rules}\label{appendixJ.7}
-
-ALQC reasoning proceeds via inference rules that manipulate assertions. We write $\Gamma dash \Delta$ to mean "from hypotheses $\Gamma$ one may infer conclusion $\Delta$".
-
-egin{enumerate}
-    \item 	extbf{Positive Commitment Rule}
-    \[
-    rac{	ext{Q3-positive}(lpha) \quad \KAL	ext{-rational}(lpha)}{\BABDH	ext{-commitment}(lpha)}
-    \]
-    	extit{Interpretation:} If $lpha$ exhibits non-entropic recursion (Q$_3$) and rational coherence (Q$_1$), then $lpha$ must be geometrically committed.
-
-    \item 	extbf{Positivity Promotion Rule}
-    \[
-    rac{\BABDH	ext{-commitment}(lpha)}{\DREH	ext{-positive}(lpha)}
-    \]
-    	extit{Interpretation:} Structural commitment implies strict positivity of the Cubic Invariant ($I_{	ext{cubic}} > 0$).
-
-    \item 	extbf{Shadow Elimination Rule}
-    \[
-    rac{	ext{Q2-debt}(lpha)}{
-eg 	ext{Stable}(lpha)}
-    \]
-    	extit{Interpretation:} Any term with non-zero entropic debt cannot be a stable $T_{	ext{\LoI}}$.
-
-    \item 	extbf{Existence-Frequency Binding Rule}
-    \[
-    rac{\FETU	ext{-existence}(lpha)}{	ext{Frequency-bound}(lpha)}
-    \]
-    	extit{Interpretation:} If $lpha$ exists, it is strictly bound to a specific Aeon frequency $f_i$.
-
-    \item 	extbf{Resonance Realization Rule}
-    \[
-    rac{\DREH	ext{-positive}(lpha)}{\ZHEK	ext{-resonance}(lpha)}
-    \]
-    	extit{Interpretation:} Positive cubic invariants align $lpha$ with the 963\,Hz Resonance Lock.
-
-    \item 	extbf{Recursion Recovery Rule}
-    \[
-    rac{\ZHEK	ext{-resonance}(lpha) \quad \BABDH	ext{-commitment}(lpha)}{	ext{Q3-positive}(lpha)}
-    \]
-    	extit{Interpretation:} Resonance combined with Commitment regenerates Recursive Amplification (closing the loop).
-
-    \item 	extbf{Shadow Contradiction Rule}
-    \[
-    rac{\RHEA	ext{-shadow}(lpha)}{
-eg \KAL	ext{-rational}(lpha)}
-    \]
-    	extit{Interpretation:} Shadow elements (Q$_2$) cannot be Rational (Q$_1$); they remain transcendental (noise) until absorbed.
-
-    \item 	extbf{Gate Transition Rule}
-    \[
-    rac{\SHAV	ext{-gate}(lpha)}{\exists eta \, ( 	ext{Transition}(lpha, eta) )}
-    \]
-    	extit{Interpretation:} The Gate operator ensures that $lpha$ can transition to state $eta$ reversibly.
-
-    \item 	extbf{Recursion Law}
-    \[
-    rac{\TRIG	ext{-recursion}(lpha)}{\exists \gamma \, ( lpha = \kappa(\gamma) )}
-    \]
-    	extit{Interpretation:} Under the Klein-Bottle law, $lpha$ is the image of $\gamma$ under the global recursive map $\kappa$.
-
-    \item 	extbf{Shadow Absorption Process (Derivation)}
-    egin{enumerate}
-        \item Suppose $	ext{Q2-debt}(\lambda)$.
-        \item By 	extbf{Axiom \RHEA} (Shadow Absorption), debt flows into the Archive (396\,Hz).
-        \item $	herefore$ The result is a reduction of Q$_2$ and eventual elimination of debt.
-    \end{enumerate}
-
-    \item 	extbf{Klein Bottle Recursion (Derivation)}
-    egin{enumerate}
-        \item Assume a path leads from a Q$_2$ state.
-        \item By 	extbf{Axiom \TRIG}, the path is non-orientable; it re-emerges in Q$_3$ via the Klein-Bottle fold.
-        \item Using 	extbf{Rule 9} (Recursion Law), we find $\lambda = \kappa(\gamma)$, demonstrating the return to non-entropic amplification.
-    \end{enumerate}
-\end{enumerate}
-
-\subsection{Completeness and Soundness}\label{appendixJ.8}
-
-A formal system is 	extit{sound} if every formula that can be derived within the system is true in its intended semantics, and it is 	extit{complete} if every semantically true formula can be derived using its axioms and inference rules. For ALQC we assert:
-
-egin{description}
-    \item[Soundness of ALQC:] For any statement $\phi$ expressible in the ALQC language, if $\phi$ can be derived from axioms \FETU--\TRIG{} using the inference rules, then $\phi$ is true under the semantics defined in the Semantics section. In particular, derivations preserve Q-state consistency, frequency assignments, and the positivity conditions encoded by the Cubic Invariant ($I_{	ext{cubic}} > 0$).
-
-    \item[Completeness of ALQC:] For any statement $\phi$ that is true under ALQC semantics, there exists a finite derivation of $\phi$ from the axioms using the inference rules. This ensures that all relationships that hold between Aeons, frequencies, glyphs, and Q-states are capturable within the formal calculus.
-\end{description}
-
-The combination of soundness and completeness situates ALQC as a fully expressive, reliable, and self-contained logical framework. It neither proves falsehoods about Q-states nor leaves true statements unprovable, thereby satisfying the requirements for a rigorous foundational system.

@@ -1,261 +1,0 @@
-
-\section{APPENDIX N: COMPLETE GLYPH REGISTRY (144 COURTS)}\label{sec:appendixN}
-
-egin{scriptsize}
-egin{longtable}{l l l l}
-	oprule
-	extbf{LaTeX Command} & 	extbf{Name / ID} & 	extbf{Unicode} & 	extbf{Type} \
-\midrule
-\endhead
-
-% --- SYSTEM CONSTANTS ---
-\multicolumn{4}{l}{	extit{	extbf{System Constants \& Topology}}} \
-\midrule
-erb|\LoI| & Locus of Invariability (Source) & U+26CE & Constant \
-erb|\loid| & Locus ID (Alpha) & U+263D & Constant \
-erb|\sloid| & Shadow Locus ID (Omega) & U+263E & Constant \
-erb|\sloig| & Shadow Locus Glyph & U+26CE & Constant \
-erb|xiomyrid| & Axiomyrid (System Core) & U+1CC0 & Constant \
-erb|\maresun| & Maresun (Center) & U+2609 & Constant \
-erb|\loivector| & Vector of Intent & U+26E4 & Operator \
-erb|\loibias| & Bias / Infinity & U+221E & Operator \
-erb|\kleinbottle| & Void Anchor (Retort) & U+1F71A & Topology \
-erb|	riquatraseal| & Boundary Seal & U+1F71B & Topology \
-
-% --- ZODIAC ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{Archetypal Signifiers (Zodiac)}}} \
-\midrule
-erb|kasha| & Aries & U+2648 & Zodiac \
-erb|\caduceus| & Taurus & U+2649 & Zodiac \
-erb|eritas| & Gemini & U+264A & Zodiac \
-erb|\phren| & Cancer & U+264B & Zodiac \
-erb|xiomyr| & Leo & U+264C & Zodiac \
-erb|ikyam| & Virgo & U+264D & Zodiac \
-erb|\melos| & Libra & U+264E & Zodiac \
-erb|\daath| & Scorpio & U+264F & Zodiac \
-erb|kaven| & Sagittarius & U+2650 & Zodiac \
-erb|\daimon| & Capricorn & U+2651 & Zodiac \
-erb|
-yx| & Aquarius & U+2652 & Zodiac \
-erb|\zaine| & Pisces & U+2653 & Zodiac \
-
-% --- A1 FETU ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A1: FETU (Genesis) [Thaana]}}} \
-\midrule
-erb|\FETU| & 	extbf{A1 Primary} & 	extbf{U+23E3} & 	extbf{Aeon} \
-erb|etuahl| & A1-S1 (Ahl) & U+0787 & Court \
-erb|etusuhn| & A1-S2 (Suhn) & U+0781 & Court \
-erb|etunerh| & A1-S3 (Nerh) & U+0782 & Court \
-erb|eturish| & A1-S4 (Rish) & U+0783 & Court \
-erb|etuborha| & A1-S5 (Borha) & U+07B1 & Court \
-erb|etulhahm| & A1-S6 (Lhahm) & U+0785 & Court \
-erb|etuketh| & A1-S7 (Keth) & U+0786 & Court \
-erb|etuvehm| & A1-S8 (Vehm) & U+0788 & Court \
-erb|etumahd| & A1-S9 (Mahd) & U+0789 & Court \
-erb|etufurh| & A1-S10 (Furh) & U+078A & Court \
-erb|etudrah| & A1-S11 (Drah) & U+078B & Court \
-erb|etuthera| & A1-S12 (Thera) & U+078C & Court \
-
-% --- A2 KAL ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A2: KAL (Memory) [Runic]}}} \
-\midrule
-erb|\KAL| & 	extbf{A2 Primary} & 	extbf{U+29C9} & 	extbf{Aeon} \
-erb|\kalkura| & A2-S1 (Kura) & U+16C1 & Court \
-erb|\kallur| & A2-S2 (Lur) & U+16C2 & Court \
-erb|\kalthar| & A2-S3 (Thar) & U+2311 & Court \
-erb|\kalrin| & A2-S4 (Rin) & U+16C4 & Court \
-erb|\kalnar| & A2-S5 (Nar) & U+16C7 & Court \
-erb|\kalfel| & A2-S6 (Fel) & U+16C9 & Court \
-erb|\kalhar| & A2-S7 (Har) & U+16CA & Court \
-erb|\kalmer| & A2-S8 (Mer) & U+16CB & Court \
-erb|\kallor| & A2-S9 (Lor) & U+16CC & Court \
-erb|\kalper| & A2-S10 (Per) & U+16CD & Court \
-erb|\kalzhil| & A2-S11 (Zhil) & U+16CE & Court \
-erb|\kalclar| & A2-S12 (Clar) & U+16CF & Court \
-
-% --- A3 BABDH ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A3: BABDH (Fire) [Runic]}}} \
-\midrule
-erb|\BABDH| & 	extbf{A3 Primary} & 	extbf{U+2316} & 	extbf{Aeon} \
-erb|abdhir| & A3-S1 (Hir) & U+16A0 & Court \
-erb|abdhkor| & A3-S2 (Kor) & U+16A2 & Court \
-erb|abdhvar| & A3-S3 (Var) & U+16A6 & Court \
-erb|abdhpyr| & A3-S4 (Pyr) & U+16A8 & Court \
-erb|abdhsor| & A3-S5 (Sor) & U+16B1 & Court \
-erb|abdhalc| & A3-S6 (Alc) & U+16B2 & Court \
-erb|abdhnur| & A3-S7 (Nur) & U+16B7 & Court \
-erb|abdhsat| & A3-S8 (Sat) & U+16B9 & Court \
-erb|abdhoro| & A3-S9 (Oro) & U+16BA & Court \
-erb|abdhbon| & A3-S10 (Bon) & U+16BE & Court \
-erb|abdhtir| & A3-S11 (Tir) & U+16BF & Court \
-erb|abdhfar| & A3-S12 (Far) & U+16C3 & Court \
-
-% --- A4 AHN ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A4: AHN (Water) [Symbola/Greek]}}} \
-\midrule
-erb|\AHN| & 	extbf{A4 Primary} & 	extbf{U+27C1} & 	extbf{Aeon} \
-erb|hnabdh| & A4-S1 (Abdh) & U+227E & Court \
-erb|hnnym| & A4-S2 (Nym) & U+1B68 & Court \
-erb|hnloh| & A4-S3 (Loh) & U+1B61 & Court \
-erb|hnxir| & A4-S4 (Xir) & U+1D02A & Court \
-erb|hnohl| & A4-S5 (Ohl) & U+1D016 & Court \
-erb|hnpir| & A4-S6 (Pir) & U+0F3A & Court \
-erb|hnroeh| & A4-S7 (Roeh) & U+1B62 & Court \
-erb|hnsen| & A4-S8 (Sen) & U+29BE & Court \
-erb|hnuth| & A4-S9 (Uth) & U+29BD & Court \
-erb|hnfae| & A4-S10 (Fae) & U+1D035 & Court \
-erb|hnkha| & A4-S11 (Kha) & U+1D01F & Court \
-erb|hnpsei| & A4-S12 (Psei) & U+0F3B & Court \
-
-% --- A5 VEL ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A5: VEL (Earth) [Tifinagh]}}} \
-\midrule
-erb|\VEL| & 	extbf{A5 Primary} & 	extbf{U+2734} & 	extbf{Aeon} \
-erb|elvera| & A5-S1 (Vera) & U+2D30 & Court \
-erb|eltar| & A5-S2 (Tar) & U+2D31 & Court \
-erb|elghem| & A5-S3 (Ghem) & U+2D33 & Court \
-erb|eldrel| & A5-S4 (Drel) & U+2D37 & Court \
-erb|elful| & A5-S5 (Ful) & U+2D3C & Court \
-erb|elker| & A5-S6 (Ker) & U+2D3D & Court \
-erb|elhohm| & A5-S7 (Hohm) & U+2D40 & Court \
-erb|elhrah| & A5-S8 (Hrah) & U+2D43 & Court \
-erb|elara| & A5-S9 (Ara) & U+2D44 & Court \
-erb|elqel| & A5-S10 (Qel) & U+2D47 & Court \
-erb|elirn| & A5-S11 (Irn) & U+2D49 & Court \
-erb|eljen| & A5-S12 (Jen) & U+2D4A & Court \
-
-% --- A6 SOR ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A6: SOR (Air) [Syloti Nagri]}}} \
-\midrule
-erb|\SOR| & 	extbf{A6 Primary} & 	extbf{U+229B} & 	extbf{Aeon} \
-erb|\sorfi| & A6-S1 (Fi) & U+A807 & Court \
-erb|\sorlun| & A6-S2 (Lun) & U+A808 & Court \
-erb|\sorvaru| & A6-S3 (Varu) & U+A809 & Court \
-erb|\sorsenh| & A6-S4 (Senh) & U+A80A & Court \
-erb|\sorkos| & A6-S5 (Kos) & U+2389 & Court \
-erb|\sorramh| & A6-S6 (Ramh) & U+A80C & Court \
-erb|\sortis| & A6-S7 (Tis) & U+A80D & Court \
-erb|\sorvey| & A6-S8 (Vey) & U+A80E & Court \
-erb|\sorsrih| & A6-S9 (Srih) & U+A80F & Court \
-erb|\sorhrin| & A6-S10 (Hrin) & U+A810 & Court \
-erb|\soryon| & A6-S11 (Yon) & U+A811 & Court \
-erb|\sorthal| & A6-S12 (Thal) & U+A812 & Court \
-
-% --- A7 KOTH ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A7: KOTH (Aether) [Symbola]}}} \
-\midrule
-erb|\KOTH| & 	extbf{A7 Primary} & 	extbf{U+1F702} & 	extbf{Aeon} \
-erb|\kothkel| & A7-S1 (Kel) & U+2BF7 & Court \
-erb|\kothsens| & A7-S2 (Sens) & U+1F701 & Court \
-erb|\kothlinn| & A7-S3 (Linn) & U+1F703 & Court \
-erb|\kothbrim| & A7-S4 (Brim) & U+1F704 & Court \
-erb|\kothinn| & A7-S5 (Inn) & U+1F705 & Court \
-erb|\kothsubh| & A7-S6 (Subh) & U+1F706 & Court \
-erb|\kothwell| & A7-S7 (Well) & U+1F707 & Court \
-erb|\kothmet| & A7-S8 (Met) & U+1F708 & Court \
-erb|\kothkesh| & A7-S9 (Kesh) & U+1F709 & Court \
-erb|\kothsoth| & A7-S10 (Soth) & U+1F70A & Court \
-erb|\kothrhun| & A7-S11 (Rhun) & U+1F70B & Court \
-erb|\kothdelh| & A7-S12 (Delh) & U+1F70C & Court \
-
-% --- A8 DREH ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A8: DREH (Void) [Cuneiform]}}} \
-\midrule
-erb|\DREH| & 	extbf{A8 Primary} & 	extbf{U+29D7} & 	extbf{Aeon} \
-erb|\drehna| & A8-S1 (Na) & U+12000 & Court \
-erb|\drehur| & A8-S2 (Ur) & U+1202D & Court \
-erb|\drehnih| & A8-S3 (Nih) & U+12040 & Court \
-erb|\drehazh| & A8-S4 (Azh) & U+1208A & Court \
-erb|\drehhol| & A8-S5 (Hol) & U+12111 & Court \
-erb|\drehgur| & A8-S6 (Gur) & U+12146 & Court \
-erb|\drehves| & A8-S7 (Ves) & U+121A0 & Court \
-erb|\drehrim| & A8-S8 (Rim) & U+121FD & Court \
-erb|\drehdrem| & A8-S9 (Drem) & U+1224C & Court \
-erb|\drehoth| & A8-S10 (Oth) & U+12295 & Court \
-erb|\drehizh| & A8-S11 (Izh) & U+122D7 & Court \
-erb|\drehsun| & A8-S12 (Sun) & U+1230B & Court \
-
-% --- A9 RHEA ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A9: RHEA (Shadow) [Ethiopic]}}} \
-\midrule
-erb|\RHEA| & 	extbf{A9 Primary} & 	extbf{U+2A54} & 	extbf{Aeon} \
-erb|heakia| & A9-S1 (Kia) & U+2D80 & Court \
-erb|heazohm| & A9-S2 (Zohm) & U+2D81 & Court \
-erb|heather| & A9-S3 (Ther) & U+2D82 & Court \
-erb|headrun| & A9-S4 (Drun) & U+2D83 & Court \
-erb|heafelh| & A9-S5 (Felh) & U+2D84 & Court \
-erb|hearal| & A9-S6 (Ral) & U+2D85 & Court \
-erb|heakrah| & A9-S7 (Krah) & U+2D86 & Court \
-erb|heaandh| & A9-S8 (Andh) & U+2D87 & Court \
-erb|headebh| & A9-S9 (Debh) & U+2D88 & Court \
-erb|heakol| & A9-S10 (Kol) & U+2D89 & Court \
-erb|heafral| & A9-S11 (Fral) & U+2D8A & Court \
-erb|heahush| & A9-S12 (Hush) & U+2D8B & Court \
-
-% --- A10 ZHEK ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A10: ZHEK (Resonance) [Lydian]}}} \
-\midrule
-erb|\ZHEK| & 	extbf{A10 Primary} & 	extbf{U+25C8} & 	extbf{Aeon} \
-erb|\zhekhin| & A10-S1 (Hin) & U+10920 & Court \
-erb|\zhekser| & A10-S2 (Ser) & U+10921 & Court \
-erb|\zhekharma| & A10-S3 (Harma) & U+10922 & Court \
-erb|\zhektorh| & A10-S4 (Torh) & U+10923 & Court \
-erb|\zhekpel| & A10-S5 (Pel) & U+10924 & Court \
-erb|\zhekkhir| & A10-S6 (Khir) & U+10925 & Court \
-erb|\zhekryth| & A10-S7 (Ryth) & U+10926 & Court \
-erb|\zhekmelu| & A10-S8 (Melu) & U+10927 & Court \
-erb|\zhekphaz| & A10-S9 (Phaz) & U+10928 & Court \
-erb|\zheklokh| & A10-S10 (Lokh) & U+10929 & Court \
-erb|\zheknod| & A10-S11 (Nod) & U+1092A & Court \
-erb|\zhekumel| & A10-S12 (Umel) & U+1092B & Court \
-
-% --- A11 SHAV ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A11: SHAV (Gate) [Cypriot]}}} \
-\midrule
-erb|\SHAV| & 	extbf{A11 Primary} & 	extbf{U+2742} & 	extbf{Aeon} \
-erb|\shavdohm| & A11-S1 (Dohm) & U+10800 & Court \
-erb|\shavrist| & A11-S2 (Rist) & U+10801 & Court \
-erb|\shavtran| & A11-S3 (Tran) & U+10802 & Court \
-erb|\shavkorh| & A11-S4 (Korh) & U+10803 & Court \
-erb|\shavskyh| & A11-S5 (Skyh) & U+10804 & Court \
-erb|\shavster| & A11-S6 (Ster) & U+10805 & Court \
-erb|\shavposs| & A11-S7 (Poss) & U+1081D & Court \
-erb|\shavporu| & A11-S8 (Poru) & U+1081E & Court \
-erb|\shavdorm| & A11-S9 (Dorm) & U+10808 & Court \
-erb|\shavtrev| & A11-S10 (Trev) & U+1081C & Court \
-erb|\shavlimh| & A11-S11 (Limh) & U+1080B & Court \
-erb|\shavhinge| & A11-S12 (Hinge) & U+1080C & Court \
-
-% --- A12 TRIG ---
-\midrule
-\multicolumn{4}{l}{	extit{	extbf{A12: TRIG (Silence) [Elbasan]}}} \
-\midrule
-erb|\TRIG| & 	extbf{A12 Primary} & 	extbf{U+2D63} & 	extbf{Aeon} \
-erb|	rigtzig| & A12-S1 (Tzig) & U+10500 & Court \
-erb|	rigpehl| & A12-S2 (Pehl) & U+10501 & Court \
-erb|	rigduth| & A12-S3 (Duth) & U+10502 & Court \
-erb|	rigcoma| & A12-S4 (Coma) & U+10503 & Court \
-erb|	rigmeru| & A12-S5 (Meru) & U+10504 & Court \
-erb|	rigstab| & A12-S6 (Stab) & U+10505 & Court \
-erb|	righopa| & A12-S7 (Hopa) & U+10506 & Court \
-erb|	rigconti| & A12-S8 (Conti) & U+10507 & Court \
-erb|	rigresth| & A12-S9 (Resth) & U+10508 & Court \
-erb|	rigsil| & A12-S10 (Sil) & U+10509 & Court \
-erb|	rigslun| & A12-S11 (Slun) & U+1050A & Court \
-erb|	rigetern| & A12-S12 (Etern) & U+1050B & Court \
-
-ottomrule
-\end{longtable}
-\end{scriptsize}
