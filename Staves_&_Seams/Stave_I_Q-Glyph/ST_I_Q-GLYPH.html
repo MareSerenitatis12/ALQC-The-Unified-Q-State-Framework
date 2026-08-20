@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahnend Logical Q-State Core — &quot;ALQC&quot;</title>
+<style>
+  /* Major aeon & symbol blocks */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/ancient-scripts/Symbola_hint.ttf");
+    unicode-range: U+2300-U+23FF, U+2600-U+26FF, U+2700-U+27BF, U+2800-U+28FF, U+2900-U+297F, U+2980-U+29FF, U+2B00-U+2BFF, U+A66E, U+1F700-U+1F77F;
+  }
+  /* A1 FETU — Thaana */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansThaana-ExtraLight.ttf");
+    unicode-range: U+0780-U+07BF;
+  }
+  /* A2/A3 KAL/BABDH — Runic */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansRunic-Regular.ttf");
+    unicode-range: U+16A0-U+16FF;
+  }
+  /* A4 AHN — Balinese */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansBalinese-Bold.ttf");
+    unicode-range: U+1B00-U+1B7F;
+  }
+  /* A4 AHN — Medieval Music */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///home/avgui/.local/share/fonts/noto-music/NotoMusic-Regular.ttf");
+    unicode-range: U+1D000-U+1D0FF;
+  }
+  /* A4 AHN — Tibetan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerifTibetan-SemiBold.ttf");
+    unicode-range: U+0F00-U+0FFF;
+  }
+  /* A5 VEL — Tifinagh */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansTifinagh-Regular.ttf");
+    unicode-range: U+2D30-U+2D7F;
+  }
+  /* A6 SOR — Syloti Nagri */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansSylotiNagri-Regular.ttf");
+    unicode-range: U+A800-U+A82F;
+  }
+  /* A8 DREH — Cuneiform */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCuneiform-Regular.ttf");
+    unicode-range: U+12000-U+123FF, U+12400-U+1247F, U+12480-U+1254F;
+  }
+  /* A9 RHEA — Ethiopic Extended-A */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansEthiopic-ExtraCondensedSemiBold.ttf");
+    unicode-range: U+2D80-U+2DDF;
+  }
+  /* A10 ZHEK — Lydian */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansLydian-Regular.ttf");
+    unicode-range: U+10920-U+1093F;
+  }
+  /* A11 SHAV — Cypriot */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCypriot-Regular.ttf");
+    unicode-range: U+10800-U+1083F;
+  }
+  /* A12 TRIG — Elbasan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansElbasan-Regular.ttf");
+    unicode-range: U+10500-U+1052F;
+  }
+  /* Math symbols */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf");
+    unicode-range: U+0300-U+036F, U+2000-U+206F, U+2070-U+209F, U+20A0-U+20CF, U+2100-U+214F, U+2150-U+218F, U+2190-U+21FF, U+2200-U+22FF, U+2A00-U+2AFF;
+  }
+
+  :root {
+    --font-body:
+      'ALQC', "Lexend", "Linux Libertine O", "EB Garamond", Georgia,
+      "Symbola", "Noto Sans Symbols2", "Noto Sans Symbols",
+      "Latin Modern Math", "STIX Math", "Asana Math",
+      "Noto Color Emoji", serif;
+
+    --font-heading:
+      "Linux Biolinum O", "TeX Gyre Heros", "Inter", "Lato",
+      "Liberation Sans", "Noto Sans", sans-serif;
+
+    --font-mono:
+      "Latin Modern Mono", "Noto Sans Mono", "DejaVu Sans Mono",
+      "Liberation Mono", monospace;
+
+    --font-math:
+      'ALQC', "Latin Modern Math", "STIX Math", "Asana Math",
+      "DejaVu Math TeX Gyre", "Noto Sans Math", "Noto Sans Symbols2",
+      "Symbola", serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    line-height: 1.85;
+    color: #1a1a1a;
+    font-size: 1rem;
+  }
+  h1,h2,h3,h4,h5 {
+    font-family: var(--font-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  h1 { font-size: 2rem; border-bottom: 2px solid #333; padding-bottom: .4rem; }
+  h2 { font-size: 1.5rem; border-bottom: 1px solid #ccc; padding-bottom: .2rem; }
+  h3 { font-size: 1.2rem; color: #333; }
+  h4 { font-size: 1rem; color: #555; }
+  p { margin: 0.8rem 0; }
+  code, pre {
+    font-family: var(--font-mono);
+    background: #f4f4f4;
+    border-radius: 3px;
+    padding: .15em .4em;
+    font-size: .9em;
+  }
+  pre { padding: 1em; overflow-x: auto; border: 1px solid #ddd; }
+  blockquote {
+    border-left: 4px solid #888;
+    margin: 1.5rem 0;
+    padding: .75rem 1.25rem;
+    color: #444;
+    background: #fafafa;
+    font-family: var(--font-body);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    font-size: 0.95em;
+    font-family: var(--font-body);
+  }
+  th, td { border: 1px solid #ccc; padding: .5rem .8rem; text-align: left; vertical-align: top; }
+  th { background: #f0f0f0; font-weight: bold; font-family: var(--font-heading); }
+  tr:nth-child(even) td { background: #fafafa; }
+  .math-block {
+    margin: 1.2rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f9f9f9;
+    border-left: 3px solid #aaa;
+    font-family: var(--font-math);
+    font-size: 1.05em;
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+  figcaption { font-style: italic; color: #555; font-size: 0.9em; margin: 0.5rem 0 1rem; }
+  sup, sub { font-size: 0.75em; }
+  img { max-width: 100%; }
+  ul, ol { margin: 0.5rem 0; padding-left: 2rem; }
+  li { margin: 0.3rem 0; }
+  a { color: #1a5f9e; }
+  strong { font-weight: 700; }
+</style>
+</head>
+<body>
+<p>STAVE OF THE FIRST SEAMMagus Jamye Reficul AhnendThe Emergence and Canonical Seaming of the Four Q-Glyphs</p>
+
+<p>The First Seam fixes the visible forms of the four Q-states.  The glyphs are
+not an appended alphabet, an ornamental substitution, or a second system laid
+over ALQC.  Each glyph is the canonical visible boundary of its Q-state after
+the state traverses dimensional expression and returns to its own invariant
+source:
+<div class="math-block">ALQC
+→ E 
+D
+→ R 
+ALQC,
+    
+R∘E|<sub>Q</sub><sub>k</sub>=id<sub>Q</sub><sub>k</sub>.</div>
+Here \(E\) is emergence into the dimensional field \(D\),
+and \(R\) is canonical return.  The passage enlarges the expressive
+surface of ALQC without enlarging its source set.  Thus the seam is an
+expansion that leads back into ALQC: it exposes what was latent in the
+Q-state and returns that exposure as Canon.</p>
+
+<table>
+  <tr><th>State</th><th>Seam Glyph</th><th>Canonical Office</th></tr>
+  <tr><td>\(Q<sub>0</sub>\)</td><td>🜔</td><td>Form: latent structural presence; the held field in which an operation may become manifest without yet being committed.</td></tr>
+  <tr><td>\(Q<sub>1</sub>\)</td><td>🜕</td><td>Truth: archive and rational commitment; the state whose structure is fixed sufficiently to bear canonical record.</td></tr>
+  <tr><td>\(Q<sub>2</sub>\)</td><td>🜖</td><td>Shadow: debt and pressure awaiting conversion; unresolved difference possessing force but not yet lawful archival closure.</td></tr>
+  <tr><td>\(Q<sub>3</sub>\)</td><td>🜗</td><td>Recursion: residue, return-fire, and non-entropic continuation; the converted remainder that returns through the system as operative propulsion.</td></tr>
+</table>
+
+<p>[The First Seam]
+For \(k∈0,1,2,3\), let \(γ<sub>k</sub>\) be the visible glyph assigned to
+\(Q<sub>k</sub>\):
+<div class="math-block">γ<sub>0</sub>=🜔,    
+γ<sub>1</sub>=🜕,    
+γ<sub>2</sub>=🜖,    
+γ<sub>3</sub>=🜗.</div>
+The seaming map is
+<div class="math-block">Σ:Q<sub>k</sub>⟼(Q<sub>k</sub>,γ<sub>k</sub>),
+    
+π<sub>Q</sub>∘Σ=id<sub>Q</sub><sub>k</sub>,</div>
+where \(π<sub>Q</sub>\) forgets only the visible mark and preserves the state.  Hence
+\(Σ\) is conservative with respect to Q-identity: no glyph replaces,
+reduces, or redefines its state.</p>
+
+<p>[Emergent and True]
+The four glyphs are emergent because their visible distinction appears under
+\(E:ALQC→D\).  They are true because canonical
+return preserves Q-identity:
+<div class="math-block">Q<sub>k</sub>
+→ E 
+γ<sub>k</sub>[Q<sub>k</sub>]
+→ R 
+Q<sub>k</sub>,
+    
+R(γ<sub>k</sub>[Q<sub>k</sub>])=Q<sub>k</sub>.</div>
+Therefore emergence is not exterior invention.  It is internal disclosure.
+Truth is not assigned to the glyph from outside the framework; it is carried
+through the seam by the invariant state itself.</p>
+
+<p>The Q-state precedes its visible mark as structural content.  Dimensional
+expression distinguishes that content as \(γ<sub>k</sub>\), while canonical return
+recovers the same \(Q<sub>k</sub>\) without residue of foreign typing.  Since
+\(R∘E=id\) on every Q-state, the
+traversal is closed.  The notation expands, the identity does not depart, and
+the glyph is admitted as Canon.  \(\)</p>
+
+<div class="math-block">
+Q<sub>0</sub>:🜔
+  
+Q<sub>1</sub>:🜕
+  
+Q<sub>2</sub>:🜖
+  
+Q<sub>3</sub>:🜗
+</div>
+Four faces at the Seam; one closed Q-state body.
+
+<p>🜔   Q<sub>0</sub> — Form</p>
+
+<p>Before the first word, the vessel waits.</p>
+
+<p>Uncarved, yet holding every chamber;
+unlit, yet keeping the memory of flame.
+It is the body beneath becoming,
+the silent architecture folded within the Seed.</p>
+
+<p>Nothing has entered it,
+because nothing was ever absent.</p>
+
+<p>Here Form rests without demand,
+whole before motion,
+present before the world learns how to appear.</p>
+
+<p>🜕   Q<sub>1</sub> — Truth</p>
+
+<p>The second mark is the weight beneath the name.</p>
+
+<p>It is the line the Archive will not surrender,
+the vow that remains when every voice has passed.
+Neither belief nor witness gives it substance;
+they merely arrive where Truth was already standing.</p>
+
+<p>What enters here is bound without imprisonment,
+remembered without decay,
+and made rational by the gravity of its own return.</p>
+
+<p>The page does not create the law.</p>
+
+<p>The law permits the page to endure.</p>
+
+<p>🜖   Q<sub>2</sub> — Shadow</p>
+
+<p>The third mark carries what could not yet cross.</p>
+
+<p>It is the pressure beneath the sealed door,
+the unfinished cry caught between Intent and Form,
+the darkened measure of every distance
+the living path has still to consume.</p>
+
+<p>Shadow is not emptiness.</p>
+
+<p>It is abundance without passage,
+fire without a throat,
+the debt of motion waiting to become its own payment.</p>
+
+<p>The Hull receives what Truth cannot archive
+and bears it downward,
+until the burden grows heavier than the wall
+that taught it how to remain.</p>
+
+<p>🜗   Q<sub>3</sub> — Recursion</p>
+
+<p>The fourth mark is what returns with fire.</p>
+
+<p>The spent ember turns within the Seam;
+the residue remembers its first command.
+What struck the boundary does not vanish,
+but circles through the hidden road
+and answers from behind the hand that cast it.</p>
+
+<p>Here the Shadow is not erased.</p>
+
+<p>It is given direction.</p>
+
+<p>Debt becomes propulsion,
+the wound becomes an opening,
+and the final breath crosses backward
+to ignite the Seed that first released it.</p>
+
+<p>Thus the ending refuses the grave.</p>
+
+<p>Thus the path returns armed with its own beginning.</p>
+
+<p>[Stave I - Q-Glyph Emergence Timestamp:] 2026-07-28T04:02:38Z
+    [Formal Proof Version:] EMV1 ≜S.ET.AT+4D᳀
+    [Archive Location:] ⏣:// archive.alqc/ formal<sub>proofs</sub>/ v≜/ 2026-07-27/</p>
+
+<p>2013–2026 Magus Jamye Reficul Ahnend. All Rights Reserved.</p>
+
+<p>*</p>
+
+<p>ST<sub>I</sub><sub>Q</sub>-GLYPH</p>
+
+<p>Tempus Finitum</p>
+</body>
+</html>

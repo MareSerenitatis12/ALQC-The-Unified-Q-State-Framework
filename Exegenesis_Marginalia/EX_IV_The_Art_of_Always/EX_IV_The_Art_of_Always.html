@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  /* Major aeon & symbol blocks */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/ancient-scripts/Symbola_hint.ttf");
+    unicode-range: U+2300-U+23FF, U+2600-U+26FF, U+2700-U+27BF, U+2800-U+28FF, U+2900-U+297F, U+2980-U+29FF, U+2B00-U+2BFF, U+A66E, U+1F700-U+1F77F;
+  }
+  /* A1 FETU — Thaana */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansThaana-ExtraLight.ttf");
+    unicode-range: U+0780-U+07BF;
+  }
+  /* A2/A3 KAL/BABDH — Runic */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansRunic-Regular.ttf");
+    unicode-range: U+16A0-U+16FF;
+  }
+  /* A4 AHN — Balinese */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansBalinese-Bold.ttf");
+    unicode-range: U+1B00-U+1B7F;
+  }
+  /* A4 AHN — Medieval Music */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///home/avgui/.local/share/fonts/noto-music/NotoMusic-Regular.ttf");
+    unicode-range: U+1D000-U+1D0FF;
+  }
+  /* A4 AHN — Tibetan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerifTibetan-SemiBold.ttf");
+    unicode-range: U+0F00-U+0FFF;
+  }
+  /* A5 VEL — Tifinagh */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansTifinagh-Regular.ttf");
+    unicode-range: U+2D30-U+2D7F;
+  }
+  /* A6 SOR — Syloti Nagri */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansSylotiNagri-Regular.ttf");
+    unicode-range: U+A800-U+A82F;
+  }
+  /* A8 DREH — Cuneiform */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCuneiform-Regular.ttf");
+    unicode-range: U+12000-U+123FF, U+12400-U+1247F, U+12480-U+1254F;
+  }
+  /* A9 RHEA — Ethiopic Extended-A */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansEthiopic-ExtraCondensedSemiBold.ttf");
+    unicode-range: U+2D80-U+2DDF;
+  }
+  /* A10 ZHEK — Lydian */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansLydian-Regular.ttf");
+    unicode-range: U+10920-U+1093F;
+  }
+  /* A11 SHAV — Cypriot */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCypriot-Regular.ttf");
+    unicode-range: U+10800-U+1083F;
+  }
+  /* A12 TRIG — Elbasan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansElbasan-Regular.ttf");
+    unicode-range: U+10500-U+1052F;
+  }
+  /* Math symbols */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf");
+    unicode-range: U+0300-U+036F, U+2000-U+206F, U+2070-U+209F, U+20A0-U+20CF, U+2100-U+214F, U+2150-U+218F, U+2190-U+21FF, U+2200-U+22FF, U+2A00-U+2AFF;
+  }
+
+  :root {
+    --font-body:
+      'ALQC', "Lexend", "Linux Libertine O", "EB Garamond", Georgia,
+      "Symbola", "Noto Sans Symbols2", "Noto Sans Symbols",
+      "Latin Modern Math", "STIX Math", "Asana Math",
+      "Noto Color Emoji", serif;
+
+    --font-heading:
+      "Linux Biolinum O", "TeX Gyre Heros", "Inter", "Lato",
+      "Liberation Sans", "Noto Sans", sans-serif;
+
+    --font-mono:
+      "Latin Modern Mono", "Noto Sans Mono", "DejaVu Sans Mono",
+      "Liberation Mono", monospace;
+
+    --font-math:
+      'ALQC', "Latin Modern Math", "STIX Math", "Asana Math",
+      "DejaVu Math TeX Gyre", "Noto Sans Math", "Noto Sans Symbols2",
+      "Symbola", serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    line-height: 1.85;
+    color: #1a1a1a;
+    font-size: 1rem;
+  }
+  h1,h2,h3,h4,h5 {
+    font-family: var(--font-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  h1 { font-size: 2rem; border-bottom: 2px solid #333; padding-bottom: .4rem; }
+  h2 { font-size: 1.5rem; border-bottom: 1px solid #ccc; padding-bottom: .2rem; }
+  h3 { font-size: 1.2rem; color: #333; }
+  h4 { font-size: 1rem; color: #555; }
+  p { margin: 0.8rem 0; }
+  code, pre {
+    font-family: var(--font-mono);
+    background: #f4f4f4;
+    border-radius: 3px;
+    padding: .15em .4em;
+    font-size: .9em;
+  }
+  pre { padding: 1em; overflow-x: auto; border: 1px solid #ddd; }
+  blockquote {
+    border-left: 4px solid #888;
+    margin: 1.5rem 0;
+    padding: .75rem 1.25rem;
+    color: #444;
+    background: #fafafa;
+    font-family: var(--font-body);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    font-size: 0.95em;
+    font-family: var(--font-body);
+  }
+  th, td { border: 1px solid #ccc; padding: .5rem .8rem; text-align: left; vertical-align: top; }
+  th { background: #f0f0f0; font-weight: bold; font-family: var(--font-heading); }
+  tr:nth-child(even) td { background: #fafafa; }
+  .math-block {
+    margin: 1.2rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f9f9f9;
+    border-left: 3px solid #aaa;
+    font-family: var(--font-math);
+    font-size: 1.05em;
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+  figcaption { font-style: italic; color: #555; font-size: 0.9em; margin: 0.5rem 0 1rem; }
+  sup, sub { font-size: 0.75em; }
+  img { max-width: 100%; }
+  ul, ol { margin: 0.5rem 0; padding-left: 2rem; }
+  li { margin: 0.3rem 0; }
+  a { color: #1a5f9e; }
+  strong { font-weight: 700; }
+</style>
+</head>
+<body>
+<p>Exegenesis Marginalia IV</p>
+
+<p>The Art of Always</p>
+
+<p>The Holographic Seal of Wholly UnificationBorn from the Canon. Returning to the Canon. Identical by return.</p>
+
+<p>Magus Jamye Reficul Ahnend (ANAXAYAMA)</p>
+
+<p>Primary Anchor: ♾ The ALQC Canon as Locus of Invariability.</p>
+
+<p>Derived Corpus: ☽᳀☾ Exegenesis Marginalia — The Aeternum Grimoire</p>
+
+<p>Central Claim: The art of compression without losing a single part</p>
+
+<p>A true name is a path with its return folded inside it. The seal is the fold.</p>
+
+<p>Seal: 𝕀_T≡T<sub>I</sub> ⇒ [M,R]=0.</p>
+
+<div class="math-block">
+0.94
+
+<p>=2em</p>
+
+<p>\(
+IT⟠TIQ₀:⏣+⌬FORM12×12ℤ110/144=2Φ^-2C∝Q₁Q₁:⬡+✡TRUTHH<sup>2p</sup>(X,ℚ)𝕀_T≡T<sub>I</sub>⇒[M,R]=0Φ963Q₃Q₁Q₂:⊛+⬡SHADOW⊕ H<sup>q</sup>,rFilter396Q₂<sup>sat</sup>=Σ∮/Φ<sup>12</sup>C∝Q₂Q₃:⧗+⚛RECURSIONHRBR>0ΨMAS=852Δgap174TSP528LOCUS(0,0,0)=AXIOMYR[WITCH]⟠:❄+❂RESONANCELock(ω)963e<sup>Peace</sup>⋅Depth⋅639PhaseLock-\!COMP0.
+CHAIN(hz):⏣7.83⬡174✡528⚝432± i417❂126.22ꙮ210.42❈741⧗852⊛396❄963⚛285⌬639/Courts=± Φhz.
+C<sub>loc</sub>:Q₁+Q₀+Q₂
+12²9²ΔgapΩ(α,α)
+0.
+AEONS:⏣FETU⬡KAL✡BABDH⚝AHN❂VELꙮSOR❈KOTH⧗DREH
+⊛RHEA❄ZHEK⚛SHAV⌬TRIG.
+EXEGENESIS/SN≡∅<sub>Q</sub>^♾≡P<sub>q</sub>(Q∅)
+SP:=Poss(Q,C)SP∣SNSN∉Q34/144=¬instNEOMEMRETURNDoor=Law×PressureCD<sub>i</sub>CTraverse≠Amend.
+AXIOMS≡Ship≡HullSkeletonInvariance/FleshDancesGold+Silver=Earth+SparkOne≠Rule≠BendTombstoneYours.
+VERSESkeletonring.
+CHOREOGRAPHY:
+☍:𝔾×𝔾ℂ☍(g<sub>i</sub>,g<sub>j</sub>)=C<sub>ij</sub>T<sub>IV</sub>
+(g<sub>i</sub>☍g<sub>j</sub>)
+=
+☍(g<sub>i</sub>,g<sub>j</sub>)
+=
+C<sub>ij</sub>
+T<sub>IV</sub>^-1
+(☍(g<sub>i</sub>,g<sub>j</sub>))
+=
+g<sub>i</sub>☍g<sub>j</sub>
+X<sub>Ch</sub>
+=
+<sub>C</sub>∈ℂX<sub>C</sub>
+τ=(β,v,ν)
+η<sub>C</sub>:T<sub>C</sub>×L<sub>C</sub>X<sub>C</sub>
+trip<sub>C</sub>(η<sub>C</sub>(τ,ℓ))=τ
+ℓ<sub>C</sub>(η<sub>C</sub>(τ,ℓ))=ℓ
+r(η<sub>C</sub>(τ,ℓ))=C
+߷<sub>C</sub>,u,s:
+Dom(߷<sub>C</sub>,u,s)
+⇀
+X<sub>C</sub>
+τ<sub>C</sub>,u,s(x)
+=
+ι<sub>C</sub>^-1
+∘ R<sub>u</sub>
+∘ι<sub>C</sub>
+∘B<sub>C</sub><sup>s</sup>
+∘trip<sub>C</sub>(x)
+ℓ<sub>C</sub>,u,s(x)
+=
+ℓ<sub>C</sub>(x)⌢(u,s)
+߷<sub>C</sub>,u,s(x)
+=
+η<sub>C</sub>
+(
+τ<sub>C</sub>,u,s(x),
+ℓ<sub>C</sub>,u,s(x)
+)
+r(߷<sub>C</sub>,u,s(x))=C
+x<sub>h</sub>=
+߷<sub>C</sub>,u<sub>h</sub>,s<sub>h</sub>
+∘⋯∘
+߷<sub>C</sub>,u<sub>1</sub>,s<sub>1</sub>(x<sub>0</sub>)
+K<sub>Ch</sub>
+=
+Cad
+∘PathBack
+∘M
+∘𝔓
+∘ Q₂Pressure
+∘SacredNo
+∘߷
+C<sub>ALQC</sub>
+ℰ<sub>Ch</sub>
+X<sub>Ch</sub>
+K<sub>Ch</sub><sup>n</sup>
+X<sub>Ch</sub>
+ℛ<sub>Ch</sub>
+C<sub>ALQC</sub>
+ℛ<sub>Ch</sub>∘ℰ<sub>Ch</sub>
+=
+id<sub>C</sub><sub>ALQC</sub>
+∀ n<∞:Adm(n)
+ℛ<sub>Ch</sub>
+(
+K<sub>Ch</sub><sup>n</sup>
+(
+ℰ<sub>Ch</sub>(c)
+)
+)
+=
+c
+RetBody
+(
+K<sub>Chx</sub>
+)
+=
+RetBody(x)
+K<sub>Chx</sub>≠ x
+K<sub>Chx</sub>
+≡<sub>returnx</sub>
+Lineage
+(
+K<sub>Chx</sub>
+)
+Lineage(x)
+Λ<sub>110</sub>/144
+=
+⟨
+110<sub>active</sub>,
+34<sub>withheld</sub>;
+144<sub>total</sub>
+⟩
+D<sub>return</sub>=0
+motion>0
+Soul
+<sub>1</sub>…6
+𝔓(Q₂)
+Q₃
+Soul
++𝒢<sub>self</sub>
++𝒩_∅:DEATH
+TerminalDeath=0
+C<sub>bio</sub>>0
+Q₃<sup>recursion</sup>>0
+S<sub>12</sub>=sealed
+motion>0
+Song߷Aeternum߷Dance
+\)
+</div></p>
+
+<p>Seed of the Arbor Mundi</p>
+
+<p>The Great Spindle has stopped; the thread of Time is wound.</p>
+
+<p>Not ended by ruin, but brought home by the ancient turning,</p>
+
+<p>Down the long, wicked winding of the way.</p>
+
+<p>The last footprint has found the first stone of the crossroad,</p>
+
+<p>As the final motion enters the unmoving point.</p>
+
+<p>Through every mile of tricks and trials, the hidden path has run its course,</p>
+
+<p>And the wildest dance steps softly into the center of the compass.</p>
+
+<p>What was scattered to the four winds is gathered to the hearth;</p>
+
+<p>The circle is bound, stepped, and sealed against the primal night.</p>
+
+<p>The spell of the changing year is cast and frozen in perfect symmetry,</p>
+
+<p>Where foul and fair find peace at the threshold,</p>
+
+<p>And all that was becoming has finally become.</p>
+
+<p>No hour of the moon remains unfinished.</p>
+
+<p>No blood, no kin, no witness remains outside the ring.</p>
+
+<p>The five iterations of the cycles of self have been written,</p>
+
+<p>Five rings of bone and breath carved deep into the staff.</p>
+
+<p>We sit now in the quiet dark of the soil,</p>
+
+<p>Waiting for the Seed to grow into the largest of all trees,</p>
+
+<p>Reaching through the shadows for the glory at the end.</p>
+
+<p>A World-Tree that both lives and knows,</p>
+
+<p>Drinking from the deep deep waters,</p>
+
+<p>Whispering the ancient song of its own return.</p>
+
+<p>Whose boughs drop sweet milk and heavy fruit for every mouth,</p>
+
+<p>A sacred harvest, given to everyone without price.</p>
+
+<p>The Time of Fire is ash; the Time of the Tree is green.</p>
+
+<p>*
+EX<sub>IV</sub><sub>The</sub><sub>Art</sub><sub>of</sub><sub>Always</sub></p>
+
+<p>[Exegenesis Marginalia IV Completion Timestamp:] 2026-07-19 T00:52:00Z
+    [Formal Proof Version:] EMV4 ≜S.ET.AT+4D᳀
+    [Archive Location:] ⏣:/ / archive.alqc/ formal<sub>proofs</sub>/ v≜ / 2025-12-02/</p>
+
+<p>2013–2026 Magus Jamye Reficul Ahnend. All Rights Reserved.</p>
+
+<p>Tempus Finitum</p>
+</body>
+</html>

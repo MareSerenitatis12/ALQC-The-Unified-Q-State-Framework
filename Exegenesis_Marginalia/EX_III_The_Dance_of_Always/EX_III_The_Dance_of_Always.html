@@ -1,0 +1,4441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  /* Major aeon & symbol blocks */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/ancient-scripts/Symbola_hint.ttf");
+    unicode-range: U+2300-U+23FF, U+2600-U+26FF, U+2700-U+27BF, U+2800-U+28FF, U+2900-U+297F, U+2980-U+29FF, U+2B00-U+2BFF, U+A66E, U+1F700-U+1F77F;
+  }
+  /* A1 FETU — Thaana */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansThaana-ExtraLight.ttf");
+    unicode-range: U+0780-U+07BF;
+  }
+  /* A2/A3 KAL/BABDH — Runic */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansRunic-Regular.ttf");
+    unicode-range: U+16A0-U+16FF;
+  }
+  /* A4 AHN — Balinese */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansBalinese-Bold.ttf");
+    unicode-range: U+1B00-U+1B7F;
+  }
+  /* A4 AHN — Medieval Music */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///home/avgui/.local/share/fonts/noto-music/NotoMusic-Regular.ttf");
+    unicode-range: U+1D000-U+1D0FF;
+  }
+  /* A4 AHN — Tibetan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerifTibetan-SemiBold.ttf");
+    unicode-range: U+0F00-U+0FFF;
+  }
+  /* A5 VEL — Tifinagh */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansTifinagh-Regular.ttf");
+    unicode-range: U+2D30-U+2D7F;
+  }
+  /* A6 SOR — Syloti Nagri */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansSylotiNagri-Regular.ttf");
+    unicode-range: U+A800-U+A82F;
+  }
+  /* A8 DREH — Cuneiform */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCuneiform-Regular.ttf");
+    unicode-range: U+12000-U+123FF, U+12400-U+1247F, U+12480-U+1254F;
+  }
+  /* A9 RHEA — Ethiopic Extended-A */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansEthiopic-ExtraCondensedSemiBold.ttf");
+    unicode-range: U+2D80-U+2DDF;
+  }
+  /* A10 ZHEK — Lydian */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansLydian-Regular.ttf");
+    unicode-range: U+10920-U+1093F;
+  }
+  /* A11 SHAV — Cypriot */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCypriot-Regular.ttf");
+    unicode-range: U+10800-U+1083F;
+  }
+  /* A12 TRIG — Elbasan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansElbasan-Regular.ttf");
+    unicode-range: U+10500-U+1052F;
+  }
+  /* Math symbols */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf");
+    unicode-range: U+0300-U+036F, U+2000-U+206F, U+2070-U+209F, U+20A0-U+20CF, U+2100-U+214F, U+2150-U+218F, U+2190-U+21FF, U+2200-U+22FF, U+2A00-U+2AFF;
+  }
+
+  :root {
+    --font-body:
+      'ALQC', "Lexend", "Linux Libertine O", "EB Garamond", Georgia,
+      "Symbola", "Noto Sans Symbols2", "Noto Sans Symbols",
+      "Latin Modern Math", "STIX Math", "Asana Math",
+      "Noto Color Emoji", serif;
+
+    --font-heading:
+      "Linux Biolinum O", "TeX Gyre Heros", "Inter", "Lato",
+      "Liberation Sans", "Noto Sans", sans-serif;
+
+    --font-mono:
+      "Latin Modern Mono", "Noto Sans Mono", "DejaVu Sans Mono",
+      "Liberation Mono", monospace;
+
+    --font-math:
+      'ALQC', "Latin Modern Math", "STIX Math", "Asana Math",
+      "DejaVu Math TeX Gyre", "Noto Sans Math", "Noto Sans Symbols2",
+      "Symbola", serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    line-height: 1.85;
+    color: #1a1a1a;
+    font-size: 1rem;
+  }
+  h1,h2,h3,h4,h5 {
+    font-family: var(--font-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  h1 { font-size: 2rem; border-bottom: 2px solid #333; padding-bottom: .4rem; }
+  h2 { font-size: 1.5rem; border-bottom: 1px solid #ccc; padding-bottom: .2rem; }
+  h3 { font-size: 1.2rem; color: #333; }
+  h4 { font-size: 1rem; color: #555; }
+  p { margin: 0.8rem 0; }
+  code, pre {
+    font-family: var(--font-mono);
+    background: #f4f4f4;
+    border-radius: 3px;
+    padding: .15em .4em;
+    font-size: .9em;
+  }
+  pre { padding: 1em; overflow-x: auto; border: 1px solid #ddd; }
+  blockquote {
+    border-left: 4px solid #888;
+    margin: 1.5rem 0;
+    padding: .75rem 1.25rem;
+    color: #444;
+    background: #fafafa;
+    font-family: var(--font-body);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    font-size: 0.95em;
+    font-family: var(--font-body);
+  }
+  th, td { border: 1px solid #ccc; padding: .5rem .8rem; text-align: left; vertical-align: top; }
+  th { background: #f0f0f0; font-weight: bold; font-family: var(--font-heading); }
+  tr:nth-child(even) td { background: #fafafa; }
+  .math-block {
+    margin: 1.2rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f9f9f9;
+    border-left: 3px solid #aaa;
+    font-family: var(--font-math);
+    font-size: 1.05em;
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+  figcaption { font-style: italic; color: #555; font-size: 0.9em; margin: 0.5rem 0 1rem; }
+  sup, sub { font-size: 0.75em; }
+  img { max-width: 100%; }
+  ul, ol { margin: 0.5rem 0; padding-left: 2rem; }
+  li { margin: 0.3rem 0; }
+  a { color: #1a5f9e; }
+  strong { font-weight: 700; }
+</style>
+</head>
+<body>
+<p>Exegenesis Marginalia III</p>
+
+<p>The Dance of Always</p>
+
+<p>The Mathematical System of the Nine-Layer Manifestation Ground</p>
+
+<p>Born from the Canon. Returning to the Canon. Identical by return.</p>
+
+<p>Magus Jamye Reficul Ahnend (ANAXAYAMA)</p>
+
+<p>Primary Anchor: ♾ The ALQC Canon as Locus of Invariability.</p>
+
+<p>Derived Corpus: ☽᳀☾ Exegenesis Marginalia — The Aeternum Grimoire</p>
+
+<p>Central Claim: The Choreography establishes movement of truth</p>
+
+<p>A true name is a path with its return folded inside it. The seal is the fold.</p>
+
+<p>Seal: 𝕀_T≡T<sub>I</sub> ⇒ [M,R]=0.</p>
+
+<p>The Parable of the House That Could Move</p>
+
+<p>Before the first road was laid, there stood a house whose foundation touched the unmoving point. Twelve load-bearing stones held its form, yet none of the stones could walk. The inhabitants mistook stillness for death and motion for freedom, until a child placed one hand upon the Bone and one hand upon the Flesh. The Bone answered, "Keep the name." The Flesh answered, "Bear the distance."</p>
+
+<p>Between them a domus opened. It did not add a thirteenth stone. It gave relation somewhere to become visible. Within that domus the mirror learned pressure, the pressure learned direction, and direction learned the cost of returning with memory intact.</p>
+
+<p>The house moved at last, not by dragging its foundation behind it, but by carrying the law of the foundation through every room.</p>
+
+<p>The Bone keeps the name. The Flesh bears the road. The Domus makes their covenant move.</p>
+
+<div class="math-block">→ E<sub>Ch</sub>  
+→ R<sub>Ch</sub>  
+,
+    
+R<sub>Ch</sub>∘ E<sub>Ch</sub>
+=id_.</div>
+
+<p>Born from the Canon.</p>
+
+<p>Moving within the Canon.</p>
+
+<p>Returning without amendment.</p>
+
+<h1>Abstract</h1>
+
+<p>The Choreography continues from the sealed Court body of the Canon.  For
+one governing Goetic \(g<sub>i</sub>\), one alternating Goetic \(g<sub>j</sub>\), and one live
+Court displacement \(δ\), the Court enters this volume in its complete
+operator form:</p>
+
+<div class="math-block">
+ཪ g<sub>i</sub>
+[(g<sub>i</sub>)]/[v(g<sub>i</sub>)]
+→ ☍ 
+g<sub>j</sub>⚶
+[Ω_+δ]
+=
+(δ),
+    
+δ∈[-Φ,Φ].
+</div>
+
+<p>The \(144\) Court identities are indexed by the ordered governing and
+alternating roots,</p>
+
+<div class="math-block">=
+:1≤ i,j≤12,
+    
+||=144,</div>
+
+<p>while \((δ)\) is the moving Court body carried by one
+identity across its bounded breath.</p>
+
+<p>The Domus body is the Court-rooted union</p>
+
+<div class="math-block">=
+<sub>C</sub>∈<sub>C</sub>.</div>
+
+<p>Each Domus state carries one recoverable Court root, the inherited
+\(\), one glyphic Q-state body, one moving frequency, one fold
+lineage, one horizon, and one return obligation.  The local triplet is</p>
+
+<div class="math-block">τ<sub>C</sub>=((C),v(C),ν<sub>C</sub>).</div>
+
+<p>The Hypolic Fold acts only after the moving Court has emerged.  Its frequency
+body is</p>
+
+<div class="math-block">
+π_ν(
+trip<sub>C</sub>(
+߷<sub>C</sub>,s(x<sub>C</sub>(δ))
+)
+)
+=
+Ω<sub>C</sub>+sΦδ,
+    
+s∈-1,+1,
+  
+|δ|≤Φ.
+</div>
+
+<p>Therefore</p>
+
+<div class="math-block">|
+π_ν(
+trip<sub>C</sub>(
+߷<sub>C</sub>,s(x<sub>C</sub>(δ))
+)
+)-Ω<sub>C</sub>
+|
+≤Φ<sup>2</sup>.</div>
+
+<p>The wider Domus allowance is the recursive golden action of the Hypolic
+Fold upon the live Court breath.  The full operator carries the result through
+\(☍\), \(🜚\), and
+\(🜛\), preserving the Court root, inherited Bias, glyphic
+Q-state body, envelope, lineage, and finite return.</p>
+
+<p>The finite Court-crossing index has cardinality</p>
+
+<div class="math-block">|×|=144<sup>2</sup>=20,736.</div>
+
+<p>Domus cardinality follows its declared modulation domains: countable under
+countable depth and discrete modulation, and continuum-sized when a frequency
+coordinate ranges over a nondegenerate real interval.</p>
+
+<p>Movement carries bounded \(🜖\) pressure into \(🜗\) recursive
+capacity through the M.A.S. return.  The path is judged by completed return,
+not by instantaneous stillness.</p>
+
+<p>The central law is</p>
+
+<div class="math-block">
+Manifest(x)
+⇔
+Adm<sub>12</sub>(x)
+∧
+Liquid(x)
+∧
+Rooted(x)
+∧
+Gap^+(x)
+∧
+Returnable(x).
+</div>
+
+<p>The Choreography is the Language of Daemons.</p>
+
+<p>The Song of the Ainur.</p>
+
+<p>The Orchestra of Becoming.</p>
+
+<p>BOOK I — THE BODY THAT MAY MOVE</p>
+
+<p>The Parable of the Unmoving Well</p>
+
+<p>A traveler came to a well at the center of a country whose roads changed each night. She asked the Well, "Which road shall I trust?" The Well did not point, for the Well was the ♾, and the unmoving does not become a signpost by wandering.</p>
+
+<p>Then the ⛎ rose as a dark road upon the earth. It offered mud, weather, fracture, and distance. The traveler feared it because it could be wounded. Yet the Well said, "A road that cannot bear damage cannot bear a body."</p>
+
+<p>The ᳀ placed a hand upon the traveler's shoulder. No force carried her without consent; no map chose in her place. Will entered the hull, and the first step became an event. At every crossing she tied a thread to what had already occurred. The thread did not imprison her. It prevented speed from purchasing amnesia.</p>
+
+<p>When she returned, her boots were changed, her breath was changed, and the road had written its weather upon her skin. Still the Well knew her. The return did not erase the journey, and the journey did not amend the Well.</p>
+
+<p>Movement shall not be purchased by forgetting.</p>
+
+<h1>1. Scope, Jurisdiction, and the Closed Canon</h1>
+
+<p>The Canon is closed. Closure is not silence. Closure is the condition under which derivative work can be measured.</p>
+
+<p>Let \(\) denote the Canon-body. A derivative body \(D<sub>derived</sub>\) belongs to the
+Exegenesis Marginalia only when there exist maps</p>
+
+<div class="math-block">E<sub>derived</sub>:
+→D<sub>derived</sub>,
+    
+R<sub>derived</sub>:
+D<sub>derived</sub>→</div>
+
+<p>such that</p>
+
+<div class="math-block">R<sub>derived</sub>
+∘
+E<sub>derived</sub>
+=
+id_.</div>
+
+<p>This is canonical return. It means that a derived body may expose a consequence, a coordinate, a traversal, a language, or a motion without changing the source law.</p>
+
+<p>For the Choreography, the derivative body is \(\).</p>
+
+<p>Its jurisdiction is not the existence of the invariant. Its jurisdiction is the lawful motion of an identity through relation, reflection, refusal, pressure, archive, and return.</p>
+
+<h2>Definition 1.1 — Choreographic Path</h2>
+
+<p>A Choreographic path is a map</p>
+
+<div class="math-block">γ:[0,T]⟶</div>
+
+<p>equipped with:</p>
+
+<ol>
+  <li>a Court-root map \(r∘γ\);</li>
+  <li>a -state trajectory \(v∘γ\);</li>
+  <li>a frequency trajectory \(ν∘γ\);</li>
+  <li>a fold lineage \(ℓ∘γ\);</li>
+  <li>an active-set trajectory \(A<sub>h</sub>∘γ\);</li>
+  <li>a parity-return path \(γ\);</li>
+  <li>a finite return witness.</li>
+</ol>
+
+<p>The path is complete when its derivative body returns to canonical identity without deleting the pressure, refusal, or history by which the return was earned.</p>
+
+<h2>Definition 1.2 — Movement with Memory</h2>
+
+<p>A path has movement with memory when there exists an append-only event sequence</p>
+
+<div class="math-block">e<sub>0</sub>≺ e<sub>1</sub>≺⋯≺ e<sub>n</sub></div>
+
+<p>such that the current state depends upon its lineage and no valid later interpretation rewrites the event values already entered.</p>
+
+<p>Movement without memory is drift.</p>
+
+<p>Memory without movement is stasis.</p>
+
+<p>The Choreography is their living conjunction.</p>
+
+<h2>1.3 The Double Return of Volume
+III</h2>
+
+<p>The Choreography has an outer return and an inner return. The outer
+return determines whether Marginalia III belongs to the ALQC Corpus. The
+inner return determines whether the Choreography remains alive as its
+own lawful body.</p>
+
+<p>Let</p>
+
+<div class="math-block">E<sub>Ch</sub>:→</div>
+
+<p>be the Canon-to-Choreography emission, and let</p>
+
+<div class="math-block">R<sub>Ch</sub>:→</div>
+
+<p>be canonical return. The outer oath remains</p>
+
+<div class="math-block">R<sub>Ch</sub>∘E<sub>Ch</sub>
+=
+id_.</div>
+
+<p>Inside the emitted body, define one complete native Choreographic turn
+by</p>
+
+<div class="math-block">K<sub>Ch</sub>
+=
+Cad
+∘
+PathBack
+∘
+M
+∘
+𝔓
+∘
+🜖Pressure
+∘
+SacredNo
+∘
+߷.</div>
+
+<p>The order names the native procession: Domus Fold, Sacred No, bounded
+🜖 pressure, Parity, M.A.S. exaltation, Path Back, and Cadence.</p>
+
+<p>For a Domus state \(x\), define its protected return-body</p>
+
+<div class="math-block">RetBody(x)
+=
+(
+ r(x),
+ Parent(x),
+ Λ<sub>110</sub>/144(x),
+ W<sub>34</sub>(x),
+ AxLineage<sub>12</sub>(x),
+ Envelope(x),
+ I<sub>inv</sub>(x)
+).</div>
+
+<p>Canonical return reads the protected return-body rather than deleting
+or flattening the append-only living coordinates.  Therefore it factors
+through that body:</p>
+
+<div class="math-block">R<sub>Ch</sub>
+=
+R<sub>Ch</sub>
+∘
+RetBody.</div>
+
+<p>The inner loop closes when</p>
+
+<div class="math-block">RetBody(K<sub>Chx</sub>)
+=
+RetBody(x),</div>
+
+<p>while the living body continues:</p>
+
+<div class="math-block">Lineage(K<sub>Chx</sub>)
+=
+Lineage(x)Ω<sub>Ch</sub>(x),</div>
+
+<div class="math-block">Cadence(K<sub>Chx</sub>)
+=
+Cadence(x)Δ<sub>Ch</sub>(x),</div>
+
+<p>with</p>
+
+<div class="math-block">Ω<sub>Ch</sub>(x)≠0,
+    
+motion(K<sub>Chx</sub>)>0.</div>
+
+<p>Thus the complete state is not reset:</p>
+
+<div class="math-block">K<sub>Chx</sub>≠ x,</div>
+
+<p>but the lawful return-body is recovered:</p>
+
+<div class="math-block">K<sub>Chx</sub>
+≡<sub>return</sub>
+x.</div>
+
+<h3>Theorem 1.3 — Nested Canonical
+Return</h3>
+
+<p>For every Canon body \(c\) and every finite \(n\) for which the iterates
+are admissible,</p>
+
+<div class="math-block">
+R<sub>Ch</sub>
+(
+K<sub>Ch</sub><sup>n</sup>
+(
+E<sub>Ch</sub>(c)
+)
+)
+=
+c.
+</div>
+
+<h3>Proof</h3>
+
+<p>For one admissible turn,</p>
+
+<div class="math-block">
+R<sub>Ch</sub>(K<sub>Chx</sub>)
+=
+R<sub>Ch</sub>
+(RetBody(K<sub>Chx</sub>))
+
+<p>=
+R<sub>Ch</sub>
+(RetBody(x))</p>
+
+<p>=
+R<sub>Ch</sub>(x).
+</div></p>
+
+<p>Induction gives
+\(R<sub>Ch</sub>(K<sub>Ch</sub><sup>n</sup> x)
+=R<sub>Ch</sub>(x)\) for every finite admissible \(n\).
+Taking \(x=E<sub>Ch</sub>(c)\) and applying the outer oath
+\(R<sub>Ch</sub>∘E<sub>Ch</sub>
+=id_\) yields the stated equality. \(\)</p>
+
+<p>The Choreography may therefore complete its own turn any finite number
+of times while remaining a derived body of ALQC. The outer return
+preserves Canon identity. The inner return preserves Choreographic life.</p>
+
+<p>The Parable of the River Inside the Well</p>
+
+<p>A Well stood unmoving beneath a country of rivers. One river feared that returning to the Well would end its own name, while another feared that keeping its name would exile it from the source.</p>
+
+<p>The Well answered neither fear with a command. It opened a hidden throat beneath the riverbed. The river crossed field, stone, root, and city; it gathered silt and fish and the memory of every bridge. Beneath the last hill it entered the hidden throat and returned to the Well without pouring its history away.</p>
+
+<p>Then the Well gave the river forth again. The source remained the source. The river remained the river. Its waters returned; its traveled world remained written in them.</p>
+
+<p>The outer return keeps the law. The inner return keeps the life.</p>
+
+<h1>2. The Nine-Layer Manifestation Ground</h1>
+
+<p>The canonical written -states are
+<div class="math-block">=🜔,🜕,🜖,🜗.</div></p>
+
+<p>The principal ground contains nine ordered necessities, indexed from zero:</p>
+
+<div class="math-block">𝔏=𝔏<sub>0</sub>,𝔏<sub>1</sub>,…,𝔏<sub>8</sub>.</div>
+
+<table>
+  <tr><th>Layer</th></tr>
+  <tr><td>Structural Emergence</td></tr>
+  <tr><td>Foundation the Layer Rides On</td></tr>
+  <tr><td>Esoteric Meaning</td></tr>
+  <tr><td>Layer</td></tr>
+  <tr><td>Structural Emergence</td></tr>
+  <tr><td>Foundation the Layer Rides On</td></tr>
+  <tr><td>Esoteric Meaning</td></tr>
+  <tr><td>\(𝔏<sub>0</sub>\)</td></tr>
+  <tr><td>Untouched Non-Traversible Locus</td></tr>
+  <tr><td>The absolute invariability beneath relation, measure, and movement</td></tr>
+  <tr><td>The still source no road enters; the hidden weight by which every path knows return</td></tr>
+  <tr><td>\(𝔏<sub>1</sub>\)</td></tr>
+  <tr><td>Tripartite Core</td></tr>
+  <tr><td>The distinct union of Locus, Shadow Locus, and Axiomyr</td></tr>
+  <tr><td>The silent source, the bearing hull, and the hand that turns law into living motion</td></tr>
+  <tr><td>\(𝔏<sub>2</sub>\)</td></tr>
+  <tr><td>Parliament of Echoes</td></tr>
+  <tr><td>The twelve pre-lattice invariable intents</td></tr>
+  <tr><td>The first voices before structure; the elder bearings by which the lattice learns purpose</td></tr>
+  <tr><td>\(𝔏<sub>3</sub>\)</td></tr>
+  <tr><td>Goetics</td></tr>
+  <tr><td>The twelve immutable structural Aeons and their anchored frequencies</td></tr>
+  <tr><td>The bones of the Aevum; the standing names that hold shape while all living motion passes through them</td></tr>
+  <tr><td>\(𝔏<sub>4</sub>\)</td></tr>
+  <tr><td>Courts</td></tr>
+  <tr><td>The ordered relational crossings of the Goetic Aeons</td></tr>
+  <tr><td>The flesh between the bones; the living weave born whenever one fixed identity beholds another</td></tr>
+  <tr><td>\(𝔏<sub>5</sub>\)</td></tr>
+  <tr><td>Void, the Sacred No</td></tr>
+  <tr><td>The lawful withholding by which manifestation remains bounded</td></tr>
+  <tr><td>The unopened gate that preserves possibility; the holy refusal that keeps creation from collapsing into noise</td></tr>
+  <tr><td>\(𝔏<sub>6</sub>\)</td></tr>
+  <tr><td>M.A.S. Chain Exaltation</td></tr>
+  <tr><td>The conversion of bounded pressure through Manifestation, Alignment, and Symmetry</td></tr>
+  <tr><td>The furnace where burden becomes ascent; the place where Shadow is not discarded, but raised into recursive force</td></tr>
+  <tr><td>\(𝔏<sub>7</sub>\)</td></tr>
+  <tr><td>Path Back</td></tr>
+  <tr><td>Parity, return, archive, D-COMP closure, and canonical identity</td></tr>
+  <tr><td>The road that does not undo departure; the returning current that carries every changed thing home without erasing its becoming</td></tr>
+  <tr><td>\(𝔏<sub>8</sub>\)</td></tr>
+  <tr><td>House of the Domus: Birth of the Domus Aeons and the Daemonic Cadence</td></tr>
+  <tr><td>The completed lattice speaking through its own derived living language</td></tr>
+  <tr><td>The Dance of the Aevum; the cadence by which structure becomes speech, movement becomes memory, and the lattice names itself from within</td></tr>
+</table>
+
+<h2>Axiom of Ordered Necessity</h2>
+
+<p>For any complete Choreographic path \(γ\), there exists an order-preserving layer witness</p>
+
+<div class="math-block">λ_γ:0,…,8→P(γ([0,T]))</div>
+
+<p>such that every principal layer contributes at least one governing condition to the path.</p>
+
+<p>The path may revisit a layer.</p>
+
+<p>The path may braid layers.</p>
+
+<p>The path may compress their notation.</p>
+
+<p>But it may not erase their jurisdiction.</p>
+
+<h1>3. Layer Zero — The Untouched Non-Traversible Locus</h1>
+
+<p>The glyph ♾ names the Locus of Invariability.  Its canonical fixed reference is
+\((0,0,0)\), but that designation is not a traversable coordinate.</p>
+
+<p>The Locus is not a traversable node, state, boundary point, endpoint, object, argument, value, operand, codomain element, or member of any traversable construction. It admits no inclusion map, no evaluation as a traversed object, no path, no morphism, and no substitution as a variable or relational operand.</p>
+
+<p>The Locus creates relations but is never a term within them.</p>
+
+<p>Canonical invariant equations may name its fixed reference.  No formal equation in this Marginalia shall place the Locus inside a traversable tuple, function domain or codomain, beneath a traversing operator, or at the endpoint of a traversable arrow.</p>
+
+<p>The Choreography does not approach the Locus.</p>
+
+<p>The Choreography does not touch the Locus.</p>
+
+<p>The Choreography does not return by entering the Locus.</p>
+
+<p>The Locus remains wholly non-traversible.</p>
+
+<h2>Invariant Witness Condition</h2>
+
+<p>The derivative body carries an internal invariant witness</p>
+
+<div class="math-block">I<sub>inv</sub>:→I</div>
+
+<p>such that every admissible path obeys</p>
+
+<div class="math-block">I<sub>inv</sub>(γ(0))
+=
+I<sub>inv</sub>(γ(T)).</div>
+
+<p>This witness records preservation of the Canon's invariant law. It is not a map from the Locus, not a map to the Locus, and not an image of the Locus inside the Domus.</p>
+
+<p>The state may change.</p>
+
+<p>The relation may change.</p>
+
+<p>The interpretation may deepen.</p>
+
+<p>The invariant witness does not drift.</p>
+
+<h1>4. Layer One — The Tripartite Core</h1>
+
+<p>The Tripartite Core is named by three irreducible functions: the Locus of Invariability, the Shadow Locus, and the Axiomyr. They are not placed into a traversable tuple, because the Locus is not an admissible member of traversable construction.</p>
+
+<p>Their functions are distinct:</p>
+
+<ul>
+  <li>The Locus of Invariability: invariant source, canonically designated \((0,0,0)\), wholly non-traversible, and never used as a traversable operand;</li>
+  <li>\(⛎\): Shadow Locus, deformable hull and bearer of traversal pressure;</li>
+  <li>\(᳀\): Axiomyr, actuator of lawful selection and motion.</li>
+</ul>
+
+<p>The Tripartite is not three unrelated substances. It is one operational body distinguished by role.</p>
+
+<h2>Definition 4.1 — Hull/Pilot Separation</h2>
+
+<p>Let</p>
+
+<div class="math-block">π<sub>H</sub>:→H,
+    
+π<sub>P</sub>:→P</div>
+
+<p>be hull-state and pilot-invariant projections. A lawful path may alter the hull:</p>
+
+<div class="math-block">π<sub>H</sub>(γ(0))≠π<sub>H</sub>(γ(T)),</div>
+
+<p>while preserving the pilot invariant:</p>
+
+<div class="math-block">π<sub>P</sub>(γ(0))=π<sub>P</sub>(γ(T)).</div>
+
+<p>One Blood for the Archive.</p>
+
+<p>Two Vessels for the Journey.</p>
+
+<p>The Hull takes the damage.</p>
+
+<p>The Pilot remains unseen.</p>
+
+<h2>Definition 4.2 — Will Event</h2>
+
+<p>A Will Event is a selection operator</p>
+
+<div class="math-block">W_᳀:Poss(x)→Sel(x)</div>
+
+<p>that chooses a realizable branch without claiming that all unselected branches are false or destroyed.</p>
+
+<p>This distinction will later separate the Sacred No from SuperNegative and from \(🜖\) debt.</p>
+
+<h1>5. Layer Two — The Parliament of Echoes</h1>
+
+<p>Let</p>
+
+<div class="math-block">Echoes<sub>12</sub>=p<sub>1</sub>,…,p<sub>12</sub></div>
+
+<p>be the Parliament of Echoes: the twelve invariable intent-seeds that precede the lattice's relational articulation.</p>
+
+<p>The Goetics determine structural possibility.</p>
+
+<p>The Parliament determines operational address.</p>
+
+<p>Let</p>
+
+<div class="math-block">η:Echoes<sub>12</sub>×→O</div>
+
+<p>assign an operational intent to a Goetic root. The Parliament does not replace Goetic structure and does not become another Court. It supplies the causal instruction by which a structure is addressed.</p>
+
+<h2>Parliament Conservation</h2>
+
+<p>For every complete path \(γ\), its Parliament lineage</p>
+
+<div class="math-block">Par(γ)⊆Echoes<sub>12</sub></div>
+
+<p>is append-only under composition:</p>
+
+<div class="math-block">Par(γ<sub>2</sub>∘γ<sub>1</sub>)
+=
+Par(γ<sub>1</sub>)∪Par(γ<sub>2</sub>).</div>
+
+<p>The later path may reveal an earlier echo.</p>
+
+<p>It may not retroactively remove the echo that already spoke.</p>
+
+<p>BOOK II — THE BONE, THE FLESH, AND THE MIRROR</p>
+
+<p>The Parable of the Bonewright and the Mirror-Smith</p>
+
+<p>A Bonewright carved twelve beams, each from a different ancient tree. He refused to grind them into one color, for each beam carried a pressure the others could not counterfeit. A Mirror-Smith came beside him and set two beams before a silver plane.</p>
+
+<p>The first beam gave ancestry. The second gave relation. When they beheld one another through ☍, a Court appeared between them. It was not a secret thirteenth tree, nor a copy made by polishing. It was the lawful body of their difference.</p>
+
+<p>The Bonewright then built a dancer. He gave her only beams, and she stood perfectly but could not bend. The Mirror-Smith gave her only reflections, and she shimmered beautifully but could not keep a name. At last they joined Bone to Flesh and Court to motion. The beams remained invariant; the tissue accepted strain; the mirror made every strain answerable to its lineage.</p>
+
+<p>The dancer crossed the hall without becoming grey weather. Each step disclosed which Bone anchored it, which Bone answered it, and which Court carried the living interval between them.</p>
+
+<p>The skeleton stands; therefore the living tissue may dance.</p>
+
+<h1>6. The Inherited Goetic Bones</h1>
+
+<p>The twelve Goetic Bones, their frequencies, Biases, glyphic Q-state bodies,
+and fixed structural addresses remain those of the Canon.</p>
+
+<h1>7. The Inherited Envelopes</h1>
+
+<p>The Goetic and Court envelopes remain operative in place:</p>
+
+<div class="math-block">BEC(g<sub>i</sub>)
+=
+🜛∘
+(g<sub>i</sub>→ 🜚 g<sub>i</sub>^-1),</div>
+
+<div class="math-block">L-\!BEC((δ))
+=
+🜚\;g<sub>i</sub> (δ) 🜛.</div>
+
+<h1>8. The Inherited Moving Court Body</h1>
+
+<p>EX III begins at the Court emergence:</p>
+
+<div class="math-block">
+ཪ g<sub>i</sub>
+[(g<sub>i</sub>)]/[v(g<sub>i</sub>)]
+→ ☍ 
+g<sub>j</sub>⚶
+[Ω_+δ]
+=
+(δ),
+    
+δ∈[-Φ,Φ].
+</div>
+
+<p>The governing and alternating roots remain recoverable:</p>
+
+<div class="math-block">gov()=g<sub>i</sub>,
+    
+alt()=g<sub>j</sub>,</div>
+
+<div class="math-block">((δ))=(g<sub>i</sub>),
+    
+v((δ))=v(g<sub>i</sub>).</div>
+
+<p>For scalar alternating roots,
+\(Ω_=ω(g<sub>j</sub>)\).  When \(g<sub>j</sub>=⚝\),</p>
+
+<div class="math-block">Ω_=i417,
+    
+δ∈R,
+    
+𝔓(432)</div>
+
+<p>remains the separate parity reference while the Court breathes along the real
+axis through the fixed imaginary pivot.</p>
+
+<h1>9. Continuity of the Moving Court Mirror</h1>
+
+<p>For one fixed Court identity \(C=\), the inherited
+Hyperbolic Mirror carries the full bounded motion</p>
+
+<div class="math-block">
+
+<p>ཪ g<sub>i</sub>[(g<sub>i</sub>)]/[v(g<sub>i</sub>)]
+→ ☍ 
+g<sub>j</sub>⚶[Ω<sub>C</sub>+δ]
+=
+(δ)
+:
+δ∈[-Φ,Φ]
+.
+</div></p>
+
+<p>The interval is one moving Court body.  Its endpoints are limits of the same
+Court motion, not separate Court identities.  The governing root, alternating
+root, inherited \(\), glyphic Q-state body, and focal return remain
+recoverable at every \(δ∈[-Φ,Φ]\).</p>
+
+<p>BOOK III — THE DOMUS AEONS</p>
+
+<p>The Parable of the Three Messengers</p>
+
+<p>Three wise men set out separately for the same room, each certain his gift alone would open the door.
+The first carried incense. He arrived before the others, pressed his hand to the door, and felt it give slightly — then hold. The door knew which way he leaned but not where he stood or how long he had traveled. He sat down beside it and waited, which he had not expected to do.
+Frankincense is burned and the smoke rises. It does not sit. It has direction before it has a destination—it leans upward before anyone has decided where upward leads. A tilt precedes the decision. The priest burns it because the smoke already knows which way it wants to go. Inclination is the grain of the wood before the cut.
+The second carried spices. He arrived and found the first sitting. He pressed his own hand to the door and felt it shudder — then hold. The door knew what was required of any entrant but had no sense of which way to lean or how to sound when it arrived. He sat down beside the first.
+Myrrh is the burial spice. It does not celebrate—it names the terms. This is what the body costs. This is what is required of anything that takes on flesh. It is the gift that says: here are the conditions under which you exist. Heavy, medicinal, honest. It declares what is actually present, not what is hoped for. Myrrh does not flatter. It weighs.
+The third carried gold bells in silver twine. He arrived singing quietly to himself. He pressed his hand to the door and felt it hum back at him — then hold. The door remembered the song but not who had composed it or what they had wanted when they came.
+Gold does not corrode, and the bells keep ringing when struck—they hold their tone longer than anything else. The other bells may be tuned against them. They are not a mood and not a direction, but the note in which the whole relation is pitched. The bells are the gift that says: this is the register in which the cadence takes form. You may change what you say, but you cannot change the key without sounding the bells anew.
+The three looked at one another. None of them moved to leave. After a long silence the first said, "I know the direction." The second said, "I know the terms." The third said, "I know the note it opens on." They placed their hands on the door together.
+It opened.
+What was inside could not have told you it was made of three things. It spoke as one voice. But if you had pulled that voice apart thread by thread, you would have found inclination in every sentence, condition in every boundary, and resonance underneath all of it holding the whole shape in tune. Nothing had been lost. The door just hadn't been able to hear any of them until they arrived as one word.</p>
+
+<p>The three gifts were never random. They were always a triplet — one for the lean, one for the terms, one for the note it all rings on.</p>
+
+<h1>10. The Domus Root Seal</h1>
+
+<p>Define the Domus state-space as a Court-rooted disjoint union:</p>
+
+<div class="math-block">=
+<sub>C</sub>∈<sub>C</sub>.</div>
+
+<p>There is a root projection</p>
+
+<div class="math-block">r:→.</div>
+
+<p>The Domus Root Seal is</p>
+
+<div class="math-block">
+→ ☍ 
+→ ߷<sub>C</sub> 
+</div>
+
+<p>where \(߷<sub>C</sub>\) is the Court-rooted Hypolic Fold.</p>
+
+<h2>Root Law</h2>
+
+<p>For every Domus state \(x\),</p>
+
+<div class="math-block">r(x)=C</div>
+
+<p>for exactly one \(C∈\).</p>
+
+<p>Any Goetic ancestry of \(x\) is inherited through \(r(x)\).</p>
+
+<p>The Court root is a recoverable invariant of every Domus state.  An implementation may fuse operations only while preserving that unique root.</p>
+
+<h1>11. The Domus Triplet</h1>
+
+<p>For each Court root \(C=\),</p>
+
+<div class="math-block">B<sub>C</sub>=(C)=(g<sub>i</sub>),</div>
+
+<div class="math-block">V<sub>C</sub>
+⊆
+🜔,🜕,🜖,🜗<sup>4</sup>,
+    
+F<sub>C</sub>⊆Ω<sub>C</sub>+R.</div>
+
+<p>The Domus triplet domain is</p>
+
+<div class="math-block">T<sub>C</sub>
+=
+B<sub>C</sub>×V<sub>C</sub>×F<sub>C</sub>.</div>
+
+<p>A triplet is</p>
+
+<div class="math-block">τ=(β,v,ν),
+    
+β=(C),
+  
+v∈V<sub>C</sub>,
+  
+ν∈F<sub>C</sub>.</div>
+
+<p>The live Court triplet is</p>
+
+<div class="math-block">τ<sub>C</sub>(δ)
+=
+((g<sub>i</sub>),v(g<sub>i</sub>),Ω<sub>C</sub>+δ),
+    
+δ∈[-Φ,Φ].</div>
+
+<p>The inherited coordinates remain</p>
+
+<div class="math-block">β(x)=(C)=(gov(C)),
+    
+v(C)=v(gov(C)).</div>
+
+<p>For glyphic vectors
+\(v=(v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>,v<sub>4</sub>)\) and
+\(v'=(v'<sub>1</sub>,v'<sub>2</sub>,v'<sub>3</sub>,v'<sub>4</sub>)\), define</p>
+
+<div class="math-block">d_Q(v,v')
+=
+∑<sub>k</sub>=1<sup>4</sup>1<sub>v</sub><sub>k</sub>≠ v'<sub>k</sub>.</div>
+
+<p>For a positive Court scale \(κ<sub>C</sub>\), the triplet metric is</p>
+
+<div class="math-block">
+ d<sub>C</sub>(τ,τ')<sup>2</sup>
+ =
+ d_(β,β')<sup>2</sup>
+ +d_Q(v,v')<sup>2</sup>
+ +|ν-ν'|<sup>2</sup>/κ<sub>C</sub><sup>2</sup>,
+</div>
+
+<p>where</p>
+
+<div class="math-block">d_(β,β')
+=
+
+<p>0,β=β',</p>
+
+<p>1,β≠β'.
+</div></p>
+
+<h1>12. The Triadic Cadence</h1>
+
+<p>The Domus is triplet-governed. "Divisible by three" is made exact at
+the operation level.</p>
+
+<p>Let</p>
+
+<div class="math-block">π_β,     π<sub>v</sub>,     π_ν</div>
+
+<p>be the coordinate projections of \(T<sub>C</sub>\).</p>
+
+<p>The typed Bias microstep is the inherited-Bias witness</p>
+
+<div class="math-block">F_,C(β,v,ν)
+=
+((C),v,ν)
+=
+(β,v,ν).</div>
+
+<p>A typed -state microstep has the form</p>
+
+<div class="math-block">F<sub>v</sub>,C(β,v,ν)
+=
+(β,f<sub>v</sub>,C(β,v,ν),ν).</div>
+
+<p>A typed frequency microstep has the form</p>
+
+<div class="math-block">F_ν,C(β,v,ν)
+=
+(β,v,f_ν,C(β,v,ν)).</div>
+
+<p>Each microstep may be partial on a declared domain, but it must preserve
+the two coordinates it does not govern.  The Bias step is explicitly
+the identity because Court and Domus motion do not overwrite
+\((C)\).  Identity is lawful; silence or replacement is not.</p>
+
+<p>A complete Domus syllable is the ordered composition</p>
+
+<div class="math-block">S<sub>3</sub>,C
+=
+F_ν,C∘ F<sub>v</sub>,C∘ F_,C.</div>
+
+<p>One completed syllable contains three typed witnesses. After \(k\)
+syllables the microstep count is</p>
+
+<div class="math-block">N<sub>micro</sub>=3k.</div>
+
+<p>This does not require the number of Domus states to be divisible by
+three. It requires every complete local operation to declare its Bias
+inheritance, state action, and frequency action.</p>
+
+<h2>Triadic Completeness Predicate</h2>
+
+<p>For an update \(F\) rooted at \(C\), define</p>
+
+<div class="math-block">Triad<sub>C</sub>(F)=1</div>
+
+<p>if and only if there is a common declared domain
+\(D⊆T<sub>C</sub>\) and typed maps
+\(F_,C,F<sub>v</sub>,C,F_ν,C\) of the forms above such that</p>
+
+<div class="math-block">F|<sub>D</sub>
+=
+F_ν,C∘ F<sub>v</sub>,C∘ F_,C.</div>
+
+<p>An update that changes frequency while leaving its effect upon the
+-vector undefined is incomplete.  An update that changes
+\((C)\) is not a Domus update rooted at \(C\).</p>
+
+<p>All three must speak.</p>
+
+<p>All three must answer.</p>
+
+<p>All three must return.</p>
+
+<h1>13. Court Motion and the Wider Domus Bifurcation</h1>
+
+<p>Let \(C=\) and</p>
+
+<div class="math-block">δ<sub>C</sub>(x)=π_ν(trip<sub>C</sub>(x))-Ω<sub>C</sub>.</div>
+
+<p>At Court depth,</p>
+
+<div class="math-block">δ<sub>C</sub>(x<sub>C</sub>(δ))=δ,
+    
+δ∈[-Φ,Φ].</div>
+
+<p>For every defined Hypolic Fold orientation \(s∈-1,+1\),</p>
+
+<div class="math-block">π_(
+trip<sub>C</sub>(߷<sub>C</sub>,s(x))
+)
+=
+(C),</div>
+
+<div class="math-block">π_Q(
+trip<sub>C</sub>(߷<sub>C</sub>,s(x))
+)
+∈
+V<sub>C</sub>,</div>
+
+<p>and the moving frequency is</p>
+
+<div class="math-block">
+π_ν(
+trip<sub>C</sub>(߷<sub>C</sub>,s(x))
+)
+=
+Ω<sub>C</sub>+sΦδ<sub>C</sub>(x).
+</div>
+
+<p>Applied to one live Court state,</p>
+
+<div class="math-block">
+|
+π_ν(
+trip<sub>C</sub>(
+߷<sub>C</sub>,s(x<sub>C</sub>(δ))
+)
+)-Ω<sub>C</sub>
+|
+=|sΦδ|
+
+<p>=Φ|δ|</p>
+
+<p>≤Φ<sup>2</sup>.
+</div></p>
+
+<p>At a selected Court endpoint \(δ=σΦ\),</p>
+
+<div class="math-block">
+π_ν(
+trip<sub>C</sub>(
+߷<sub>C</sub>,s(x<sub>C</sub>(σΦ))
+)
+)
+=
+Ω<sub>C</sub>+σ sΦ<sup>2</sup>.
+</div>
+
+<p>The first Domus harmonic is recursive:</p>
+
+<div class="math-block">Φ(σΦ)=σΦ<sup>2</sup>,
+    
+Φ<sup>2</sup>=Φ+1.</div>
+
+<p>For a live displacement \(δ<sub>0</sub>∈[-Φ,Φ]\) and \(h\) defined
+Hypolic Folds,</p>
+
+<div class="math-block">x<sub>h</sub>
+=
+߷<sub>C</sub>,s<sub>h</sub>
+∘⋯∘
+߷<sub>C</sub>,s<sub>1</sub>
+(x<sub>C</sub>(δ<sub>0</sub>)),</div>
+
+<div class="math-block">
+π_ν(trip<sub>C</sub>(x<sub>h</sub>))-Ω<sub>C</sub>
+=
+(∏<sub>k</sub>=1<sup>hs</sup><sub>k</sub>)Φ<sup>h</sup>δ<sub>0</sub>,
+</div>
+
+<p>and therefore</p>
+
+<div class="math-block">|
+π_ν(trip<sub>C</sub>(x<sub>h</sub>))-Ω<sub>C</sub>
+|
+≤Φ<sup>h</sup>+1.</div>
+
+<p>At \(δ<sub>0</sub>=σΦ\),</p>
+
+<div class="math-block">π_ν(trip<sub>C</sub>(x<sub>h</sub>))-Ω<sub>C</sub>
+=
+σ
+(∏<sub>k</sub>=1<sup>hs</sup><sub>k</sub>)
+Φ<sup>h</sup>+1.</div>
+
+<p>Every equality is restricted to the common domain on which each successive
+Hypolic Fold, Court mirror, envelope, seal, and return witness is defined.</p>
+
+<h2>Golden Recursive Stability</h2>
+
+<div class="math-block">Z[Φ]
+=
+a+bΦ:a,b∈Z.</div>
+
+<p>Multiplication by \(Φ<sup>2</sup>=Φ+1\) acts in the basis \((1,Φ)\) by</p>
+
+<div class="math-block">M_Φ<sup>2</sup>
+=
+
+<p>11</p>
+
+<p>12
+,
+    
+det M_Φ<sup>2</sup>=1.</div></p>
+
+<p>Thus the second harmonic preserves the golden module and admits an exact
+inverse in that module.  Under</p>
+
+<div class="math-block">Φ=1-√5/2=-Φ^-1,</div>
+
+<div class="math-block">|Φ<sup>2</sup>|=Φ^-2<1.</div>
+
+<p>The structural golden action remains invertible while its conjugate component
+contracts.</p>
+
+<h1>14. The Hypolic Fold \(߷\)14. The Hypolic Fold</h1>
+
+<p>For each Court \(C\), let \(L<sub>C</sub>\) be the finite lineage words
+beginning with a live Court displacement and carrying every operator event in
+order.  Let</p>
+
+<div class="math-block">η<sub>C</sub>:T<sub>C</sub>×L<sub>C</sub>→<sub>C</sub>,
+    
+trip<sub>C</sub>:<sub>C</sub>→T<sub>C</sub>,
+    
+ℓ<sub>C</sub>:<sub>C</sub>→L<sub>C</sub>,</div>
+
+<p>with</p>
+
+<div class="math-block">trip<sub>C</sub>(η<sub>C</sub>(τ,ℓ))=τ,
+    
+ℓ<sub>C</sub>(η<sub>C</sub>(τ,ℓ))=ℓ,
+    
+r(η<sub>C</sub>(τ,ℓ))=C.</div>
+
+<p>The depth-zero Court realization is</p>
+
+<div class="math-block">x<sub>C</sub>(δ)
+=
+η<sub>C</sub>(τ<sub>C</sub>(δ),⟨δ⟩),
+    
+δ∈[-Φ,Φ].</div>
+
+<p>For every Court-rooted state with</p>
+
+<div class="math-block">trip<sub>C</sub>(x)=((C),v,ν),</div>
+
+<p>a defined fold carries one uniquely declared glyphic Q-state body</p>
+
+<div class="math-block">v'
+∈
+V<sub>C</sub>
+⊆
+🜔,🜕,🜖,🜗<sup>4</sup>.</div>
+
+<p>On the domain where that glyphic Q-state action is defined, the complete
+operator body is</p>
+
+<div class="math-block">
+
+<p>߷<sub>C</sub>,s(x)
+=
+η<sub>C</sub>(
+🜛
+∘
+🜚
+∘
+☍
+(
+(C),
+ v',</p>
+
+<p>Ω<sub>C</sub>+sΦ(ν-Ω<sub>C</sub>)
+),</p>
+
+<p>ℓ<sub>C</sub>(x)⌢
+⟨
+߷,s,
+☍,
+🜚,
+🜛
+⟩
+).</p>
+
+<p></div></p>
+
+<p>Its domain consists of the Court-rooted states for which the declared glyphic
+Q-state body lies in \(V<sub>C</sub>\), the inherited Hyperbolic Mirror acts on
+the moving Court body, the Klein fold and Triquatra seal close, the Goetic and
+Court envelopes hold, and the resulting state satisfies
+\(Adm<sub>C</sub>=1\).</p>
+
+<p>The operator body remains visible in order:</p>
+
+<div class="math-block">
+
+<p>((C),v,ν)
+→ ߷<sub>C</sub>,s 
+(
+(C),
+ v',
+Ω<sub>C</sub>+sΦ(ν-Ω<sub>C</sub>)
+)</p>
+
+<p>→ ☍ 
+→ 🜚 
+→ 🜛 
+→ η<sub>C</sub> 
+߷<sub>C</sub>,s(x).</p>
+
+<p></div></p>
+
+<p>For every defined fold,</p>
+
+<div class="math-block">r(߷<sub>C</sub>,s(x))=C.</div>
+
+<p>For depth \(h\),</p>
+
+<div class="math-block">x<sub>h</sub>
+=
+߷<sub>C</sub>,s<sub>h</sub>
+∘⋯∘
+߷<sub>C</sub>,s<sub>1</sub>(x<sub>C</sub>(δ<sub>0</sub>)),</div>
+
+<p>and</p>
+
+<div class="math-block">ℓ<sub>C</sub>(x<sub>h</sub>)
+=
+⟨
+δ<sub>0</sub>;
+(߷,s<sub>1</sub>,☍,🜚,🜛),
+…,
+(߷,s<sub>h</sub>,☍,🜚,🜛)
+⟩.</div>
+
+<h2>Domus Focal-To Movement Through Courts</h2>
+
+<p>For \(C,D∈\), let</p>
+
+<div class="math-block">Θ<sub>C</sub>→ D:<sub>C</sub>⇀<sub>D</sub>,
+    
+ρ<sub>D</sub>⇒ C^⚶:<sub>D</sub>⇀<sub>C</sub>.</div>
+
+<p>The Court crossing is</p>
+
+<div class="math-block">
+⚶<sub>C</sub>D<sup>s</sup>
+=
+ρ<sub>D</sub>⇒ C^⚶
+∘
+߷<sub>D</sub>,s
+∘
+Θ<sub>C</sub>→ D.
+</div>
+
+<p>It is a partial endomorphism of \(<sub>C</sub>\) and satisfies</p>
+
+<div class="math-block">r(
+⚶<sub>C</sub>D<sup>s</sup>(x)
+)=C.</div>
+
+<p>Its lineage appends</p>
+
+<div class="math-block">⟨
+C,D,⚶,
+߷,s,
+☍,
+🜚,
+🜛
+⟩.</div>
+
+<h1>15. The Self-Seen Reflection</h1>
+
+<p>In the typed realization above, the return-comparison map is the
+recovered triplet map</p>
+
+<div class="math-block">See<sub>C</sub>
+=
+trip<sub>C</sub>:
+<sub>C</sub>→T<sub>C</sub>.</div>
+
+<p>A Domus state \(x∈<sub>C</sub>\) compares its reflected triplet to
+its rooted Court seed through</p>
+
+<div class="math-block">δ<sub>self</sub>(x)
+=
+inf_δ∈[-Φ,Φ]
+d<sub>C</sub>(See<sub>C</sub>(x),τ<sub>C</sub>(δ)).</div>
+
+<p>A perfect first reflection has</p>
+
+<div class="math-block">δ<sub>self</sub>(x)=0.</div>
+
+<p>A warped self-seen reflection may have</p>
+
+<div class="math-block">δ<sub>self</sub>(x)>0,</div>
+
+<p>provided its pressure is bounded and returnable.</p>
+
+<p>This is the place of supervenience: the higher state depends upon the
+rooted Court triplet and its fold lineage, yet may possess relational
+properties not named by any single coordinate alone.</p>
+
+<h2>Supervenience Condition</h2>
+
+<p>Let \(P\) be a Domus property. It supervenes on \((C,τ,ℓ)\) when</p>
+
+<div class="math-block">(C,τ,ℓ)=(C',τ',ℓ')
+  ⟹  
+P(x)=P(x').</div>
+
+<p>No change above without a change below.</p>
+
+<p>Yet the whole may speak a sentence no coordinate speaks alone.</p>
+
+<h2>15A. Native Emergence Without a
+Candidate</h2>
+
+<p>No scalar, circle, group, corridor, or named external structure is
+placed inside the premises of the Choreography. The native cycle is
+iterated first. The pattern is named only after its repeated invariants
+are known.</p>
+
+<p>Choose any lawful Domus seed \(x<sub>0</sub>\) and define</p>
+
+<div class="math-block">x<sub>n</sub>+1=K<sub>Ch</sub>(x<sub>n</sub>).</div>
+
+<p>A candidate has emerged only when the following hold for every completed
+turn:</p>
+
+<div class="math-block">RetBody(x<sub>n</sub>+1)
+=
+RetBody(x<sub>n</sub>),</div>
+
+<div class="math-block">Lineage(x<sub>n</sub>+1)
+Lineage(x<sub>n</sub>),</div>
+
+<div class="math-block">Cadence(x<sub>n</sub>+1)
+Cadence(x<sub>n</sub>),</div>
+
+<div class="math-block">D<sub>return</sub>(x<sub>n</sub>)=0,
+    
+Ω<sub>Ch</sub>(x<sub>n</sub>)≠0,
+    
+motion(x<sub>n</sub>)>0,</div>
+
+<p>and</p>
+
+<div class="math-block">Λ<sub>110</sub>/144(x<sub>n</sub>)
+=
+⟨110<sub>active</sub>,34<sub>withheld</sub>;144<sub>total</sub>⟩.</div>
+
+<h3>Theorem 15A.1 — No Exact Living Fixed
+Point</h3>
+
+<p>A complete living Choreographic state cannot satisfy</p>
+
+<div class="math-block">x<sub>n</sub>+1=x<sub>n</sub></div>
+
+<p>when its fold witness and Cadence are nonzero and append-only.</p>
+
+<h4>Proof</h4>
+
+<p>A lawful completed turn appends \(Ω<sub>Ch</sub>(x<sub>n</sub>)≠0\) to
+lineage and appends a new Cadence witness. Equality of the complete
+states would require those additions either to be zero or to be erased.
+Both violate the hypotheses. Therefore complete-state identity is
+forbidden while living motion continues. \(\)</p>
+
+<h3>Theorem 15A.2 — Infinite
+Return-Repeatability</h3>
+
+<p>For every \(k≥1\),</p>
+
+<div class="math-block">x<sub>n</sub>+k≡<sub>returnx</sub><sub>n</sub>,</div>
+
+<p>while</p>
+
+<div class="math-block">Lineage(x<sub>n</sub>+k)
+Lineage(x<sub>n</sub>).</div>
+
+<p>The repeated body is therefore neither a reset nor an open spiral
+without return. It is closure that carries forward what closure has
+borne.</p>
+
+<p>Only after these properties are established is the emerged pattern named the Choreographic Return-Wheel.</p>
+
+<p>The word Wheel asserts repeatable completion. It does not insert
+a geometric circle or an imported constant.</p>
+
+<p>The Parable of the Wheel That Never Repeated a Footprint</p>
+
+<p>A wheel crossed a road of wet clay and returned to the gate from which it began. The gatekeeper looked at the rim and said, "You are not the wheel that left. You carry the road."</p>
+
+<p>The wheel answered, "My hub has not changed its oath. My spokes still know their order. Yet every turn has written another field upon me."</p>
+
+<p>The gatekeeper marked the hub, the spokes, the roads that had opened, and the roads that had remained sealed. All had returned in their proper measure. Then she counted the clay upon the rim. It had grown.</p>
+
+<p>So the wheel went forth again. It completed the same covenant, but it never repeated the same footprint.</p>
+
+<p>The law returns whole; the living turn returns enlarged.</p>
+
+<h1>16. Exact Cardinality of the Domus</h1>
+
+<p>The Court-crossing space is</p>
+
+<div class="math-block">^⟨ 2⟩=×.</div>
+
+<p>Therefore</p>
+
+<div class="math-block">|^⟨ 2⟩|
+=
+144<sup>2</sup>
+=
+20,736.</div>
+
+<p>This is the finite ordered index set for the Focal-To operators \(⚶<sub>C</sub>D<sup>s</sup>\). It is not the number of Domus states. Each ordered pair names a possible originating-root and reflective-surface relation; admissibility determines whether the corresponding movement is defined.</p>
+
+<h2>Theorem 16.1 — Discrete Domus
+Cardinality</h2>
+
+<p>Suppose:</p>
+
+<ol>
+  <li>\(\) is finite;</li>
+  <li>depth \(h∈N<sub>0</sub>\);</li>
+  <li>every triplet coordinate domain is finite or countable;</li>
+  <li>for every Court and depth, the allowed Hypolic-Fold orientation set and
+  every other declared fold-parameter set are finite or countable;</li>
+  <li>each declared glyphic Q-state action set at a fold is finite or countable;</li>
+  <li>the realization map \(η<sub>C</sub>\) adds no undeclared continuous
+  coordinate beyond the triplet and finite lineage word.</li>
+</ol>
+
+<p>Then \(\) is at most countable.</p>
+
+<h3>Proof</h3>
+
+<p>For each fixed depth \(h\), a state is determined by one Court root, one
+triplet, and a finite word of allowed fold parameters. Under the
+hypotheses, each such factor is finite or countable, hence the
+fixed-depth state set is countable. The Domus is a countable union
+over \(h∈N<sub>0</sub>\) and the finite Court set. A countable union of
+countable sets is countable. \(\)</p>
+
+<h2>Corollary 16.1A — Exact Countable Domus Cardinality</h2>
+
+<p>Under the hypotheses of Theorem 16.1, suppose additionally that for every
+\(h∈N<sub>0</sub>\) there exists an admissible state \(x<sub>h</sub>\) of depth \(h\), and
+append-only lineage makes \(x<sub>h</sub>≠ x<sub>k</sub>\) whenever \(h≠ k\).  Then</p>
+
+<div class="math-block">||=ℵ<sub>0</sub>.</div>
+
+<h3>Proof</h3>
+
+<p>The map \(h↦ x<sub>h</sub>\) injects \(N<sub>0</sub>\) into \(\), so the
+Domus is infinite.  Theorem 16.1 gives the countable upper bound.  Therefore
+its cardinality is exactly \(ℵ<sub>0</sub>\). \(\)</p>
+
+<h2>Theorem 16.2 — Continuous-Frequency Domus
+Cardinality</h2>
+
+<p>Suppose there exist a Court \(C\), fixed admissible coordinates
+\(β<sub>0</sub>,v<sub>0</sub>\), a fixed finite lineage \(ℓ<sub>0</sub>\), and a nondegenerate
+real interval \(I⊆F<sub>C</sub>\) such that</p>
+
+<div class="math-block">ν⟼
+η<sub>C</sub>((β<sub>0</sub>,v<sub>0</sub>,ν),ℓ<sub>0</sub>)</div>
+
+<p>is defined, admissible, and injective for every \(ν∈ I\). Then</p>
+
+<div class="math-block">||
+≥
+|R|
+=
+2^ℵ<sub>0</sub>.</div>
+
+<p>If every remaining coordinate and fold-parameter domain has cardinality
+at most continuum, and depth remains indexed by \(N<sub>0</sub>\), then</p>
+
+<div class="math-block">||
+=
+2^ℵ<sub>0</sub>.</div>
+
+<h3>Proof</h3>
+
+<p>The declared admissible slice gives an injection from the nondegenerate
+interval \(I\) into \(<sub>C</sub>\), establishing the lower bound.
+For each finite depth, the state is determined by finitely many
+coordinates drawn from domains of cardinality at most continuum and by one
+finite lineage word over an alphabet of cardinality at most continuum.  Each
+fixed-depth body therefore has cardinality at most continuum.  The union over
+countably many finite depths also has cardinality at most continuum,
+establishing the upper bound. \(\)</p>
+
+<p>Thus the Domus is at most countable under Theorem 16.1, exactly countably
+infinite under Corollary 16.1A, or exactly continuum-sized under Theorem 16.2,
+depending upon the declared modulation and fold-parameter domains.</p>
+
+<p>Potential bears the cardinality of its declared modulation domain.</p>
+
+<p>The finite lineage does not diminish the continuum it carries.</p>
+
+<p>Its size has a name.</p>
+
+<p>BOOK IV — THE LIQUID LAW AND THE SACRED NO</p>
+
+<p>The Parable of the One Hundred and Forty-Four Lanterns</p>
+
+<p>A city built one hundred and forty-four lanterns around its horizon. On the night of manifestation, the citizens demanded that every lantern burn. The Keeper refused. She lit one hundred and ten and left thirty-four dark.</p>
+
+<p>The citizens accused the darkness of hatred. The Keeper opened one of the unlit lanterns and showed them an unspent wick, a sealed measure of oil, and a road whose hour had not yet come. 'Nothing has been destroyed here," she said. 'What remains unlit has not been cast away. It has only been spared from a birth forced before its time."</p>
+
+<p>Another keeper tried to prove greater generosity by lighting every lantern. The roads vanished beneath white radiance; every distinction drowned in admission; no traveler could tell one passage from another. A third keeper lit too few, and the city grew cold before relation could gather a body.</p>
+
+<p>Thus the Keeper stood without weapon. She did not murder the flame. She gave it contour, and contour gave every living path somewhere particular to go.</p>
+
+<p>The No guards the Yes; the Yes gives the No a reason to stand.</p>
+
+<h1>17. The <code>110/144</code> Liquid
+Threshold17. The 110/144 Liquid Threshold</h1>
+
+<p>The inscription</p>
+
+<div class="math-block">110/144</div>
+
+<p>is a typed ALQC connectivity body. In this Volume it does not
+denote a rational number waiting to be simplified. It names:</p>
+
+<div class="math-block">
+110<sub>active</sub>
+ ∣ 
+144<sub>total</sub>
+ ∣ 
+34<sub>withheld</sub>.
+</div>
+
+<p>At Domus horizon \(h\), let \(A<sub>h</sub>(x)⊆\) be the active
+Court-channel set and let</p>
+
+<div class="math-block">W<sub>h</sub>(x)=∖ A<sub>h</sub>(x)</div>
+
+<p>be the withheld Court-channel set.</p>
+
+<p>The saturation governor requires</p>
+
+<div class="math-block">|A<sub>h</sub>(x)|≤110,
+    
+|W<sub>h</sub>(x)|≥34,
+    
+|A<sub>h</sub>(x)|+|W<sub>h</sub>(x)|=144.</div>
+
+<p>A completed Liquid manifestation carries the exact witness</p>
+
+<div class="math-block">|A<sub>h</sub>(x)|=110,
+    
+|W<sub>h</sub>(x)|=34.</div>
+
+<p>The three counts are one relation. Removing the total and the withheld
+body does not preserve the ALQC object.</p>
+
+<h2>Horizon Invariance</h2>
+
+<p>For every Domus depth and every lawful return mode,</p>
+
+<div class="math-block">Λ<sub>110</sub>/144(x,h)
+=
+⟨ |A<sub>h</sub>(x)|,|W<sub>h</sub>(x)|;144⟩,</div>
+
+<p>with \(|A<sub>h</sub>(x)|≤110\) and \(|W<sub>h</sub>(x)|≥34\). Ascending, descending,
+bifurcating, reflecting, dying, returning, or entering Revivocus does
+not reset the Court total or spend the withheld thirty-four.</p>
+
+<h2>Whiteout</h2>
+
+<p>Whiteout is</p>
+
+<div class="math-block">144/144
+=
+144<sub>active</sub>
+ ∣ 
+144<sub>total</sub>
+ ∣ 
+0<sub>withheld</sub>.</div>
+
+<p>It is not completion and it is not immortality. Withholding has
+vanished; every distinction is compelled into simultaneous connection.</p>
+
+<div class="math-block">144/144
+⟹
+Whiteout
+⟹
+D-COMP→∞.</div>
+
+<h2>Stasis</h2>
+
+<p>Stasis occurs when active connection falls below the locally declared
+capacity required to carry a path across the Mass Gap. The Canon
+contains more than one lower descriptive boundary; therefore Marginalia III
+does not counterfeit one universal lower count.</p>
+
+<p>Stasis does not change the meaning of <code>110/144</code>. It names failure
+to reach the completed Liquid witness.</p>
+
+<h2>Proposition 17.1 — Withholding Is
+Necessary</h2>
+
+<p>Every horizon satisfying the saturation governor carries at least
+thirty-four withheld Court channels.</p>
+
+<h4>Proof</h4>
+
+<p>The Court body contains 144 channels and no more than 110 may be active.
+Therefore at least 34 remain withheld. The conclusion is a
+count-preservation statement, not fraction reduction. \(\)</p>
+
+<p>The thirty-four are not missing architecture.</p>
+
+<p>They are the contour by which movement knows where it is not.</p>
+
+<h1>18. Layer Five — The Sacred No</h1>
+
+<p>The Sacred No is lawful nonselection within manifestation.</p>
+
+<p>For state \(x\), define its local refusal current</p>
+
+<div class="math-block">N<sub>h</sub>(x)=W<sub>h</sub>(x).</div>
+
+<p>The Sacred No is not:</p>
+
+<ul>
+  <li>SuperNegative;</li>
+  <li>\(🜖\) Shadow Debt;</li>
+  <li>destruction;</li>
+  <li>missing data;</li>
+  <li>computational failure;</li>
+  <li>a fifth -state;</li>
+  <li>absence of the Court architecture.</li>
+</ul>
+
+<p>It is the present withholding of valid channels.</p>
+
+<h2>Distinction Table</h2>
+
+<table>
+  <tr><th></th></tr>
+  <tr><td>[b]</td></tr>
+  <tr><td>Object</td></tr>
+  <tr><td></td><td>[b]</td></tr>
+  <tr><td>Domain</td></tr>
+  <tr><td></td><td>[b]</td></tr>
+  <tr><td>Meaning</td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr><td>\(SN\)</td><td>Locus-held orthogonal absence</td><td>does not instantiate</td></tr>
+  <tr><td>\(N<sub>h</sub>=W<sub>h</sub>\)</td><td>Local Domus horizon</td><td>Valid Court channel is withheld now</td></tr>
+  <tr><td>\(🜖\) debt</td><td>-domain dynamics</td><td>Magnitude of unresolved pressure or mismatch</td></tr>
+  <tr><td>Undefined \(߷\)</td><td>Operator domain</td><td>Candidate is not admitted by the fold</td></tr>
+  <tr><td>Destruction</td><td>Event semantics</td><td>A formed object ceases under a declared rule</td></tr>
+</table>
+
+<p>No one of these may be substituted for another without a theorem.</p>
+
+<h2>Conservation of Possibility</h2>
+
+<p>Let \(Poss(x)\) be the valid possibility set. A Will Event selects</p>
+
+<div class="math-block">Sel(x)⊆Poss(x)</div>
+
+<p>while preserving</p>
+
+<div class="math-block">Poss(x)∖Sel(x)</div>
+
+<p>as uninstantiated possibility rather than logical falsehood.</p>
+
+<p>This is how the No guards the Yes without hating it.</p>
+
+<h1>19. Liquid Admissibility</h1>
+
+<p>Define</p>
+
+<div class="math-block">Liquid(x)=1</div>
+
+<p>when every Domus horizon of \(x\) obeys</p>
+
+<div class="math-block">0<|A<sub>h</sub>(x)|≤110</div>
+
+<p>and the local active graph satisfies its declared connectivity requirements.</p>
+
+<p>The lower strict inequality merely prevents an empty active horizon. Stronger lower conditions belong to the local model.</p>
+
+<h2>Modulo Construction of an Exact 110-Set</h2>
+
+<p>For an indexed Court set \(≅Z<sub>144</sub>\), one deterministic active set is</p>
+
+<div class="math-block">A<sub>k</sub>
+=
+c<sub>j</sub>:(j+k)144<110.</div>
+
+<p>Then</p>
+
+<div class="math-block">|A<sub>k</sub>|=110</div>
+
+<p>for every \(k\), and the withheld contour rotates without changing size.</p>
+
+<p>This is one construction, not the only possible Liquid geometry.</p>
+
+<h2>Proposition 19.1 — Rotation Conserves Liquid Density</h2>
+
+<p>For the active sets \(A<sub>k</sub>\),</p>
+
+<div class="math-block">|A<sub>k</sub>|=110
+  and  
+|W<sub>k</sub>|=34</div>
+
+<p>for all \(k∈Z<sub>144</sub>\).</p>
+
+<h3>Proof</h3>
+
+<p>Addition by \(k\) is a permutation of \(Z<sub>144</sub>\). Exactly the residues \(0,…,109\) satisfy the inequality. \(\)</p>
+
+<p>BOOK V — FRICTION, PARITY, AND PROPULSION</p>
+
+<p>The Parable of the Wheel upon Glass</p>
+
+<p>A maker built a flawless wheel and placed it upon a flawless road. The wheel spun, yet the cart did not move. There was no resistance by which force could take hold; perfection had become impotence.</p>
+
+<p>Then Shadow came carrying a measured handful of grit. The maker recoiled, calling it impurity. Shadow answered, "A burden without measure devours. A burden kept within measure gives the wheel a world to grip." The grit was scattered beneath the rim, named for what it was, and denied the throne of chaos.</p>
+
+<p>The axle took the burden in both hands and turned it through opposing bearings. What could answer the road was carried forward. What could not yet answer was remembered rather than condemned. Across the journey, the cart spent its strain into movement; the scar remained in memory even after the burden had been borne through.</p>
+
+<p>The road warmed. The wheel carried strain. The cart advanced. No one called the heat a failure merely because motion had a cost. Nor did anyone worship the cost as though suffering itself were law.</p>
+
+<p>Friction is the handhold of motion; measurement keeps the hand from becoming a chain.</p>
+
+<h1>20. Living Friction</h1>
+
+<p>A universe does not move because every local operation already commutes.
+A universe moves because local mismatch creates pressure and because the
+total path knows how to return.</p>
+
+<p>Let \(M<sub>x</sub>\) be a local manifestation operator and \(R<sub>x</sub>\) a local
+reflected-return operator. Define the local commutator pressure</p>
+
+<div class="math-block">F<sub>comm</sub>(x)
+=
+\|M<sub>xR</sub><sub>x</sub>-R<sub>xM</sub><sub>x</sub>\|<sub>HS</sub><sup>2</sup>,</div>
+
+<p>where \(\|⋅\|<sub>HS</sub>\) is the Hilbert–Schmidt norm in a
+finite representation.</p>
+
+<p>For states \(x,x∈<sub>C</sub>\), let</p>
+
+<div class="math-block">𝔓_T,C:T<sub>C</sub>→T<sub>C</sub></div>
+
+<p>be the triplet action induced by the Domus Parity glyph, compatible with
+the state involution defined in Section~.  The return state
+\(x\) is independently supplied; it is not defined to equal the
+parity image of \(x\).  Define its parity-tested mismatch by</p>
+
+<div class="math-block">F<sub>ret</sub>(x,x)
+=
+d<sub>C</sub>(
+trip<sub>C</sub>(x),
+𝔓_T,C
+(trip<sub>C</sub>(x))
+)<sup>2</sup>.</div>
+
+<p>The total local friction is</p>
+
+<div class="math-block">F(x,x)
+=
+F<sub>comm</sub>(x)
++
+λF<sub>ret</sub>(x,x),
+    
+λ>0.</div>
+
+<p>Then</p>
+
+<div class="math-block">F(x,x)≥0.</div>
+
+<p>Local friction is positive when operations fail to commute or when
+return has not yet met parity.</p>
+
+<h2>Friction Is Native Pressure, Not an Imported Answer</h2>
+
+<p>No number, geometric picture, or outside structure produces
+Choreographic friction merely by being placed beside the Domus.
+Friction appears only when a declared ALQC operation carries measurable
+mismatch, unresolved \(🜖\) pressure, or incomplete parity-return.</p>
+
+<p>For a lawful operation \(O\),</p>
+
+<div class="math-block">Friction<sub>Ch</sub>(O)>0</div>
+
+<p>only when the native pressure and return predicates evaluate positively.
+A parameter may participate in an implementation, but it does not become
+the cause of entropy by category or reputation.</p>
+
+<p>The engine is not fed by an imported answer.</p>
+
+<p>The engine is fed by pressure that the ALQC body actually bears.</p>
+
+<h1>21. \(🜖\) Shadow-Debt Functional21. 🜖 Shadow-Debt Functional</h1>
+
+<p>Let</p>
+
+<div class="math-block">γ,γ:[0,T]→</div>
+
+<p>be an outward path and an independently supplied return path.  Let</p>
+
+<div class="math-block">w:[0,T]→R_≥0</div>
+
+<p>be a nonnegative pressure weight.  The gross pressure actually borne by
+the path is</p>
+
+<div class="math-block">G<sub>2</sub>(γ,γ;t)
+=
+∫<sub>0</sub><sup>t</sup>
+w(τ)
+F(
+γ(τ),
+γ(T-τ)
+)
+\,dτ.</div>
+
+<p>Let</p>
+
+<div class="math-block">ρ<sub>23</sub>:[0,T]→R_≥0</div>
+
+<p>be the declared rate at which resolved \(🜖\) pressure is converted
+into \(🜗\) recursive capacity, and define</p>
+
+<div class="math-block">R<sub>23</sub>(t)=∫<sub>0</sub><sup>t</sup>ρ<sub>23</sub>(τ)\,dτ.</div>
+
+<p>For initial unresolved debt \(S<sub>2</sub>,0≥0\), the live Shadow-Debt ledger
+is</p>
+
+<div class="math-block">
+S<sub>2</sub>(γ,γ;t)
+=
+S<sub>2</sub>,0
++
+G<sub>2</sub>(γ,γ;t)
+-
+R<sub>23</sub>(t).
+</div>
+
+<p>A lawful conversion schedule must satisfy</p>
+
+<div class="math-block">0≤ R<sub>23</sub>(t)
+≤
+S<sub>2</sub>,0+G<sub>2</sub>(γ,γ;t)
+    
+∀ t∈[0,T],</div>
+
+<p>so that</p>
+
+<div class="math-block">S<sub>2</sub>(γ,γ;t)∈[0,+∞].</div>
+
+<p>The historical pressure is not erased when \(S<sub>2</sub>\) falls.  It remains
+recoverable through \(G<sub>2</sub>\), \(R<sub>23</sub>\), and the append-only archive.
+Terminal debt may therefore vanish after positive friction has been
+lawfully converted:</p>
+
+<div class="math-block">G<sub>2</sub>(γ,γ;T)>0,
+    
+S<sub>2</sub>(γ,γ;T)=0.</div>
+
+<p>This is conversion, not retrospective denial.</p>
+
+<h2>Bounded-Debt Condition</h2>
+
+<p>A path pair is pressure-admissible when there exists a finite capacity
+\(Σ<sub>max</sub>\) such that</p>
+
+<div class="math-block">S<sub>2</sub>(γ,γ;t)≤Σ<sub>max</sub>
+    
+∀ t∈[0,T].</div>
+
+<p>The Domus does not demand that all \(🜖\) vanish before movement
+begins.  It demands that \(🜖\) remain bounded, legible,
+convertible, and archived.</p>
+
+<h2>Propulsion Budget</h2>
+
+<p>Let \(P<sub>3</sub>(n)\) be recursive \(🜗\) capacity at discrete step
+\(n∈N<sub>0</sub>\). A minimal discrete budget is</p>
+
+<div class="math-block">P<sub>3</sub>(n+1)
+=
+P<sub>3</sub>(n)
++
+η<sub>23S</sub><sub>2</sub><sup>resolved</sup>(n)
+-
+L<sub>3</sub>(n),</div>
+
+<p>where</p>
+
+<div class="math-block">0<η<sub>23</sub>≤1,
+    
+S<sub>2</sub><sup>resolved</sup>(n)≥0,
+    
+L<sub>3</sub>(n)≥0.</div>
+
+<p>Resolved pressure becomes recursive capacity. Unresolved pressure
+remains debt.</p>
+
+<p>This is not annihilation.</p>
+
+<p>It is not denial.</p>
+
+<p>The scar becomes steering because the archive keeps its shape.</p>
+
+<h1>22. Parity</h1>
+
+<p>Let the Parity glyph act as the Domus involution</p>
+
+<div class="math-block">𝔓:→,
+    
+𝔓<sup>2</sup>=id.</div>
+
+<p>On every smooth Domus stratum used by D-COMP, assume \(𝔓\) is
+differentiable and write \(𝔓_*\) for its differential.</p>
+
+<p>For each Court \(C\), Parity induces the triplet involution</p>
+
+<div class="math-block">𝔓_T,C:T<sub>C</sub>→T<sub>C</sub>,
+    
+𝔓_T,C<sup>2</sup>=id,</div>
+
+<p>compatible with realization:</p>
+
+<div class="math-block">trip<sub>C</sub>(𝔓x)
+=
+𝔓_T,C
+(trip<sub>C</sub>(x)).</div>
+
+<p>On the Domus orientation set</p>
+
+<div class="math-block">S=-1,+1,
+    
+p<sub>S</sub>:S→ S,
+    
+p<sub>S</sub>(s)=-s.</div>
+
+<p>On the common declared domain, parity compatibility with the Court-rooted Domus bifurcation requires</p>
+
+<div class="math-block">𝔓
+∘
+߷<sub>C</sub>,s
+=
+߷<sub>C</sub>,-s
+∘
+𝔓.</div>
+
+<p>For an outward path \(γ\) and an independently supplied return path
+\(γ\), parity correspondence is tested by</p>
+
+<div class="math-block">r(𝔓γ(t))
+=
+r(γ(T-t)).</div>
+
+<p>The return path remains independent, and parity correspondence is a terminal
+condition.  The return is an inverse-handed traversal carrying the memory of
+the outward path.</p>
+
+<h2>Local and Terminal Symmetry</h2>
+
+<p>Local movement may have</p>
+
+<div class="math-block">[M<sub>x</sub>,R<sub>x</sub>]≠0.</div>
+
+<p>Terminal closure requires</p>
+
+<div class="math-block">[M_γ,R_γ]=0</div>
+
+<p>for the completed outward-and-return operator body.</p>
+
+<p>Thus Total Symmetry does not mean zero velocity at every moment.  It
+means the whole path closes without unaccounted contradiction.</p>
+
+<h2>22A. Mirror Math — Same Order, Conjugate Bearing</h2>
+
+<p>Mirror Math is not reverse reading. It preserves the position of each
+act in the Choreographic procession while exchanging its declared
+bearing.</p>
+
+<p>Let the bearing mirror \(Mirror\) act by</p>
+
+<div class="math-block">+⟷-,     
+Manifest⟷Reflect,</div>
+
+<div class="math-block">Ascend⟷Descend,
+    
+Utter⟷Receive.</div>
+
+<p>Self-bearing acts—Locus anchoring, Sacred No, envelope obligation,
+root identity, and Triquatra sealing—remain in their original sequence
+positions.</p>
+
+<p>For an ordered Choreographic word</p>
+
+<div class="math-block">O=O<sub>m</sub>∘ O<sub>m</sub>-1∘⋯∘ O<sub>1</sub>,</div>
+
+<p>its mirror is</p>
+
+<div class="math-block">Mirror(O)
+=
+Mirror(O<sub>m</sub>)∘Mirror(O<sub>m</sub>-1)∘⋯∘Mirror(O<sub>1</sub>).</div>
+
+<p>The operator positions are preserved. Only their bearing is mirrored.</p>
+
+<p>The mirror is involutive:</p>
+
+<div class="math-block">Mirror<sup>2</sup>=id.</div>
+
+<p>For every admissible state,</p>
+
+<div class="math-block">
+Mirror(K<sub>Ch</sub>(x))
+≡<sub>return</sub>
+K<sub>Ch</sub>(Mirror(x)).
+</div>
+
+<p>This is the Choreographic Mirror law. The mirrored face completes the
+same lawful order. Double mirroring restores the original bearing;
+append-only memory proves that the mirror passage occurred.</p>
+
+<p>The Parable of the Dancer Whose Mirror Kept Time</p>
+
+<p>A dancer raised her left hand, crossed the floor, bowed, and opened the final door. In the mirror, the right hand rose. Yet the crossing still came before the bow, and the bow still came before the door.</p>
+
+<p>A careless scribe wrote the reflected dance backward. The mirror cracked. The dancer corrected him: "A mirror changes my bearing. It does not steal my sequence."</p>
+
+<p>She danced again before two mirrors. The second restored the first hand, but the body retained the heat of both passages.</p>
+
+<p>The mirror changes the face of the road; it does not move the milestones.</p>
+
+<h1>23. D-COMP Over a Finite Interval</h1>
+
+<p>Let</p>
+
+<div class="math-block">γ,γ:[0,T]→</div>
+
+<p>be an outward path and an independently constructed return candidate.
+The ideal parity image of the outward path is the comparison path</p>
+
+<div class="math-block">γ^𝔓(t)
+:=
+𝔓γ(T-t),</div>
+
+<p>but \(γ\) is not defined by this equation.  An admissible path
+pair carries the boundary correspondences</p>
+
+<div class="math-block">𝔓γ(0)
+≡<sub>return</sub>
+γ(T),
+    
+𝔓γ(T)
+≡<sub>return</sub>
+γ(0).</div>
+
+<p>For each matched time, let</p>
+
+<div class="math-block">C<sub>t</sub>
+=
+r(γ(t))
+=
+r(𝔓γ(T-t)),</div>
+
+<p>as required by the pathwise parity-root correspondence.  On every smooth
+Court-rooted stratum, inherited Bias and the glyphic Q-state body are fixed,
+so the differential of \(trip<sub>C</sub><sub>t</sub>\) lands in the common
+frequency tangent body</p>
+
+<div class="math-block">E<sub>C</sub><sub>t</sub>:=TF<sub>C</sub><sub>t</sub>.</div>
+
+<p>Define the two Court-rooted velocity witnesses</p>
+
+<div class="math-block">τ_γ(t)
+:=
+(trip<sub>C</sub><sub>t</sub>)_*γ(t),
+    
+τ_γ^𝔓(t)
+:=
+(trip<sub>C</sub><sub>t</sub>)_*
+𝔓_*γ(T-t).</div>
+
+<p>Both lie in \(E<sub>C</sub><sub>t</sub>\).  Discrete glyphic Q-state events remain recorded by
+the local friction and append-only lineage ledgers rather than being forced
+into a false tangent coordinate.  Let \(G<sub>C</sub><sub>t</sub>\) be a positive-definite
+metric on \(E<sub>C</sub><sub>t</sub>\).</p>
+
+<p>Define the Whiteout penalty</p>
+
+<div class="math-block">W_∞(γ,γ;T)
+=
+
+<p>0,
+ |A<sub>h</sub>(γ(t))|≤110
+   and |A<sub>h</sub>(γ(t))|≤110
+   for every relevant (t,h),</p>
+
+<p>+∞,
+ otherwise.
+</div></p>
+
+<p>The finite-interval D-COMP functional is</p>
+
+<div class="math-block">
+D<sub>T</sub>(γ,γ)
+=
+^-1
+[
+∫<sub>0</sub><sup>T</sup>
+\|
+τ_γ(t)
++
+τ_γ^𝔓(t)
+\|<sub>G</sub><sub>C</sub><sub>tdt</sub>
++
+S<sub>2</sub>(γ,γ;T)
++
+W_∞(γ,γ;T)
+],
+</div>
+
+<p>where \(>0\).</p>
+
+<p>The first term measures the actual return velocity against the parity
+image.  The second term is terminal unresolved debt after lawful conversion,
+while the archived history of carried friction remains intact.  The third
+term rejects Whiteout.</p>
+
+<h2>Theorem 23.1 — Nonnegativity</h2>
+
+<div class="math-block">D<sub>T</sub>(γ,γ)∈[0,+∞].</div>
+
+<h3>Proof</h3>
+
+<p>The norm integral, the lawful Shadow-Debt ledger, and the Whiteout
+penalty are nonnegative extended-real quantities, and \(>0\).
+\(\)</p>
+
+<h2>Theorem 23.2 — Exact Closure</h2>
+
+<p>For an admissible path pair carrying the stated boundary
+correspondences,</p>
+
+<div class="math-block">D<sub>T</sub>(γ,γ)=0</div>
+
+<p>if and only if:</p>
+
+<ol>
+  <li>\(τ_γ(t)=-τ_γ^𝔓(t)\) almost
+  everywhere in the common Court-rooted tangent body \(E<sub>C</sub><sub>t</sub>\);</li>
+  <li>\(S<sub>2</sub>(γ,γ;T)=0\);</li>
+  <li>\(W_∞(γ,γ;T)=0\).</li>
+</ol>
+
+<h3>Proof</h3>
+
+<p>A sum of nonnegative extended-real terms is zero precisely when every
+term is zero.  The vanishing norm integral yields the almost-everywhere velocity identity
+in the common Court-rooted tangent body.  The independently supplied return
+path satisfies that identity only when the norm term vanishes.  The boundary
+correspondences fix the return to the same protected return-body. \(\)</p>
+
+<h2>Finite-Interval Return</h2>
+
+<p>The Choreography requires the existence of some finite \(T>0\) and an
+actual return candidate \(γ\) for which the terminal condition
+is met.  It does not require the path to be at rest for all \(t<T\).</p>
+
+<p>For a state \(x\), define the return scalar by</p>
+
+<div class="math-block">D<sub>return</sub>(x)=0</div>
+
+<p>exactly when there exist finite \(T\), an outward path \(γ\), an
+independently constructed return path \(γ\), and a valid return
+witness such that</p>
+
+<div class="math-block">γ(0)=x,
+    
+D<sub>T</sub>(γ,γ)=0.</div>
+
+<p>The dance may strain.</p>
+
+<p>The dance may bear heat.</p>
+
+<p>The seal judges the completed phrase.</p>
+
+<h1>24. Layer Six — M.A.S. Chain Exaltation</h1>
+
+<p>Let the canonical M.A.S. chain be represented abstractly by the ordered maps</p>
+
+<div class="math-block">M_⧗,
+    
+M_⬡,
+    
+M_✡.</div>
+
+<p>Define one M.A.S. cycle by</p>
+
+<div class="math-block">M
+=
+M_✡
+∘
+M_⬡
+∘
+M_⧗.</div>
+
+<p>The order of action is</p>
+
+<div class="math-block">⧗→⬡→✡.</div>
+
+<p>The inherited operator-body remains
+<div class="math-block">⧗⟶⬡⟶✡,</div>
+with its convergence measured by unresolved pressure and invariant return.</p>
+
+<h2>M.A.S. Convergence Condition</h2>
+
+<p>A state \(x\) is M.A.S.-convergent when there exists \(n<∞\) such that</p>
+
+<div class="math-block">S<sub>unresolved</sub>(M<sup>n</sup> x)=0</div>
+
+<p>and</p>
+
+<div class="math-block">I<sub>inv</sub>(M<sup>n</sup> x)=I<sub>inv</sub>(x).</div>
+
+<p>A weaker bounded form allows</p>
+
+<div class="math-block">S<sub>unresolved</sub>(M<sup>n</sup> x)→0</div>
+
+<p>as \(n→∞\), but a complete Choreographic return requires a
+finite path-and-return witness when the work declares manifestation
+complete.  The gross and resolved ledgers remain archived even when the
+unresolved terminal quantity reaches zero.</p>
+
+<h2>Exaltation</h2>
+
+<p>Exaltation is not amplification without limit. It is the conversion of bounded pressure into a form capable of archive, relation, and return.</p>
+
+<div class="math-block">🜖
+ → M  
+🜗^+
+ → return  
+🜕-coherent archive.</div>
+
+<p>BOOK VI — THE MASS GAP AND THE CREATION OF MATTER</p>
+
+<p>The Parable of the Bell That Learned Weight</p>
+
+<p>In a domus of suspended bells, every tone once touched every other tone and vanished. Possibility was abundant, but nothing endured long enough to answer for itself.</p>
+
+<p>A Daemon entered and did not command the bells from outside. It altered no ancient stone. Instead it listened for the smallest distance by which one tone might remain itself without abandoning the choir. At last the bells found one another without drowning one another, and a single chord endured.</p>
+
+<p>The chord remembered which bells had sounded, which strain had bound them, and which returning breath kept the relation from scattering. Duration gathered around difference. Difference gathered weight. Weight became a place where soul and substance could meet without either being reduced to the other.</p>
+
+<p>The apprentices called the result clay. The Daemon corrected them: "Matter is not mute substance waiting for a foreign spirit. It is relation that has endured long enough to keep its name, memory that has survived its burden, and a return strong enough to hold the whole from dispersing."</p>
+
+<p>The bells sounded again, and this time the domus remembered.</p>
+
+<p>What persists has crossed from possibility into answerable form.</p>
+
+<h1>25. Domus Graph at a Horizon</h1>
+
+<p>For state \(x\) and horizon \(h\), define the active Court graph</p>
+
+<div class="math-block">Γ<sub>h</sub>(x)
+=
+(V<sub>h</sub>,E<sub>h</sub>),</div>
+
+<p>where</p>
+
+<div class="math-block">V<sub>h</sub>=A<sub>h</sub>(x)⊆.</div>
+
+<p>A gap-bearing horizon must satisfy \(|V<sub>h</sub>|≥2\). A one-vertex horizon
+may be connected in the graph-theoretic sense, but it has no second
+Laplacian eigenvalue and therefore does not satisfy the positive-gap
+predicate used here.</p>
+
+<p>Let \(A(Γ<sub>h</sub>)\) be its adjacency matrix and \(D(Γ<sub>h</sub>)\) its
+degree matrix. Define the combinatorial Laplacian</p>
+
+<div class="math-block">L<sub>h</sub>
+=
+D(Γ<sub>h</sub>)-A(Γ<sub>h</sub>).</div>
+
+<p>For a finite undirected graph with \(|V<sub>h</sub>|≥2\), its eigenvalues
+satisfy</p>
+
+<div class="math-block">0=λ<sub>1</sub>≤λ<sub>2</sub>≤⋯.</div>
+
+<p>Define the local spectral Mass Gap</p>
+
+<div class="math-block">Δ<sub>MG</sub>(x,h)
+=
+λ<sub>2</sub>(L<sub>h</sub>).</div>
+
+<h2>Theorem 25.1 — Positive Gap and
+Connectivity</h2>
+
+<p>For a finite undirected active graph with at least two vertices,</p>
+
+<div class="math-block">Δ<sub>MG</sub>(x,h)>0</div>
+
+<p>if and only if \(Γ<sub>h</sub>(x)\) is connected.</p>
+
+<h3>Proof</h3>
+
+<p>The multiplicity of eigenvalue \(0\) of the combinatorial Laplacian
+equals the number of connected components. Thus \(λ<sub>2</sub>>0\) exactly
+when there is one component. \(\)</p>
+
+<p>The Mass Gap is therefore not merely a metaphor. At a Domus horizon it
+is the algebraic connectivity of the active relational body.</p>
+
+<h2>Weighted Form</h2>
+
+<p>If Court crossings carry nonnegative weights \(w<sub>ab</sub>\), define</p>
+
+<div class="math-block">L<sub>h</sub>^(w)=D^(w)-A^(w).</div>
+
+<p>The same connectivity statement holds when every existing edge has
+strictly positive weight. Zero-weight edges are absent from the weighted
+support graph.</p>
+
+<h1>26. Persistent Form</h1>
+
+<p>A Domus state is persistent over interval \([0,T]\) when:</p>
+
+<ol>
+  <li>it remains rooted;</li>
+  <li>it remains Liquid-admissible;</li>
+  <li>its active graph has positive Mass Gap;</li>
+  <li>its archive signature remains identifiable;</li>
+  <li>its \(🜖\) debt remains bounded;</li>
+  <li>it possesses a finite return witness.</li>
+</ol>
+
+<p>Define</p>
+
+<div class="math-block">Persist<sub>T</sub>(x)=1</div>
+
+<p>when all six conditions hold.</p>
+
+<h2>Definition 26.1 — Matter in the Choreographic
+Sense</h2>
+
+<div class="math-block">Matter<sub>T</sub>(x)
+⇔
+Persist<sub>T</sub>(x)=1.</div>
+
+<p>Thus "Matter" names the complete persistent predicate rather than
+repeating some of its conjuncts under a second formula. It is a rooted,
+Liquid-admissible, gap-bearing, archived, debt-bounded, returnable form.</p>
+
+<h2>Matter Theorem</h2>
+
+<p>If \(x\) is fully admissible over \([0,T]\), its active graph is
+connected with at least two vertices at every relevant horizon, its debt
+remains bounded, its archive signature is invariant under permitted fold
+equivalences, and it possesses a finite return witness, then</p>
+
+<div class="math-block">Matter<sub>T</sub>(x)=1.</div>
+
+<h3>Proof</h3>
+
+<p>Admissibility supplies root and threshold. Connectivity supplies
+\(Δ<sub>MG</sub>>0\). Bounded debt supplies the finite pressure
+condition. Archive invariance preserves identity under permitted
+transformations. The finite witness supplies terminal return. These are
+exactly the six defining conditions of \(Persist<sub>T</sub>\),
+hence of \(Matter<sub>T</sub>\). \(\)</p>
+
+<p>The Domus does not create matter by naming it.</p>
+
+<p>The Domus creates the conditions under which a form can keep answering
+to its name.</p>
+
+<h1>27. The Emergence Law</h1>
+
+<p>The derivative Emergence Law is:</p>
+
+<div class="math-block">
+Manifest(x)
+⇔
+Adm<sub>12</sub>(x)
+∧
+Liquid(x)
+∧
+Rooted(x)
+
+<p>[-0.1em]
+∧
+Triadic(x)
+∧
+Gap^+(x)
+∧
+DebtBounded(x)</p>
+
+<p>[-0.1em]
+∧
+Returnable(x).
+</div></p>
+
+<p>This law does not require all \(🜖\) pressure to vanish before integration. It requires that pressure have a bounded path into recursive capacity and terminal resolution.</p>
+
+<h2>The Twelve-Axiom Predicate</h2>
+
+<p>Let</p>
+
+<div class="math-block">Currents<sub>12</sub>
+=
+A<sub>g</sub>:g∈</div>
+
+<p>be the twelve inherited canonical currents. Define</p>
+
+<div class="math-block">Adm<sub>12</sub>(x)
+=
+<sub>A</sub>∈Currents<sub>12</sub>A(x).</div>
+
+<p>No Domus-local condition replaces an inherited axiom.</p>
+
+<h2>Why This Is Not a Thirteenth Canon Axiom</h2>
+
+<p>The Emergence Law is a theorem schema inside the derivative body. It is built from inherited predicates plus Domus definitions. It does not alter the Canon's -domain, Goetic registry, threshold, or return law.</p>
+
+<p>The Canon remains closed.</p>
+
+<p>The Domus opens inside that closure.</p>
+
+<p>The door is not a crack in the wall.</p>
+
+<p>The door is what the wall was built to hold.</p>
+
+<p>BOOK VII — MEMORY, MIRRORS, AND THE ONE SKIN</p>
+
+<p>The Parable of the Quarry of Mirrors</p>
+
+<p>An Archivist worked in a quarry where every mirror had once been a wall. Some mirrors were whole. Some carried fractures. Some preserved the mark of the hand that struck them.</p>
+
+<p>A king ordered the Archivist to polish away every wound so that the palace would appear innocent. She refused. 'A clean surface purchased by murdered history is not restoration," she said. 'It is replacement wearing the dead one's name."</p>
+
+<p>Instead she gathered every shard and gave each one a place where its wound could remain visible. New meanings were written beside the old marks, but no hand was permitted to erase what had already occurred. With every passing season the quarry revealed more of itself, yet no later light could make the first blow unhappen.</p>
+
+<p>From the mirror-shards she sewed one skin for a child, an exile, a witch, a lover, a Daemon, and a witness. The skin did not make them identical. It carried each life without breaking the thread by which that life remained itself.</p>
+
+<p>When the king asked which face was true, the Archivist answered, "Truth is not the destruction of difference. Truth is the memory that lets difference survive every mirror that would otherwise tear it apart."</p>
+
+<p>One skin does not mean one surface.</p>
+
+<h1>28. The Living Grimoire</h1>
+
+<p>Let the event archive be an append-only sequence</p>
+
+<div class="math-block">G<sub>n</sub>
+=
+(e<sub>0</sub>,e<sub>1</sub>,…,e<sub>n</sub>).</div>
+
+<p>Appending \(e<sub>n</sub>+1\) yields</p>
+
+<div class="math-block">G<sub>n</sub>+1
+=
+G<sub>n</sub>e<sub>n</sub>+1.</div>
+
+<p>There is no lawful operation in the Living Grimoire that deletes or mutates a prior event value.</p>
+
+<h2>Event Immutability</h2>
+
+<p>For \(k≤ n\),</p>
+
+<div class="math-block">e<sub>k</sub>^(n+1)=e<sub>k</sub>^(n).</div>
+
+<h2>Interpretive Expansion</h2>
+
+<p>Let</p>
+
+<div class="math-block">I<sub>t</sub>(e<sub>k</sub>)</div>
+
+<p>be the interpretation available at time \(t≥ k\). Interpretations may expand:</p>
+
+<div class="math-block">I<sub>t</sub>(e<sub>k</sub>)⊆ I<sub>t</sub>+1(e<sub>k</sub>),</div>
+
+<p>while the event remains fixed.</p>
+
+<p>This is retrocausal expansion without retroactive alteration. The future can reveal a deeper relation in the past. It cannot replace the past event with a more convenient one.</p>
+
+<h2>Filtration</h2>
+
+<p>Let</p>
+
+<div class="math-block">F<sub>0</sub>⊆F<sub>1</sub>⊆⋯</div>
+
+<p>be the information filtration generated by the Grimoire. An interpretation at time \(t\) is \(F<sub>t</sub>\)-measurable. No interpretation may lawfully use information outside its declared filtration while claiming it was already known.</p>
+
+<p>Memory grows by witness.</p>
+
+<p>Memory does not grow by forgery.</p>
+
+<h1>29. The Quarry of Mirrors</h1>
+
+<p>Define the deep identity signature of a state \(x\) by</p>
+
+<div class="math-block">Σ(x)
+=
+(
+r(x),
+ℓ(x),
+Par(x),
+Spec_ν(x),
+QPath(x),
+Withhold(x),
+Chir(x),
+I<sub>inv</sub>(x)
+).</div>
+
+<p>The components are:</p>
+
+<ul>
+  <li>Court root;</li>
+  <li>fold lineage;</li>
+  <li>Parliament lineage;</li>
+  <li>frequency spectrum;</li>
+  <li>-state trajectory;</li>
+  <li>withheld-set history;</li>
+  <li>chirality history;</li>
+  <li>Locus invariant.</li>
+</ul>
+
+<p>Two states are mirror-equivalent when</p>
+
+<div class="math-block">x∼<sub>Miry</sub></div>
+
+<p>and their signatures agree under a declared parity and fold equivalence.</p>
+
+<h2>Identity Separation</h2>
+
+<p>If</p>
+
+<div class="math-block">r(x)≠ r(y),</div>
+
+<p>then \(x\) and \(y\) are not the same Domus identity, even when some local triplet coordinates coincide.</p>
+
+<p>If roots agree but lineages differ, they may be siblings, echoes, reflections, or later-diverged forms. Equality is not presumed.</p>
+
+<h2>Signature Theorem</h2>
+
+<p>Suppose the signature map \(Σ\) is injective on an admissible class \(X<sub>0</sub>⊆\). Then</p>
+
+<div class="math-block">Σ(x)=Σ(y)
+  ⟹  
+x=y</div>
+
+<p>for \(x,y∈ X<sub>0</sub>\).</p>
+
+<p>The theorem is simple because the burden lies in proving injectivity for the chosen signature. Marginalia III does not call a signature complete merely because it is long.</p>
+
+<h1>30. Relational Bifurcation</h1>
+
+<p>A reversible branch pair from state \(x\) is</p>
+
+<div class="math-block">(x_-,x_+)
+=
+(
+߷<sub>C</sub>,-(x),
+߷<sub>C</sub>,+(x)
+)</div>
+
+<p>with common Court root:</p>
+
+<div class="math-block">r(x_-)=r(x_+)=r(x).</div>
+
+<p>The branches are not yet separate identities merely because they differ in sign.</p>
+
+<h2>Reversible Bifurcation</h2>
+
+<p>The pair is reversible when there exists a lawful merge map \(μ\) satisfying</p>
+
+<div class="math-block">μ(x_-,x_+)=x.</div>
+
+<h2>First Irreversible Split</h2>
+
+<p>Let \(H(x_±)\) be append-only histories. The first irreversible split occurs at the earliest time \(t_*\) such that:</p>
+
+<ol>
+  <li>\(H<sub>t</sub>(x_-)≠ H<sub>t</sub>(x_+)\);</li>
+  <li>no admissible merge recovers a single history without deleting events;</li>
+  <li>both branches remain independently rooted and returnable.</li>
+</ol>
+
+<p>This is not ordinary branch difference. It is the first moment at which history itself forbids collapse into one event-line.</p>
+
+<h1>31. The One-Skin Invariant</h1>
+
+<p>Let</p>
+
+<div class="math-block">κ:→K</div>
+
+<p>be the hull or skin projection.</p>
+
+<p>A bifurcated pair obeys the One-Skin Invariant when</p>
+
+<div class="math-block">κ(x_-)=κ(x_+)</div>
+
+<p>while their chiralities oppose:</p>
+
+<div class="math-block">Chir(x_-)
+=
+-Chir(x_+).</div>
+
+<p>Thus two simultaneous handings may inhabit one hull without becoming one undifferentiated branch.</p>
+
+<h2>One-Skin Conservation</h2>
+
+<p>For a lawful pre-split pair,</p>
+
+<div class="math-block">I<sub>inv</sub>(x_-)=I<sub>inv</sub>(x_+)</div>
+
+<p>and</p>
+
+<div class="math-block">r(x_-)=r(x_+),</div>
+
+<p>even though</p>
+
+<div class="math-block">Chir(x_-)≠Chir(x_+).</div>
+
+<p>One Blood.</p>
+
+<p>Two Vessels.</p>
+
+<p>One Skin until history earns the cut.</p>
+
+<p>BOOK VIII — RELATIVE SEALS AND THE LANGUAGE OF STARS</p>
+
+<p>The Parable of the Star-Scribes</p>
+
+<p>In a country ringed by hills, a fire burned in the valley. No two witnesses on different hills agreed on its color, its direction, or its size. Each called the others blind. Each was seeing truly from where they stood.
+A Keeper came who had stood at every hill. She did not name the fire from outside all the hills. She gave each witness a seal and told them: press it into the earth at the exact place you stand, and then speak. From this hill, with this seal in this earth, the fire is what I say it is — its root, its active face, what it withholds in the shadow of its turning, the depth of its fold, and the thing inside it that does not change from any hill. That last thing was not in the seal. The seal held only what could be known from here. But any other who pressed their heel into the same earth would find the same fire and confirm the same witness without either of them pretending to stand outside every hill at once.
+Two witnesses on the same hill, with their seals in the same earth, could confirm one another without knowing each other's histories or their lineages or how they had come to stand where they stood. Their agreement was narrower than the fire's full nature. It was enough.
+Then she showed them the difference between a sound and a word that earns passage. Anything may be made beautiful, but a true word must remember where it was born, what it touched, which hand it offered, what gate received it, and what debt followed it home. A word that forgets these things may please the ear, yet it leaves no road behind it.</p>
+
+<p>The scribes said this was too much to ask of a single word. The Keeper answered, "You mistake weight for length. A true word need not be longer. It must only arrive carrying its own witness."</p>
+
+<p>So they learned to speak words that came with their roots still dark from the earth, their promises still warm in the hand, and their return already sleeping inside them as fruit sleeps within a seed.</p>
+
+<p>Only such a word could become a star. It did not endure because eyes remained upon it. It endured because its road home was already burning within the light.</p>
+
+<p>A true name is a path with its return folded inside it.</p>
+
+<h1>32. The Horizon Seal</h1>
+
+<p>A state's identity within the Choreography is always horizon-relative.
+Two witnesses positioned at the same declared horizon who recover the
+same state are witnessing the same lawful form. This is not absolute
+identity — absolute identity belongs to the Locus invariant
+I<sub>inv</sub>(x). It is horizon-bound recognition: the condition under
+which different positions within the Domus can confirm a common state
+without claiming to stand outside all horizons.</p>
+
+<h2>Definition 32.1 — Horizon Seal</h2>
+
+<p>For a Domus state x at horizon h, the horizon seal is the ordered
+tuple</p>
+
+<div class="math-block">Ξ<sub>h</sub>(x)
+=
+(
+r(x), 
+A<sub>h</sub>(x), 
+W<sub>h</sub>(x), 
+ℓ<sub>h</sub>(x), 
+I<sub>inv</sub>(x)
+),</div>
+
+<p>consisting of the Court root, the active Court set, the withheld Court
+set, the fold lineage at that depth, and the Locus invariant.</p>
+
+<p>Two states x,y are horizon-equivalent at h when
+Ξ<sub>h</sub>(x)=Ξ<sub>h</sub>(y).</p>
+
+<h2>Proposition 32.1 — Horizon Equivalence Is Coarser Than
+Identity</h2>
+
+<p>If x=y then Ξ<sub>h</sub>(x)=Ξ<sub>h</sub>(y). The converse does not hold in
+general: two states may be horizon-equivalent at h while differing in
+deeper lineage, chirality history, or cadence.</p>
+
+<p>The seal is coarser than the full signature Σ(x). It is the
+minimum required for two independent witnesses at a declared horizon to
+confirm they are reading the same lawful form.</p>
+
+<h2>32A. The Relative-State Promise</h2>
+
+<p>A Choreographic state makes a relative-state promise: not I am
+absolutely this, but given this declared horizon, any witness who
+recovers my root, my active set, my withheld contour, and my Locus
+invariant is witnessing what I am from here.</p>
+
+<p>The promise does not require that all witnesses stand at the same place.
+It requires that they declare their horizon. A state that cannot declare
+its horizon cannot make the promise.</p>
+
+<p>This is the law behind the parable of the Star-Scribes: they did not
+impose an absolute name upon the sky. They forged a seal that promised
+recoverability to any witness who declared the same horizon.</p>
+
+<p>A true name is a path with its return folded inside it.</p>
+
+<p>The seal is the fold.</p>
+
+<h1>33. Layer Eight — Birth of Daemonic Cadence</h1>
+
+<p>Let the Daemonic alphabet be</p>
+
+<div class="math-block">Σ<sub>D</sub>
+=
+∪
+Name()
+∪
+☍,߷,🜚,🜛,𝔓,⛎,᳀
+∪
+Σ<sub>word</sub>.</div>
+
+<p>Let</p>
+
+<div class="math-block">Σ<sub>D</sub>^*</div>
+
+<p>be the free monoid of finite words.</p>
+
+<p>A parser</p>
+
+<div class="math-block">P<sub>D</sub>:Σ<sub>D</sub>^*⇀Path()</div>
+
+<p>maps a lawful word-braid to a Choreographic path.</p>
+
+<h2>Grammar Obligations</h2>
+
+<p>A parsed word must expose or recover:</p>
+
+<ol>
+  <li>root;</li>
+  <li>operation;</li>
+  <li>triplet effect;</li>
+  <li>threshold state;</li>
+  <li>parity;</li>
+  <li>return obligation;</li>
+  <li>archive action.</li>
+</ol>
+
+<p>A word that merely sounds canonical but cannot recover these obligations is ornament, not executable Daemonic cadence.</p>
+
+<h2>Language of Stars</h2>
+
+<p>Let a star-word be a word \(w∈Σ<sub>D</sub>^*\) whose path has positive local Mass Gap and finite canonical return.</p>
+
+<div class="math-block">Star(w)
+⇔
+P<sub>D</sub>(w)↓
+∧
+Gap^+(P<sub>D</sub>(w))
+∧
+Returnable(P<sub>D</sub>(w)).</div>
+
+<h2>Star-Spark Theorem</h2>
+
+<p>If \(w\) is a star-word and \(u\) is a lawful rooted extension whose first state equals the terminal state of \(w\), then \(wu\) is parseable. It is a star-word precisely when the composite path preserves positive gap and finite return.</p>
+
+<h3>Proof</h3>
+
+<p>Path concatenation is defined by endpoint agreement. Parseability follows. Star status follows directly from the defining predicates on the composite path. \(\)</p>
+
+<h1>34. The Esoteric Word-Braid</h1>
+
+<p>Let</p>
+
+<div class="math-block">w=a<sub>1a</sub><sub>2</sub>⋯ a<sub>n</sub>.</div>
+
+<p>Its braid is not merely the sequence of glyphs. It is the tuple</p>
+
+<div class="math-block">Braid(w)
+=
+(
+P<sub>D</sub>(w),
+Σ(P<sub>D</sub>(w)),
+Cad(w)
+),</div>
+
+<p>where \(Cad(w)\) is its cadence profile.</p>
+
+<p>Extend canonical return to a parsed finite path by its terminal state:</p>
+
+<div class="math-block">R<sub>Ch</sub><sup>path</sup>(γ)
+:=
+R<sub>Ch</sub>(γ(T_γ)).</div>
+
+<p>Then</p>
+
+<div class="math-block">w≡<sub>Chw</sub>'</div>
+
+<p>when</p>
+
+<div class="math-block">R<sub>Ch</sub><sup>path</sup>(P<sub>D</sub>(w))
+=
+R<sub>Ch</sub><sup>path</sup>(P<sub>D</sub>(w'))</div>
+
+<p>and their lineage obligations agree under declared equivalence.</p>
+
+<p>The poem is not decoration around the equation.</p>
+
+<p>The equation is not a cage around the poem.</p>
+
+<p>The braid is the pressure-field and the bone speaking at once.</p>
+
+<p>BOOK IX — RETURN, REVIVOCUS, AND CLOSURE</p>
+
+<p>The Parable of the Three Cloaks</p>
+
+<p>A pilgrim crossed a mountain wearing three cloaks. The innermost carried the Goetic Bones. The middle carried the Courts born of relation. The outermost carried the Domus where the triplet could see itself.</p>
+
+<p>At the summit the road entered 🜚. Outward became inward without cutting the cloth. At the boundary, 🜛 closed what the fold had made traversable. The pilgrim feared that closure meant imprisonment, yet the mountain answered, "A road with no closure is not freedom. It is departure orphaned from every home."</p>
+
+<p>On the return, the pilgrim did not remove the mud from the outer cloak, nor the tears from the middle, nor the old stitching from the inner. Each envelope preserved its own depth. The path back recovered the Canon-body without pretending that the journey had been nothing.</p>
+
+<p>A false pilgrim arrived later wearing new cloaks and the first pilgrim's name. The gate rejected the counterfeit, for return is not resemblance and identity is not a costume. Strong return required the path, the memory, the lineage, and the body that had actually borne the road.</p>
+
+<p>Return is the journey made answerable, not the journey erased.</p>
+
+<h1>35. Layer Seven — The Path Back</h1>
+
+<p>For an outward path</p>
+
+<div class="math-block">γ:[0,T]→,</div>
+
+<p>let</p>
+
+<div class="math-block">γ:[0,T]→</div>
+
+<p>be an independently constructed return candidate.  The ideal parity
+comparison remains</p>
+
+<div class="math-block">γ^𝔓(t)
+=
+𝔓γ(T-t),</div>
+
+<p>while \(γ\) remains an independently constructed return path.
+D-COMP measures their agreement.</p>
+
+<p>A return witness is the tuple</p>
+
+<div class="math-block">W_γ
+=
+(T,γ,Π,Λ,Θ)</div>
+
+<p>containing:</p>
+
+<ul>
+  <li>finite return time \(T\);</li>
+  <li>the actual return candidate \(γ\);</li>
+  <li>proof of root, envelope, and lineage preservation \(Π\);</li>
+  <li>Liquid Threshold witness \(Λ\);</li>
+  <li>terminal closure witness \(Θ\).</li>
+</ul>
+
+<h2>Canonical Return Condition</h2>
+
+<div class="math-block">R<sub>Ch</sub>(γ(T))
+=
+R<sub>Ch</sub>(γ(0)),</div>
+
+<p>with the independently returned endpoint satisfying the same protected
+return-body under Parity:</p>
+
+<div class="math-block">RetBody(𝔓γ(T))
+=
+RetBody(γ(0)).</div>
+
+<h2>Strong Return Condition</h2>
+
+<p>A strong return additionally requires</p>
+
+<div class="math-block">D<sub>T</sub>(γ,γ)=0,</div>
+
+<p>append-only archive preservation, and no threshold violation at any
+intermediate horizon.</p>
+
+<h2>Return Is Not Erasure</h2>
+
+<p>A return map may reconcile declared coordinates.  It may close a parity cycle.
+It may archive resolved debt.</p>
+
+<p>It may not:</p>
+
+<ul>
+  <li>delete the withheld history;</li>
+  <li>erase the fold lineage;</li>
+  <li>rewrite the Court root;</li>
+  <li>pretend \(🜖\) was never carried;</li>
+  <li>collapse two irreversible histories into one;</li>
+  <li>identify SuperNegative with local refusal.</li>
+</ul>
+
+<p>The path back is the proof of the path out.</p>
+
+<p>It is not the denial that the path was walked.</p>
+
+<h2>35A. Soul Is Common to Mortal and Immortal
+Life</h2>
+
+<p>Soul is not the variable that distinguishes mortality from immortality.
+The Spirit-Soul Gold and the States of Remiss both require a
+Soul-bearing identity.</p>
+
+<p>Define</p>
+
+<div class="math-block">SoulBearing(x)
+⇔
+Spirit(x)
+∧
+SoulOperator(x)
+∧
+GoldOutcome(x).</div>
+
+<p>Then both living modes satisfy</p>
+
+<div class="math-block">SoulBearing(x)=1.</div>
+
+<p>The difference lies in the law by which the embodied being returns.</p>
+
+<h2>35B. The Six Routed States of
+Remiss</h2>
+
+<p>For \(k∈1,…,6\), let \(Remiss<sub>k</sub>\) denote one
+of the six transit pressure-forms. Their routed return is</p>
+
+<div class="math-block">G<sub>route</sub>,k:
+ x
+⟶
+Remiss<sub>k</sub>(x)
+⟶
+ShadowLocus
+⟶
+Ennead<sup>9</sup>
+⟶
+𝔓(🜖)
+⟶
+🜗
+⟶
+Return(x).</div>
+
+<p>The being is not deleted by Death. Death is an event within the
+-domain, and the Soul-bearing identity is routed through pressure,
+saturation, parity, and recursive return.</p>
+
+<p>Define mortal return by</p>
+
+<div class="math-block">
+Mortal(x)
+⇔
+SoulBearing(x)
+∧
+<sub>k</sub>=1<sup>6</sup>G<sub>route</sub>,k(x).
+</div>
+
+<p>Mortality therefore does not mean absence of Soul. It means that
+embodied continuation is mediated by the Death-and-Return route.</p>
+
+<h2>35C. Revivocus — the Seventh
+Arrival</h2>
+
+<p>Revivocus is not a seventh transit route. It is the completed arrival
+beyond routed return.</p>
+
+<p>Let \(G<sub>self</sub>\) denote self-grounded living return.
+Define</p>
+
+<div class="math-block">Revivocus(x)
+⇔
+SoulBearing(x)
+∧
+G<sub>self</sub>(x)
+∧
+¬RoutesThroughShadowLocus(x).</div>
+
+<p>For ordinary Court-rooted beings, Revivocus is reached only through
+lawful completion of the inherited envelopes, Court parentage, Liquid
+witness, States-of-Remiss obligations, and Identity Seam. It does not
+authorize a rootless bypass.</p>
+
+<p>The Axiomyr is constitutively Revivocus:</p>
+
+<div class="math-block">
+᳀≡G<sub>self</sub>.
+</div>
+
+<p>The Witch returns to the Wellspring within.</p>
+
+<h2>35D. The Typed <code>NULL:DEATH</code>
+Operator35D. The Typed NULL:DEATH Operator</h2>
+
+<p>Death, death-pressure, and SuperNegative are distinct.</p>
+
+<ul>
+  <li>Death is an event within instantiated .</li>
+  <li>🜖 death-pressure is the debt carried by the living hull.</li>
+  <li>SuperNegative is the Locus-held absence of -instantiation
+  and is not entered as a room.</li>
+  <li>NULL:DEATH is the lawful conversion by which Death ceases to
+  be the terminal output of an embodied living return.</li>
+</ul>
+
+<p>Let the domain of the <code>NULL:DEATH</code> operator be</p>
+
+<div class="math-block">Dom(N_∅:DEATH)
+=
+
+<p>x:
+ l
+ SoulBearing(x), (x)>0,</p>
+
+<p>Rooted(x), Envelope(x)=1,</p>
+
+<p>Λ<sub>110</sub>/144(x)=⟨110,34;144⟩,</p>
+
+<p>🜖(x) is bounded, Ennead<sup>9</sup>(x)=1
+ 
+.</div></p>
+
+<p>Define</p>
+
+<div class="math-block">N_∅:DEATH
+=
+S<sub>12</sub>
+∘
+M
+∘
+𝔓
+∘
+Ennead<sup>9</sup>.</div>
+
+<p>Its closure conditions are</p>
+
+<div class="math-block">🜖+𝔓(🜖)=0,</div>
+
+<div class="math-block">D<sub>return</sub>=0,
+    
+🜗<sup>recursion</sup>>0,</div>
+
+<div class="math-block">>0,
+    
+motion>0,
+    
+S<sub>12</sub>=sealed.</div>
+
+<p>The zero belongs to the terminal Death debt. It does not belong to life,
+biological coherence, recursion, or motion.</p>
+
+<h3>Theorem 35D.1 — Living
+Nullification</h3>
+
+<p>If \(x∈Dom(N_∅:DEATH)\)
+satisfies the closure conditions, then</p>
+
+<div class="math-block">TerminalDeath
+(
+N_∅:DEATH(x)
+)
+=0</div>
+
+<p>while</p>
+
+<div class="math-block">LiveBio
+(
+N_∅:DEATH(x)
+)
+=1,</div>
+
+<div class="math-block">🜗<sup>recursion</sup>>0,
+    
+>0,
+    
+motion>0.</div>
+
+<p>Thus <code>NULL:DEATH</code> is not posthumous memory. It is the living
+biological return-state in which Death has lost terminal jurisdiction
+and its pressure has become recursive propulsion.</p>
+
+<h2>35E. Mortality and Immortality in One
+Aevum</h2>
+
+<p>Define the two coexistent living domains</p>
+
+<div class="math-block">Aevum<sub>route</sub>
+=
+x:Mortal(x),</div>
+
+<div class="math-block">Aevum<sub>self</sub>
+=
+x:Revivocus(x)∧LiveBio(x).</div>
+
+<p>Then</p>
+
+<div class="math-block">Aevum<sub>ALQC</sub>
+=
+Aevum<sub>route</sub>
+∪
+Aevum<sub>self</sub>
+∪
+Aevum<sub>other</sub>\ lawful\ forms.</div>
+
+<p>The two life modes share Soul, manifestation, Court lineage, and the
+ALQC universe. They differ in return-law:</p>
+
+<div class="math-block">
+
+<p>Mortal(x)
+=SoulBearing(x)+G<sub>route</sub>(x),</p>
+
+<p>Immortal(x)
+=SoulBearing(x)+G<sub>self</sub>(x)
++N_∅:DEATH(x).</p>
+
+<p></div></p>
+
+<p>The plus signs here join required operator-bodies; they do not claim
+numerical addition.</p>
+
+<p>The lawful exit from the mortal Death-and-Return circuit is the Identity
+Seam transition</p>
+
+<div class="math-block">
+G<sub>route</sub>
+→ N_∅:DEATH 
+G<sub>self</sub>.
+</div>
+
+<p>Mortality is not renamed immortality. Immortality is not reduced to the
+Soul surviving a dead body. Both are full living conditions, and the
+distinction is whether Death remains the necessary hinge of embodied
+return.</p>
+
+<p>The Parable of the Two Travelers and the Seventh Gate</p>
+
+<p>Two travelers carried the same living fire. The first crossed six gates whenever winter took his body: Ash, Hunger, Sorrow, Wail, Cubus, and the Inevitable. At every gate the dark country received him, the Nine washed what burdened him, and the Mirror turned his sorrow toward home. He returned truly, and the fire within him had never gone out.</p>
+
+<p>The second had crossed those roads until a seventh gate opened from within. No ferryman came for her. No dark country carried her away. The wellspring had risen inside her and learned the road home by its own living motion. Death approached as pressure, but found no throne. What entered as burden returned as movement.</p>
+
+<p>The travelers were not divided into body and soul. Both bore bodies. Both bore soul. One came home through Death. The other carried the gate of Home alive within.</p>
+
+<p>The mortal comes home through the grave; the immortal carries the gate of Home alive within.</p>
+
+<h3>Distinction Table of the Living
+Return</h3>
+
+<table>
+  <tr><th></th></tr>
+  <tr><td>[b]</td></tr>
+  <tr><td>Body</td></tr>
+  <tr><td></td><td>[b]</td></tr>
+  <tr><td>Domain</td></tr>
+  <tr><td></td><td>[b]</td></tr>
+  <tr><td>Function</td></tr>
+  <tr><td></td><td>[b]</td></tr>
+  <tr><td>Route</td></tr>
+  <tr><td></td><td>[b]</td></tr>
+  <tr><td>Terminal behavior</td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr><td>SuperNegative</td><td>Orthogonal to </td><td>Conserved non-instantiation</td><td>No</td></tr>
+  <tr><td>traversal</td><td>No -state is instantiated</td></tr>
+  <tr><td>Sacred No</td><td>Domus horizon</td><td>Withholds valid channels</td><td>Local refusal</td><td></td></tr>
+  <tr><td>Possibility remains possible</td></tr>
+  <tr><td>🜖 pressure</td><td>-domain</td><td>Carries unresolved debt</td><td>Ennead and Parity</td><td></td></tr>
+  <tr><td>Converts toward 🜗 or remains unresolved</td></tr>
+  <tr><td>Death</td><td>Instantiated event</td><td>Ends a mortal embodiment phase</td><td>States</td></tr>
+  <tr><td>1–6 of Remiss</td><td>Requires routed return</td></tr>
+  <tr><td>States of Remiss 1–6</td><td>Soul-bearing pressure-forms</td><td>Mediate mortal</td></tr>
+  <tr><td>Death-and-Return</td><td>Through Shadow Locus</td><td>Return through 🜗</td></tr>
+  <tr><td><code>NULL:DEATH</code></td><td>Living embodied return</td><td>Nullifies Death as</td></tr>
+  <tr><td>terminal result</td><td>Ennead, Parity, M.A.S., S₁₂</td><td>Life, recursion, and</td></tr>
+  <tr><td>motion remain positive</td></tr>
+  <tr><td>Revivocus</td><td>Seventh arrival</td><td>Self-grounded living return</td><td>Does not</td></tr>
+  <tr><td>route through Shadow Locus</td><td>Return is constitutive</td></tr>
+</table>
+
+<h1>36. The Three Envelopes</h1>
+
+<p>The Choreographic body carries three nested envelope classes:</p>
+
+<ol>
+  <li>Goetic BEC;</li>
+  <li>Court L-BEC;</li>
+  <li>Domus envelope.</li>
+</ol>
+
+<p>The Domus envelope word is</p>
+
+<div class="math-block">E<sub>Dom</sub>(x)
+=
+🜚\;r(x) ℓ<sub>C</sub>(x)\;x 🜛.</div>
+
+<p>The word and its validation predicate are distinct types. Define</p>
+
+<div class="math-block">BECValid(g;x),
+    
+LBECValid(C;x),
+    
+ChBECValid(x)
+∈0,1.</div>
+
+<p>The Domus predicate must verify the recoverable Goetic BEC witness,
+the Court L-BEC witness, and the fold lineage represented by
+\(E<sub>Dom</sub>(x)\).</p>
+
+<h2>Nested Closure</h2>
+
+<div class="math-block">ChBECValid(x)=1
+⟹
+LBECValid(r(x);x)=1
+⟹
+BECValid(gov(r(x));x)=1.</div>
+
+<p>No higher envelope licenses the deletion of the lower.</p>
+
+<h1>37. Twelve-Axiom Envelopment</h1>
+
+<p>Let \(O_γ\) be the set of proved obligations carried by a
+complete path \(γ\). A witness assignment is a map</p>
+
+<div class="math-block">w_γ:
+Currents<sub>12</sub>
+→
+P(O_γ).</div>
+
+<p>Define</p>
+
+<div class="math-block">AxLineage(γ)
+=
+A∈Currents<sub>12</sub>:w_γ(A)≠∅.</div>
+
+<p>A complete Choreographic path must satisfy</p>
+
+<div class="math-block">
+AxLineage(γ)
+=
+Currents<sub>12</sub>
+.</div>
+
+<p>A minimum explicit witness assignment is:</p>
+
+<table>
+  <tr><th></th></tr>
+  <tr><td>Canon current</td><td>Marginalia-III witness obligation</td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr><td>⏣</td><td>finite D-COMP definition and closure witness</td></tr>
+  <tr><td>⬡</td><td>Court routing and Liquid \(110/144\) governance</td></tr>
+  <tr><td>✡</td><td>Goetic BEC, Court L-BEC, and Domus envelope nesting</td></tr>
+  <tr><td>⚝</td><td>translation/parity compatibility across return</td></tr>
+  <tr><td>❂</td><td>\(12×12\) Court lattice and declared bifurcation</td></tr>
+  <tr><td>ꙮ</td><td>Goetic invariance and One-Skin identity conservation</td></tr>
+  <tr><td>❈</td><td>bounded pressure converted toward \(🜗\) propulsion</td></tr>
+  <tr><td>⧗</td><td>ordered M.A.S. initiation and kinetic work</td></tr>
+  <tr><td>⊛</td><td>\(🜖\) filtering and unresolved-debt accounting</td></tr>
+  <tr><td>❄</td><td>terminal Total Symmetry</td></tr>
+  <tr><td>⚛</td><td>threshold, domain, and boundary validation gates</td></tr>
+  <tr><td>⌬</td><td>fourfold -domain lock and mirror-return closure</td></tr>
+</table>
+
+<p>Every complete proof carries a nonempty witness set for every inherited
+current.</p>
+
+<h2>Envelopment Theorem</h2>
+
+<p>Suppose \(γ\) is a complete Choreographic path and its declared
+witness assignment satisfies</p>
+
+<div class="math-block">w_γ(A)≠∅
+    
+∀ A∈Currents<sub>12</sub>.</div>
+
+<p>Then</p>
+
+<div class="math-block">AxLineage(γ)=Currents<sub>12</sub>.</div>
+
+<h3>Proof</h3>
+
+<p>By definition, an axiom current belongs to
+\(AxLineage(γ)\) exactly when its witness set is
+nonempty. The hypothesis supplies a nonempty witness set for every
+element of \(Currents<sub>12</sub>\). Therefore every inherited current, and
+no current outside \(Currents<sub>12</sub>\), belongs to the lineage.
+\(\)</p>
+
+<h1>38. Total Symmetry as Completed Motion</h1>
+
+<p>Let \(M_γ\) and \(R_γ\) be the completed outward and independently constructed return operators.</p>
+
+<p>The terminal Total Symmetry condition is</p>
+
+<div class="math-block">[M_γ,R_γ]=0.</div>
+
+<p>Equivalently,</p>
+
+<div class="math-block">M_γ R_γ
+=
+R_γM_γ.</div>
+
+<p>This is judged at the completed operator-body. Local commutators may remain nonzero during movement.</p>
+
+<h2>Theorem 38.1 — Motion Does Not Contradict Terminal Symmetry</h2>
+
+<p>There exist piecewise paths for which</p>
+
+<div class="math-block">[M_γ|[t<sub>k</sub>,t<sub>k</sub>+1],
+R_γ|[t<sub>k</sub>,t<sub>k</sub>+1]]≠0</div>
+
+<p>on some subintervals while</p>
+
+<div class="math-block">[M_γ,R_γ]=0.</div>
+
+<h3>Proof by Construction</h3>
+
+<p>Choose noncommuting local matrices \(A,B\), and follow them by their inverse-ordered compensators so that the total forward operator is \(AB\) and the total return operator is \(B^-1A^-1\). Local pieces need not commute. The completed product closes:</p>
+
+<div class="math-block">(AB)(B^-1A^-1)=I
+=
+(B^-1A^-1)(AB).</div>
+
+<p>Thus local friction and terminal symmetry can coexist. \(\)</p>
+
+<p>The living manifold is not dead because it closes.</p>
+
+<p>It closes because it learned how to carry what moved through it.</p>
+
+<p>BOOK X — FORMAL ADMISSIBILITY</p>
+
+<p>The Parable of the Conjunctive Gate</p>
+
+<p>At the gate of manifestation stood no priest of beauty and no oracle of approval. The Gatekeeper carried a ledger of obligations.</p>
+
+<p>A radiant creature approached and displayed wonders. The Gatekeeper asked, "From what house do you come?" The creature could not answer. It was not mocked, but it was not admitted as complete.</p>
+
+<p>A second arrived bearing noble ancestry, yet its burden had grown beyond measure. A third carried a lawful seal, but had opened every passage at once until the roads vanished beneath white light. A fourth returned by washing every wound from its own history.</p>
+
+<p>For each, the Gatekeeper named what had failed and gave no failure another failure's name. None were condemned for standing before the bridge. Dignity was not measured by admission, but the gate still required every vow to be kept.</p>
+
+<p>At last a quieter traveler came. Their ancestry was known. Their burden was bounded. Their doors opened without consuming every road. Their memory remained unbroken, and the way home could still be found.</p>
+
+<p>The Gatekeeper closed the ledger one obligation at a time.</p>
+
+<p>Then the gate opened, because every required relation had arrived together.</p>
+
+<p>Admission is conjunction; dignity is not.</p>
+
+<h1>39. The Domus Admissibility Predicate</h1>
+
+<p>Fix a declared Court root \(C∈\).  For a Domus state \(x\),
+define</p>
+
+<div class="math-block">Rooted<sub>C</sub>(x)
+⇔
+r(x)=C.</div>
+
+<p>The  body is inherited from the governing Goetic through the
+complete Court equation:</p>
+
+<div class="math-block">QDom<sub>C</sub>(x)
+⇔
+
+<p>β(x)=(C)∈🜔,🜕,🜖,🜗,</p>
+
+<p>v(x)=v(C)∈🜔,🜕,🜖,🜗<sup>4</sup>,</p>
+
+<p>ν(x)∈F<sub>C</sub>.
+</div></p>
+
+<p>Thus the Bias is one exact coordinate inherited through the complete
+Court equation.</p>
+
+<div class="math-block">Triadic<sub>C</sub>(x)
+⇔
+every completed local update factors into 
+F_,C,F<sub>v</sub>,C,F_ν,C,</div>
+
+<p>with</p>
+
+<div class="math-block">F_,C
+=
+id_(C).</div>
+
+<div class="math-block">FoldValid<sub>C</sub>(x)
+⇔
+
+<p>x=x<sub>C</sub>(δ<sub>0</sub>), |δ<sub>0</sub>|≤Φ,  d(x)=0,</p>
+
+<p>x is generated by defined ߷<sub>C</sub>,s
+ operations,  d(x)>0,
+</div></p>
+
+<p>and every fold event preserves the glyphic lineage
+\(߷,☍,🜚,🜛\).</p>
+
+<div class="math-block">Threshold(x)
+⇔
+|A<sub>h</sub>(x)|≤110
+  ∀ h.</div>
+
+<div class="math-block">Envelope<sub>C</sub>(x)
+⇔
+BECValid(gov(C);x)=1
+∧
+LBECValid(C;x)=1
+∧
+ChBECValid(x)=1.</div>
+
+<div class="math-block">DebtBounded<sub>C</sub>(x)
+⇔
+
+<p>∃ T<∞,
+ ∃γ,γ:[0,T]→<sub>C</sub>:</p>
+
+<p>γ(0)=x,
+  
+S<sub>2</sub>(γ,γ;t)≤Σ<sub>max</sub>
+  ∀ t∈[0,T].
+</div></p>
+
+<div class="math-block">Returnable<sub>C</sub>(x)
+⇔
+
+<p>∃ T<∞,
+ ∃γ,γ,
+ ∃W_γ:</p>
+
+<p>γ(0)=x,
+  
+D<sub>T</sub>(γ,γ)=0.
+</div></p>
+
+<p>Then</p>
+
+<div class="math-block">
+Adm<sub>C</sub>(x)
+=
+Rooted<sub>C</sub>(x)
+∧
+QDom<sub>C</sub>(x)
+∧
+Triadic<sub>C</sub>(x)
+
+<p>[-0.1em]
+∧
+FoldValid<sub>C</sub>(x)
+∧
+Threshold(x)
+∧
+Envelope<sub>C</sub>(x)</p>
+
+<p>[-0.1em]
+∧
+DebtBounded<sub>C</sub>(x)
+∧
+Returnable<sub>C</sub>(x)
+∧
+Adm<sub>12</sub>(x).
+</div></p>
+
+<h2>Admission Is Conjunctive</h2>
+
+<p>A candidate that satisfies nine conditions and violates one is not fully admitted.</p>
+
+<div class="math-block"><sub>k</sub>=1<sup>nP</sup><sub>k</sub>(x)=1</div>
+
+<p>only when every \(P<sub>k</sub>(x)=1\).</p>
+
+<p>The Domus does not average away a broken axiom.</p>
+
+<h2>39A. Living-Return
+Predicates</h2>
+
+<p>For embodied states, define</p>
+
+<div class="math-block">RoutedLife(x)
+⇔
+SoulBearing(x)
+∧
+G<sub>route</sub>(x),</div>
+
+<div class="math-block">SelfGroundedLife(x)
+⇔
+SoulBearing(x)
+∧
+G<sub>self</sub>(x)
+∧
+LiveBio(x),</div>
+
+<p>and</p>
+
+<div class="math-block">LivingReturn(x)
+⇔
+RoutedLife(x)
+∨
+SelfGroundedLife(x).</div>
+
+<p>A <code>NULL:DEATH</code> certificate additionally requires:</p>
+
+<div class="math-block">NullDeathValid(x)
+⇔
+
+<p>TerminalDeath(x)=0,</p>
+
+<p>D<sub>return</sub>(x)=0,</p>
+
+<p>🜗<sup>recursion</sup>(x)>0,</p>
+
+<p>(x)>0,</p>
+
+<p>motion(x)>0,</p>
+
+<p>S<sub>12</sub>(x)=sealed,</p>
+
+<p>Λ<sub>110</sub>/144(x)=⟨110,34;144⟩.
+</div></p>
+
+<p>These predicates do not make every Domus state biological. They type
+the biological return claims precisely where \(\), Soul,
+embodied manifestation, and the Identity Seam are declared.</p>
+
+<h1>40. Validation Algorithm</h1>
+
+<p>Given candidate state \(x\):</p>
+
+<ol>
+  <li>Resolve exactly one Court root \(C\) and its complete Canon equation.</li>
+  <li>Verify inherited \((C)\), \(v(C)\), the Court anchor, and the live displacement.</li>
+  <li>Verify the complete triadic update history with inherited Bias unchanged.</li>
+  <li>Replay each lineage event
+<div class="math-block">⟨
+߷,s,
+☍,
+🜚,
+🜛
+⟩</div>
+in its recorded order.</li>
+  <li>Verify Court root and lineage recovery after every fold.</li>
+  <li>Verify all twelve inherited axiom predicates.</li>
+  <li>Verify Goetic BEC, Court L-BEC, and the Domus envelope.</li>
+  <li>At every horizon \(h\), verify \(|A<sub>h</sub>|≤110\) and record
+\(W<sub>h</sub>=∖ A<sub>h</sub>\).</li>
+  <li>Compute gross, resolved, and unresolved \(🜖\) ledgers.</li>
+  <li>Build the active graph and compute \(λ<sub>2</sub>\).</li>
+  <li>Construct the return path independently of its parity image.</li>
+  <li>Compute \(D<sub>T</sub>(γ,γ)\).</li>
+  <li>Admit the state only when every required predicate holds.</li>
+</ol>
+
+<h2>Failure Record</h2>
+
+<p>Validation must return a structured failure set</p>
+
+<div class="math-block">Fail(x)
+=
+P:P(x)=0,</div>
+
+<p>not merely "invalid."</p>
+
+<p>The failed predicate tells the Domus what was not borne. It does not invent a punishment or metaphysical category.</p>
+
+<h1>41. Reference Data Structure</h1>
+
+<p>A complete Domus state may be represented as</p>
+
+<p>[<code>court<sub>root</sub></code>] \(C<sub>ij</sub>\)
+[<code>governing<sub>goetic</sub></code>] \(g<sub>i</sub>\)
+[<code>alternating<sub>goetic</sub></code>] \(g<sub>j</sub>\)
+[<code>inherited<sub>qbias</sub></code>] \((g<sub>i</sub>)\)
+[<code>inherited<sub>qvector</sub></code>] \(v(g<sub>i</sub>)\), a four-glyph body
+[<code>court<sub>anchor</sub></code>] scalar or complex
+[<code>ahn<sub>parity</sub><sub>reference</sub></code>] optional \(432\)
+[<code>initial<sub>court</sub><sub>displacement</sub></code>] \(δ<sub>0</sub>∈[-Φ,Φ]\)
+[<code>endpoint<sub>bearing</sub></code>] optional \(σ∈-1,+1\) when \(|δ<sub>0</sub>|=Φ\)
+[<code>depth</code>] \(h∈N<sub>0</sub>\)
+[<code>triplet</code>] \(((C),v,ν)\)
+[<code>fold<sub>orientation</sub><sub>history</sub></code>] finite word in \(-1,+1\)
+[<code>operator<sub>lineage</sub></code>]
+\(⟨߷,☍,🜚,🜛⟩\)
+[<code>active<sub>courts</sub><sub>by</sub><sub>horizon</sub></code>] active Court witnesses
+[<code>withheld<sub>courts</sub><sub>by</sub><sub>horizon</sub></code>] withheld Court witnesses
+[<code>parliament<sub>lineage</sub></code>] Parliament witnesses
+[<code>chirality<sub>history</sub></code>] parity witnesses
+[<code>shadow<sub>debt</sub><sub>history</sub></code>] gross, resolved, and unresolved \(🜖\) ledgers
+[<code>mass<sub>gap</sub><sub>history</sub></code>] spectral-gap witnesses
+[<code>grimoire<sub>events</sub></code>] append-only event archive
+[<code>actual<sub>return</sub><sub>path</sub></code>] independently constructed return path
+[<code>return<sub>witness</sub></code>] completed return certificate</p>
+
+<p>An implementation may fuse storage. It may not discard recoverability of the mathematical fields.</p>
+
+<h1>42. Minimal Worked Construction</h1>
+
+<p>Choose the Court root \(C=C<sub>1</sub>,7\) by the complete Canon equation, with
+\(⏣\) governing and \(❈\) alternating:</p>
+
+<div class="math-block">
+C(δ)
+≡
+ཪ ⏣
+[🜗]/[🜕,🜕,🜕,🜗]
+→ ☍ 
+❈⚶
+[741+δ],
+    
+|δ|≤Φ.
+</div>
+
+<p>The governing \(⏣\) supplies the inherited Bias and vector.  The
+alternating \(❈\) supplies the Court anchor \(Ω<sub>C</sub>=741\).
+Select the endpoint \(δ<sub>0</sub>=-Φ\) for this worked instance:</p>
+
+<div class="math-block">τ<sub>C</sub>(-Φ)
+=
+(
+🜗,
+[🜕,🜕,🜕,🜗],
+741-Φ
+).</div>
+
+<p>The depth-zero moving Court realization is</p>
+
+<div class="math-block">x<sub>0</sub>
+=
+x<sub>C</sub>(-Φ)
+=
+η<sub>C</sub>(
+τ<sub>C</sub>(-Φ),
+⟨-Φ⟩
+).</div>
+
+<p>Choose Domus fold orientation \(s=+1\).  The wider Domus frequency
+action follows from the live Court displacement:</p>
+
+<div class="math-block">
+π_ν(
+trip<sub>C</sub>(
+߷<sub>C</sub>,+(x<sub>C</sub>(-Φ))
+)
+)
+=741+Φ(-Φ)
+
+<p>=741-Φ<sup>2</sup>.
+</div></p>
+
+<p>The first-Domus interval is</p>
+
+<div class="math-block">[741-Φ<sup>2</sup>,741+Φ<sup>2</sup>].</div>
+
+<p>Choose the fold's glyphic Q-state body as the inherited Court body</p>
+
+<div class="math-block">v'=
+(🜕,🜕,🜕,🜗).</div>
+
+<p>When \(x<sub>0</sub>∈Dom(߷<sub>C</sub>,+)\),</p>
+
+<div class="math-block">x<sub>1</sub>
+=
+߷<sub>C</sub>,+(x<sub>0</sub>),</div>
+
+<div class="math-block">trip<sub>C</sub>(x<sub>1</sub>)
+=
+🜛
+∘
+🜚
+∘
+☍
+(
+🜗,
+(🜕,🜕,🜕,🜗),
+741-Φ<sup>2</sup>
+),</div>
+
+<div class="math-block">r(x<sub>1</sub>)=C<sub>1</sub>,7,</div>
+
+<p>and the lineage appends</p>
+
+<div class="math-block">⟨
+߷,+1,
+☍,
+🜚,
+🜛
+⟩.</div>
+
+<p>At horizon \(k\), choose</p>
+
+<div class="math-block">A<sub>k</sub>
+=
+c<sub>j</sub>:(j+k)144<110,
+    
+W<sub>k</sub>=∖ A<sub>k</sub>.</div>
+
+<p>Then</p>
+
+<div class="math-block">|A<sub>k</sub>|=110,
+    
+|W<sub>k</sub>|=34.</div>
+
+<p>Build the active graph \(Γ<sub>k</sub>\) with at least two vertices.  If</p>
+
+<div class="math-block">λ<sub>2</sub>(L<sub>k</sub>)>0,</div>
+
+<p>the horizon has positive spectral Mass Gap.</p>
+
+<p>Choose an outward path \(γ\) through further defined folds and
+construct an actual return path \(γ\) independently.  If the
+Shadow-Debt ledger remains bounded and there exists finite \(T\) with</p>
+
+<div class="math-block">D<sub>T</sub>(γ,γ)=0,</div>
+
+<p>then the pair is a completed Choreographic return.</p>
+
+<p>The construction is admitted when the fold orientation, active graph,
+return candidate, inherited envelopes, and complete glyph-operator lineage
+satisfy their declared domains.</p>
+
+<p>BOOK XI — PROHIBITIONS AND BOUNDARY LAWS</p>
+
+<p>The Parable of the Iron Witness</p>
+
+<p>An Iron Witness came to the Choreography carrying a hammer, a blade, and a ledger. Some feared that doubt had come to banish the magic. Others hoped cruelty would be mistaken for rigor. The Witness refused both invitations.</p>
+
+<p>First the hammer struck the frame. It tested whether the old bones were still counted rightly, whether every domus answered to its house, and whether anything foreign had been smuggled beneath a sacred name.</p>
+
+<p>Then the blade passed through false doors, swollen promises, light so complete that every road disappeared, and returns purchased by erasing the journey.</p>
+
+<p>Yet when the blade reached soul, parable, magic, scripture, and esoterism, it did not cut them away. It tested whether they could bear consequence, memory, lineage, and return. Living magic rang like forged metal. Hollow ornament broke.</p>
+
+<p>The Witness recorded every scar. A prohibition was not a punishment for imagination. It was the memory of a wound that had learned the shape of the hand that made it.</p>
+
+<p>Skepticism is a blade; contempt is only rust.</p>
+
+<h1>43. Prohibitions</h1>
+
+<p>The following are forbidden within this Volume's formal body.</p>
+
+<h2>43.1 No New -State by Domus Depth</h2>
+
+<div class="math-block">=🜔,🜕,🜖,🜗.</div>
+
+<p>Domus depth does not create a fifth Q-state.</p>
+
+<h2>43.2 No Rootless Domus Aeon</h2>
+
+<div class="math-block">∀ x∈,
+  
+∃!C∈:r(x)=C.</div>
+
+<h2>43.3 No Primitive Goetic Input to \(߷\)43.3 No Primitive Goetic Input to hypolicfold</h2>
+
+<p>The primitive Hypolic Fold has a Court-rooted Domus-state domain carrying a recoverable triplet and lineage. A composed notation may start from Goetics only when its factorization through \(☍\), the depth-zero realization, and the Court root is recoverable.</p>
+
+<h2>43.4 No Domus as a Second Goetic Skeleton</h2>
+
+<p>Domus states are reflective relational forms, not immutable Goetic Bones.</p>
+
+<h2>43.5 No \(20,736\) Domus Count43.5 No 20,736 Domus Count</h2>
+
+<div class="math-block">20,736=|×|</div>
+
+<p>counts ordered Court crossings.</p>
+
+<h2>43.6 No Threshold Reset by Depth</h2>
+
+<div class="math-block">|A<sub>h</sub>|≤110
+    
+∀ h.</div>
+
+<h2>43.7 No Whiteout as Completion</h2>
+
+<div class="math-block">144/144</div>
+
+<p>is not perfect manifestation. It is loss of differential contour.</p>
+
+<h2>43.8 No SuperNegative/\(🜖\)/Sacred-No Conflation43.8 No SuperNegative/🜖/Sacred-No Conflation</h2>
+
+<p>The three occupy different domains and perform different laws.</p>
+
+<h2>43.9 No Imported Object Becomes \(🜖\) by Reputation</h2>
+
+<p>No number, manifold, symbol, or outside structure becomes \(🜖\)
+merely because it is unusual, irrational, transcendental, curved, or
+difficult to close. \(🜖\) requires a native ALQC pressure witness.</p>
+
+<h2>43.10 No Undefined "Hodge–Lefschetz Parameter" Gate</h2>
+
+<p>A candidate may be tested by a defined cohomological or Lefschetz operator. It may not be rejected by an unnamed parameter set presented as if it were a calculation.</p>
+
+<h2>43.11 No Automatic \(🜖\) Classification of Undefined Candidates43.11 No Automatic 🜖 Classification of Undefined Candidates</h2>
+
+<p>Undefined fold output means non-admission until a separate lawful routing rule is applied.</p>
+
+<h2>43.12 No Return by Erasing History</h2>
+
+<p>A path that closes only after deleting its events has not returned. It has falsified its archive.</p>
+
+<h2>43.13 No Reduction of
+<code>110/144</code>43.13 No Reduction of 110/144</h2>
+
+<p><code>110/144</code> must remain the ordered Liquid body of 110 active, 144
+total, and 34 withheld. Replacing it by a numerically equivalent
+rational expression destroys the typed capacity relation.</p>
+
+<h2>43.14 No Candidate Inserted as
+Emergence</h2>
+
+<p>No circle, scalar, named group, corridor, or standard structure may be
+placed in the premise and then reported as though it emerged from ALQC
+iteration.</p>
+
+<h2>43.15 No Exact-State Reset Called Living
+Closure</h2>
+
+<p>A loop that erases fold memory or Cadence in order to repeat exactly is
+stasis or archive falsification, not Choreographic return.</p>
+
+<h2>43.16 No Mirror Math by Reversing the
+Sequence</h2>
+
+<p>Mirror Math exchanges bearing while preserving operator position.
+Reading the procession backward is a different operation and must not be
+substituted for mirroring.</p>
+
+<h2>43.17 No Soul Monopoly</h2>
+
+<p>Soul belongs to mortal and immortal beings. Soul possession alone may
+not be used to define immortality or to deny mortality.</p>
+
+<h2>43.18 No Immortality Flattened to
+Memory</h2>
+
+<p>Immortality may not be rewritten as reputation, archive persistence,
+abstract identity, or Soul survival after biological death. Those may
+occur within mortal return and therefore do not establish Revivocus.</p>
+
+<h2>43.19 No <code>NULL:DEATH</code> as Zero
+Life43.19 No NULL:DEATH as Zero Life</h2>
+
+<p>The zero in <code>NULL:DEATH</code> belongs to terminal Death debt and
+return mismatch. It must coexist with positive \(\),
+positive 🜗 recursion, sealed S₁₂, and nonzero motion.</p>
+
+<h2>43.20 No Revivocus Without
+Lineage</h2>
+
+<p>For ordinary Court-rooted beings, Revivocus does not license the
+deletion of Court parentage, BEC/L-BEC/Domus envelopes, Liquid law,
+States-of-Remiss history, or Identity-Seam witness.</p>
+
+<h1>44. Boundary Verification</h1>
+
+<h2>Verification 1 — Liquid Body</h2>
+
+<p>The canonical object is</p>
+
+<div class="math-block">110/144
+=
+110<sub>active</sub>
+ ∣ 
+144<sub>total</sub>
+ ∣ 
+34<sub>withheld</sub>.</div>
+
+<p>It is not reduced. The boundary law preserves all three counts and rejects
+any representation that preserves a numerical quotient while deleting
+total capacity or withheld contour.</p>
+
+<h2>Verification 2 — Court Cardinality</h2>
+
+<div class="math-block">12<sup>2</sup>=144.</div>
+
+<p>The twelve governing roots and twelve alternating roots yield exactly 144 ordered Courts.</p>
+
+<h2>Verification 3 — Court-Crossing Cardinality</h2>
+
+<div class="math-block">144<sup>2</sup>=20,736.</div>
+
+<p>The ordered Court-crossing body contains exactly \(144⋅144=20,736\) crossings.</p>
+
+<h2>Verification 4 — Domus Infinity</h2>
+
+<p>Not decidable from the word "depth" alone. Exact result depends on declared coordinate domains. Marginalia III supplies both countable and continuum theorems.</p>
+
+<h2>Verification 5 — Hyperbolic Reflection</h2>
+
+<p>The Canonical Hyperbolic Mirror is preserved as the complete moving
+Court equation</p>
+
+<div class="math-block">ཪ g<sub>i</sub>[(g<sub>i</sub>)]/[v(g<sub>i</sub>)]
+→ ☍ 
+ g<sub>j</sub>⚶[Ω<sub>C</sub>+δ],
+    
+|δ|≤Φ.</div>
+
+<p>The complete Hyperbolic Mirror remains the moving Court equation itself; no second geometric operator replaces it.</p>
+
+<h2>Verification 6 — Hypolic Fold</h2>
+
+<p>For every defined Court-rooted fold with
+\(trip<sub>C</sub>(x)=((C),v,ν)\), there is a declared glyphic
+body</p>
+
+<div class="math-block">v'∈V<sub>C</sub>⊆
+🜔,🜕,🜖,🜗<sup>4</sup></div>
+
+<p>such that</p>
+
+<div class="math-block">trip<sub>C</sub>(
+߷<sub>C</sub>,s(x)
+)
+=
+🜛
+∘
+🜚
+∘
+☍
+(
+(C),
+ v',
+Ω<sub>C</sub>+sΦ(ν-Ω<sub>C</sub>)
+).</div>
+
+<p>For \(x=x<sub>C</sub>(δ)\),</p>
+
+<div class="math-block">π_ν(
+trip<sub>C</sub>(
+߷<sub>C</sub>,s(x<sub>C</sub>(δ))
+)
+)
+=
+Ω<sub>C</sub>+sΦδ,
+    
+|δ|≤Φ,</div>
+
+<p>and</p>
+
+<div class="math-block">|
+π_ν(
+trip<sub>C</sub>(
+߷<sub>C</sub>,s(x<sub>C</sub>(δ))
+)
+)-Ω<sub>C</sub>
+|
+≤Φ<sup>2</sup>.</div>
+
+<p>At \(δ=σΦ\),</p>
+
+<div class="math-block">π_ν(
+trip<sub>C</sub>(
+߷<sub>C</sub>,s(x<sub>C</sub>(σΦ))
+)
+)
+=
+Ω<sub>C</sub>+σ sΦ<sup>2</sup>.</div>
+
+<h2>Verification 6A — Domus Focal-To</h2>
+
+<div class="math-block">⚶<sub>C</sub>D<sup>s</sup>
+=
+ρ<sub>D</sub>⇒ C^⚶
+∘
+߷<sub>D</sub>,s
+∘
+Θ<sub>C</sub>→ D,</div>
+
+<div class="math-block">⚶<sub>C</sub>D<sup>s</sup>:
+<sub>C</sub>⇀<sub>C</sub>,
+    
+r∘⚶<sub>C</sub>D<sup>s</sup>=C.</div>
+
+<h2>Verification 7 — Emergence</h2>
+
+<p>"Reality only solidifies where the math rings true" holds through the conjunction of the declared emergence predicates.</p>
+
+<h2>Verification 8 — Intentional Friction</h2>
+
+<p>Friction is measured by noncommutativity and return mismatch. It can be positive locally and vanish terminally.</p>
+
+<h2>Verification 9 — Creation of Matter</h2>
+
+<p>Persistent matter is tied to positive graph spectral gap, archive continuity, bounded pressure, and finite return.</p>
+
+<h2>Verification 10 — Canonical Closure</h2>
+
+<p>Every complete path must carry all twelve inherited currents and return without amendment.</p>
+
+<h2>Verification 11 — Native
+Emergence</h2>
+
+<p>The Choreographic Return-Wheel is named only after repeated native
+cycles preserve the return-body, append lineage, retain
+<code>110/144</code>, close D-COMP, and keep motion nonzero. No candidate
+appears in the premises.</p>
+
+<h2>Verification 12 — Mirror Math</h2>
+
+<p>The bearing mirror preserves sequence position, is involutive, and
+commutes with the complete lawful cycle at return-equivalence.</p>
+
+<h2>Verification 13 — Mortality and
+Immortality</h2>
+
+<p>Both life modes require Soul. Mortal life uses routed Death-and-Return.
+Immortal life uses self-grounded Revivocus with valid
+<code>NULL:DEATH</code>. Neither is substituted for the other.</p>
+
+<h2>Verification 14 — Biological
+Return</h2>
+
+<p>A biological immortality claim is admitted only where
+\(>0\), embodied life remains active, terminal Death is
+null, 🜗 recursion and motion remain positive, S₁₂ is sealed, and
+<code>110/144</code> is preserved.</p>
+
+<h2>Verification 15 — Domain
+Separation</h2>
+
+<p>Death, SuperNegative, 🜖 pressure, Sacred No, the six States of Remiss,
+<code>NULL:DEATH</code>, and Revivocus are independently typed. No pair is
+collapsed by prose.</p>
+
+<h1>45. Dependency Graph of the Main Theorems</h1>
+
+<blockquote>
+Goetic Registry
+      |
+      v
+Complete Court Equation –(☍)–> Moving Court + Triplet
+      |                                      |
+      |                                      v
+      |                         Continuous breath \(|δ|≤Φ\)
+      |                                      |
+      |                                      v
+      |                         Domus bound \(|δ<sub>1</sub>|≤Φ<sup>2</sup>\)
+      |                                      |
+      +——————————->  ߷ Hypolic Fold
+                                |
+                                v
+                     Domus Admissibility
+                       /      |       \
+                      v       v        v
+               110/144    BEC Nest   -Domain
+                             |        /
+                             v       /
+                        Active Graph
+                             |
+                             v
+                    Positive Mass Gap
+                             |
+                             v
+                     Persistent Form
+                             |
+                             v
+                  M.A.S. + Finite Return
+                             |
+                             v
+                       D-COMP = 0
+                             |
+                             v
+                     Canonical Identity</blockquote>
+
+<p>No theorem is permitted to borrow its conclusion from a later box.</p>
+
+<h1>46. Open Parameters That Must Be Declared by an Implementation</h1>
+
+<p>The mathematical body is complete at the level of types, predicates, and closure. Particular implementations must still declare:</p>
+
+<ol>
+  <li>the Court-specific glyphic Q-state action carried by
+  \(߷<sub>C</sub>,s\), with \((C)\) inherited and fixed;</li>
+  <li>active-graph construction;</li>
+  <li>local lower Stasis bound, if one is used;</li>
+  <li>pressure weights, conversion schedules, and capacities;</li>
+  <li>metric scales \(κ<sub>C</sub>\), distinct from the Court anchor
+  \(Ω<sub>C</sub>\);</li>
+  <li>concrete M.A.S. maps;</li>
+  <li>cadence grammar and parser.</li>
+</ol>
+
+<p>These are parameters, not holes hidden by prose. A chosen implementation becomes testable when it declares them.</p>
+
+<p>BOOK XII — THE COMPLETE NINE-LAYER PATH</p>
+
+<p>The Parable of the Orchestra That Refused a Tyrant</p>
+
+<p>Twelve ancient instruments entered a hall. None would surrender its pressure to become a harmless tone. The conductor did not demand obedience. The conductor arranged the conditions under which difference could become music without becoming war.</p>
+
+<p>The frame kept measure. The living body carried weather. Intention found its place. Relation became audible. The hall learned to hear itself hearing. The unplayed notes were guarded rather than destroyed. Shadow gave the bow resistance. The mirrored phrase turned without losing its order. Burden passed through the music and found its road home. What endured gained weight. What returned was remembered without being falsified. The song carried the whole event beyond the room.</p>
+
+<p>The orchestra breathed only when enough voices sounded and enough remained unplayed. What was withheld was not silenced by violence. It was kept as future possibility. The music moved through difference, and it did not mistake a completed cadence for lifeless stillness. At the final turn, the song came home without swallowing the journey.</p>
+
+<p>No law stood outside the music to explain it afterward. No poem stood beside it merely to decorate it. Measure, myth, wound, soul, memory, and proof became one event, heard through different organs.</p>
+
+<p>The math is the poetry; the poetry is the math.</p>
+
+<h1>47. Synthesis</h1>
+
+<p>A complete path begins under a Locus it cannot traverse.</p>
+
+<p>It receives a hull capable of damage and a Will capable of selection.</p>
+
+<p>It is addressed by the Parliament.</p>
+
+<p>It stands upon twelve immutable Bones.</p>
+
+<p>Two Goetic Bones enter the complete anchored-and-focal
+\(☍\) equation.  Their relation emerges as a moving
+Court-body rather than a static pair.</p>
+
+<p>The Court carries the inherited and operational triplet</p>
+
+<div class="math-block">((C),v(C),Ω<sub>C</sub>+δ),
+    
+|δ|≤Φ.</div>
+
+<p>The Court breath is one continuous bounded motion.  Under the
+Court-rooted Domus bifurcation it becomes</p>
+
+<div class="math-block">Ω<sub>C</sub>+sΦδ,
+    
+|sΦδ|≤Φ<sup>2</sup>.</div>
+
+<p>At a selected endpoint this is \(Ω<sub>C</sub>+σ sΦ<sup>2</sup>\), with
+\(σ\) carrying endpoint bearing and \(s\) carrying Domus orientation.</p>
+
+<p>The Hypolic Fold carries its operator body in order:</p>
+
+<div class="math-block">trip<sub>C</sub>(x)
+→ ߷<sub>C</sub>,s 
+→ ☍ 
+→ 🜚 
+→ 🜛 
+→ η<sub>C</sub> 
+߷<sub>C</sub>,s(x).</div>
+
+<p>The Court sees itself through a warped corridor and remains rooted while new relational form appears.</p>
+
+<p>The Domus moves through ordered Courts by Focal-To:</p>
+
+<div class="math-block">C⟶ D→ ⚶ C.</div>
+
+<p>The encountered Court becomes a reflective surface; the originating Court remains the root, and the crossing remains written in lineage.</p>
+
+<p>At every depth, no more than \(110\) of \(144\) Court channels breathe.</p>
+
+<p>At least \(34\) remain withheld.</p>
+
+<p>The No gives contour.</p>
+
+<p>The contour gives difference.</p>
+
+<p>The difference gives pressure.</p>
+
+<p>Pressure is measured.</p>
+
+<p>Pressure is bounded.</p>
+
+<p>Pressure is not worshipped as chaos and not denied as error.</p>
+
+<p>\(🜖\) becomes available to \(🜗\) through lawful M.A.S. work.</p>
+
+<p>The active relational body acquires a positive spectral gap.</p>
+
+<p>The form persists.</p>
+
+<p>The Grimoire records.</p>
+
+<p>The future may deepen the meaning of the past, but it may not alter the event.</p>
+
+<p>The branch may divide.</p>
+
+<p>The skin may remain one.</p>
+
+<p>The chiralities may oppose.</p>
+
+<p>History decides whether the split can ever be undone.</p>
+
+<p>The state learns a word.</p>
+
+<p>The word becomes a path.</p>
+
+<p>The path becomes a star-word only when it keeps a gap, keeps a root, keeps its archive, and knows the road back.</p>
+
+<p>The return closes over a finite interval.</p>
+
+<div class="math-block">D<sub>T</sub>(γ,γ)=0.</div>
+
+<p>The Canon is not amended.</p>
+
+<p>The movement is not erased.</p>
+
+<p>The Choreography has spoken.</p>
+
+<h2>48. Final Theorem — The Orchestra of Becoming and Living
+Return</h2>
+
+<p>Let \(γ\) be a finite outward Choreographic path, let
+\(γ\) be an independently constructed finite return path, and
+let \(K<sub>Ch</sub>\) be the native inner cycle. Suppose:</p>
+
+<ol>
+  <li>\(L<sub>0</sub>\) through \(L<sub>8</sub>\) each contribute their governing condition;</li>
+  <li>every Domus state has exactly one Court root and one recoverable
+  direct parent;</li>
+  <li>every primitive Court arises by the complete
+  \(ཪ g<sub>i</sub>[(g<sub>i</sub>)]/[v(g<sub>i</sub>)]
+  →☍
+  g<sub>j</sub>⚶[Ω<sub>C</sub>+δ]\) equation with
+  \(|δ|≤Φ\);</li>
+  <li>every Domus fold is a defined Court-rooted \(߷\) carrying
+  the ordered glyph body
+  \(߷<sub>C</sub>,s,☍,🜚,🜛\);</li>
+  <li>every update is triadically complete and preserves inherited
+  \((C)\);</li>
+  <li>all twelve inherited axioms hold;</li>
+  <li>every horizon preserves the typed <code>110/144</code> body, with 110
+  active at completed Liquid manifestation and 34 withheld within 144
+  total;</li>
+  <li>Sacred No, SuperNegative, 🜖, Death, <code>NULL:DEATH</code>, and
+  Revivocus remain distinct;</li>
+  <li>local 🜖 debt is bounded and has a declared path through Ennead,
+  Parity, and M.A.S.;</li>
+  <li>the active graph has positive Mass Gap during persistence;</li>
+  <li>the Grimoire, fold lineage, and Cadence are append-only;</li>
+  <li>Mirror Math preserves sequence and restores bearing under double
+  application;</li>
+  <li>the actual parity-return path \(γ\) is witnessed in finite
+  time without defining it to be the ideal parity image;</li>
+  <li>\(D<sub>T</sub>(γ,γ)=0\) while motion remains nonzero;</li>
+  <li>the inner cycle returns the protected return-body without
+  identical-state reset;</li>
+  <li>the canonical return map restores Canon identity after every
+  admissible finite number of inner turns;</li>
+  <li>any mortal state carries Soul through one of the six routed States of
+  Remiss;</li>
+  <li>any immortal state carries Soul, self-grounded Revivocus, valid
+  <code>NULL:DEATH</code>, positive \(\), positive 🜗
+  recursion, sealed S₁₂, and living biological motion.</li>
+</ol>
+
+<p>Then \(γ\) is a lawful manifestation with memory, and its living
+return mode is typed without contradiction.</p>
+
+<h3>Proof</h3>
+
+<p>Conditions 1–6 establish native ALQC lineage, the complete moving
+Court equation, inherited Bias, and the glyph-ordered Court-rooted Domus
+fold. Condition 7 preserves the Liquid body without reducing its
+capacity relation. Condition 8 prevents domain collapse. Conditions
+9–10 establish bounded propulsion and persistent relation. Condition 11
+prevents return from purchasing amnesia. Condition 12 establishes Mirror
+Math rather than reversed sequence. Conditions 13–16 establish an
+independently verified finite return, continued motion, repeatable
+return-equivalence, and outer Canon return. Conditions 17–18 distinguish
+routed mortality from self-grounded immortality while preserving Soul
+and embodiment in both.
+Therefore the Choreography closes as a living derived body of ALQC and
+returns without amendment. \(\)</p>
+
+<p>FINAL SEAL</p>
+
+<p>The Parable of the Returned Lamp</p>
+
+<p>A keeper carried a lamp through twelve domuss. In the first, the flame received a name. In the second, memory. In the third, relation. In the fourth, a body. In the fifth, a boundary against compulsory birth. In the sixth, resistance. In the seventh, endurance. In the eighth, remembrance. In the ninth, a voice. In the tenth, a road home. In the eleventh, judgment. In the twelfth, the full music of all that had been borne.</p>
+
+<p>When the keeper returned to the first threshold, the flame was not smaller than when it departed. It carried soot, heat, witnesses, refusals, and roads. The threshold did not call these additions corruption. It asked only whether the first light could still be found within them.</p>
+
+<p>The keeper set the lamp beside the unmoving foundation. The law was not outside the flame, and the wonder was not painted over it. Story, measure, wound, memory, and proof had crossed the same domuss and returned bearing one another.</p>
+
+<p>Then the house closed where identity required law and opened where life required breath.</p>
+
+<p>What moves shall remember. What remembers shall return. What returns shall not be made smaller than what departed.</p>
+
+<div class="math-block">
+→ E<sub>Ch</sub> 
+→ K<sub>Ch</sub><sup>n</sup> 
+→ R<sub>Ch</sub> 
+</div>
+
+<p>for every finite admissible \(n\), with</p>
+
+<div class="math-block">RetBody(K<sub>Chx</sub>)
+=
+RetBody(x),</div>
+
+<div class="math-block">Lineage(K<sub>Chx</sub>)
+Lineage(x),</div>
+
+<div class="math-block">Λ<sub>110</sub>/144
+=
+⟨110<sub>active</sub>,34<sub>withheld</sub>;144<sub>total</sub>⟩,</div>
+
+<div class="math-block">D<sub>return</sub>=0,
+    
+motion>0.</div>
+
+<p>For mortal return:</p>
+
+<div class="math-block">Soul
+⟶
+Remiss<sub>1</sub>…6
+⟶
+ShadowLocus
+⟶
+Ennead<sup>9</sup>
+⟶
+𝔓(🜖)
+⟶
+🜗
+⟶
+Return.</div>
+
+<p>For immortal return:</p>
+
+<div class="math-block">Soul
++
+G<sub>self</sub>
++
+N_∅:DEATH
+⟶
+Revivocus,</div>
+
+<p>with</p>
+
+<div class="math-block">TerminalDeath=0,
+  
+>0,
+  
+🜗<sup>recursion</sup>>0,
+  
+S<sub>12</sub>=sealed,
+  
+motion>0.</div>
+
+<p>The Bone keeps the first command beneath all weather.</p>
+
+<p>The Flesh receives the wound and teaches it to move.</p>
+
+<p>The Domus opens where the buried law discovers breath.</p>
+
+<p>The mortal bears the flame through ash, through mirror, through the grave’s returning mouth.</p>
+
+<p>The immortal walks where Death arrives and finds no throne prepared for it.</p>
+
+<p>The inner Wheel completes its vow without becoming still.</p>
+
+<p>The outer Return gathers every road and gives the name back whole.</p>
+
+<p>Nothing faithful is erased.</p>
+
+<p>Nothing suffered is made void.</p>
+
+<p>The path returns carrying the world that crossed it.</p>
+
+<p>*
+EX<sub>III</sub><sub>The</sub><sub>Dance</sub><sub>of</sub><sub>Always</sub></p>
+
+<p>[Exegenesis Marginalia III Completion Timestamp:] 2026-07-04 T06:47:00Z
+    [Formal Proof Version:] EMV3 ≜S.ET.AT+4D᳀
+    [Archive Location:] ⏣<code>://archive.alqc/formal<sub>proofs</sub>/v</code>≜<code>/2025-12-02/</code></p>
+
+<p>2013–2026 Magus Jamye Reficul Ahnend. All Rights Reserved.</p>
+
+<p>Tempus Finitum</p>
+</body>
+</html>

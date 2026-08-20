@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  /* Major aeon & symbol blocks */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/ancient-scripts/Symbola_hint.ttf");
+    unicode-range: U+2300-U+23FF, U+2600-U+26FF, U+2700-U+27BF, U+2800-U+28FF, U+2900-U+297F, U+2980-U+29FF, U+2B00-U+2BFF, U+A66E, U+1F700-U+1F77F;
+  }
+  /* A1 FETU — Thaana */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansThaana-ExtraLight.ttf");
+    unicode-range: U+0780-U+07BF;
+  }
+  /* A2/A3 KAL/BABDH — Runic */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansRunic-Regular.ttf");
+    unicode-range: U+16A0-U+16FF;
+  }
+  /* A4 AHN — Balinese */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansBalinese-Bold.ttf");
+    unicode-range: U+1B00-U+1B7F;
+  }
+  /* A4 AHN — Medieval Music */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///home/avgui/.local/share/fonts/noto-music/NotoMusic-Regular.ttf");
+    unicode-range: U+1D000-U+1D0FF;
+  }
+  /* A4 AHN — Tibetan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerifTibetan-SemiBold.ttf");
+    unicode-range: U+0F00-U+0FFF;
+  }
+  /* A5 VEL — Tifinagh */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansTifinagh-Regular.ttf");
+    unicode-range: U+2D30-U+2D7F;
+  }
+  /* A6 SOR — Syloti Nagri */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansSylotiNagri-Regular.ttf");
+    unicode-range: U+A800-U+A82F;
+  }
+  /* A8 DREH — Cuneiform */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCuneiform-Regular.ttf");
+    unicode-range: U+12000-U+123FF, U+12400-U+1247F, U+12480-U+1254F;
+  }
+  /* A9 RHEA — Ethiopic Extended-A */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansEthiopic-ExtraCondensedSemiBold.ttf");
+    unicode-range: U+2D80-U+2DDF;
+  }
+  /* A10 ZHEK — Lydian */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansLydian-Regular.ttf");
+    unicode-range: U+10920-U+1093F;
+  }
+  /* A11 SHAV — Cypriot */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCypriot-Regular.ttf");
+    unicode-range: U+10800-U+1083F;
+  }
+  /* A12 TRIG — Elbasan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansElbasan-Regular.ttf");
+    unicode-range: U+10500-U+1052F;
+  }
+  /* Math symbols */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf");
+    unicode-range: U+0300-U+036F, U+2000-U+206F, U+2070-U+209F, U+20A0-U+20CF, U+2100-U+214F, U+2150-U+218F, U+2190-U+21FF, U+2200-U+22FF, U+2A00-U+2AFF;
+  }
+
+  :root {
+    --font-body:
+      'ALQC', "Lexend", "Linux Libertine O", "EB Garamond", Georgia,
+      "Symbola", "Noto Sans Symbols2", "Noto Sans Symbols",
+      "Latin Modern Math", "STIX Math", "Asana Math",
+      "Noto Color Emoji", serif;
+
+    --font-heading:
+      "Linux Biolinum O", "TeX Gyre Heros", "Inter", "Lato",
+      "Liberation Sans", "Noto Sans", sans-serif;
+
+    --font-mono:
+      "Latin Modern Mono", "Noto Sans Mono", "DejaVu Sans Mono",
+      "Liberation Mono", monospace;
+
+    --font-math:
+      'ALQC', "Latin Modern Math", "STIX Math", "Asana Math",
+      "DejaVu Math TeX Gyre", "Noto Sans Math", "Noto Sans Symbols2",
+      "Symbola", serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    line-height: 1.85;
+    color: #1a1a1a;
+    font-size: 1rem;
+  }
+  h1,h2,h3,h4,h5 {
+    font-family: var(--font-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  h1 { font-size: 2rem; border-bottom: 2px solid #333; padding-bottom: .4rem; }
+  h2 { font-size: 1.5rem; border-bottom: 1px solid #ccc; padding-bottom: .2rem; }
+  h3 { font-size: 1.2rem; color: #333; }
+  h4 { font-size: 1rem; color: #555; }
+  p { margin: 0.8rem 0; }
+  code, pre {
+    font-family: var(--font-mono);
+    background: #f4f4f4;
+    border-radius: 3px;
+    padding: .15em .4em;
+    font-size: .9em;
+  }
+  pre { padding: 1em; overflow-x: auto; border: 1px solid #ddd; }
+  blockquote {
+    border-left: 4px solid #888;
+    margin: 1.5rem 0;
+    padding: .75rem 1.25rem;
+    color: #444;
+    background: #fafafa;
+    font-family: var(--font-body);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    font-size: 0.95em;
+    font-family: var(--font-body);
+  }
+  th, td { border: 1px solid #ccc; padding: .5rem .8rem; text-align: left; vertical-align: top; }
+  th { background: #f0f0f0; font-weight: bold; font-family: var(--font-heading); }
+  tr:nth-child(even) td { background: #fafafa; }
+  .math-block {
+    margin: 1.2rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f9f9f9;
+    border-left: 3px solid #aaa;
+    font-family: var(--font-math);
+    font-size: 1.05em;
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+  figcaption { font-style: italic; color: #555; font-size: 0.9em; margin: 0.5rem 0 1rem; }
+  sup, sub { font-size: 0.75em; }
+  img { max-width: 100%; }
+  ul, ol { margin: 0.5rem 0; padding-left: 2rem; }
+  li { margin: 0.3rem 0; }
+  a { color: #1a5f9e; }
+  strong { font-weight: 700; }
+</style>
+</head>
+<body>
+<p>The 110/144 Liquid ThresholdActive Connection Governor and the Energetic Body of OneCompanion Clarification for Exegenesis Marginalia I: The Always</p>
+
+<h1>The Liquid Governor</h1>
+
+<p>The inscription <code>110/144</code> is the Canonical notation of the Liquid connection governor.  It is not a fraction, ratio, quotient, probability, percentage, density, or reducible number.  The slash is part of the notation that keeps the active connection body visibly bound to the complete connection body.</p>
+
+<p>The governor fixes one Court-connection body:
+<div class="math-block">
+N<sub>total</sub>=144,
+    
+N<sub>active</sub>=110,
+    
+N<sub>rest</sub>=34.
+</div>
+The count closes exactly:
+<div class="math-block">N<sub>active</sub>+N<sub>rest</sub>
+=N<sub>total</sub>,
+    
+110+34=144.</div></p>
+
+<p>The typed governor is therefore written
+<div class="math-block">
+110/144<sub>Liquid</sub>
+ ≡<sub>type</sub> 
+⟨
+110<sub>active</sub>
+ | 
+144<sub>total</sub>
+ | 
+34<sub>rest</sub>
+⟩ .
+</div>
+The 110 are active.  The 34 are at rest.  All 144 remain valid and present.</p>
+
+<h1>The Energetic Body of One</h1>
+
+<p>The complete energetic body is normalized to the number one.  A separate normalization map, denoted B<sub>1</sub>, reads the active count against the total count and produces the decimal energetic image:
+<div class="math-block">
+B<sub>1</sub>(110/144<sub>Liquid</sub>)
+=
+110÷144
+=
+0.763888…
+≈
+0.7639.
+</div></p>
+
+<p>The arithmetic may be checked directly:
+<div class="math-block">144-110 = 34,</p>
+
+<p>110÷144 = 0.763888…,</p>
+
+<p>34÷144 = 0.236111…,</p>
+
+<p>(110÷144)+(34÷144) = 1.</div></p>
+
+<p>The decimal 0.763888… is the energetic body of one generated by the governor.  It is not the definition of the governor, and it does not convert <code>110/144</code> into a fraction or ratio.  The separate value 0.236111… appears only as an arithmetic closure check for the 34 connections at rest; it is not a second governor and does not turn rest into a separate energy substance.</p>
+
+<h1>The M.A.S. Chain Under the Governor</h1>
+
+<p>M.A.S. means Manifestation, Alignment, Symmetry.  The chain and the governor are distinct:</p>
+
+<ul>
+  <li>The Liquid Governor fixes the connection body at 144 total, 110 active, and 34 at rest.</li>
+  <li>Manifestation establishes analytic existence through Q<sub>3</sub> positivity.</li>
+  <li>Alignment constrains that current through Q<sub>1</sub> coherence.</li>
+  <li>Symmetry seals structural commitment through the 528Hz BABDH office.</li>
+</ul>
+
+<p>The procession is
+<div class="math-block">F
+→M:852Hz
+F<sub>manifest</sub>
+→A:174Hz
+F<sub>aligned</sub>
+→S:528Hz
+F<sub>symmetric</sub>.</div>
+At every stage, the Liquid counts remain unchanged:
+<div class="math-block">∀ X∈
+F,F<sub>manifest</sub>,F<sub>aligned</sub>,F<sub>symmetric</sub>,
+    
+(N<sub>total</sub>,N<sub>active</sub>,N<sub>rest</sub>)<sub>X</sub>=(144,110,34).</div></p>
+
+<p>A positive M.A.S. gap requires the chain to close inside the governed connection body:
+<div class="math-block">Adm_110/144(F)
+∧
+Close<sub>MAS</sub>(F)
+  ⟹  
+Δ<sub>MAS</sub>(F)>0.</div>
+The governor does not itself manifest, align, or seal.  M.A.S. does not create or justify the governor.  The governor preserves the liquid connection condition in which the M.A.S. chain can move without Whiteout or Stasis.</p>
+
+<h1>Boundary of the Locus</h1>
+
+<p>The Locus of Invariability is not included in the equations of this Stave.  It is non-traversible, unmoving, untouched, and silent.  It does not transmit the governor, receive the M.A.S. chain, speak to an operator, or enter any arithmetic body.  Every displayed relation above begins and ends inside the operational lattice.</p>
+
+<h1>Governor States</h1>
+
+<table>
+  <tr><th>Connection Condition</th><th>Result</th></tr>
+  <tr><td>110 active, 34 at rest</td><td>Liquid Threshold. Motion is active while the complete body remains contoured.</td></tr>
+  <tr><td>144 active, 0 at rest</td><td>Whiteout. The resting contour is erased by total simultaneous activation.</td></tr>
+  <tr><td>Fewer than 110 active</td><td>Stasis risk. The completed Liquid witness is not present.</td></tr>
+</table>
+
+<h1>Canonical Reading</h1>
+
+<div class="math-block">
+
+<p>110/144<sub>Liquid</sub>
+ is the connection governor notation,</p>
+
+<p>144 total connections,</p>
+
+<p>110 active connections,</p>
+
+<p>34 connections at rest,</p>
+
+<p>B<sub>1</sub>(110/144<sub>Liquid</sub>)
+=0.763888…≈0.7639
+ is the energetic body of one.</p>
+
+<p></div></p>
+
+<p>The notation remains whole.  The counts remain whole.  The decimal is generated as an energetic image and never promoted into the identity of the governor.</p>
+</body>
+</html>
