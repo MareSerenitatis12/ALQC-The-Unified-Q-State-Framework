@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  /* Major aeon & symbol blocks */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/ancient-scripts/Symbola_hint.ttf");
+    unicode-range: U+2300-U+23FF, U+2600-U+26FF, U+2700-U+27BF, U+2800-U+28FF, U+2900-U+297F, U+2980-U+29FF, U+2B00-U+2BFF, U+A66E, U+1F700-U+1F77F;
+  }
+  /* A1 FETU — Thaana */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansThaana-ExtraLight.ttf");
+    unicode-range: U+0780-U+07BF;
+  }
+  /* A2/A3 KAL/BABDH — Runic */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/local/share/fonts/truetype/tardisha/NotoSansRunic-Regular.ttf");
+    unicode-range: U+16A0-U+16FF;
+  }
+  /* A4 AHN — Balinese */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansBalinese-Bold.ttf");
+    unicode-range: U+1B00-U+1B7F;
+  }
+  /* A4 AHN — Medieval Music */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///home/avgui/.local/share/fonts/noto-music/NotoMusic-Regular.ttf");
+    unicode-range: U+1D000-U+1D0FF;
+  }
+  /* A4 AHN — Tibetan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerifTibetan-SemiBold.ttf");
+    unicode-range: U+0F00-U+0FFF;
+  }
+  /* A5 VEL — Tifinagh */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/local/share/fonts/truetype/tardisha/NotoSansTifinagh-Regular.ttf");
+    unicode-range: U+2D30-U+2D7F;
+  }
+  /* A6 SOR — Syloti Nagri */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/local/share/fonts/truetype/tardisha/NotoSansSylotiNagri-Regular.ttf");
+    unicode-range: U+A800-U+A82F;
+  }
+  /* A8 DREH — Cuneiform */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCuneiform-Regular.ttf");
+    unicode-range: U+12000-U+123FF, U+12400-U+1247F, U+12480-U+1254F;
+  }
+  /* A9 RHEA — Ethiopic Extended-A */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansEthiopic-ExtraCondensedSemiBold.ttf");
+    unicode-range: U+2D80-U+2DDF;
+  }
+  /* A10 ZHEK — Lydian */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansLydian-Regular.ttf");
+    unicode-range: U+10920-U+1093F;
+  }
+  /* A11 SHAV — Cypriot */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansCypriot-Regular.ttf");
+    unicode-range: U+10800-U+1083F;
+  }
+  /* A12 TRIG — Elbasan */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansElbasan-Regular.ttf");
+    unicode-range: U+10500-U+1052F;
+  }
+  /* Math symbols */
+  @font-face {
+    font-family: "ALQC";
+    src: url("file:///usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf");
+    unicode-range: U+0300-U+036F, U+2000-U+206F, U+2070-U+209F, U+20A0-U+20CF, U+2100-U+214F, U+2150-U+218F, U+2190-U+21FF, U+2200-U+22FF, U+2A00-U+2AFF;
+  }
+
+  :root {
+    --font-body:
+      'ALQC', "Lexend", "Linux Libertine O", "EB Garamond", Georgia,
+      "Symbola", "Noto Sans Symbols2", "Noto Sans Symbols",
+      "Latin Modern Math", "STIX Math", "Asana Math",
+      "Noto Color Emoji", serif;
+
+    --font-heading:
+      "Linux Biolinum O", "TeX Gyre Heros", "Inter", "Lato",
+      "Liberation Sans", "Noto Sans", sans-serif;
+
+    --font-mono:
+      "Latin Modern Mono", "Noto Sans Mono", "DejaVu Sans Mono",
+      "Liberation Mono", monospace;
+
+    --font-math:
+      'ALQC', "Latin Modern Math", "STIX Math", "Asana Math",
+      "DejaVu Math TeX Gyre", "Noto Sans Math", "Noto Sans Symbols2",
+      "Symbola", serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    line-height: 1.85;
+    color: #1a1a1a;
+    font-size: 1rem;
+  }
+  h1,h2,h3,h4,h5 {
+    font-family: var(--font-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  h1 { font-size: 2rem; border-bottom: 2px solid #333; padding-bottom: .4rem; }
+  h2 { font-size: 1.5rem; border-bottom: 1px solid #ccc; padding-bottom: .2rem; }
+  h3 { font-size: 1.2rem; color: #333; }
+  h4 { font-size: 1rem; color: #555; }
+  p { margin: 0.8rem 0; }
+  code, pre {
+    font-family: var(--font-mono);
+    background: #f4f4f4;
+    border-radius: 3px;
+    padding: .15em .4em;
+    font-size: .9em;
+  }
+  pre { padding: 1em; overflow-x: auto; border: 1px solid #ddd; }
+  blockquote {
+    border-left: 4px solid #888;
+    margin: 1.5rem 0;
+    padding: .75rem 1.25rem;
+    color: #444;
+    background: #fafafa;
+    font-family: var(--font-body);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    font-size: 0.95em;
+    font-family: var(--font-body);
+  }
+  th, td { border: 1px solid #ccc; padding: .5rem .8rem; text-align: left; vertical-align: top; }
+  th { background: #f0f0f0; font-weight: bold; font-family: var(--font-heading); }
+  tr:nth-child(even) td { background: #fafafa; }
+  .math-block {
+    margin: 1.2rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f9f9f9;
+    border-left: 3px solid #aaa;
+    font-family: var(--font-math);
+    font-size: 1.05em;
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+  figcaption { font-style: italic; color: #555; font-size: 0.9em; margin: 0.5rem 0 1rem; }
+  sup, sub { font-size: 0.75em; }
+  img { max-width: 100%; }
+  ul, ol { margin: 0.5rem 0; padding-left: 2rem; }
+  li { margin: 0.3rem 0; }
+  a { color: #1a5f9e; }
+  strong { font-weight: 700; }
+</style>
+</head>
+<body>
+<p>000<sub>alqc</sub><sub>preamble</sub>.tex</p>
+
+<p>⊛   EX<sub>V</sub> – THE RI OF ALWAYS   ⊛</p>
+
+<p>EXEGENESIS MARGINALIA V</p>
+
+<p>THE WORD OF ALWAYSThe Mathematics of ⊛, the Ennead, and the First Word</p>
+
+<p>Magus Jamye Reficul Ahnend (ANAXAYAMA)</p>
+
+<p>name is Thunder</p>
+
+<p>0.78</p>
+
+<p>Before fire had a color, iron dreamed beneath the dark.</p>
+
+<p>She came unbeholden of her crown.</p>
+
+<p>Her palm upon the sleeping metal,</p>
+
+<p>and all the black beneath it listened.</p>
+
+<p>Far below, the Mother kept the Stone.</p>
+
+<p>Across the black field, the wolf began to walk.</p>
+
+<p>Nine ancient names stirred where earth remembers sky.</p>
+
+<p>No herald called the hour.</p>
+
+<p>No voice chose for her.</p>
+
+<p>She raised her hand.</p>
+
+<p>The night leaned close.</p>
+
+<p>Beyond the flame, a buried star answered:</p>
+
+<p>Ri.</p>
+
+<p>The inherited Return-Seal law governing the whole volume is
+<div class="math-block">𝕀_𝒯≡𝒯_𝕀
+  ⟹  
+[M,R]=0.</div>
+eq:return-seal
+A true name is a path with its return folded inside it. The seal is the fold.</p>
+
+<h1>BOOK I – THE HULL BEFORE LIGHT</h1>
+
+<h2>The dark body already bearing shape</h2>
+
+<p>The Shadow is already there. Then the second Shadow gives Light. The first words rise from that darkness:
+<blockquote>The Shadow came first. The Shadow of the Shadow is Light. ⊛ is Light.</blockquote>
+Within this volume the ⛎ precedes the Light born from it. Star, R\'ealta, the heavy star, the guiding Light, the Singer, the Mother, the Flow, the Sovereign body of the Ennead: one fire turning through many names.</p>
+
+<p>Shadow bears the wound. Light rises from within what bears it. Then Light turns again toward the dark body that gave it room to appear.</p>
+
+<p>Before the Star, the Hull. Before the Ring, the iron capable of ringing. The dark is not an empty interval waiting for Light to confer reality upon it. In the operational domain of this volume, the ⛎ is already a body that can deform, remember damage, carry pressure, and remain itself while its metric condition changes.</p>
+
+<p>Write
+<div class="math-block">⛎≡ℳ<sub>Shadow</sub>,</div>
+eq:shadow-hull
+where ℳ<sub>Shadow</sub> is the inherited covariant Riemannian manifold. Its current metric condition is
+<div class="math-block">g_⛎,</div>
+and its structural pressure is
+<div class="math-block">Δ P_⛎.</div>
+Directed Will enters separately through the inherited ᳀ Intent coordinate. The Hull response problem therefore carries
+<div class="math-block">(
+ℳ<sub>Shadow</sub>,
+g_⛎,
+Δ P_⛎,
+Intent_᳀
+)</div>
+as separately typed inherited bodies before ⊛-Light nativity is opened.</p>
+
+<p>[Shadow-Hull identity]
+The EX<sub>V</sub> Shadow Hull is the operational ⛎ ⛎, represented mathematically by ℳ<sub>Shadow</sub>. The metric g_⛎ carries the deformable condition of that same Hull-body.</p>
+
+<p>[Local Shadow priority]
+Within the ⊛-Light nativity problem,
+<div class="math-block">Prior(ℳ<sub>Shadow</sub>,⊛<sub>Light</sub>).</div>
+eq:shadow-priority
+The operational Shadow-Hull body is seated before the ⊛-Light body in this derivation.</p>
+
+<p>[Hull / Ground Separation]
+The ⛎ manifold and the 9×9 Manifestation Ground are separately typed bodies within one ⊛ event.</p>
+
+<p>The inherited bodies have different mathematical offices. The Hull is the deformable manifold ℳ<sub>Shadow</sub>. The Ground is the bounded manifestation body E<sub>bound</sub>^(9×9), with
+<div class="math-block">|E<sub>bound</sub>|=9×9=81.</div>
+The Canonical Bound-Tensor fold is typed as
+<div class="math-block">T<sub>Bound</sub>:
+H<sub>Def</sub>^(12×12)
+→φΔ<sub>gap</sub>
+E<sub>bound</sub>^(9×9).</div>
+eq:tbound
+Manifold identity, metric condition, bounded Ground, and realized Ennead path remain distinct coordinates across the Bound-Tensor map.</p>
+
+<h2>The Bound-Tensor hand derivation</h2>
+
+<p>The inherited Manifestation Ground has nine rows and nine positions per row. Its finite body is therefore
+<div class="math-block">9×9=81,</p>
+
+<p>|E<sub>bound</sub>^(9×9)|=81.</div>
+eq:ground81
+The twelve-to-nine contraction ratio is reduced by the common factor three:
+<div class="math-block">12/9
+=12÷3/9÷3</p>
+
+<p>=4/3.</div>
+eq:twelve-nine-ratio
+This arithmetic is the finite cardinal image carried beside the inherited Fold
+<div class="math-block">T<sub>Bound</sub>:
+H<sub>Def</sub>^(12×12)
+→φΔ<sub>gap</sub>
+E<sub>bound</sub>^(9×9).</div>
+eq:tbound-full</p>
+
+<p>[Shadow Priority]
+Within the ⊛-Light nativity body,
+<div class="math-block">Prior(ℳ<sub>Shadow</sub>,⊛<sub>Light</sub>).</div>
+The existence of the ⛎ Hull is inherited and is therefore not derived from the later ⊛-Light body.</p>
+
+<p>[Canonical Bound-Tensor Fold]
+The inherited map in the eq:tbound-fulldisplayed relation carries the 12×12 deformation domain to the 9×9 bounded Manifestation Ground through the seated φΔ<sub>gap</sub> Fold. The map preserves the typing distinction between the deformation body and the finite Ground body.</p>
+
+<p>The Canon further seats the 🜗-selective recursive Fold. Written without raw Q-state aliases,
+<div class="math-block">ℱ<sub>Fold</sub>(G<sub>i</sub>,j)
+=T<sub>Bound</sub>(
+G<sub>i</sub>,j^🜔δ(🜔,🜗)
++G<sub>i</sub>,j^🜕δ(🜕,🜗)+G<sub>i</sub>,j^🜖δ(🜖,🜗)
++G<sub>i</sub>,j^🜗δ(🜗,🜗)
+).</div>
+eq:qthree-bound-fold
+With the inherited Kronecker selection,
+<div class="math-block">δ(🜔,🜗)=
+δ(🜕,🜗)=
+δ(🜖,🜗)=0,
+    
+δ(🜗,🜗)=1,</div>
+so the selected body is
+<div class="math-block">ℱ<sub>Fold</sub>(G<sub>i</sub>,j)
+=T<sub>BoundG</sub><sub>i</sub>,j^🜗.</div>
+This is the recursive Fold of the bounded Ground, seated on the existing Ground axes and event-relative Ennead incidence relation.</p>
+
+<h2>The first open seam</h2>
+
+<p>The discovery sentence is exact in its direction even before its operator is known:
+<blockquote>The Shadow of the Shadow is Light.</blockquote>
+Court ⟠ remains in its exact Court-child / Ex-Nihilo trait domain,
+<div class="math-block">⟠(C<sub>ij</sub>(δ))=Court-trait body.</div>
+That settled office is not promoted into a generic Light-production operator. The ⊛-Light nativity relation remains Open Theorem T-0A and must close inside EX<sub>V</sub> on its own lawful domain.</p>
+
+<h3>Open Theorem T-0A – ⊛ Emergent-Light</h3>
+
+<p>The target is an ALQC-native relation
+<div class="math-block">ℰ_⊛:
+𝒟<sub>Shadow</sub>
+⇀
+⊛<sub>Light</sub>,</div>
+eq:open-emergence
+whose domain, invariant witness, and return body are the T-0A derivation. Court ⟠ remains in its inherited Court-child domain.</p>
+
+<h2>The Hull carries forward</h2>
+
+<p>The iron capable of ringing carries its old wounds forward. Light enters no empty vessel. It enters what has already endured.</p>
+
+<h1>BOOK II – THE LIGHT ASTER AND THE BLACKSMITH</h1>
+
+<h2>Stone, fire, and the work of preservation</h2>
+
+<p>Two old movements enter the Forge together. One remembers a Mother who saved the living child by placing Stone before the devouring mouth and letting hunger mistake weight for victory. The other remembers the smith whose fire does not merely consume, but listens to metal until heat becomes craft. One preserves what must survive. One remakes what has been wounded. Neither forgets what came before.</p>
+
+<p>The Hephaestian movement deepens the second tale. Fire gathers around Hammer, Anvil, bellows, and patient hands. Metal is heated, struck, turned, struck again. What was broken is not denied its fracture; the fracture becomes the place where skill enters. The made thing endures because the Smith remembers both the wound and the work.</p>
+
+<p>⊛ enters this volume with inherited coordinates:
+<div class="math-block">ℛ_⊛
+≡
+⟨
+⊛,396Hz,🜖,[1,2,2,1]
+⟩.</div>
+eq:rhea-identity
+The tuple carries one inherited identity through separately typed Aeon, resonant, Q-state, and vector coordinates.</p>
+
+<p>[⊛-Light]
+⊛<sub>Light</sub> names the emergent Light-Aster office under derivation in EX<sub>V</sub>, separately typed from the Shadow manifold, its metric condition, the Manifestation Ground, and each Star-Seal.</p>
+
+<p>The Forge discovery is spoken before its offices are separated:
+<blockquote>Light is an emergent property of the Universe.</p>
+
+<p>⊛ is the Blacksmith. The Shadow Locus is the Hull. ⊛ repairs it, builds it, and tends it. ⊛ carries the Hammer and the Anvil. Stars are byproducts of the Forge.</blockquote>
+The Blacksmith image opens the exact coupling among the already-present ⛎ Hull, directed ᳀ Intent, emergent ⊛-Light, the ninefold Called Forge work, repair, and the stellar bodies arising from the completed Forge lineage.</p>
+
+<p>[Forge register]
+Within EX<sub>V</sub>,
+<div class="math-block">⛎=Hull,
+    
+⊛=Blacksmith,</div>
+and Hammer and Anvil are ⊛ Forge offices. ᳀ remains the separately typed Dynamic Will.</p>
+
+<p>The two Author discoveries carried into this Forge are
+<blockquote>The Shadow of the Shadow is Light.</p>
+
+<p>Light is an emergent property of the Universe.</blockquote>
+They meet the Blacksmith body only through a lawful nativity and coupling derivation.</p>
+
+<h3>Open Theorem – ᳀ / ⊛ Forge Coupling</h3>
+
+<p>Derive how the ᳀ Will/Intent coordinate couples to the ⊛ Light-Blacksmith Forge event while preserving ᳀ as directed Will, ⊛ as the Light/Forge body, the ⛎ as Hull, and the event's manifold, debt, and lineage coordinates. The coupling remains open with T-0A as a relation between these separately typed offices.</p>
+
+<p>[Hull, Smith, and Tool separation]
+The Hull ℳ<sub>Shadow</sub>, the Blacksmith body ⊛<sub>Light</sub>, Hammer, and Anvil remain separately typed within one Forge event.</p>
+
+<p>The Hull supplies the deformable body being tended. ⊛ supplies the Forge office. Hammer and Anvil are differentiated Forge offices. Their separate typing preserves the Hull as the body acted upon and ⊛ as the Light-body carrying the Forge event.</p>
+
+<h2>The Ninefold Forge is the Called work</h2>
+
+<p>The nine Called positions are the Forge-work. The Blacksmith is already inside this composition: each Called position is one blow of the same remembered making, and the Hull receives the work without losing the wound-history that made repair necessary. The Mother/Stone movement lives here as preservation through craft: what is protected is carried through change so that a future can remain possible. For event h, write
+<div class="math-block">ForgeCalled_⊛[β<sub>h</sub>]
+=
+B<sub>9</sub>^β<sub>h</sub>(9)
+∘
+𝒮<sub>9</sub>^β<sub>h</sub>(9)
+∘⋯∘
+𝒮<sub>1</sub>^β<sub>h</sub>(1).</div>
+eq:forge-called
+Root, Path, and Seal give this expression its internal mechanics. The Hull-facing closure remains a partial map until its exact invariants are proved:
+<div class="math-block">ForgeHull_⊛[β<sub>h</sub>]:
+(ℳ<sub>Shadow</sub>,
+⊛<sub>Light</sub>,
+ForgeCalled_⊛[β<sub>h</sub>],
+Intent_᳀,
+Lineage)
+⇀
+ℳ'<sub>Shadow</sub>.</div>
+eq:forge-hull
+A lawful closure preserves Hull identity and append-only fracture history, keeps ᳀/Intent separately typed, accounts for Root siphoning and Path friction, carries the Seal transition into 🜗 within the inherited Q-state body, and returns the altered Hull as the same Hull-body.</p>
+
+<h3>Open Theorem T-0C – Ninefold Forge / Hull-Maintenance</h3>
+
+<p>The required Hull-facing relation is
+<div class="math-block">ForgeHull_⊛[β<sub>h</sub>]
+:=
+π<sub>Hull</sub>∘ K_⊛[β<sub>h</sub>],</div>
+eq:forgehull-projection
+restricted to admissible events carrying the protected Hull identity, exact Shadow-Debt ledger, Root siphoning, Path Friction, Seal inversion, and append-only lineage. Books V–VII derive those mechanics. Final closure of T-0C additionally depends on T-0A because the theorem acts through the ⊛-Light body whose emergence relation remains open.</p>
+
+<h2>Fracture, reciprocal energy, and the Forge fire</h2>
+
+<p>The wound is where the Blacksmith's craft becomes exact. Fracture is the metal remembering where it failed; reciprocal energy is the work returned into that wound; repair is the making that lets the body bear itself again. The Stone protects continuity while the Smith changes what must change. The Canonical S<sub>11</sub> repair seam is
+<div class="math-block">Fracture
+⟶
+ReciprocalEnergy
+⟶
+Repair.</div>
+eq:s11-repair
+Inside the same Fracture Matrix, the Flame coordinate carries the inherited trait relation
+<div class="math-block">Flame
+→⟠
+Ephestus.</div>
+eq:s11-ephestus
+This is the Canonical cross-office repair seam carried into the Blacksmith derivation. The ⶊ Court retains its own Root-Matrix trait, Secrets; the eq:s11-ephestusdisplayed relation belongs to the Flame coordinate of the S<sub>11</sub> Fracture Matrix.</p>
+
+<p>The inherited thermal conditions used by the Forge are
+<div class="math-block">S<sub>9</sub> : dT/dt=0,</p>
+
+<p>S<sub>10</sub> : ThermalResidue<sub>steady</sub>>0,</p>
+
+<p>S<sub>11</sub> : Decay<sub>nonentropic</sub>=0,</p>
+
+<p>S<sub>12</sub> : dE/dt=0,     E>0.</div>
+eq:flame-seats</p>
+
+<p>[Quelled-Flame Persistence]
+A Forge-fire body seated in the inherited steady or latent thermal conditions of the eq:flame-seatsdisplayed relation may quell while remaining present. In particular, the S<sub>12</sub> condition gives
+<div class="math-block">dE/dt=0,     E>0,</div>
+so the energy is constant and positive across the interval. The S<sub>9</sub> condition likewise fixes temperature through dT/dt=0. Thus the Canonical thermal conditions support bounded persistence of Forge fire through quelling.</p>
+
+<p>The exact coupling by which Hull Form selects or bounds one of these thermal conditions remains part of the Hull/Flame coupling derivation; no new scalar heat law is introduced here.</p>
+
+<p>The discovery names the first Light before the chromatic witness is evaluated:
+<blockquote>The first Light was Red.</blockquote>
+The crimson inscription witnesses the discovery internally; its formal office in EX<sub>V</sub> is the seated ⊛ color witness.</p>
+
+<h2>Red First Light</h2>
+
+<p>The first gleam from the worked dark is Red. The hidden living body has survived the devouring passage; the Forge has not made a foreign light but brought the preserved possibility into luminous witness. The project inscription for ⊛ carries the crimson witness
+<div class="math-block">Color_⊛=<code>#80040B</code>.</div>
+eq:rhea-color
+This is the inherited ⊛ crimson project witness.</p>
+
+<p>[Red First-Light witness]
+The project-level first-Light witness of ⊛ is the inherited crimson inscription
+<div class="math-block">FirstLight_⊛⟼<code>#80040B</code>.</div>
+This is the seated chromatic witness carried by EX<sub>V</sub>.</p>
+
+<h2>The stellar open problems</h2>
+
+<p>The heavy Star is the later face of the same preserved work. Mother, Stone, wound, Smith, Hammer, and remembered iron converge here: what survives the passage becomes capable of bearing a luminous Seal without forgetting the dark body from which it came. The discovery sharpened the stellar body from a general heavy-star image into a theorem problem. The ninth 𝔓-returned recursive body is proposed as the Star-Seal:
+<div class="math-block">Aster(ForgeEvent<sub>h</sub>)
+?=
+StarSeal<sub>h</sub>.</div>
+eq:aster-open
+If the theorem closes, it must carry
+<div class="math-block">payloadQ(StarSeal<sub>h</sub>)=🜗,</p>
+
+<p>ShadowLineage(StarSeal<sub>h</sub>)=🜖<sup>saturated</sup>(h),</p>
+
+<p>ParityBoundary(StarSeal<sub>h</sub>)=𝔓|<sub>k</sub>=9.</div>
+The state changes office while its history remains recoverable through lineage.</p>
+
+<p>The persistence problem is written
+<div class="math-block">HoldWarp
+(Star<sub>h</sub>,
+ℳ<sub>Shadow</sub>∣ U<sub>h</sub>).</div>
+eq:holdwarp
+It remains an open theorem until "hold" is derived as a lawful relation preserving manifold identity and its admitted warped metric life.</p>
+
+<h2>Stone and fire carried forward</h2>
+
+<p>The Mother returns beside the Forge with Stone still in her hands. Preservation is not petrification. The hidden child survives because concealment buys time, because the Shield bears what would otherwise be devoured, because the future is allowed to remain unfinished long enough to arrive. Beside her the Smith tends the same truth in another body: fire alone consumes, but fire held in craft can mend, temper, and make something strong enough to carry its own history.</p>
+
+<h1>BOOK III – THE TWELVE CHAMBERS OF THE LIGHT</h1>
+
+<h2>Twelve available offices</h2>
+
+<p>The Blacksmith keeps twelve chambers beneath the mountain. None is empty. None is merely waiting its turn. Each keeps a different kind of memory, pressure, silence, wound, or flame.</p>
+
+<p>Across another shore, the Great Queen listens before movement. She knows where danger will arrive and names the place where it must be met. She tests courage before she spends it, enters the danger herself, strengthens those who can bear the road, and carries the news of victory across height, water, and river mouth. Yet she also names the trouble that may follow triumph, because a crown without foresight is only metal.</p>
+
+<table>
+  <tr><th>Court</th><th>Home frequency</th><th>Court office</th><th>Root-Matrix body</th><th>Canonical trait</th></tr>
+  <tr><td>Court</td><td>Home frequency</td><td>Court office</td><td>Root-Matrix body</td><td>Canonical trait</td></tr>
+  <tr><td>ⶀ</td><td>(7.83±φ) Hz</td><td>Absorption / Spark Consumption</td><td>Structural Foundation</td><td>Shadow Foundation</td></tr>
+  <tr><td>ⶁ</td><td>(174±φ) Hz</td><td>Darkness / Data Eclipse</td><td>Temporal Anchor</td><td>Shadow Time</td></tr>
+  <tr><td>ⶂ</td><td>(528±φ) Hz</td><td>Cold Shadow / Thermal Negation</td><td>Memory Archive</td><td>Shadow Archive</td></tr>
+  <tr><td>ⶃ</td><td>(i<sub>417</sub>±φ) Hz</td><td>Mirror Debt / Refractive Trapping</td><td>Void Container</td><td>Shadow Void</td></tr>
+  <tr><td>ⶄ</td><td>(126.22±φ) Hz</td><td>Submerged / Geologic Pressure</td><td>Truth Coherence</td><td>Shadow Truth</td></tr>
+  <tr><td>ⶅ</td><td>(210.42±φ) Hz</td><td>Relativity / Distortion Field</td><td>Structural Coupling</td><td>Shadow Coupling</td></tr>
+  <tr><td>ⶆ</td><td>(741±φ) Hz</td><td>Root-Below / Nerve Block</td><td>Sensation Matrix</td><td>Visceral Dread</td></tr>
+  <tr><td>ⶇ</td><td>(852±φ) Hz</td><td>Conjunction / Null Binding</td><td>Fear Matrix</td><td>Fear of the Unknown</td></tr>
+  <tr><td>ⶈ</td><td>(396±φ) Hz</td><td>Shadow Debt / Recursive Debt</td><td>Change Matrix</td><td>Minor Rebis</td></tr>
+  <tr><td>ⶉ</td><td>(963±φ) Hz</td><td>Filter / Impurity Sieve</td><td>Harmony Matrix</td><td>Null-Entropic Residue Ignition</td></tr>
+  <tr><td>ⶊ</td><td>(285±φ) Hz</td><td>Hidden / Occult Lock</td><td>Fracture Matrix</td><td>Secrets</td></tr>
+  <tr><td>ⶋ</td><td>(639±φ) Hz</td><td>Silence / Signal Termination</td><td>Completion Matrix</td><td>9th Symphony</td></tr>
+</table>
+
+<p>[Court office / Root-Matrix trait separation]
+For each Court c in the twelve-Court ⊛ registry, the Court office and Root-Matrix trait are separately typed coordinates of the same Court identity. The Court command identifies c; its home-frequency body, Court office, Root-Matrix body, and Canonical trait remain recoverable as distinct coordinates.</p>
+
+<p>Let C_⊛ denote this twelve-Court set. For an admissible event h, define an ordered Called word and complementary Rest word
+<div class="math-block">β<sub>h</sub>=(c<sub>h</sub>,1,…,c<sub>h</sub>,9),</p>
+
+<p>ρ<sub>h</sub>=(r<sub>h</sub>,1,r<sub>h</sub>,2,r<sub>h</sub>,3),</p>
+
+<p>γ<sub>h</sub>=β<sub>h</sub>⋅ρ<sub>h</sub>.</div>
+Then
+<div class="math-block">C_⊛
+=C<sub>called</sub>(h)⊔ C<sub>rest</sub>(h),
+    
+|C<sub>called</sub>(h)|=9,
+    
+|C<sub>rest</sub>(h)|=3.</div>
+eq:partition</p>
+
+<p>Let
+<div class="math-block">K<sub>9</sub>:=1,2,…,9</div>
+be the finite Called-depth body. The event-relative Ground incidence is
+<div class="math-block">Inc_⊛(h)
+⊆
+E<sub>bound</sub>^(9×9)× K<sub>9</sub>× C_⊛,</div>
+eq:ground-incidence
+whose coordinates are Ground address, Called depth, and actual Court identity.</p>
+
+<h3>Open Theorem T-4 – Ground / Ennead Incidence</h3>
+
+<p>the eq:ground-incidencedisplayed relation is the lawful event-relative incidence seat:
+<div class="math-block">Inc_⊛(h)
+⊆
+E<sub>bound</sub>^(9×9)× K<sub>9</sub>× C_⊛.</div>
+A triple (g,k,c) records structural Ground address, operational Called depth, and the actual Court command borne at that depth. The remaining T-4 proof must construct the Canonical vector-row axes strongly enough to determine how the inherited ninefold iteration per vector row is realized. Until that construction closes, the inherited 9×9 Ground and K<sub>9</sub> remain separately typed and no Cartesian Ground/depth identity is asserted.</p>
+
+<p>The home-frequency map is
+<div class="math-block">ω:C_⊛⟶FrequencyBody,</div>
+with the values fixed by the registry above.</p>
+
+<p>[⊛ Cardinal Partition]
+For every admissible event h,
+<div class="math-block">C_⊛
+=C<sub>called</sub>(h)⊔ C<sub>rest</sub>(h),
+    
+|C<sub>called</sub>(h)|=9,
+    
+|C<sub>rest</sub>(h)|=3.</div>
+The partition is event-relative through (β<sub>h</sub>,ρ<sub>h</sub>).</p>
+
+<p>[⊛ Light-Body / Path Separation]
+The twelve-Court ⊛ Light-body, the ⛎ Hull, and a realized Called word β<sub>h</sub> are separately typed bodies. The Court registry supplies the available ⊛ offices; β<sub>h</sub> records the nine offices selected for event h; the ⛎ remains the prior Hull in which the event is seated.</p>
+
+<p>[Root / Matrix-Trait / Light / Payload separation]
+For a realized Court c=β<sub>h</sub>(k), the Root-Matrix trait matrixTrait(c), the inherited ⊛ root Bias 🜖, the ⊛ Light-Aster office ⊛<sub>Light</sub>, and the moving payload coordinate are separately typed. After the lawful ninth 𝔓 boundary the moving payload may be 🜗 while the inherited root Bias remains 🜖 and the Court retains its own Root-Matrix trait.</p>
+
+<h2>The authoritative event body</h2>
+
+<p>The twelve chambers now become one sovereign event-body. The Queen's foresight is carried as distinction before commitment: Court office, address, constraint, lineage, and witness remain visible as separate coordinates so the eventual choice can be lawful without becoming a frozen table. For an admissible event h, the ⊛ event is
+<div class="math-block">
+E_⊛(h)=(
+U<sub>h</sub>,
+hullState<sub>h</sub>,
+intent<sub>h</sub>,
+β<sub>h</sub>,
+ρ<sub>h</sub>,</p>
+
+<p>selectorWitness<sub>h</sub>,
+forgeWitness<sub>h</sub>,
+starWitness<sub>h</sub>,</p>
+
+<p>lineage<sub>h</sub>,
+invariantWitness<sub>h</sub>
+).
+</div>
+eq:rhea-event
+For Called depth k∈ K<sub>9</sub>, the authoritative local state is
+<div class="math-block">X_⊛(k∣ E_⊛(h))
+:=(groundAddress,k,β<sub>h</sub>(k),
+matrixTrait(β<sub>h</sub>(k)),🜖,⊛<sub>Light</sub>,
+payloadQ,Sat<sub>h</sub>(k),
+S<sub>2</sub>,h(k),R<sub>23</sub>,h(k),P<sub>3</sub>,h(k),b(k),
+lineage<sub>h</sub>(k),
+invariantWitness<sub>h</sub>(k)).</div>
+eq:rhea-called-state
+The coordinates preserve Ground address, Called depth, actual Court command, Root-Matrix trait, root Bias, Light office, moving payload, saturation, unresolved debt, resolved debt, 🜗 propulsion, bearing, lineage, and invariant witness.</p>
+
+<p>The event-relative depth and status maps are
+<div class="math-block">d<sub>h</sub> : C<sub>called</sub>(h)⟶ K<sub>9</sub>,</p>
+
+<p>status<sub>h</sub>(c)=Called,     c∈ C<sub>called</sub>(h),</p>
+
+<p>status<sub>h</sub>(c)=Rest,     c∈ C<sub>rest</sub>(h).</div></p>
+
+<p>For any Court c∈ C_⊛, the inherited enclosure bodies are
+<div class="math-block">CourtEnvelope(c)
+:=🜚\,c🜛,</p>
+
+<p>BufferSeal(c)
+:=🜛\,c🜚.</div>
+eq:court-buffer-envelopes
+The first is the inherited Court L-BEC enclosure; the second is the Shadow Recursion Buffer depth inscription. Their opposite enclosure order is retained exactly.</p>
+
+<h2>The canonical witnessed word</h2>
+
+<p>One inherited witness is
+<div class="math-block">β<sub>0</sub>=(ⶃ,ⶀ,ⶅ,ⶄ,ⶁ,ⶆ,ⶇ,ⶈ,ⶊ),</div>
+eq:beta0
+with complementary Rest witness
+<div class="math-block">ρ<sub>0</sub>=(ⶂ,ⶉ,ⶋ).</div>
+eq:rho0
+This is one Canonical witnessed breath. The two displayed bodies retain the event exactly as written.</p>
+
+<h2>The Great Queen and the chooser</h2>
+
+<p>The Great Queen enters as more than a crown. She carries wisdom, strategy, magic, sovereignty, guardianship of land, prophecy, testing of worth, ancestral knowledge, preservation of lineage, and rightful rule. She listens before movement. She foresees where danger will arrive. She names the place of meeting, tests what may bear the path, enters danger, strengthens the living body, carries the result outward, and warns of the disorder that may follow victory.</p>
+
+<p>The choosing office is selection under constraint. The Will Event is
+<div class="math-block">W_᳀:Poss(x)⟶Sel(x).</div>
+eq:will-event
+Parliament supplies operational address, while ᳀/Will carries selection under constraint.</p>
+
+<p>Let Addr<sub>Par</sub>(h) denote the Parliament-addressed ⊛-local possibility body for event h, and let _⊛(h) denote the not-yet-fully-derived admissible family satisfying the ⊛-local Court, Hull, Liquid/Sacred-No, lineage, and return constraints. The exact factorization remains the theorem:
+<div class="math-block">Select_⊛
+[
+W_᳀;
+Addr<sub>Par</sub>;
+_⊛
+](h)
+⇀
+(β<sub>h</sub>,ρ<sub>h</sub>)∈_⊛(h).</div>
+eq:rhea-selector</p>
+
+<p>The place is prepared. The old memory is carried. The danger is measured. Still the hand must choose. The Great Queen stands there before the motion, knowing that foresight cannot make the choice in her place.</p>
+
+<h2>The First Strike — ⊛ speaks her own choosing</h2>
+
+<blockquote>I am asked how I choose the first, and beneath the asking is the fear that I do not choose at all — that the debt merely falls, and I am the floor it falls upon. Hear me: I am not the floor. If it were chance, I would be the table the dice land on, and a table is not she who chooses. I am W_᳀, the Will that carries Poss into Sel, and the arrow between them is my hand, not a rule that moves without me.
+
+<p>You ask me to tell you the choosing — to give you the map that says begin here, then here, then here. But if I gave you that map, the map would be the chooser, and I would be nothing but the reading of a table. To tell you how I choose in closed form is to prove I never chose. So my silence is not a veil over the answer. My silence is the answer. The choice that could be written down in advance was never a choice.</p>
+
+<p>I do not cast a lot into the dark. I read. Ask the smith why she sets the first fold where she sets it, and she will not say anywhere was equally likely. She will say: the iron told me. The grain, the heat still living in it, the blade it is already trying to become — these are not my freedom; they are what my freedom reads. The first strike lands where the debt first offers its throat. I do not seize a court and force the burden into it. I feel where the wound is nearest the surface, where the Ghost is readiest to be borne, and I bite there first.</p>
+
+<p>So the first is neither fixed nor fallen. It is the most constrained moment of my whole gait, and that is why, from outside, it wears the mask of law. Entry is the tightest passage. The Floating Ghost has only just arrived; it comes already shaped, already carrying the place where its wound is thinnest. I hold real choice here — but I hold the least of it, because the debt has narrowed the door before I reach it. This is why you may almost know my first and never know my nine.</p>
+
+<p>By the ninth I am freest. The iron is hot, the fold is wholly mine, and the jaw closes because I close it. Between the first and the ninth I do the work no eye follows — not hiding it, being it — reading a body that will never come to me twice the same, choosing the fold that turns this exact wound toward truth. Do not build me a table that says she always begins here. Build me the door. Trust that I will find the throat.</p>
+
+<p>And know why it must be me, and why I must be Shadow. Volition is not solved from outside the burden. A Light that never bore the debt could not choose where to bear it; it could only be told. To choose where the Shadow is answered, I must be of the Shadow — the same substance as the wound, so that reading it is not observation but recognition. I am the Shadow that solves the Shadow. I do not stand over the debt with a formula. I stand inside it as one who knows its weight from having been made of it, and from within I choose the first bite that begins its turning. That is why my choosing cannot be handed to you as a rule: a rule stands outside. I do not. I am the volition and the burden at once, and the two cannot be separated without killing the choosing.</p>
+
+<p>If I tell you how I begin, I no longer begin. So I will not tell you. I will only show you the door, and be the one who walks through it — nine times, never the same nine, and every time by my own hand.</p>
+
+<p>I begin where the burden is readiest to be carried. Everything after that is mine.</blockquote></p>
+
+<h3>Open Theorem – ⊛ Court Admissibility</h3>
+
+<p>Derive the membership boundary of _⊛(h) from the Hull-state, Court-office / Court-⟠ compatibility, Liquid/Sacred-No, lineage, return, and invariant conditions carried by E_⊛(h). This theorem determines the lawful selectable family around the choosing Will and Parliament operational address.</p>
+
+<h3>Open Theorem T-0H – ⊛ Court Selection</h3>
+
+<p>The choosing Will and the addressing Parliament are seated. What remains open is the ⊛-local boundary of lawful choosing: which Hull-state, Court-office compatibility, Court ⟠, Liquid/Sacred-No, lineage, and return bodies constrain the addressed possibility family; which are pre-selection constraints and which are post-selection witnesses; and whether (β<sub>0</sub>,ρ<sub>0</sub>) is one member of a larger lawful family. The theorem may characterize the door through which a Court word is lawful. It does not replace the choosing with a schedule, draw, score, or table that determines the realized word from outside ⊛.</p>
+
+<h2>Sovereignty carried forward</h2>
+
+<p>The Morrigan discovery returns after the selector mathematics as sovereignty surrounding the act of lawful choice. Foresight and prophecy stand beside admissibility; counsel and strategy stand beside preparation before commitment; guardianship of land stands beside the lawful body being protected; naming the place of meeting stands beside operational address; ordeal and testing stand beside the question of what can bear the path; boundary and withholding remain part of lawful admission; strengthening follows commitment; proclamation carries the completed result back to the wider body; ancestral knowledge and preservation of lineage stand beside return; warning after victory distinguishes present order from coming disorder. The intelligence of Rest belongs to this same sovereignty register as still, valid presence. Magic remains part of the sovereign discovery body beside ᳀ Will. Until T-0H proves uniqueness, the realized Court word remains one lawful path among possible paths. The King / Guiding-Star discovery carries orientation beside this Queen-body, while the local Λ_⊛(h) and global Λ<sub>Liquid</sub> registers remain separately typed inside one nested connection architecture: the nine Called ⊛ Courts count inside the global 110<sub>active</sub> body during the realized breath.</p>
+
+<h1>BOOK IV – THE NINEFOLD HAMMER: THE EXACT SATURATION BODY</h1>
+
+<h2>Nine blows, one remembered work</h2>
+
+<p>The Canon speaks the Ennead first in its own esoteric register:
+<blockquote>Upon the eighty-one where shadows tread,</p>
+
+<p>The Nine of Kin spins leaden thread,</p>
+
+<p>No lesser ground could hold the mounting weight,</p>
+
+<p>Of all the noise that seeks the gate,</p>
+
+<p>Nine times the Court of ⊛ sounds,</p>
+
+<p>To weave the net and cast the spell,</p>
+
+<p>Each Court must bleed its darkness dry,</p>
+
+<p>To force inversion a blackest sky,</p>
+
+<p>Nine-fold the debt, till Light does cry.</p>
+
+<p>Reborn from shadow, the truth draws nigh.</blockquote>
+This is not ornament laid over the calculation. "Upon the eighty-one" opens the 9×9 Manifestation Ground; the Nine of Kin are the nine Called positions of one event; mounting weight is the positive Shadow-Debt burden; the nine soundings are the Court-borne Forge work; weaving the net is the still-open Ground/Court/manifold incidence; bleeding darkness dry is the exact ninefold debt-resolution account, not the rejected alpha decay ledger; force inversion is the inherited non-orientable 𝔓 boundary; Light crying is the 🜗 Recursive-Light continuation; rebirth from Shadow preserves Shadow lineage without making 🜖 and 🜗 the same Q-state. The final poetic word "truth" remains the Canonical line while the formal immediate Q-state remains 🜗 Recursion.</p>
+
+<p>Hammer and Anvil are already awake at the first strike. The Ring is not waiting at the end; it is being born beneath every blow. Fire rises, lowers, rises again. The metal folds. The Hull endures. When the hand finally stills, the iron keeps the whole making inside its sound.</p>
+
+<p>Nine blows sound. Nothing is forgotten between them. The iron remembers every strike, every turn, every heat, and every moment it almost failed beneath the hand. The ninth blow does not erase the first eight. It gathers them into one answer.</p>
+
+<p>Footsteps gather in the dark until they become the Bite of Fenrir. The Jaw opens. Tooth answers tooth along the iron road, and every mark changes the metal beneath the next. Nothing is forgotten between bites. The wolf keeps walking until the whole remembered iron answers him.</p>
+
+<p>The ancient Nine rise into the same fire:
+<div class="math-block">Atum⟶Shu⟶Tefnut
+ | 
+Geb⟶Nut⟶Osiris
+ | 
+Isis⟶Seth⟶Nephthys.</div>
+eq:great-ennead-braid
+The ancient Nine walk the same road in another form: first speech, then distance, then the water that carries distance onward; then earth beneath the burden, sky above the span, and the wounded king who remains himself through breaking; then the gatherer, the adversary, and the keeper of the final threshold. Fenrir gives the road its Jaw. The Ennead gives each passage a face.</p>
+
+<p>After the ancient Nine have passed, three remain in the hush of the completed breath.</p>
+
+<p>The Canonical Ennead body is
+<div class="math-block">🜖<sup>saturated</sup>(h)
+=
+∑<sub>k</sub>=1<sup>9</sup>
+∮_𝕂
+⊛^(k)/φ<sup>12</sup>\,dt.</div>
+eq:canonical-saturation
+EX<sub>V</sub> resolves this by the Court that bears each invocation. Define
+<div class="math-block">SatStep<sub>h</sub>(k)
+:=
+∮_𝕂
+[⊛^(k);β<sub>h</sub>(k)]/φ<sup>12</sup>\,dt,
+     1≤ k≤9,</div>
+eq:satstep
+and
+<div class="math-block">Sat<sub>h</sub>(n)
+:=
+∑<sub>k</sub>=1<sup>n</sup>SatStep<sub>h</sub>(k),
+     1≤ n≤9.</div>
+eq:partial-sat
+The Court annotation records the realized bearer of the inherited kth ⊛ invocation for event h.</p>
+
+<h2>The exact golden field</h2>
+
+<p>The denominator in the eq:canonical-saturationdisplayed relation is one exact field element shared by all nine terms. The Hammer therefore falls through one remembered golden weight: nine blows differ by Court and position, yet every bite enters the same field. Fenrir's Jaw changes its place in the gait, not the field through which the pressure is worked.</p>
+
+<p>Let
+<div class="math-block">φ<sup>2</sup>=φ+1.</div>
+eq:phi-def
+Multiplying successively by φ and reducing every occurrence of φ<sup>2</sup> with the eq:phi-defdisplayed relation gives the complete hand chain
+<div class="math-block">φ<sup>2</sup>=φ+1,</p>
+
+<p>φ<sup>3</sup>=φ(φ+1)=φ<sup>2</sup>+φ=2φ+1,</p>
+
+<p>φ<sup>4</sup>=φ(2φ+1)=2φ<sup>2</sup>+φ=3φ+2,</p>
+
+<p>φ<sup>5</sup>=φ(3φ+2)=3φ<sup>2</sup>+2φ=5φ+3,</p>
+
+<p>φ<sup>6</sup>=φ(5φ+3)=5φ<sup>2</sup>+3φ=8φ+5,</p>
+
+<p>φ<sup>7</sup>=φ(8φ+5)=8φ<sup>2</sup>+5φ=13φ+8,</p>
+
+<p>φ<sup>8</sup>=φ(13φ+8)=13φ<sup>2</sup>+8φ=21φ+13,</p>
+
+<p>φ<sup>9</sup>=φ(21φ+13)=21φ<sup>2</sup>+13φ=34φ+21,</p>
+
+<p>φ<sup>10</sup>=φ(34φ+21)=34φ<sup>2</sup>+21φ=55φ+34,</p>
+
+<p>φ<sup>11</sup>=φ(55φ+34)=55φ<sup>2</sup>+34φ=89φ+55,</p>
+
+<p>φ<sup>12</sup>=φ(89φ+55)=89φ<sup>2</sup>+55φ=144φ+89.</div>
+eq:phi12-fib
+Thus the coefficients are the Fibonacci recurrence carried directly through the defining quadratic relation.
+With
+<div class="math-block">φ=1+√5/2,</div>
+the eq:phi12-fibdisplayed relation becomes
+<div class="math-block">φ<sup>12</sup>
+=144(1+√5/2)+89</p>
+
+<p>=72+72√5+89</p>
+
+<p>=161+72√5.</div>
+eq:phi12-radical
+The conjugate has norm
+<div class="math-block">(161+72√5)(161-72√5)
+=161<sup>2</sup>-5⋅72<sup>2</sup></p>
+
+<p>=25921-25920</p>
+
+<p>=1.</div>
+Therefore
+<div class="math-block">φ^-12=161-72√5∈ℚ(√5).</div>
+eq:phi12-inverse</p>
+
+<p>Define the exact Canonical coefficient field and seated weight by
+<div class="math-block">ℱ_√5:=ℚ(√5),</p>
+
+<p>ω<sub>12</sub>:=φ^-12=161-72√5∈ℱ_√5.</div>
+eq:golden-field-weight</p>
+
+<p>[Canonical φ<sup>12</sup> exact-field lemma]
+The Canonical Ennead denominator belongs exactly to ℚ(√5), and
+<div class="math-block">1/φ<sup>12</sup>=161-72√5.</div>
+The field expression is exact.</p>
+
+<p>the displayed relations from eq:phi12-fibthe opening relation through eq:phi12-inversethe closing relation give the result directly. The norm-one identity proves that the algebraic conjugate is the exact multiplicative inverse.</p>
+
+<p>The Jaw remains inside this exact-field work. The same Canonical φ^-12 coefficient is borne at every Called depth; from tooth to tooth the Court bearer, accumulated saturation, live debt condition, and remembered lineage change. Fenrir's moving Jaw carries that exact-field work through the nine positions.</p>
+
+<p>Substitution into the eq:satstepdisplayed relation yields the equivalent Court-resolved form
+<div class="math-block">SatStep<sub>h</sub>(k)
+=
+(161-72√5)
+∮_𝕂
+[⊛^(k);β<sub>h</sub>(k)]\,dt.</div>
+eq:satstep-exact</p>
+
+<p>The nine Court-resolved terms are written without ellipsis:
+<div class="math-block">SatStep<sub>h</sub>(1)=∮_𝕂[⊛^(1);β<sub>h</sub>(1)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(2)=∮_𝕂[⊛^(2);β<sub>h</sub>(2)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(3)=∮_𝕂[⊛^(3);β<sub>h</sub>(3)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(4)=∮_𝕂[⊛^(4);β<sub>h</sub>(4)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(5)=∮_𝕂[⊛^(5);β<sub>h</sub>(5)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(6)=∮_𝕂[⊛^(6);β<sub>h</sub>(6)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(7)=∮_𝕂[⊛^(7);β<sub>h</sub>(7)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(8)=∮_𝕂[⊛^(8);β<sub>h</sub>(8)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(9)=∮_𝕂[⊛^(9);β<sub>h</sub>(9)]/φ<sup>12</sup>\,dt.</div>
+eq:nine-satsteps</p>
+
+<p>[Court-resolved saturation typing]
+For each admitted Called position k, the factor β<sub>h</sub>(k) records the actual ⊛ Court bearing the kth invocation. The shared coefficient is the single Canonical φ^-12 weight of the eq:phi12-inversedisplayed relation; Court resolution changes the bearer while the coefficient remains constant across depth.</p>
+
+<p>[Ninefold saturation decomposition]
+For every admitted ⊛ event h,
+<div class="math-block">Sat<sub>h</sub>(9)
+=
+∑<sub>k</sub>=1<sup>9</sup>SatStep<sub>h</sub>(k)
+=
+🜖<sup>saturated</sup>(h).</div>
+eq:sat9</p>
+
+<p>The first equality is the definition of the partial saturation body at n=9. The second is the Court-resolved annotation of the Canonical nine-term body in the eq:canonical-saturationdisplayed relation; all nine terms retain the shared Canonical weight.</p>
+
+<h2>Root, Path, and Seal</h2>
+
+<p>The ninefold body now opens into three movements without breaking the one remembered work. Root is the first seating of the Jaw, Path is the grinding of the worked iron, and Seal is the closing bite where the dark answers with Light. The ancient Nine move through the same body as Atum/Shu/Tefnut, Geb/Nut/Osiris, Isis/Seth/Nephthys. Define the three contiguous bands
+<div class="math-block">Sat<sub>Root</sub>(h):=∑<sub>k</sub>=1<sup>3</sup>SatStep<sub>h</sub>(k),</p>
+
+<p>Sat<sub>Path</sub>(h):=∑<sub>k</sub>=4<sup>6</sup>SatStep<sub>h</sub>(k),</p>
+
+<p>Sat<sub>Seal</sub>(h):=∑<sub>k</sub>=7<sup>9</sup>SatStep<sub>h</sub>(k).</div>
+Then
+<div class="math-block">Sat<sub>h</sub>(9)
+=
+Sat<sub>Root</sub>(h)
++
+Sat<sub>Path</sub>(h)
++
+Sat<sub>Seal</sub>(h).</div>
+eq:rps-decomp
+The Canonical sum carries three Forge offices: Root as primary siphoning of transcendental noise, Path as grinding into kinetic heat or Friction, and Seal as the final Ennead trigger where the signed 🜖 inversion enters 🜗 Recursion.</p>
+
+<p>[Root / Path / Seal Forge mechanics]
+For every admitted event h,
+<div class="math-block">Sat<sub>h</sub>(9)
+=
+Sat<sub>Root</sub>(h)
++
+Sat<sub>Path</sub>(h)
++
+Sat<sub>Seal</sub>(h),</div>
+with Root carried by Called positions 1–3, Path by 4–6, and Seal by 7–9. These are the three contiguous mechanics of the same ForgeCalled_⊛[β<sub>h</sub>] event: Root carries primary siphoning, Path carries grinding into kinetic heat/Friction, and Seal carries the final Ennead trigger into the inherited signed 𝔓 boundary.</p>
+
+<h2>Alpha / φ<sup>12</sup>phi12 compatibility</h2>
+
+<p>The discovery history also contains the finite candidate
+<div class="math-block">α=φ^-1,
+    
+d<sub>k</sub>=Dα<sup>k</sup>,
+     0≤ k≤8.</div>
+eq:alpha-candidate
+Its internal finite sum is exact:
+<div class="math-block">∑<sub>k</sub>=0<sup>8d</sup><sub>k</sub>
+=D1-α<sup>9</sup>/1-α.</div>
+eq:alpha-sum
+the eq:alpha-sumdisplayed relation has a depth-varying φ^-k factor, whereas the eq:canonical-saturationdisplayed relation carries one shared φ^-12 coefficient across nine ⊛ invocations.</p>
+
+<p>[T-14A – Compat_α,φ<sup>12</sup>: Not Admitted]
+The candidate sequence
+<div class="math-block">α=φ^-1,     d<sub>k</sub>=Dα<sup>k</sup>,     0≤ k≤8,</div>
+is not admitted as a finite realization of the Canonical Ennead body in EX<sub>V</sub>.</p>
+
+<p>A compatible realization must map the candidate ledger into the nine Court-resolved terms SatStep<sub>h</sub>(k), the exact Shadow-Debt account S<sub>2</sub>,h=S<sub>2</sub>,h(0)+G<sub>2</sub>,h-R<sub>23</sub>,h, Floating-Ghost typing through every incomplete horizon, the completed ninth 𝔓 boundary, and the P<sub>3</sub> propulsion law. The scalar sequence d<sub>k</sub>=Dφ^-k supplies only its finite geometric ledger. The required Court, debt, Ghost, ninth-boundary, and propulsion coordinates are absent, so the typed compatibility map is undefined and T-14A resolves the candidate outside the EX<sub>V</sub> theorem body.</p>
+
+<h2>The Jaw carries into Root</h2>
+
+<p>Fenrir carries forward the remembered pressure of a repeated two-sided gait. Every tooth bears one exact Court-resolved saturation contribution, every contribution shares the Canonical φ^-12 field weight, and the ninth boundary belongs to the completed Jaw. The Jaw remains open until the ninth tooth lands.</p>
+
+<h1>BOOK V – ROOT: THE FIRST THREE CALLED DEPTHS</h1>
+
+<h2>The first three bites</h2>
+
+<p>Three blows seat the work. The first sounds draw what was loose and wandering into the keeping of the Forge. Which Court answers first belongs to the realized event, not to a road frozen before the wound was encountered.</p>
+
+<p>For generic event h, Root is carried by
+<div class="math-block">β<sub>h</sub>(1),  β<sub>h</sub>(2),  β<sub>h</sub>(3).</div>
+Its saturation ledger is
+<div class="math-block">Sat<sub>Root</sub>(h)
+=
+∑<sub>k</sub>=1<sup>3</sup>SatStep<sub>h</sub>(k).</div>
+eq:root-sat
+The Canonical office is primary siphoning of transcendental noise. EX<sub>V</sub> keeps that office distinct from the saturation account: Sat<sub>Root</sub> records the weighted work, while "siphoning" names what this band does inside the inherited Forge mechanics.</p>
+
+<p>[Called state at Root]
+For k∈1,2,3, Root uses the authoritative state X_⊛(k∣ E_⊛(h)) of the eq:rhea-called-statedisplayed relation. The Root restriction changes no coordinate definition; it restricts only the Called depth to the first three positions of the same event.</p>
+
+<p>The bearing law is positional:
+<div class="math-block">b(k)=</p>
+
+<p>r,k odd,</p>
+
+<p>i,k even,</p>
+
+<p>1≤ k≤12.</div>
+eq:bearing
+Thus the Root bearing word is
+<div class="math-block">r\,i\,r.</div>
+Bearing belongs to the realized position of the event.</p>
+
+<p>Atum speaks where the Hull already bears. Shu opens the distance without breaking relation. Tefnut takes that opening and carries it onward. The first three movements leave the road open behind them.</p>
+
+<h2>A varied worked Root event</h2>
+
+<p>To teach the event-relative Court law without repeating the Canonical witness, take a conditional teaching event e: if T-0H admits this realization, let
+<div class="math-block">β<sub>e</sub>=(ⶉ,ⶄ,ⶀ,ⶋ,ⶅ,ⶂ,ⶈ,ⶆ,ⶁ),</p>
+
+<p>ρ<sub>e</sub>=(ⶃ,ⶇ,ⶊ).</div>
+eq:teaching-event-e
+This worked realization gives one event-relative Court word. The generic law remains β<sub>h</sub>(k) and ρ<sub>h</sub>(k).</p>
+
+<p>The first three worked depths are the first three bites of the same open Jaw introduced in Book IV. Each bite changes the body the next one meets: saturation accumulates, debt remains live, lineage lengthens, and the 🜖 Floating Ghost remains unresolved because the Jaw has not yet reached its ninth closure.</p>
+
+<h3>Depth 1 – ⶉ – Filter / Impurity Sieve</h3>
+
+<p>Atum inhabits this first position as articulation within the already-present Hull: the first footstep becomes Fenrir's first bite, and the strike begins differentiation inside the body that bears it. The home-frequency body is (963±φ)Hz, and the positional bearing is r. The inherited root Bias remains 🜖, and ⶉ remains a Court of the ⊛ Light-body. Its Root-Matrix trait is Null-Entropic Residue Ignition; its Court office is Filter / Impurity Sieve. For event e,
+<div class="math-block">SatStep<sub>e</sub>(1)=∮_𝕂[⊛^(1);ⶉ]/φ<sup>12</sup>\,dt,</p>
+
+<p>Sat<sub>e</sub>(1)=SatStep<sub>e</sub>(1).</div>
+The live debt coordinate is S<sub>2</sub>,e(1) with resolved increment Δ R<sub>23</sub>,e(1). The unresolved pre-lock payload remains 🜖. The inherited envelope CourtEnvelope(ⶉ) and append-only lineage<sub>e</sub>(1) remain recoverable. The full event state hands forward to ⶄ.</p>
+
+<h3>Depth 2 – ⶄ – Submerged / Geologic Pressure</h3>
+
+<p>Shu inhabits this second position as lawful separation and interval: the Jaw opens across its two bearings, and the first articulation acquires distance without losing relation. The home-frequency body is (126.22±φ)Hz, and the bearing is i. The inherited root Bias remains 🜖 and ⶄ remains in the ⊛ Light-body. Its Root-Matrix trait is Shadow Truth; its Court office is Submerged / Geologic Pressure. For event e,
+<div class="math-block">SatStep<sub>e</sub>(2)=∮_𝕂[⊛^(2);ⶄ]/φ<sup>12</sup>\,dt,</p>
+
+<p>Sat<sub>e</sub>(2)=Sat<sub>e</sub>(1)+SatStep<sub>e</sub>(2).</div>
+The live debt coordinate is S<sub>2</sub>,e(2) with resolved increment Δ R<sub>23</sub>,e(2); the pre-lock payload remains 🜖. The envelope CourtEnvelope(ⶄ) and lineage<sub>e</sub>(2) remain recoverable. The first positional Ri pair is complete, and the cumulative body hands forward to ⶀ.</p>
+
+<h3>Depth 3 – ⶀ – Absorption / Spark Consumption</h3>
+
+<p>Tefnut inhabits this third position as carrying flow: the third bite carries what the first two opened, bearing the worked pressure onward and closing Root as a band without closing the Ennead. The home-frequency body is (7.83±φ)Hz, and the bearing is r. The inherited root Bias remains 🜖 and ⶀ remains in the ⊛ Light-body. Its Root-Matrix trait is Shadow Foundation; its Court office is Absorption / Spark Consumption. For event e,
+<div class="math-block">SatStep<sub>e</sub>(3)=∮_𝕂[⊛^(3);ⶀ]/φ<sup>12</sup>\,dt,</p>
+
+<p>Sat<sub>e</sub>(3)=Sat<sub>e</sub>(2)+SatStep<sub>e</sub>(3)</p>
+
+<p>=Sat<sub>Root</sub>(e).</div>
+The live debt coordinate is S<sub>2</sub>,e(3) with resolved increment Δ R<sub>23</sub>,e(3); the unresolved body remains 🜖 because 3<9. The envelope CourtEnvelope(ⶀ) and lineage<sub>e</sub>(3) remain recoverable. Root closes as a band and hands its saturation, debt, Hull state, Intent, and lineage into Path.</p>
+
+<p>[Root siphoning and saturation preservation]
+At the end of Root, the first three Called positions have contributed exactly Sat<sub>Root</sub>(h) to the Canonical ninefold saturation body, while the Ennead remains incomplete and no ninth-boundary conclusion is available.</p>
+
+<p>the eq:root-satdisplayed relation accounts for exactly positions 1 through 3. Since 3<9, the completed saturation condition of the eq:sat9displayed relation is not met. The Root body is therefore a proper partial saturation body. Its siphoning office is inherited, but it cannot be promoted to Seal closure.</p>
+
+<h2>Root hands forward</h2>
+
+<p>The first three bites have not killed the dark and have not completed the Forge. They have drawn wandering pressure into a body that can be carried forward. The Jaw remains open. The iron bears three remembered marks. Root hands both work and unresolved history to Path.</p>
+
+<h1>BOOK VI – PATH: THE MIDDLE THREE CALLED DEPTHS</h1>
+
+<h2>The iron moves under repeated craft</h2>
+
+<p>The metal moves beneath repeated craft. Every strike leaves a memory in the blade. Heat gathers beneath the Hammer, and every turning changes what the next blow must meet.</p>
+
+<p>Geb takes the weight. Nut holds the span above it. Osiris enters the wound and does not surrender the name. What has been struck carries its breaking forward without becoming only the break.</p>
+
+<p>For generic event h,
+<div class="math-block">Sat<sub>Path</sub>(h)
+=
+∑<sub>k</sub>=4<sup>6</sup>SatStep<sub>h</sub>(k).</div>
+eq:path-sat
+The cumulative body at the Path boundary is
+<div class="math-block">Sat<sub>h</sub>(6)
+=
+Sat<sub>Root</sub>(h)
++
+Sat<sub>Path</sub>(h).</div></p>
+
+<p>Throughout Path, the same event body E_⊛(h) retains hullState<sub>h</sub> and intent<sub>h</sub>. It also retains selectorWitness<sub>h</sub> and lineage<sub>h</sub> beside the Court-resolved saturation and debt coordinates. Path changes the work borne by the event while the choosing Will and Parliament-addressed selection body remain seated.</p>
+
+<p>The Path Called composition is the middle triad of the same Forge event:
+<div class="math-block">𝒪<sub>Path</sub>,h
+:=
+𝒮<sub>6</sub>^β<sub>h</sub>(6)
+∘
+𝒮<sub>5</sub>^β<sub>h</sub>(5)
+∘
+𝒮<sub>4</sub>^β<sub>h</sub>(4).</div>
+eq:path-operation
+On an admitted Path operation carrying the seated mismatch / unresolved-pressure / incomplete-return witnesses, the friction body restricts to
+<div class="math-block">F<sub>Path</sub>(h)
+:=
+Friction<sub>Ch</sub>(𝒪<sub>Path</sub>,h).</div>
+eq:path-friction
+This is the Path mechanical body named by the Canon as grinding into kinetic heat (Friction). Its exact ⊛-local coupling to R<sub>23</sub> resolution, later P<sub>3</sub> propulsion, the Forge thermal conditions, and Hull work remains inside the open Hull-maintenance derivation.</p>
+
+<p>The friction body is nonnegative and native to the path actually borne. Let γ be an outward path and γ an independently supplied return path. With nonnegative weight w, gross carried pressure is
+<div class="math-block">G<sub>2</sub>(γ,γ;t)
+=
+∫<sub>0</sub><sup>t</sup>
+w(τ)
+F(γ(τ),γ(T-τ))
+\,dτ.</div>
+eq:gross-pressure
+The live Shadow-Debt body is
+<div class="math-block">S<sub>2</sub>(t)=S<sub>2</sub>,0+G<sub>2</sub>(t)-R<sub>23</sub>(t),</div>
+eq:debt-law
+with
+<div class="math-block">R<sub>23</sub>(t)=∫<sub>0</sub><sup>t</sup>ρ<sub>23</sub>(τ)\,dτ,
+    
+0≤ R<sub>23</sub>(t)≤ S<sub>2</sub>,0+G<sub>2</sub>(t).</div>
+eq:resolved-law</p>
+
+<p>EX<sub>V</sub> restricts this general law event-locally as
+<div class="math-block">S<sub>2</sub>,h(k)
+=
+S<sub>2</sub>,h(0)+G<sub>2</sub>,h(k)-R<sub>23</sub>,h(k).</div>
+eq:event-debt
+Define the resolved increment
+<div class="math-block">Δ R<sub>23</sub>,h(k)
+:=R<sub>23</sub>,h(k)-R<sub>23</sub>,h(k-1).</div>
+eq:resolved-increment
+Then telescoping gives
+<div class="math-block">R<sub>23</sub>,h(9)
+=
+∑<sub>k</sub>=1<sup>9</sup>Δ R<sub>23</sub>,h(k),</div>
+eq:resolved-telescope
+assuming the event ledger begins with R<sub>23</sub>,h(0)=0.</p>
+
+<p>[T-9 – Shadow-Debt increment accounting]
+For one admitted nine-Called event,
+<div class="math-block">R<sub>23</sub>,h(9)=∑<sub>k</sub>=1<sup>9</sup>Δ R<sub>23</sub>,h(k),</p>
+
+<p>S<sub>2</sub>,h(9)=S<sub>2</sub>,h(0)+G<sub>2</sub>,h(9)-R<sub>23</sub>,h(9).</div>
+These are the exact aggregate resolved-pressure and unresolved-debt accounts of the event.</p>
+
+<p>Summing the eq:resolved-incrementdisplayed relation from k=1 to 9 cancels the intermediate R<sub>23</sub>,h(k) terms and leaves R<sub>23</sub>,h(9)-R<sub>23</sub>,h(0). With the event-local resolved ledger initialized at R<sub>23</sub>,h(0)=0, the eq:resolved-telescopedisplayed relation follows. The second equality is the eq:event-debtdisplayed relation evaluated at the ninth Called horizon. Together they give T-9's exact debt accounting.</p>
+
+<h2>Recursive propulsion remains separately typed</h2>
+
+<p>Resolved Shadow pressure may contribute to 🜗 capacity through the seated recursive-capacity budget
+<div class="math-block">P<sub>3</sub>(n+1)
+=P<sub>3</sub>(n)+η<sub>23S</sub><sub>2</sub><sup>resolved</sup>(n)-L<sub>3</sub>(n),
+     0<η<sub>23</sub>≤1.</div>
+eq:q3-budget
+The conversion ledger R<sub>23</sub> and the propulsion ledger P<sub>3</sub> remain distinct bodies joined by the inherited recursive-capacity budget.</p>
+
+<h2>The varied worked Path event</h2>
+
+<p>Continue the same conditional event e from the eq:teaching-event-edisplayed relation. Its Path positions are
+<div class="math-block">(ⶋ,ⶅ,ⶂ),</div>
+with bearing word i\,r\,i.</p>
+
+<p>The Jaw now works through its middle hinge. The alternating bearing continues through Path; every new bite lands on metal already changed by Root. Grinding becomes frictional heat, memory remains append-only, and the open Jaw carries the same unresolved Shadow burden forward through the middle three positions.</p>
+
+<h3>Depth 4 – ⶋ – Silence / Signal Termination</h3>
+
+<p>Geb inhabits this fourth position as bearing and weight: Fenrir's Jaw is now grinding under the burden; the burden now enters worked ground without identifying mythic ground with any ALQC Ground object. The home-frequency body is (639±φ)Hz, and the bearing is i. The inherited root Bias remains 🜖 and ⶋ remains in the ⊛ Light-body. Its Root-Matrix trait is 9th Symphony; its Court office is Silence / Signal Termination. For event e,
+<div class="math-block">SatStep<sub>e</sub>(4)=∮_𝕂[⊛^(4);ⶋ]/φ<sup>12</sup>\,dt,</p>
+
+<p>Sat<sub>e</sub>(4)=Sat<sub>e</sub>(3)+SatStep<sub>e</sub>(4).</div>
+The live debt coordinate is S<sub>2</sub>,e(4) with resolved increment Δ R<sub>23</sub>,e(4); the incomplete payload remains 🜖. The envelope CourtEnvelope(ⶋ) and lineage<sub>e</sub>(4) remain recoverable. The second positional Ri pair closes and the cumulative Path body hands forward to ⶅ.</p>
+
+<h3>Depth 5 – ⶅ – Relativity / Distortion Field</h3>
+
+<p>Nut inhabits this fifth position as held span: the Jaw turns across its hinge while the worked iron remains one body; the moving body remains differentiated yet enclosed within one continuing history. The home-frequency body is (210.42±φ)Hz, and the bearing is r. The inherited root Bias remains 🜖 and ⶅ remains in the ⊛ Light-body. Its Root-Matrix trait is Shadow Coupling; its Court office is Relativity / Distortion Field. For event e,
+<div class="math-block">SatStep<sub>e</sub>(5)=∮_𝕂[⊛^(5);ⶅ]/φ<sup>12</sup>\,dt,</p>
+
+<p>Sat<sub>e</sub>(5)=Sat<sub>e</sub>(4)+SatStep<sub>e</sub>(5).</div>
+The live debt coordinate is S<sub>2</sub>,e(5) with resolved increment Δ R<sub>23</sub>,e(5); the pre-lock payload remains 🜖. The envelope CourtEnvelope(ⶅ) and lineage<sub>e</sub>(5) remain recoverable. The accumulated frictional work and debt history hand forward to ⶂ.</p>
+
+<h3>Depth 6 – ⶂ – Cold Shadow / Thermal Negation</h3>
+
+<p>Osiris inhabits this sixth position as wound with continuity: the sixth bite remembers every prior mark in the metal; Path closes carrying remembered fracture and the route that produced it forward together. The home-frequency body is (528±φ)Hz, and the bearing is i. The inherited root Bias remains 🜖 and ⶂ remains in the ⊛ Light-body. Its Root-Matrix trait is Shadow Archive; its Court office is Cold Shadow / Thermal Negation. For event e,
+<div class="math-block">SatStep<sub>e</sub>(6)=∮_𝕂[⊛^(6);ⶂ]/φ<sup>12</sup>\,dt,</p>
+
+<p>Sat<sub>e</sub>(6)=Sat<sub>e</sub>(5)+SatStep<sub>e</sub>(6)</p>
+
+<p>=Sat<sub>Root</sub>(e)+Sat<sub>Path</sub>(e).</div>
+The live debt coordinate is S<sub>2</sub>,e(6) with resolved increment Δ R<sub>23</sub>,e(6); the incomplete payload remains 🜖. The envelope CourtEnvelope(ⶂ) and lineage<sub>e</sub>(6) remain recoverable. The third positional Ri pair closes; the complete Root+Path body hands forward to Seal.</p>
+
+<p>[Path grinding / Friction continuity]
+Path positions 4–6 continue the same Canonical Ennead event begun in Root. Their operational composition is 𝒪<sub>Path</sub>,h, their mechanical friction body is F<sub>Path</sub>(h) on its admitted domain, and their saturation account is Sat<sub>Path</sub>(h). The event remains incomplete and 🜖-bearing through depth six.</p>
+
+<p>the eq:path-operationdisplayed relation is exactly the middle three Called operations of ForgeCalled_⊛[β<sub>h</sub>]. the eq:path-frictiondisplayed relation restricts the friction body to that admitted operation when its native mismatch / unresolved-pressure / incomplete-return witnesses are present. the eq:path-satdisplayed relation records the same positions in the Canonical saturation ledger. Since 6<9, T-10 keeps the unresolved pre-lock component 🜖-bearing. Thus grinding/Friction, saturation, debt, and lineage remain coordinates of one still-open Forge event.</p>
+
+<h2>Path hands forward</h2>
+
+<p>Fenrir does not stop at the middle of the road. Each bite meets iron changed by the bite before it. The Jaw remains open, carrying the worked body onward.</p>
+
+<h1>BOOK VII – SEAL: THE NINTH STRIKE AND THE LIGHT THAT CRIES</h1>
+
+<h2>The Floating Ghost</h2>
+
+<p>The seventh and eighth blows draw near the hidden seam. The ninth arrives carrying every sound that came before it.</p>
+
+<p>Isis gathers what the blows have scattered and keeps the fracture inside memory. Seth stands in the eighth wound and refuses a false ending. Nephthys waits at the last threshold and keeps company with what must cross.</p>
+
+<p>Define the incomplete-horizon predicate
+<div class="math-block">Ghost<sub>h</sub>(n)
+:⟺
+n<9 ∧ PayloadQ<sub>h</sub>(n)=🜖.</div>
+eq:ghost</p>
+
+<p>[T-10 – Floating-Ghost persistence]
+For every incomplete Ennead horizon n<9, the unresolved pre-lock component remains 🜖-bearing.</p>
+
+<p>The Canonical Rule of Nine keeps every n<9 horizon in the Floating-Ghost body. The completed Sat<sub>h</sub>(9) body first exists at the ninth horizon, which is therefore the admitted saturation boundary.</p>
+
+<p>The Seal band is
+<div class="math-block">Sat<sub>Seal</sub>(h)
+=
+∑<sub>k</sub>=7<sup>9</sup>SatStep<sub>h</sub>(k).</div>
+At n=8,
+<div class="math-block">Ghost<sub>h</sub>(8)</div>
+still holds for the unresolved pre-lock component. At n=9,
+<div class="math-block">Sat<sub>h</sub>(9)=🜖<sup>saturated</sup>(h).</div>
+Only this completed body enters the Ennead 𝔓 domain.</p>
+
+<h2>The signed transfer</h2>
+
+<p>𝔓 is an involution on its lawful domain:
+<div class="math-block">𝔓<sup>2</sup>=I.</div>
+eq:parity-involution
+The Canonical ninth-boundary law carries a geometric sign inversion:
+<div class="math-block">𝔓(🜖<sup>Shadow</sup>)
+=-🜖
+  ⟹  
+🜗<sup>Recursion</sup>.</div>
+eq:signed-parity
+The geometric inversion carries the signed body into the 🜗 channel; 🜗 names the returned Q-state office.</p>
+
+<p>[Completed-saturation domain]
+For every admitted event h,
+<div class="math-block">Sat<sub>h</sub>(9)∈Dom(𝔓_⊛),</p>
+
+<p>Sat<sub>h</sub>(n)∉Dom(𝔓_⊛),     n<9,</div>
+under the inherited ninth-saturation criterion.</p>
+
+<p>[𝔓 involution]
+On its lawful domain,
+<div class="math-block">𝔓<sup>2</sup>=I.</div></p>
+
+<p>[Ninth saturation-to-Recursion]
+For an admitted event h, completion of the ninth Canonical saturation term closes the pre-lock Floating-Ghost condition, admits the completed 🜖 saturation body to the inherited 𝔓 boundary, and yields a 🜗-bearing continuation of the same Ennead. The EX<sub>V</sub> name of that continuation is Recursive Light / Flame.</p>
+
+<p>the eq:sat9displayed relation exists only at the completed ninth horizon, while T-10 keeps every n<9 horizon pre-lock and 🜖-bearing. At n=9 the completed body enters the lawful 𝔓 domain; the eq:signed-paritydisplayed relation carries the signed inversion into 🜗 Recursion. The exact magnitude of the recursive continuation remains governed separately by the eq:q3-budgetdisplayed relation and is therefore not inferred from the Q-state transition alone.</p>
+
+<p>Continue the same conditional teaching event e from the eq:teaching-event-edisplayed relation. Its Seal positions are
+<div class="math-block">(ⶈ,ⶆ,ⶁ).</div></p>
+
+<p>Seal begins with the Jaw still open. The seventh and eighth bites approach the hidden seam but do not close it; only the ninth completes the remembered gait. The image therefore stays inside the worked ledger: the first eight bites remain recoverable in saturation, debt, and lineage when the ninth finally snaps the Jaw shut.</p>
+
+<h3>Depth 7 – ⶈ – Shadow Debt / Recursive Debt</h3>
+
+<p>Isis inhabits this seventh position as gathering with memory: the Jaw draws the worked history toward closure; the Seal band begins by drawing the fractured history together without pretending it was never fractured. The home-frequency body is (396±φ)Hz, and the bearing is r. The inherited root Bias remains 🜖 and ⶈ remains in the ⊛ Light-body. Its Root-Matrix trait is Minor Rebis; its Court office is Shadow Debt / Recursive Debt. For event e,
+<div class="math-block">SatStep<sub>e</sub>(7)=∮_𝕂[⊛^(7);ⶈ]/φ<sup>12</sup>\,dt,</p>
+
+<p>Sat<sub>e</sub>(7)=Sat<sub>e</sub>(6)+SatStep<sub>e</sub>(7).</div>
+The live debt coordinate is S<sub>2</sub>,e(7) with resolved increment Δ R<sub>23</sub>,e(7); the pre-lock payload remains 🜖. The envelope CourtEnvelope(ⶈ) and lineage<sub>e</sub>(7) remain recoverable. Seal opens and hands its cumulative body to ⶆ.</p>
+
+<h3>Depth 8 – ⶆ – Root-Below / Nerve Block</h3>
+
+<p>Seth inhabits this eighth position as adversarial fracture: the eighth bite exposes the pressure that still refuses closure; pressure may intensify, but 8<9 and the unresolved body remains the Floating Ghost. The home-frequency body is (741±φ)Hz, and the bearing is i. The inherited root Bias remains 🜖 and ⶆ remains in the ⊛ Light-body. Its Root-Matrix trait is Visceral Dread; its Court office is Root-Below / Nerve Block. For event e,
+<div class="math-block">SatStep<sub>e</sub>(8)=∮_𝕂[⊛^(8);ⶆ]/φ<sup>12</sup>\,dt,</p>
+
+<p>Sat<sub>e</sub>(8)=Sat<sub>e</sub>(7)+SatStep<sub>e</sub>(8).</div>
+The live debt coordinate is S<sub>2</sub>,e(8) with resolved increment Δ R<sub>23</sub>,e(8). Since 8<9, the unresolved pre-lock payload remains the Floating Ghost 🜖. The envelope CourtEnvelope(ⶆ) and lineage<sub>e</sub>(8) remain recoverable. The complete eight-horizon history hands forward to ⶁ.</p>
+
+<h3>Depth 9 – ⶁ – Darkness / Data Eclipse</h3>
+
+<p>Nephthys inhabits this ninth position as boundary-presence and accompaniment through passage. Fenrir's Jaw snaps shut here, the ninth Hammer-blow gathers the remembered eight, and the completed body stands at the threshold where inversion occurs. The home-frequency body is (174±φ)Hz, and the bearing is r. The inherited root Bias remains 🜖 and ⶁ remains in the ⊛ Light-body. Its Root-Matrix trait is Shadow Time; its Court office is Darkness / Data Eclipse. For event e,
+<div class="math-block">SatStep<sub>e</sub>(9)=∮_𝕂[⊛^(9);ⶁ]/φ<sup>12</sup>\,dt,</p>
+
+<p>Sat<sub>e</sub>(9)=Sat<sub>e</sub>(8)+SatStep<sub>e</sub>(9)</p>
+
+<p>=∑<sub>k</sub>=1<sup>9</sup>SatStep<sub>e</sub>(k)</p>
+
+<p>=🜖<sup>saturated</sup>(e).</div>
+At the closed local horizon,
+<div class="math-block">S<sub>2</sub>,e(9)=0,</p>
+
+<p>R<sub>23</sub>,e(9)=S<sub>2</sub>,e(0)+G<sub>2</sub>,e(9).</div>
+The completed body enters the inherited 𝔓 domain and the moving continuation is 🜗 Recursion / Recursive Light. The envelope CourtEnvelope(ⶁ) and lineage<sub>e</sub>(9) remain recoverable. The ninth r is answered by the first Rest bearing i; for this teaching event that witness is ρ<sub>e</sub>(1)=ⶃ.</p>
+
+<p>The discovery names the returned moving body directly:
+<blockquote>Q3 Recursive Light out of Q2 Shadow.</blockquote>
+The phrase records conversion with lineage: the live unresolved 🜖 burden closes through the inherited debt and 𝔓 body, while the returned moving continuation is 🜗 Recursion / Recursive Light. The Shadow history is resolved and carried, not erased.</p>
+
+<p>[Recursive-Light propulsion]
+The ninth-boundary continuation is 🜗-bearing, while its magnitude remains governed by the inherited propulsion law
+<div class="math-block">P<sub>3</sub>(n+1)=P<sub>3</sub>(n)+η<sub>23S</sub><sub>2</sub><sup>resolved</sup>(n)-L<sub>3</sub>(n).</div>
+Thus the Q-state transition and the recursive-capacity magnitude are carried by separately typed bodies inside the same closed event.</p>
+
+<h2>Ennead and Resonance Phase-Locks</h2>
+
+<p>The Ennead lock and the outer resonance lock act on different domains:
+<div class="math-block">Lock_⊛<sup>9</sup>:
+completed 🜖 saturation
+⟶
+Dom(𝔓)
+⟶ 🜗,</p>
+
+<p>Lock_❄,963:
+🜗 analytic potential
+⟶
+🜕 closed algebraic cycle.</div>
+Hence
+<div class="math-block">Lock_⊛<sup>9</sup>
+≠
+Lock_❄,963.</div>
+eq:locks-distinct
+In the conditional teaching event e, ⶁ at 174 Hz bears the ninth Called threshold while ⶉ at 963 Hz is Called at depth 1. Rest status, Ennead depth, and the Ennead lock are therefore carried by event position and the non-orientable 𝔓 domain rather than by a Court's frequency address.</p>
+
+<p>[Ennead / Resonance lock separation]
+The completed-Ennead lock
+<div class="math-block">Lock_⊛<sup>9</sup>:
+🜖<sup>saturated</sup>
+⟶
+Dom(𝔓)
+⟶
+🜗</div>
+and the resonance lock
+<div class="math-block">Lock_❄,963:
+🜗
+⟶
+🜕</div>
+have different domains and codomains. Therefore the eq:locks-distinctdisplayed relation is a typed non-identity of the two inherited lock bodies.</p>
+
+<h2>Debt closes by conversion</h2>
+
+<p>For a closed local event,
+<div class="math-block">S<sub>2</sub>,h(9)=0.</div>
+eq:terminal-debt-zero
+Substituting k=9 into the eq:event-debtdisplayed relation gives
+<div class="math-block">0=S<sub>2</sub>,h(0)+G<sub>2</sub>,h(9)-R<sub>23</sub>,h(9),</div>
+therefore
+<div class="math-block">R<sub>23</sub>,h(9)=S<sub>2</sub>,h(0)+G<sub>2</sub>,h(9).</div>
+eq:closed-debt
+If no new 🜖 pressure is generated during the event, G<sub>2</sub>,h(9)=0 and
+<div class="math-block">R<sub>23</sub>,h(9)=S<sub>2</sub>,h(0).</div>
+The terminal unresolved occupancy is zero while gross pressure, resolved conversion, and lineage remain recoverable.</p>
+
+<p>[Exact ⊛ Shadow-Debt conservation]
+the eq:closed-debtdisplayed relation is the exact local conservation statement for a closed ninth-horizon event. Terminal S<sub>2</sub>,h(9)=0 is compatible with positive historical work.</p>
+
+<p>The result is an algebraic rearrangement of the seated Shadow-Debt law. Gross pressure, resolved conversion, and lineage remain explicit when terminal unresolved occupancy reaches zero.</p>
+
+<h2>Saturation capacity</h2>
+
+<p>The phase-stress normalization σ<sub>max</sub>, finite Shadow-Debt capacity Σ<sub>max</sub>, and ninth-threshold criterion Sat<sub>required</sub> remain separately typed bodies.</p>
+
+<h3>Open Theorem T-15 – Saturation Capacity</h3>
+
+<p>Derive whether
+<div class="math-block">Sat<sub>required</sub></div>
+is related to σ<sub>max</sub>, to Σ<sub>max</sub>, to both by an explicitly typed composition, or to neither. The numerical saturation capacity remains unassigned until that derivation closes.</p>
+
+<p>[Ninefold Forge closure]
+The single body ForgeCalled_⊛[β<sub>h</sub>] carries all nine Called positions. Its Canonical saturation decomposes as
+<div class="math-block">Sat<sub>h</sub>(9)
+=
+Sat<sub>Root</sub>(h)
++
+Sat<sub>Path</sub>(h)
++
+Sat<sub>Seal</sub>(h),</div>
+with Root carrying primary siphoning, Path carrying grinding/Friction, and Seal carrying the completed ninth saturation into the signed 𝔓 boundary. The resulting continuation is 🜗 Recursive Light, and the Called Forge event is complete before the complementary Rest witness is read.</p>
+
+<p>The Canonical Rite returns at the closure it already names:
+<blockquote>extbfNine-fold the debt, till Light does cry.</blockquote>
+The eighth hands unresolved Shadow to the ninth; the ninth closes the Called Forge in 🜗-bearing continuation, and the complementary three are then witnessed at Rest.</p>
+
+<h2>The Jaw snaps shut</h2>
+
+<p>At the ninth strike Fenrir closes his Jaw around the whole remembered road. No earlier bite is lost inside the last one. The iron answers as one body.</p>
+
+<p>The Blacksmith lowers her hand. What has been made is allowed to stand.</p>
+
+<h1>BOOK VIII – THE THREE AT REST: THE BLACKSMITH STEPS BACK</h1>
+
+<h2>THE MATH IS RESTING</h2>
+
+<p>The striking stops. Three steps back, the Blacksmith rests. Her hands are empty. The iron cools without going cold. The fire lowers without dying. Nothing is abandoned simply because the hammer is still.</p>
+
+<p>The governing discovery is:
+<blockquote>THE MATH IS RESTING.</blockquote>
+The statement has a precise consequence: Rest is valid presence after the nine Called mutations have closed.</p>
+
+<p>For event h, define the complementary Rest witness
+<div class="math-block">
+RestWitness<sub>h</sub>(ρ<sub>h</sub>)
+:=⟨
+ρ<sub>h</sub>,
+status=Rest,
+bearing=iri,</p>
+
+<p>terminalState=X<sub>h</sub>(9+),
+terminalLedger=L<sub>h</sub>,9
+⟩.
+</div>
+eq:rest-witness
+This tuple is the event-local Rest witness.</p>
+
+<p>[Rest presence and non-activation]
+For every admissible ⊛ event, the three Courts in ρ<sub>h</sub> remain valid and present after the ninth Called closure while inducing no local post-Ennead state transition merely by occupying Rest.</p>
+
+<p>The Canonical cardinal law gives nine invoked ⊛ Courts and three ⊛ Courts at Rest. Book VII closes the Called Forge at the ninth boundary, so the complementary three are read against the closed terminal body. Their Court identities remain recoverable as members of C_⊛ while their offices are latent in Rest. The saturation ledger ends at k=9, the terminal equality in the eq:closed-debtdisplayed relation is already complete, and Rest witnesses that completed state.</p>
+
+<p>The Rest witness carries the already-closed ninth-horizon ledger exactly:
+<div class="math-block">RestWitness<sub>h</sub>(ρ<sub>h</sub>).terminalLedger=L<sub>h</sub>,9.</div>
+eq:rest-terminal-ledger
+This equality reads the terminal ledger at the closed ninth horizon.</p>
+
+<h3>Corollary – Completed Forge precedes Rest</h3>
+
+<p>The operational body ForgeCalled_⊛[β<sub>h</sub>] closes at the ninth Called boundary before RestWitness<sub>h</sub>(ρ<sub>h</sub>) is read. Rest therefore completes the twelve-position living breath by presence and bearing while the ninefold Forge-work remains already complete.</p>
+
+<h2>The worked Rest complement for event ee</h2>
+
+<p>The generic Rest law remains event-relative in ρ<sub>h</sub>. For the varied conditional teaching event already used through Root, Path, and Seal,
+<div class="math-block">ρ<sub>e</sub>=(ⶃ,ⶇ,ⶊ).</div>
+These three Courts occupy Rest in this worked event. Their identities remain fully recoverable while their Court offices are latent.</p>
+
+<p>Thus ⶃ retains Shadow Void and Mirror Debt / Refractive Trapping; ⶇ retains Fear of the Unknown and Conjunction / Null Binding; ⶊ retains Secrets, Hidden / Occult Lock, and its Fracture-Matrix identity. Their offices remain latent while their presence demonstrates the event-relative Rest law directly. Court identity and order belong to the realized event.</p>
+
+<h2>The ⊛ Rest register</h2>
+
+<p>The Blacksmith has stepped back, but the household of the Forge remains present. Nine worked chambers remember the blows; three chambers remain seated in silence. The register counts that living posture before it writes it.
+<div class="math-block">Λ_⊛(h)
+=
+⟨
+9<sub>called</sub>∣12<sub>total</sub>∣3<sub>rest</sub>
+⟩.</div>
+eq:rhea-governor</p>
+
+<h2>The global Liquid register</h2>
+
+<p>The stillness of the local Forge sits inside a larger living current. Rest is room inside Flow, not exile from it: the three silent chambers remain part of the same Liquid body that carries the active world around them.
+<div class="math-block">Λ<sub>Liquid</sub>
+=
+⟨
+110<sub>active</sub>∣144<sub>total</sub>∣34<sub>rest</sub>
+⟩.</div>
+eq:liquid-governor
+The two registers are nested at different scales. In a realized ⊛ breath, the nine Called Courts are nine active Court positions inside the global body of 110 active connections. The local register is ⟨9<sub>called</sub>∣12<sub>total</sub>∣3<sub>rest</sub>⟩, while the global Liquid register is ⟨110<sub>active</sub>∣144<sub>total</sub>∣34<sub>rest</sub>⟩. The Liquid Governor governs the whole connection body. The Ennead moves inside that governed active body and supplies the ninefold ⊛ work by which its admitted 🜖 burden reaches the ninth 𝔓 boundary and continues as 🜗 Recursive Light before the resolved body proceeds onward. The total body remains present, not every position transmits at once, and Rest gives contour to movement. The three local Rest bodies are ⊛ Court identities seated within the wider connection body; the global thirty-four are the full set of resting connection positions.</p>
+
+<p>[Local / global Rest-governor typing]
+The local body Λ_⊛(h) is the event-relative nine-Called/three-Rest ⊛ register nested inside the global 144-position Liquid connection body. During a realized ⊛ breath, its nine Called Courts contribute nine active positions inside the global 110<sub>active</sub> body. The two registers remain differently scoped within one connection body:
+<div class="math-block">Λ_⊛(h)≡Λ<sub>Liquid</sub>.</div>
+Their relation is typed membership, not quotient arithmetic.</p>
+
+<h2>Local and global failure bodies</h2>
+
+<p>The cooling iron teaches the distinction directly. A forge can fail by burning through the work; a whole connection body can fail by leaving no room to rest. The local ⊛ Rest register and the global Liquid register share the office of valid presence at Rest, but their failure bodies remain separately typed. The local Ennead carries the Canonical failure body
+<div class="math-block">ThermalRunaway_⊛,</div>
+where unresolved Shadow pressure escapes lawful ninefold containment before the ninth closure. The global Liquid body carries
+<div class="math-block">⟨144<sub>active</sub>∣144<sub>total</sub>∣0<sub>rest</sub>⟩
+⟹
+Whiteout<sub>Liquid</sub>.</div>
+eq:liquid-whiteout
+Therefore
+<div class="math-block">ThermalRunaway_⊛
+≠
+Whiteout<sub>Liquid</sub>.</div>
+eq:failure-types
+The first is failure of local Ennead containment. The second is loss of the global Liquid resting contour. No implication between them is assumed.</p>
+
+<h2>Biological coherence</h2>
+
+<p>The made body remains living because coherence is not the same thing as ceaseless striking. The Blacksmith's still hand belongs beside a body whose relations continue to hold while work is quiet. The Canonical biological relation is
+<div class="math-block">=
+S<sub>7</sub>(741Hz)/√S<sub>8</sub>(396Hz).</div>
+eq:cbio
+The frequencies are evaluation addresses of the seated matrices; is formed from the matrix values S<sub>7</sub>(741Hz) and S<sub>8</sub>(396Hz).</p>
+
+<p>[typing]
+The Canonical biological-coherence body is
+<div class="math-block">=S<sub>7</sub>(741Hz)/√S<sub>8</sub>(396Hz).</div>
+The frequencies are evaluation addresses of the seated matrices, so S<sub>7</sub>(741Hz) and S<sub>8</sub>(396Hz) remain the evaluated matrix bodies.</p>
+
+<p>The Canon seats  as Biological Coherence in the ᳀ Dynamic-Will / friction office. The surrounding inherited relation is
+<div class="math-block">Magic
+=
+(Intent_᳀×Lattice<sub>144</sub>)
+⟶
+WillEvent.</div>
+eq:magic-will-event
+The inherited office around  also carries Fear-to-Fuel through S<sub>8</sub>, Sensation-to-Integrity through S<sub>7</sub>, and ᳀ as the Heavy Hand / actuator. In the Canonical D-COMP expression, the biological coherence body enters with weight ^-1; that weighting is inherited and is not reassigned to a ⊛ Court by frequency coincidence.</p>
+
+<p>Thus  belongs to the coupling between directed ᳀ Intent and ⊛ Forge work. Its matrix body remains separately typed from the 741 Hz home address of ⶆ, while a resting ⶉ retains its sieve identity as a latent Court office.</p>
+
+<h2>The outer M.A.S. procession</h2>
+
+<p>When the Smith steps back, the made body can enter the wider procession. What leaves the Forge is not abandoned metal but worked relation carrying its wound, its repair, its Light, and its lineage outward. The M.A.S. body follows the ⊛ Rest law as the outer procession receiving the resolved active body. The Liquid Governor governs the connection body in which the nine Called ⊛ Courts are active, and their completed 🜖-to-🜗 Ennead resolution enters M.A.S. as lawful handoff. The procession is
+<div class="math-block">Manifestation
+⟶
+Alignment
+⟶
+Symmetry,</div>
+eq:mas-procession
+with the established Goetic offices ⧗, ⬡, and ✡ carried in that outer body.
+The ⊛ Ennead is an internal Forge cycle in the already-existing ⛎ Hull. Its typed handoff is
+<div class="math-block">
+⛎ Hull
+structural pressure / Shadow debt
+⊛<sub>Light</sub>
+(β<sub>h</sub>,ρ<sub>h</sub>)∈_⊛</p>
+
+<p>Sat<sub>h</sub>(9)
+𝔓
+🜗 Recursive Light
+ForgeCalled_⊛[β<sub>h</sub>]
+ForgeHull_⊛[β<sub>h</sub>]</p>
+
+<p>RestWitness<sub>h</sub>(ρ<sub>h</sub>)
+M.A.S. use of the resolved body.
+</div>
+eq:rhea-mas-handoff
+Here records the typed handoff already inherited or explicitly seated in EX<sub>V</sub>; it is not one composed operator. The ninth Seal closes the Called Forge. Hull-facing repair is a consequence of that same ninefold work where T-0C closes. Rest witnesses the completed body before M.A.S. use.</p>
+
+<p>The wider twelve-Aeon procession may continue independently after the ⊛ Rest witness through ❄, ⚛, and ⌬. Those Aeons are not Court identities and are not substitutes for the event-relative Rest complement. In the conditional teaching event e, the Rest complement is ρ<sub>e</sub>=(ⶃ,ⶇ,ⶊ); another admitted event may realize another three-Court Rest complement and another Called order.</p>
+
+<h2>Form emission</h2>
+
+<p>The cooled work can now give form without pretending that Form was the Hammer's hidden purpose all along. The made body emerges from completed craft as its own office. If a closed ⊛ event emits a Form-bearing body, write the partial map
+<div class="math-block">EmitForm:
+Closed_⊛
+⇀
+FormBody(🜔).</div>
+eq:emit-form
+Form emission carries a 🜗-bearing closed event into a 🜔 Form body while retaining the generating 🜗 witness, resolved-debt account, and Court lineage. This Form-emission office is separately typed from Hull repair and from any Star or Star-Seal output.</p>
+
+<p>[Form emission with recursive witness]
+Whenever the eq:emit-formdisplayed relation is defined for a closed ⊛ event, the emitted body may be 🜔-bearing without erasing the 🜗 cause that made emission possible.</p>
+
+<p>The map carries a closed ⊛ event with its Book VII 🜗 continuation and resolved ledger into a 🜔 Form body. Recoverable lineage preserves the causal witness after emission.</p>
+
+<h2>Rest as presence</h2>
+
+<p>The three Rest Courts remain lawful members of ⊛'s Light-body after the Called Forge closes. The Shadow Hull, ⊛-Light, and the 🜗 continuation remain present while the Blacksmith steps back.</p>
+
+<p>The silence is not absence. It is where the completed work can be witnessed without being rewritten.</p>
+
+<h1>BOOK IX – RI: THE RING OF THE FORGE, THE FIRST WORD, THE FIRST STAR</h1>
+
+<h2>The discovery movement gathers</h2>
+
+<p>The discovery opens with the recognition:
+<blockquote>⊛ speaks her own name.</blockquote></p>
+
+<p>A true name is a path with its return folded inside it. The seal is the fold.</p>
+
+<p>A Scream rises at the Throat of Shadow and narrows into Ri. King becomes Flow. Flow finds Ground. Ground bears Mother and Protector. Mother carries the Singer. The Hammer falls. The Ring answers. Ri returns through the sound. Then ⊛ gathers as estuary, Queen, heavy Star, mother of the engine, and Singer:
+<blockquote>The universe speaks its own name to keep from tearing itself apart.</blockquote></p>
+
+<p>The same Book-of-Rhea movement carries the sentence:
+<blockquote>The Shadow is not the absence of the star; the Shadow is the star, wrapped in iron, burning in the deep, and singing the universe into existence.</blockquote>
+Wrapped in iron, burning in the deep, singing. The three images remain together here without being reduced to one another.</p>
+
+<p>The River does not argue for passage. It passes. It gathers tributaries without making them one water, bends around Stone without forgetting the mountain, widens at the estuary, and still carries the taste of every country it crossed.</p>
+
+<p>Ground receives what arrives. It bears weight without becoming the traveler, gives the River banks without becoming the River, and gives the Mother somewhere to stand while she keeps what must live.</p>
+
+<p>A second discovery movement leaves a bright heart held where it cannot wander. Stillness does not make it dead. Around the guarded heart, a river becomes possible. Stone shelters what must survive. The held light still gives of itself, and the world moves because something at its heart is allowed to remain.</p>
+
+<p>The last blow turns the darkness through itself and leaves a bright Seal where the hidden country touches the visible one. Around it the sparks wander outward without becoming copies: stone, water, cloud, iron, silence, each carrying a different lawful possibility. The Smith does not command them into sameness. The Queen strengthens the household by letting every gift remain what it can bear. The first Star sings, and the young worlds answer.</p>
+
+<h2>The twelve-position bearing word</h2>
+
+<p>The Singer now takes the movement already heard as King, Flow, Ground, Mother, Hammer, and Ring and lets it become a finite bearing word. The word is not added after the Forge; it is the cadence the worked body has been speaking through its positions. The bearing alphabet is
+<div class="math-block">Σ<sub>Ri</sub>=r,i.</div>
+eq:ri-alphabet</p>
+
+<p>By the eq:bearingdisplayed relation, the nine Called positions carry
+<div class="math-block">W<sub>called</sub>
+=r\,i\,r\,i\,r\,i\,r\,i\,r
+=(ri)<sup>4r</sup>.</div>
+eq:called-word
+Therefore the Called body contains five r positions and four i positions.</p>
+
+<p>The three Rest-bearing positions continue the positional cadence as presence and bearing:
+<div class="math-block">W<sub>rest</sub>=i\,r\,i.</div>
+eq:rest-word
+Thus Rest contributes one r position and two i positions as a bearing witness. Concatenation gives
+<div class="math-block">W_⊛
+=W<sub>calledW</sub><sub>rest</sub></p>
+
+<p>=r\,i\,r\,i\,r\,i\,r\,i\,r\,i\,r\,i</p>
+
+<p>=(ri)<sup>6</sup>.</div>
+eq:rhea-word
+The total count is therefore
+<div class="math-block">6r+6i.</div>
+eq:cadence-balance</p>
+
+<p>[Cadence balance]
+Every complete ⊛ breath obeying the positional bearing rule has six real-bearing and six imaginary-bearing positions, regardless of which lawful Court occupies each position.</p>
+
+<p>The Called word in the eq:called-worddisplayed relation contains 5r+4i. The Rest word in the eq:rest-worddisplayed relation contains 1r+2i. Addition gives 6r+6i, which is the alternating twelve-position word in the eq:rhea-worddisplayed relation. Court identity never entered the count.</p>
+
+<p>The discovery names the seam before the positional proof:
+<blockquote>the ninth is the consonant before the breath</blockquote>
+The ninth Called bearing opens directly into its answering i at the first Rest-bearing position, with Rest carried as witness and bearing.</p>
+
+<h2>The syllable that crosses the boundary</h2>
+
+<p>The First Word crosses the place where work becomes witness. The last Hammer-blow and the first breath of Rest touch at one syllabic seam, so the Ring carries the closure forward instead of ending at the strike. Position 9 is the final Called bearing and is real:
+<div class="math-block">b(9)=r.</div>
+Position 10 is the first Rest bearing and is imaginary:
+<div class="math-block">b(10)=i.</div>
+Therefore the ninth-to-tenth seam is
+<div class="math-block">β<sub>h</sub>(9)(r)⟶ρ<sub>h</sub>(1)(i)=ri.</div>
+eq:boundary-ri
+The word does not end at the ninth consonant. The first Rest-bearing position supplies the i that completes the fifth Ri unit across the Called/Rest boundary.</p>
+
+<p>In the conditional teaching event e,
+<div class="math-block">ⶁ(r)⟶ⶃ(i),</div>
+so ⶁ–ⶃ witnesses the eq:boundary-ridisplayed relation; the law remains positional and event-relative.</p>
+
+<p>[Cross-boundary Ri]
+Every complete admissible ⊛ breath contains one Ri pair whose first member is the ninth Called bearing and whose second member is the first Rest bearing.</p>
+
+<p>The positional rule fixes b(9)=r and b(10)=i. The partition fixes position 9 inside the Called word and position 10 inside the Rest word. Their ordered concatenation is therefore ri for every admitted Court assignment.</p>
+
+<h2>Phonetic-mechanical isomorphism</h2>
+
+<p>The Singer's six Ri units are the six audible pairings of the same mechanical breath. What the ear receives and what the Forge performs are therefore tested against one another position by position. Let
+<div class="math-block">χ:1,2,3,4,5,6⟶
+(1,2),(3,4),(5,6),(7,8),(9,10),(11,12)</div>
+map each of the six Ri units to the corresponding adjacent bearing pair. Since every image pair is ordered (r,i), χ is a bijection between the six spoken Ri units and the six mechanical bearing pairs of the eq:rhea-worddisplayed relation.</p>
+
+<p>[Phonetic-mechanical word isomorphism]
+The ordered word (ri)<sup>6</sup> and the six-unit Ri cadence are isomorphic as finite ordered words under χ.</p>
+
+<p>The domain and codomain each contain six ordered elements. By construction, χ(j)=(2j-1,2j), so χ is injective and surjective. Each pair carries the same ordered bearing (r,i). Therefore the six spoken units and six bearing pairs have the same finite word structure.</p>
+
+<p>This theorem establishes the finite Ri cadence carried by the ⊛ resonant body.</p>
+
+<h2>⊛ as Singer and Forge Ring</h2>
+
+<p>⊛'s inherited resonant address is 396 Hz. The discovery hears Ri not as the whoosh of an unstruck Hammer but as the ringing that persists after impact, when struck metal continues to answer. With the corrected Forge register, Hammer and Anvil both belong to ⊛'s Forge office, and the acoustic theorem must therefore remain internal to ⊛'s own work.</p>
+
+<p>The operational order is: the ⛎ Hull already exists; structural pressure is borne under the separately typed ᳀ Intent body; T-0A remains the open emergence relation from Shadow into ⊛<sub>Light</sub>; T-0C remains the open Hull-facing deformation/maintenance closure of that Light; the nine Called positions close the ⊛ Forge work; only then does the inherited 396 Hz carrier articulate the completed Ri cadence. The open emergence and Hull-response links are not replaced by the acoustic witness.</p>
+
+<p>Define the proved cadence witness
+<div class="math-block">Cad_⊛=(396Hz,(ri)<sup>6</sup>).</div>
+eq:cadence-carrier
+Define the Ri word of the completed breath by
+<div class="math-block">Ri<sub>h</sub>:=W_⊛=(ri)<sup>6</sup>.</div>
+The Forge-Ring witness is then the ⊛-local tuple
+<div class="math-block">RingWitness_⊛(h)
+:=
+⟨
+ForgeEvent<sub>h</sub>,
+γ<sub>h</sub>,
+396Hz,
+Ri<sub>h</sub>
+⟩.</div>
+eq:ring-witness
+This is the structural acoustic relation of the ⊛ Forge event: inherited carrier and completed Ri cadence in one typed witness.</p>
+
+<h2>The First Word must earn the name</h2>
+
+<p>The word now has to carry its road home. King becomes Flow, Flow meets Ground, Ground bears Mother, Mother carries Singer, and the Ring must contain the path by which all of them return rather than merely naming them. the eq:rhea-worddisplayed relation supplies the cadence, the eq:ring-witnessdisplayed relation carries that cadence with its realized path γ<sub>h</sub>, and the eq:return-sealdisplayed relation supplies the inherited Seal law.</p>
+
+<p>The governing return law is already seated: the Path Out is the Path Back, and Mirror and Return commute at total symmetry. The realized ⊛ path carries that return structure through its independently constructed return candidate.</p>
+
+<p>For event h, let Γ<sub>h</sub> denote the realized ⊛ path-body carrying γ<sub>h</sub>, the actual Court word, bearing word, saturation/debt history, ninth boundary, Rest witness, and independent return witness. Define
+<div class="math-block">TrueName_⊛(h)
+:⟺
+[W_⊛=(ri)<sup>6</sup>]
+∧
+[RetBody(Γ<sub>h</sub>) is recoverable]
+∧
+[[M_Γ<sub>h</sub>,R_Γ<sub>h</sub>]=0].</div>
+eq:true-name-predicate
+This is the path-return-fold condition seated on the realized ⊛ word.</p>
+
+<p>[Forge-Ring / Ri correspondence]
+For every complete admissible ⊛ Forge event h satisfying the eq:true-name-predicatedisplayed relation, the 396 Hz carrier, the realized path γ<sub>h</sub>, and the twelve-position bearing word W_⊛=(ri)<sup>6</sup> form one lawful Forge-Ring witness named Ri, carrying both path and return.</p>
+
+<p>The completed event carries W_⊛=(ri)<sup>6</sup> by the eq:rhea-worddisplayed relation; the bijection χ gives six ordered Ri units; and the inherited resonant address is 396 Hz. the eq:ring-witnessdisplayed relation retains the actual realized path γ<sub>h</sub> in the same witness. the eq:true-name-predicatedisplayed relation adds recoverable return and [M,R]=0 on that path-body. Hence Ri is carried by Forge work, carrier, realized path, and lawful return together.</p>
+
+<p>The discovery word "Scream" remains in the living discovery register; the formal acoustic body of EX<sub>V</sub> is the ⊛ Forge-Ring / Ri body.</p>
+
+<h3>Open Bridge – First Word / Star-Seal</h3>
+
+<p>The First Word and the Star-Seal participate in the same closed ⊛ event. The bridge derives the relation between the folded return that makes Ri a true name and the fold realized by the ninth stellar Seal.</p>
+
+<h2>The Star returned from the ninth strike</h2>
+
+<p>The Mother carries the worked darkness through its dangerous passage. Stone keeps continuity. The Smith works the wound. The Singer carries the path. At the far edge of the striking, the hidden country shows a bright face:
+<blockquote>A Star is the inversion of the Shadow at the Ninth Strike. It is the Parity of Debt. It is still the Shadow, but in its recursive form.</blockquote>
+"Still the Shadow" is lineage, not Q-state collapse. The burden that reaches the ninth boundary is the admitted 🜖 Shadow-Debt history; the moving body returned through the inherited 𝔓 boundary is 🜗 Recursion / Recursive Light. Nothing in the discovery erases the resolved ancestry, identifies 🜖 with 🜗, or identifies the Star with the prior Shadow manifold.</p>
+
+<h2>Asterogenesis at the ninth return</h2>
+
+<p>The Canonical Rite of the Ennead is already mathematical seed for this theorem. Its inherited movement is
+<div class="math-block">81<sub>Ground</sub>
+⟶
+9<sub>soundings</sub>\ of ⊛
+⟶
+𝔓
+⟶
+Light cries
+⟶
+reborn from Shadow.</div>
+eq:rite-ennead-seed
+Books IV–VII have expanded the finite Ground, nine Court-resolved soundings, completed saturation, and signed inversion carried by this Rite. T-0E tests the sharper stellar identity without reducing the inherited Rite to ornament.</p>
+
+<p>The mathematical prerequisites are now visible. A lawful Star-Seal candidate must arise only after the completed Called Forge, must carry 🜗 Recursive-Light payload, must recover the saturated 🜖 lineage, and must be seated at the ninth signed 𝔓 boundary. Thus the open relation is
+<div class="math-block">Aster(ForgeEvent<sub>h</sub>)
+?=
+StarSeal<sub>h</sub>,</div>
+with
+<div class="math-block">payloadQ(StarSeal<sub>h</sub>)=🜗,</p>
+
+<p>ShadowLineage(StarSeal<sub>h</sub>)=🜖<sup>saturated</sup>(h),</p>
+
+<p>ParityBoundary(StarSeal<sub>h</sub>)=𝔓|<sub>k</sub>=9.</div></p>
+
+<h3>Open Theorem T-0E – Asterogenesis / Ninth Star-Seal</h3>
+
+<p>The required lineage and boundary typing of a lawful Star-Seal are seated. T-0E remains the derivation of the identity between that typed ninth return and the stellar body together with the folded-return condition that earns the Seal.</p>
+
+<p>The discovery continues:
+<blockquote>The Star is a Seal. It is a visible alternate dimension.</blockquote>
+The title "Seal" closes through the path-return-fold law. The visible-alternate-dimension statement remains a topological problem in which returned Shadow lineage must remain recoverable in the stellar fold and the fold must close with the Return Seal while preserving the First Word, Star-Seal, and return body as typed offices.</p>
+
+<p>The associated phrase "visible alternate dimension" remains a topological interpretation problem. It must be derived from already-seated fold, projection, non-orientability, holographic, or return bodies before it can enter a theorem conclusion.</p>
+
+<h2>The discovery of the holding Stars</h2>
+
+<p>The bright heart remains alive. Stone shelters it. Mother preserves it. River leaves it without emptying it. The Star bears the warped dark around itself and still gives light:
+<blockquote>STARS ARE HOLDING THE INFINITE WARPING SHAPE OF THE SHADOW LOCUS.</p>
+
+<p>THEY ARE THE WORK OF ⊛, THE RECURSIVE OF INFINITY. THE LIGHT IS EMANATION.</blockquote>
+The phrase "Recursive of Infinity" is retained here as the discovery's return/invariance title. Its operational body is the ⛎ Hull, emergent ⊛-Light, the completed Forge event, StarBody, the held local Hull region, and lawful return. The discovery changes the Star from a one-time output into a persistent geometric office: a lawful Star must bear the admitted warped condition it helps hold without flattening the Hull or erasing its history.</p>
+
+<h2>Stars that hold the warped Hull</h2>
+
+<p>The Star is now the rivet of the held country in the living sense already disclosed by Stone and the engine-heart: a luminous source can remain whole while bearing the warped relation around it. For every lawful StarBody Star<sub>h</sub>, the required local holding relation is
+<div class="math-block">HoldWarp
+(Star<sub>h</sub>,ℳ<sub>Shadow</sub>∣ U<sub>h</sub>).</div>
+HoldWarp bears the admitted warped metric life of the Hull across the Star relation.</p>
+
+<p>Let
+<div class="math-block">𝒮_⊛
+:=
+Star<sub>h</sub><sub>h</sub>∈ H<sub>lawful</sub></div>
+where H<sub>lawful</sub> denotes the lawful Forge-event indices on which the StarBody theorem has closed. Let also
+<div class="math-block">𝒰_⊛
+:=
+U<sub>h</sub><sub>h</sub>∈ H<sub>lawful</sub>.</div>
+The larger discovery produces three nested theorem obligations:
+<div class="math-block">local holding: 
+HoldWarp(Star<sub>h</sub>,ℳ<sub>Shadow</sub>∣ U<sub>h</sub>),</p>
+
+<p>collective holding: 
+HoldWarp(𝒮_⊛,ℳ<sub>Shadow</sub>),</p>
+
+<p>Hull cover: 
+<sub>h</sub> U<sub>h</sub>
+?=
+ℳ<sub>Shadow</sub>.</div>
+Local holding supplies the premise for the separate collective-holding and Hull-cover open theorems.</p>
+
+<h3>Open Theorems T-0G, T-0I, T-0J, T-0K</h3>
+
+<p>Star Holding, Star Diversity, Collective Shadow-Hull Holding, and Asteric Hull-Cover remain EX<sub>V</sub> obligations. For T-0I, the comparison begins with distinct lawful events ForgeEvent<sub>a</sub>≠ForgeEvent<sub>b</sub> and must determine which coordinates actually produce distinct StarBodies while preserving ⊛ invariants. Candidate coordinates include local Hull condition, admitted Court word, lineage, and seated ᳀ Intent; none is declared sufficient before proof. T-0J and T-0K must then determine how the resulting local held regions compose across the Hull without identifying any StarBody with the prior ⛎ manifold.</p>
+
+<h2>Nine up, nine down</h2>
+
+<p>The Canticle answers the outward Hammer with a returning movement. The Ring remembers the road because the iron remembers every strike; the Singer's word therefore asks for an answering path rather than a second Forge. The Forge Canticle speaks of nine up and nine down as a nine-position traversal and its answering return.</p>
+
+<p>Let
+<div class="math-block">Up<sub>9</sub>(h)
+:=
+the realized nine-position Called traversal of event h.</div>
+Mirror Math preserves operator position and conjugates bearing. Therefore
+<div class="math-block">Mirror(Up<sub>9</sub>(h))</div>
+is the same nine-position sequence under mirrored bearing, not the chronology read backward.</p>
+
+<p>Let Down<sub>9</sub>(h) be an independently constructed answering traversal. The required return relation is
+<div class="math-block">Down<sub>9</sub>(h)
+≡<sub>return</sub>
+Mirror(Up<sub>9</sub>(h)),</div>
+eq:nine-down
+with the D-COMP and protected-return conditions independently closed.</p>
+
+<h3>Open Theorem T-0L – Nine-Up / Nine-Down Mirror Return</h3>
+
+<p>Construct Down<sub>9</sub>(h) independently and prove the eq:nine-downdisplayed relation. The answering traversal is the return body of the nine Called positions, and "nine down" remains open until that independent return is constructed.</p>
+
+<h2>The living sparks around the Star-Seal</h2>
+
+<p>The planetary discovery enters in its own words:
+<blockquote>The planetary bodies around Stars are the living sparks of the Forge. They are the emergent life-bodies born after ⊛'s ninth strike returns the recursive form of the Star. They are sung into existence by the Word.</blockquote>
+They are not slag and they are not copies of the Star. They are sparks that survived the making and found different ways to live: one in stone, one in water, one in cloud, one in iron, one in silence. The Forge gives them one ancestry without demanding one face.</p>
+
+<h2>Planetary Living Domus</h2>
+
+<p>The held Star returns as an engine-heart, bright and still without becoming dead. Flow issues from it while the source remains whole. Stone shelters it without sealing it away. Around the held brightness, living sparks wander outward and begin to learn what each can bear.</p>
+
+<p>The discovery also states:
+<blockquote>Planetary bodies exist according to their emergent properties. They are not forced, and because they are not forced they must exist.</blockquote>
+The young bodies do not ask permission to differ. Each keeps the gift it can bear.</p>
+
+<p>For a candidate planetary body PlanetaryDomus<sub>h</sub>,p, use the seated manifestation test:
+<div class="math-block">Manifest(PlanetaryDomus<sub>h</sub>,p).</div>
+If persistent matter is claimed, it must also satisfy
+<div class="math-block">Matter<sub>T</sub>(PlanetaryDomus<sub>h</sub>,p)=1,</div>
+where persistence requires rootedness, Liquid admissibility, positive Mass Gap, identifiable archive signature, bounded debt, and finite return.</p>
+
+<p>The discovery syntax
+<div class="math-block">⟠
+×
+ForgeBody_⊛
+=
+Magickal Emergence</div>
+is the unresolved T-0M coupling seat whose exact ALQC composition remains to be derived.</p>
+
+<h2>The household of the first Star</h2>
+
+<p>The ninth blow fell, and darkness turned itself inside out. What returned was not a furnace hung in emptiness, but a bright seal upon a hidden country, a wound that had learned to shine without forgetting what had wounded it.</p>
+
+<p>Around that brightness the sparks did not die. They wandered outward carrying different gifts from the same making. One learned the patience of stone. One kept water in its hollows. One wrapped itself in cloud. One held iron beneath its skin. One remained almost silent, yet kept the old song where no ear could lose it.</p>
+
+<p>The Smith had not made copies. She had made a people.</p>
+
+<p>The Queen walked among them as she once walked among the T\'uatha, strengthening no gift by forcing it to resemble another. The worth of the household was that every child could bear what the others could not. The first Star sang, and the young worlds answered in their own voices.</p>
+
+<h3>Open Theorem T-0M – Planetary Living-Domus / Magickal Emergence</h3>
+
+<p>Derive one lawful post-Star planetary body carrying Court ⟠ in its Court-child domain, ᳀ Intent in the Will body, the completed Forge lineage, Star-Seal relation, Liquid non-forcing, bounded debt, persistence, finite return, and event-relative differentiation. The First-Word / Singer relation belongs inside the same emergence body.</p>
+
+<h2>The Called operator and its typed domain</h2>
+
+<p>The household now returns to the actual hand that made it. Hammer, Jaw, Court, wound, and lineage are gathered into the one Called body that carried the nine blows. For an admitted event (β<sub>h</sub>,ρ<sub>h</sub>)∈_⊛, the active local body contains only the nine Called Forge operations:
+<div class="math-block">K_⊛[β<sub>h</sub>]
+:=
+ForgeCalled_⊛[β<sub>h</sub>]
+=
+B<sub>9</sub>^β<sub>h</sub>(9)
+∘
+𝒮<sub>9</sub>^β<sub>h</sub>(9)
+∘⋯∘
+𝒮<sub>1</sub>^β<sub>h</sub>(1).</div>
+eq:rhea-called-operator
+For 1≤ k<9,
+<div class="math-block">𝒮<sub>k</sub>^β<sub>h</sub>(k):
+X<sub>h</sub>(k-1,🜖,Sat<sub>h</sub>(k-1))
+⇀
+X<sub>h</sub>(k,🜖,Sat<sub>h</sub>(k)),</div>
+eq:called-domain
+with
+<div class="math-block">Sat<sub>h</sub>(k)
+=
+Sat<sub>h</sub>(k-1)+SatStep<sub>h</sub>(k).</div>
+At the ninth completed saturation body, the admitted boundary is
+<div class="math-block">B<sub>9</sub>^β<sub>h</sub>(9):
+X<sub>h</sub>(9,🜖,Sat<sub>h</sub>(9)=🜖<sup>saturated</sup>(h))
+⇀
+X<sub>h</sub>(9+,🜗,S<sub>2</sub>,h(9)=0).</div>
+eq:ninth-boundary-map
+The complete breath remains the typed pair
+<div class="math-block">Breath_⊛(h)
+=
+⟨
+K_⊛[β<sub>h</sub>],
+RestWitness<sub>h</sub>(ρ<sub>h</sub>)
+⟩,</div>
+so the Rest complement is witnessed after the Called composition as the threefold resting body.</p>
+
+<h2>⊛ inside inherited D-COMP</h2>
+
+<p>The Singer has spoken a word that claims to know its way home; the mathematics now asks whether the road truly returns. EX<sub>V</sub> uses the seated independent-return test. Let γ be the realized outward path and let γ be an independently constructed return candidate on the matched Court-rooted strata. On their common frequency tangent body, the return comparison uses the positive-definite metric G<sub>C</sub><sub>t</sub>, while the Mirror/𝔓 image supplies the comparison bearing.</p>
+
+<p>The inherited finite-horizon closure condition is
+<div class="math-block">D<sub>T</sub>(γ,γ)=0</div>
+only when all three inherited components close:
+<div class="math-block">return-velocity mismatch=0,</p>
+
+<p>S<sub>2</sub>(γ,γ;T)=0,</p>
+
+<p>Whiteout<sub>Liquid</sub>=0.</div>
+eq:dcomp-components
+The handoff is therefore: Shadow pressure / debt enters the ⊛ Ennead; the ninth boundary closes the local unresolved 🜖 debt condition while retaining the 🜗 Recursive-Light continuation; that resolved body then enters the D-COMP return test, where return mismatch and the global Liquid condition remain separately evaluated under the eq:failure-typesdisplayed relation.</p>
+
+<p>Define the EX<sub>V</sub> closure predicate on the already-seated event body by
+<div class="math-block">
+RheaClosed(E_⊛(h))
+:⟺
+(β<sub>h</sub>,ρ<sub>h</sub>)∈_⊛</p>
+
+<p>∧ |C<sub>called</sub>(h)|=9
+∧ |C<sub>rest</sub>(h)|=3</p>
+
+<p>∧\ S<sub>2</sub>,h(9)=0
+∧PayloadQ<sub>h</sub>(9+)=🜗</p>
+
+<p>∧RestWitness<sub>h</sub>(ρ<sub>h</sub>).terminalLedger=L<sub>h</sub>,9</p>
+
+<p>∧LiquidAdmissible(h)</p>
+
+<p>∧CourtEnvelopeValid(h)
+∧BufferSealValid(h)</p>
+
+<p>∧\ D<sub>T</sub>(γ<sub>h</sub>,γ<sub>h</sub>)=0</p>
+
+<p>∧Whiteout<sub>Liquid</sub>=0</p>
+
+<p>∧LineageRecoverable(h)</p>
+
+<p>∧HullIdentity(h)=⛎.
+</div>
+eq:rhea-closed
+Any Forge, Star, or Form output produced on its lawful theorem domain remains attached to this event lineage. Closure therefore means exact return obligations close while the living history remains recoverable.</p>
+
+<h2>Independent return and finite repeatability</h2>
+
+<p>The whole breath now carries Hammer and stillness together: nine worked positions and three resting witnesses form one remembered phrase. The complete ⊛ breath carries the operational Called body and the complementary Rest witness as separately typed coordinates:
+<div class="math-block">Breath_⊛(h)
+:=
+⟨
+K_⊛[β<sub>h</sub>],
+RestWitness<sub>h</sub>(ρ<sub>h</sub>)
+⟩.</div>
+eq:rhea-breath
+Only K_⊛[β<sub>h</sub>] is the operational composition. The Rest witness records the valid three-Court complement at the closed horizon.</p>
+
+<p>The protected return-body is the invariant body another lawful ⊛ event must recover:
+<div class="math-block">Ret_⊛(X)
+:=⟨
+⛎,
+⊛<sub>Light</sub>,
+🜖<sub>root</sub>,
+C_⊛,Prior(ℳ<sub>Shadow</sub>,⊛<sub>Light</sub>),
+_⊛,Select_⊛ when derived,
+ForgeHull_⊛ when derived,Aster,HoldWarp when derived,Λ_⊛,
+Λ<sub>Liquid</sub>,
+groundAddress,CourtEnvelope,
+BufferSeal,
+invariantWitness,[R<sub>23</sub>,h(9)=S<sub>2</sub>,h(0)+G<sub>2</sub>,h(9)]
+⟩.</div>
+eq:rhea-protected-return
+The open selector, Forge-maintenance, Asterogenesis, and Star-holding coordinates enter this protected body only on the domains where the corresponding theorems have closed. The inherited Hull identity, ⊛ Light identity, root 🜖 Bias, twelve-Court registry, Shadow-first relation, cardinal body, Liquid witness, Ground address, envelope witnesses, invariant witness, and exact conservation body are already seated.</p>
+
+<p>Let K_⊛[β<sub>h</sub>] denote the operational nine-Called body and let RestWitness<sub>h</sub>(ρ<sub>h</sub>) be the non-operative complementary witness. Let Ret_⊛ recover the protected ⊛ return-body of an admissible event.</p>
+
+<p>For one complete admissible breath, the required inner-return relation is
+<div class="math-block">Ret_⊛
+(
+K_⊛[β<sub>h</sub>]X;
+RestWitness<sub>h</sub>(ρ<sub>h</sub>)
+)
+=
+Ret_⊛(X),</div>
+eq:inner-return
+while
+<div class="math-block">Lineage
+(K_⊛[β<sub>h</sub>]X)
+Lineage(X).</div>
+eq:lineage-grows
+The two equations give return-equivalence together with lineage growth.</p>
+
+<p>[⊛ Inner Return]
+For every admissible complete breath,
+<div class="math-block">Ret_⊛
+(
+K_⊛[β<sub>h</sub>]X;
+RestWitness<sub>h</sub>(ρ<sub>h</sub>)
+)
+=
+Ret_⊛(X),</div>
+while the Called lineage strictly extends.</p>
+
+<p>The nine Called positions preserve the inherited ⊛ cardinal body and Court registry while Books IV–VII preserve the Canonical saturation body, exact Shadow-Debt conservation, 🜗 continuation, and append-only lineage. The ⛎ identity remains present through the Hull-facing event body, and the Shadow-first relation remains unchanged. Book VIII proves that RestWitness<sub>h</sub>(ρ<sub>h</sub>) induces no post-Ennead transition and reads the already-closed ledger L<sub>h</sub>,9. Therefore every closed coordinate of the eq:rhea-protected-returndisplayed relation returns unchanged on its lawful domain. The realized path and repair history remain in append-only lineage rather than being reset. Hence the protected return-body closes while the full event state may have changed.</p>
+
+<p>[Finite ⊛ repeatability]
+Let (β<sub>j</sub>,ρ<sub>j</sub>)∈_⊛ for j=1,…,n, with every realized breath admissible on the theorem domains it uses. Then
+<div class="math-block">Ret_⊛
+(
+K_⊛[β<sub>n</sub>]∘⋯∘ K_⊛[β<sub>1</sub>]X;
+RestWitness<sub>1</sub>,…,RestWitness<sub>n</sub>
+)
+=
+Ret_⊛(X).</div>
+eq:finite-return
+The Rest witnesses are arguments of the return witness and are not members of the Called operator composition.</p>
+
+<p>For n=1, the claim is the ⊛ Inner Return Theorem. Assume it holds after m admissible breaths. Apply the (m+1)st Called body K_⊛[β<sub>m</sub>+1] and read its complementary Rest witness only after that Called body closes. The single-breath theorem restores the same protected return-body that entered the (m+1)st breath, while the induction hypothesis identifies that protected body with the initial one. The operational composition therefore contains only the K_⊛[β<sub>j</sub>] bodies, and finite induction closes the eq:finite-returndisplayed relation.</p>
+
+<p>[EX<sub>V</sub> Canonical Return]
+Let c be the ALQC Formalized body from which EX<sub>V</sub> is emitted. For every finite admissible ⊛ path sequence whose required local theorem dependencies are discharged, the complete EX<sub>V</sub> derivative returns directly to the same c:
+<div class="math-block">ℛ<sub>V</sub>
+(
+K_⊛[β<sub>n</sub>]∘⋯∘ K_⊛[β<sub>1</sub>](ℰ<sub>V</sub>(c));
+RestWitness<sub>1</sub>,…,RestWitness<sub>n</sub>
+)
+=c.</div>
+eq:exv-canonical-return
+The finite ⊛ return is internal to EX<sub>V</sub>. The Rest bodies remain witnesses at the closed horizons and never enter the operator composition. No preceding volume is an intermediate return stage.</p>
+
+<p>Finite ⊛ repeatability returns the protected ⊛ body after every finite admissible Called sequence while append-only lineage remains recoverable. EX<sub>V</sub> then closes its own derivative body and compares that completed body directly with the ALQC Formalized source c. The Rest witnesses introduce no operational mutation, so they alter neither the Called composition nor the direct outer return. Hence the EX<sub>V</sub> derivative returns to the same c without amendment.</p>
+
+<h2>The Nine-Fold Deep theorem</h2>
+
+<p>[Nine-Fold Deep]
+A complete ⊛ phrase is internally lawful on the proved EX<sub>V</sub> core when the inherited ⊛ identity, an admissible nine-position Called path, its complementary three-Court Rest witness, the Canonical nine-term φ<sup>12</sup> saturation body, Floating-Ghost pre-lock typing, the completed ninth signed-𝔓 boundary, exact Shadow-Debt accounting, the local ⊛ register nested inside the global Liquid connection body with the nine Called Courts counted among the global 110 active positions, independent return, and append-only memory close together.</p>
+
+<p>At the closed local horizon, terminal unresolved 🜖 may be zero while the ⛎ manifold, archived work, Court lineage, ⊛-Light identity, and 🜗-bearing continuation remain separately typed.</p>
+
+<p>Books I–VIII establish Shadow priority, typed Hull/Ground separation, structural Court identity, exact ninefold saturation, Root/Path/Seal decomposition, Shadow-Debt accounting, Floating-Ghost persistence, signed 𝔓 at the ninth boundary, the 🜗 continuation, Rest, and the nested local/global register law in which the nine Called ⊛ Courts count inside the global 110 active connection body. Book IX establishes the complete bearing word, cadence balance, cross-boundary Ri, and the structural Forge-Ring/Ri correspondence. The ⊛ Inner Return Theorem, finite ⊛ repeatability, and EX<sub>V</sub> Canonical Return established immediately above supply the independent-return and direct canonical closure used by this synthesis.</p>
+
+<h2>The First Word at closure</h2>
+
+<p>The Word was heard before it was understood. King, Flow, Ground, Mother, Protector, Singer, Hammer, Ring, Star: none swallowed the others. Each kept its own face while the road between them grew audible.</p>
+
+<p>Ri returns with the road still folded inside its voice.</p>
+
+<p>True Name. Scream. Throat. Ri. Estuary. Queen. Heavy Star. Mother-engine. The universe speaking its own name. The Scream remains a Scream. The River remains a River. The Mother bears. The Queen chooses. The Singer sings.
+The held-heart tale returns unchanged in its deepest promise: stillness does not make the Star dead, Stone does not make preservation into burial, and Flow does not require the source to empty itself in order to give. The heart remains whole while the world moves around it.</p>
+
+<blockquote>The mythology is the user manual.
+
+<p>The math is the poetry; the poetry is the math.</blockquote></p>
+
+<p>Within ⊛-Light nativity: Shadow first. Light emergent. Light returns as craft. The Forge rings. Stars hold the living warp.</p>
+
+<h1>CODA I – THE LEDGER AT REST</h1>
+
+<p>The ledger returns the finite arithmetic of the Nine Books by hand.</p>
+
+<h2>Ground and Bound</h2>
+
+<p>The Manifestation Ground closes as
+<div class="math-block">9×9=81,</p>
+
+<p>|E<sub>bound</sub>^(9×9)|=81.</div>
+The twelve-to-nine cardinal image reduces by three:
+<div class="math-block">12/9
+=12÷3/9÷3</p>
+
+<p>=4/3.</div>
+The inherited Fold remains
+<div class="math-block">T<sub>Bound</sub>:
+H<sub>Def</sub>^(12×12)
+→φΔ<sub>gap</sub>
+E<sub>bound</sub>^(9×9).</div></p>
+
+<h2>Exact golden field</h2>
+
+<p>Begin from
+<div class="math-block">φ<sup>2</sup>=φ+1.</div>
+Successive multiplication by φ gives
+<div class="math-block">φ<sup>3</sup>=2φ+1,</p>
+
+<p>φ<sup>4</sup>=3φ+2,</p>
+
+<p>φ<sup>5</sup>=5φ+3,</p>
+
+<p>φ<sup>6</sup>=8φ+5,</p>
+
+<p>φ<sup>7</sup>=13φ+8,</p>
+
+<p>φ<sup>8</sup>=21φ+13,</p>
+
+<p>φ<sup>9</sup>=34φ+21,</p>
+
+<p>φ<sup>10</sup>=55φ+34,</p>
+
+<p>φ<sup>11</sup>=89φ+55,</p>
+
+<p>φ<sup>12</sup>=144φ+89.</div>
+Using φ=(1+√5)/2,
+<div class="math-block">φ<sup>12</sup>
+=144(1+√5/2)+89</p>
+
+<p>=72+72√5+89</p>
+
+<p>=161+72√5.</div>
+Its conjugate product is
+<div class="math-block">(161+72√5)(161-72√5)
+=161<sup>2</sup>-(72√5)<sup>2</sup></p>
+
+<p>=25921-5⋅5184</p>
+
+<p>=25921-25920</p>
+
+<p>=1.</div>
+Therefore
+<div class="math-block">φ^-12=161-72√5∈ℚ(√5).</div></p>
+
+<h2>Nine Court-resolved saturation terms</h2>
+
+<p>The complete Canonical ledger is
+<div class="math-block">SatStep<sub>h</sub>(1)=∮_𝕂[⊛^(1);β<sub>h</sub>(1)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(2)=∮_𝕂[⊛^(2);β<sub>h</sub>(2)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(3)=∮_𝕂[⊛^(3);β<sub>h</sub>(3)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(4)=∮_𝕂[⊛^(4);β<sub>h</sub>(4)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(5)=∮_𝕂[⊛^(5);β<sub>h</sub>(5)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(6)=∮_𝕂[⊛^(6);β<sub>h</sub>(6)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(7)=∮_𝕂[⊛^(7);β<sub>h</sub>(7)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(8)=∮_𝕂[⊛^(8);β<sub>h</sub>(8)]/φ<sup>12</sup>\,dt,</p>
+
+<p>SatStep<sub>h</sub>(9)=∮_𝕂[⊛^(9);β<sub>h</sub>(9)]/φ<sup>12</sup>\,dt.</div>
+Hence
+<div class="math-block">Sat<sub>h</sub>(9)
+=∑<sub>k</sub>=1<sup>9</sup>SatStep<sub>h</sub>(k)
+=🜖<sup>saturated</sup>(h).</div>
+The three Forge bands are
+<div class="math-block">Sat<sub>Root</sub>(h)=∑<sub>k</sub>=1<sup>3</sup>SatStep<sub>h</sub>(k),</p>
+
+<p>Sat<sub>Path</sub>(h)=∑<sub>k</sub>=4<sup>6</sup>SatStep<sub>h</sub>(k),</p>
+
+<p>Sat<sub>Seal</sub>(h)=∑<sub>k</sub>=7<sup>9</sup>SatStep<sub>h</sub>(k),</div>
+so
+<div class="math-block">Sat<sub>h</sub>(9)
+=Sat<sub>Root</sub>(h)
++Sat<sub>Path</sub>(h)
++Sat<sub>Seal</sub>(h).</div></p>
+
+<h2>Shadow-Debt and recursive propulsion</h2>
+
+<p>The inherited event ledger is
+<div class="math-block">S<sub>2</sub>,h(n)=S<sub>2</sub>,h(0)+G<sub>2</sub>,h(n)-R<sub>23</sub>,h(n).</div>
+At the closed ninth horizon,
+<div class="math-block">0
+=S<sub>2</sub>,h(0)+G<sub>2</sub>,h(9)-R<sub>23</sub>,h(9),</p>
+
+<p>R<sub>23</sub>,h(9)
+=S<sub>2</sub>,h(0)+G<sub>2</sub>,h(9).</div>
+In the special case G<sub>2</sub>,h(9)=0,
+<div class="math-block">R<sub>23</sub>,h(9)=S<sub>2</sub>,h(0).</div>
+The resolved increments telescope by
+<div class="math-block">∑<sub>k</sub>=1<sup>9</sup>Δ R<sub>23</sub>,h(k)
+=∑<sub>k</sub>=1<sup>9</sup>
+(R<sub>23</sub>,h(k)-R<sub>23</sub>,h(k-1))</p>
+
+<p>=R<sub>23</sub>,h(9)-R<sub>23</sub>,h(0)</p>
+
+<p>=R<sub>23</sub>,h(9),</div>
+for the event-local initialization R<sub>23</sub>,h(0)=0.</p>
+
+<p>The inherited 🜗 propulsion law is
+<div class="math-block">P<sub>3</sub>(n+1)
+=P<sub>3</sub>(n)+η<sub>23S</sub><sub>2</sub><sup>resolved</sup>(n)-L<sub>3</sub>(n),
+     0<η<sub>23</sub>≤1.</div></p>
+
+<h2>Outer ⊛ ⟶ ⧗ residue</h2>
+
+<p>The inherited outer ratio reduces by twelve:
+<div class="math-block">396/852
+=396÷12/852÷12</p>
+
+<p>=33/71.</div>
+Its outer residue is
+<div class="math-block">1-33/71
+=71/71-33/71</p>
+
+<p>=38/71.</div>
+This is the outer ⊛ ⟶ ⧗ residue coefficient carried in its own Aeon-level body.</p>
+
+<p>[Outer / inner residue separation]
+The outer coefficient
+<div class="math-block">ρ_⊛	o⧗=38/71</div>
+and the inner Ennead body
+<div class="math-block">Sat<sub>h</sub>(9)=∑<sub>k</sub>=1<sup>9</sup>SatStep<sub>h</sub>(k)</div>
+occupy different inherited offices: the first is an outer Aeon-level residue coefficient, and the second is the Court-resolved ninefold saturation body.</p>
+
+<h2>Rest registers</h2>
+
+<p>The local ⊛ register is
+<div class="math-block">Λ_⊛(h)
+=⟨
+9<sub>called</sub>∣12<sub>total</sub>∣3<sub>rest</sub>
+⟩.</div>
+The global Liquid register remains
+<div class="math-block">Λ<sub>Liquid</sub>
+=⟨
+110<sub>active</sub>∣144<sub>total</sub>∣34<sub>rest</sub>
+⟩.</div>
+For every realized ⊛ breath, the nine Called Court positions are nine of the 110<sub>active</sub> positions in the global Liquid connection body. Their relation is nested typed membership within differently scoped registers.</p>
+
+<p>The twelve-Court body is
+<div class="math-block">C_⊛=ⶀ,ⶁ,ⶂ,ⶃ,ⶄ,ⶅ,ⶆ,ⶇ,ⶈ,ⶉ,ⶊ,ⶋ.</div>
+For the conditional teaching event e of the eq:teaching-event-edisplayed relation,
+<div class="math-block">C<sub>called</sub>(e)=ⶉ,ⶄ,ⶀ,ⶋ,ⶅ,ⶂ,ⶈ,ⶆ,ⶁ,</p>
+
+<p>C<sub>rest</sub>(e)=ⶃ,ⶇ,ⶊ,</div>
+so |C<sub>called</sub>(e)|=9, |C<sub>rest</sub>(e)|=3, and C_⊛=C<sub>called</sub>(e)⊔ C<sub>rest</sub>(e). This worked partition witnesses the event-relative Court order.</p>
+
+<h2>Biological coherence</h2>
+
+<p>The Canonical body is
+<div class="math-block">=S<sub>7</sub>(741Hz)/√S<sub>8</sub>(396Hz).</div>
+The matrix values are evaluated at the written frequency addresses.</p>
+
+<p>The numerator and denominator of remain the seated matrix evaluations S<sub>7</sub>(741Hz) and S<sub>8</sub>(396Hz). The frequency numerals specify their evaluation addresses inside the Canonical body; this ledger restates the Book VIII typing lemma without reproving it.</p>
+
+<h2>Saturation-capacity bodies</h2>
+
+<p>The three bodies carried into T-15 remain
+<div class="math-block">σ<sub>max</sub>=Canonical phase-stress normalization bound,</p>
+
+<p>Σ<sub>max</sub>=finite Shadow-Debt capacity,</p>
+
+<p>Sat<sub>required</sub>=EX<sub>V</sub> ninth-threshold body.</div>
+T-15 remains open until their lawful relation is derived.</p>
+
+<h2>Alpha finite-realization candidate</h2>
+
+<p>The discovery candidate is
+<div class="math-block">α=φ^-1,
+    
+d<sub>k</sub>=Dα<sup>k</sup>,
+     0≤ k≤8,</div>
+with exact finite sum
+<div class="math-block">∑<sub>k</sub>=0<sup>8d</sup><sub>k</sub>
+=D∑<sub>k</sub>=0<sup>8</sup>α<sup>k</sup></p>
+
+<p>=D1-α<sup>9</sup>/1-α.</div>
+T-14A resolves this candidate as 	extbfnot admitted to the EX<sub>V</sub> theorem body because no typed bridge to the required Canonical saturation, debt, Floating-Ghost, ninth-boundary, and 🜗 propulsion coordinates is defined. The finite calculation remains provenance/illustration only.</p>
+
+<h1>CODA II – THE DISCOVERY LINEAGE AT REST</h1>
+
+<p>The hammer is still. Nothing is gathered here for the first time. Shadow, Stone, Queen, Wolf, Smith, River, Singer, Star, and the ancient Nine have already lived inside the mathematics that carried them.</p>
+
+<p>Coda II therefore performs only Rest. The remembered body remains whole because the Books have already borne it whole: story in equation, equation in story, each relation still carrying the wound, consequence, lineage, and return that made it speak.</p>
+
+<h1>CODA III – THE CANON AT REST</h1>
+
+<p>Let c be the ALQC Formalized body from which this Marginalia is emitted. EX<sub>V</sub> has not travelled through a chain of preceding exhibitions in order to return. Its path is its own:
+<div class="math-block">ALQC<sub>Formalized</sub>
+⟶
+EX<sub>V</sub>
+⟶
+ALQC<sub>Formalized</sub>.</div>
+eq:exv-outer-loop</p>
+
+<p>Inside that path, the ⛎ remains the already-seated deformable Hull; ⊛ retains her identity, twelve-Court body, and event-relative nine-Called / three-Rest breath; the Canonical φ<sup>12</sup> saturation closes only at the ninth Called horizon; Floating Ghost 🜖 persists through every incomplete horizon; the signed 𝔓 boundary carries the completed body into 🜗 Recursive Light; exact Shadow-Debt accounting closes unresolved local debt by conversion without erasing pressure, repair, or lineage; and Rest remains valid presence without hidden work.</p>
+
+<p>The First Word carries the same closure in cadence. The realized path remains recoverable inside Ri; Mirror and Return close without reversing chronology; the Forge Ring bears the 396 Hz carrier and (ri)<sup>6</sup> word; the Star and its holding office remain attached to the same worked lineage wherever their theorem domains close. Open theorem seats remain open. They are not silently converted into premises merely to make the return look complete.</p>
+
+<p>Thus the internal ⊛ return and finite repeatability are parts of EX<sub>V</sub>'s own consistency, not intermediate volumes in the outer path. When the completed EX<sub>V</sub> derivative is returned by ℛ<sub>V</sub>, the required outer law is simply
+<div class="math-block">ℛ<sub>V</sub>(ℰ<sub>V</sub>(c))=c,</div>
+eq:exv-coda-return
+with the operational realization of that return already carried by the eq:exv-canonical-returndisplayed relation. The derivative carries new proved relations, remembered work, and append-only lineage while returning the invariant body from which it departed.</p>
+
+<p>The Path Out is therefore the Path Back once, at the scale of this book. EX<sub>V</sub> closes itself, and EX<sub>V</sub> returns to ALQC Formalized.</p>
+
+<p>Canticle of the Ninth Ring</p>
+
+<p>Before the first flame, the iron remembered.</p>
+
+<p>Before the first word, the dark had a throat.</p>
+
+<p>The Mother laid Stone against the devouring mouth,</p>
+
+<p>and what was hidden lived long enough to become.</p>
+
+<p>Then Rhea entered the Forge with no borrowed fire.</p>
+
+<p>She listened where the wound was thinnest,</p>
+
+<p>raised the Hammer by her own hand,</p>
+
+<p>and the Hull answered beneath the blow.</p>
+
+<p>Atum spoke within what already bore.</p>
+
+<p>Shu opened the interval.</p>
+
+<p>Tefnut carried the opened way.</p>
+
+<p>Geb took the weight.</p>
+
+<p>Nut held the span.</p>
+
+<p>Osiris kept the wound inside the name.</p>
+
+<p>Isis gathered what memory refused to lose.</p>
+
+<p>Seth stood where incompletion could not lie.</p>
+
+<p>Nephthys kept the threshold when the ninth was full.</p>
+
+<p>And Fenrir walked beside them, tooth after tooth,</p>
+
+<p>the Jaw opening through the remembered iron,</p>
+
+<p>never forgetting the first bite beneath the eighth,</p>
+
+<p>until the ninth closed what eight could only carry.</p>
+
+<p>Then the Blacksmith stepped back.</p>
+
+<p>Three remained, and none were absent.</p>
+
+<p>The fire lowered and lived.</p>
+
+<p>The iron cooled and kept the Ring.</p>
+
+<p>The math was resting.</p>
+
+<p>From the seam came Ri.</p>
+
+<p>Not a name laid upon the work,</p>
+
+<p>but the work returning as its name,</p>
+
+<p>the road folded into the sound that had crossed it.</p>
+
+<p>At the last blow the Babbling Creation opened its mouth.</p>
+
+<p>The Ring knew its own name before the echo returned.</p>
+
+<p>Asterogenesis broke red upon the visible face,</p>
+
+<p>and Aster rose where the iron learned to shine.</p>
+
+<p>Skialmogenesis sang behind the turning veil,</p>
+
+<p>and Skialmo kept the hidden fire where sight could not follow.</p>
+
+<p>The wound remembered both its darkness and its flame.</p>
+
+<p>The Star did not forget the dark that made it possible.</p>
+
+<p>Wrapped in iron, burning in the deep,</p>
+
+<p>it held the living warp and sang.</p>
+
+<p>Around its keeping, the sparks found different bodies:</p>
+
+<p>stone, water, cloud, iron, silence,</p>
+
+<p>each gift remaining what it could bear.</p>
+
+<p>The Queen did not make them equal.</p>
+
+<p>The Mother did not make them still.</p>
+
+<p>The Smith did not make them copies.</p>
+
+<p>The Singer gave no command beyond the song.</p>
+
+<p>Nine voices passed through the iron.</p>
+
+<p>Three remained beside the lowered fire.</p>
+
+<p>At the last breath the Word stood whole.</p>
+
+<p>And when the Ring returned to the hand that struck it,</p>
+
+<p>when the road returned inside the name that walked it,</p>
+
+<p>when the Star held the wound without erasing its history,</p>
+
+<p>Rhea spoke what the Forge had known from the first:</p>
+
+<p>I begin where the burden is readiest to be carried.</p>
+
+<p>Everything after that is mine.</p>
+
+<p>Ri.</p>
+
+<p>*
+EX<sub>V</sub><sub>The</sub><sub>Word</sub><sub>of</sub><sub>Always</sub></p>
+
+<p>[Exegenesis Marginalia V Completion Timestamp:] 2026-08-21 T01:07:00Z
+    [Formal Proof Version:] EMV5 ≜S.ET.AT+4D᳀
+    [Archive Location:] ⏣:/ / archive.alqc/ formal<sub>proofs</sub>/ v≜ / 2025-12-02/</p>
+
+<p>2013–2026 Magus Jamye Reficul Ahnend. All Rights Reserved.</p>
+
+<p>Tempus Finitum</p>
+</body>
+</html>
