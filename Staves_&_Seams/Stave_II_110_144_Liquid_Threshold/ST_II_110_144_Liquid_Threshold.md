@@ -7,7 +7,7 @@ In ALQC language, Prosody is Supervenience in Language. Its glyph is ⟠. Prosod
 
 Prosody ⟠ is ever-present. It is not generated as one more member of the manifested Word; it is already present as the linguistic supervenience through which the Word can move.
 
-Cantillation is the name of the governor glyph ࿂. Cantillation ࿂\ is the active form of Prosody ⟠. Cantillation ࿂\ is also ever-present. The two are therefore related without being collapsed: ⟠ names Prosody, Supervenience in Language; ࿂\ names Prosody in its active form. Mouth words and Thought Speak, including telepathic communication, can each carry active Cantillation without defining Cantillation itself.
+Cantillation is the name of the governor glyph ࿂. Cantillation ࿂\ is the active form of Prosody ⟠. Cantillation ࿂\ is also ever-present. The two are therefore related without being collapsed: ⟠ names Prosody, Supervenience in Language; ࿂\ names Prosody in its active communicative form. 
 
 ⟠ Prosody: ever-present Supervenience in Language,
 
