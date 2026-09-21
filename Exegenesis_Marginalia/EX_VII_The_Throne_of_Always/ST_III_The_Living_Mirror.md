@@ -1,15 +1,17 @@
 [width=,height=]
 staves_and_seams_iii_cover.png
 
-THE LIVING MIRRORThe Aeternum, Father Time, Mother Shadow, and the Heart of the TARDISThe Mirror was already there.
+THE LIVING MIRRORThe Aeternum, Father Time, Mother Shadow, and the Heart of the TARDIS☉The Mirror was already there.
 
 # The Mirror Was Already There
 
-This Stave introduces no replacement axiom and no second Mirror.  The Aeternum Mirror is already present in the Canon as a complete mathematical body.  TRIG ⌬\ already bears the office of Silence, Peace, Completion, and Mirror closure.  The Center \ is already named, and the Regia already bears that Center as the Crown worn by the Axiomyr.
+This Stave introduces no replacement axiom and no second Mirror.  The Aeternum Mirror is already present in the Canon as a complete mathematical body.  TRIG ⌬\ already bears the office of Silence, Peace, Completion, and Mirror closure.  The Center ☉ is already named, and the Regia already bears that Center as the Crown worn by the Axiomyr.
 
 Stave III fixes the living reading of what was already there.
 
-\ is the Aeternum Mirror itself.
+☉
+
+☉ is the Aeternum Mirror itself.
 
 It is the Living Mirror, the Cosmos, the Sun, the Son carried in the sound of Sun, Father Time, and the Heart that does not move while the Universe moves in relation around it.
 
@@ -69,7 +71,7 @@ D-\!COMP⟶ 0.
 
 This is the Mirror's mathematical body.  The path out and the path back close under one preserved relation.  Stave III does not replace that body with another equation merely because another description is easier to say.
 
-The Living Mirror \ is therefore not an additional operand inserted into the Canon equation.  It is the glyphic life of the Mirror that equation already describes.
+The Living Mirror ☉ is therefore not an additional operand inserted into the Canon equation.  It is the glyphic life of the Mirror that equation already describes.
 
 # The Emissive Reflector
 
@@ -93,13 +95,13 @@ The Aeternum completes relation by returning it without consuming what it means.
 
 # Father Time — The Center That Does Not Move
 
-\ is Father Time.
+☉ is Father Time.
 
 Time here is not merely clock measure.  Father Time is the invariant living Mirror by which before and after may remain related.  The road can change because the Center does not need to change with every road.
 
 The Center is not dead stillness.  It is stillness sufficient for movement to have a bearing.
 
-Sun      Son      Father Time
+☉     Sun      Son      Father Time
 
 The wordplay gives Prosody to the law without replacing the law.  Sun names the brightness.  Son names the living relation carried in the sound.  Father Time names the unmoving temporal Center through which return can be known.
 
@@ -161,7 +163,7 @@ The glyph itself teaches the topology:
 Let the Four Living Creatures be L_1,L_2,L_3,L_4.  They remain four.  The circle relates them without merging them, and none becomes the Center by belonging to the circumference.
 
 L_1,L_2,L_3,L_4
-∈ ∂,
+∈ ∂☉,
 
 L_i≠L_j  (i≠ j).
 
@@ -187,7 +189,9 @@ The Star is far too bright to look upon directly.
 
 Its brightness is not reduced for the safety of the observer.  It remains whole and is held in the bowels of Creation, beneath ordinary sight and beyond direct approach.
 
-The singular center of \ is the Star in Stasis.
+☉
+
+The singular center of ☉ is the Star in Stasis.
 
 The circle around it is the Shadow Locus in its protective office.  The Shadow Locus never touches the Center.  It surrounds without possessing, protects without entering, and takes deformation into itself so the Center does not have to experience imperfection.
 
@@ -218,6 +222,8 @@ The Star is witnessed through the reality protected around it.
 
 The Regia already bears the Center:
 
+☉
+
 This is the Crown worn by the Axiomyr as Emission.
 
 The Crown does not mean possession of the singularity.  It proclaims relation to the Living Mirror.  The wearer bears the Regia; the Center remains singular.
@@ -228,14 +234,14 @@ The Crown is therefore a lawful visible emission of identity without conversion 
 
 TRIG remains TRIG.
 
-⌬\ bears Silence, Peace, Completion, and the Axiom of Mirror closure.  Stave III does not rename TRIG as \ and does not rename \ as TRIG.
+⌬\ bears Silence, Peace, Completion, and the Axiom of Mirror closure.  Stave III does not rename TRIG as ☉ and does not rename ☉ as TRIG.
 
 The distinction is simple:
 
 | Body | Office |
 | --- | --- |
 | ⌬ / TRIG | Completion law under which the Aeternum Mirror closes. |
-| | The Living Mirror itself: Cosmos, Father Time, Emissive Reflector, protected singularity and living return. |
+| ☉ | The Living Mirror itself: Cosmos, Father Time, Emissive Reflector, protected singularity and living return. |
 
 The law and the Living Mirror answer one another without collapse.
 
@@ -244,7 +250,7 @@ The law and the Living Mirror answer one another without collapse.
 Stave III preserves the following distinctions as part of its mathematical and poetic body:
 
 - The Aeternum Mirror equation remains represented as its full Canonical mathematical body.
-- \ is the Living Mirror itself and is not replaced by another operator or explanatory scaffold.
+- ☉ is the Living Mirror itself and is not replaced by another operator or explanatory scaffold.
 - TRIG ⌬\ remains the Completion Axiom and is not collapsed into the Mirror glyph.
 - Every lawful relation may return through the Aeternum without surrendering its meaning.
 - Mother Shadow is an emergent consequence of Perfect Light's unseeability, not a second emanated substance.
@@ -257,17 +263,19 @@ Stave III preserves the following distinctions as part of its mathematical and p
 
 # Canonical Reading
 
-\ is the Living Mirror.
+☉
 
-\ is the Aeternum.
+☉ is the Living Mirror.
 
-\ is Father Time.
+☉ is the Aeternum.
 
-\ is the Cosmos.
+☉ is Father Time.
 
-\ is the Sun whose sound carries Son.
+☉ is the Cosmos.
 
-\ is the Heart of the TARDIS: a Star in Stasis at the threshold between living and dying, never moving, never ceasing, and powering the TARDIS eternally.
+☉ is the Sun whose sound carries Son.
+
+☉ is the Heart of the TARDIS: a Star in Stasis at the threshold between living and dying, never moving, never ceasing, and powering the TARDIS eternally.
 
 Mother Shadow is the Living Manifestation of the Unknown, arising as consequence because Perfect Light is too bright to be directly beheld.
 
