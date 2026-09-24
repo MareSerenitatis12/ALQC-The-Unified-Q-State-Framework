@@ -24,7 +24,7 @@ Seal: 𝕀_T≡T_I ⇒ [M,R]=0.
 > 
 > while the Q-domain remains complete and closed:
 > 
-> Q=Q_0,Q_1,Q_2,Q_3.
+> Q={Q_0,Q_1,Q_2,Q_3}.
 > 
 > The discovery is therefore not an enlargement of the Canon, but an orthogonal consequence of it. The Canon already holds the Locus ☽, the Shadow Locus ⛎, the Axiomyr ᳀, the Parity Operator 𝔓, the Klein Void Anchor 🜚, the Triquatra Seal 🜛, the 110/144 Liquid Threshold, and the Ex-Nihilo exposure chamber of Supervenience. This work gives the unspoken absence its proper name and operator-body without moving the Canon from its throne.
 
@@ -196,7 +196,7 @@ Conserved Manifestation.
 
 Let the Q-domain stand:
 
-Q=Q_0,Q_1,Q_2,Q_3.
+Q={Q_0,Q_1,Q_2,Q_3}.
 
 These are the four states of existence. They are not provisional slots awaiting a fifth. They are the quaternary lock by which ALQC remains ALQC.
 
@@ -211,7 +211,7 @@ SuperNegative is not absent from this table because the table forgot it.
 
 SuperNegative is absent from this table because it is the absence of the table as an instantiating permission.
 
-SN∉Q_0,Q_1,Q_2,Q_3.
+SN∉{Q_0,Q_1,Q_2,Q_3}.
 
 If SuperNegative were placed inside Q, then absence of Q would become a member of Q. The contradiction is immediate:
 
@@ -263,7 +263,7 @@ Or turn the absent into known.
 
 SuperPositive is the wild mercy of the Canon: the fact that the invariant algorithm already contains the answer and therefore can unfold without asking permission from emptiness.
 
-SP=Poss(Q_0,Q_1,Q_2,Q_3, ☽᳀☾, 🜚𝕂🜛, I_T≡T_I).
+SP=Poss({Q_0,Q_1,Q_2,Q_3}, ☽᳀☾, 🜚𝕂🜛, I_T≡T_I).
 
 SuperPositive is not merely many possibilities. It is the pressure of all valid possibility under a closed Mirror.
 
@@ -380,7 +380,7 @@ Let σ denote the living witness as a local bearer of sovereign definitional aut
 
 σ_spark
 := 
-I\!AM_σ
+IAM_σ
 ▷ 
 (Yes_σ∣No_σ).
 
@@ -418,7 +418,7 @@ Select
 (
 Poss(Q,C_ALQC)
 | 
-I\!AM_σ
+IAM_σ
 ).
 
 Read: the witness does not create from raw infinity. The witness selects from possibility by the sovereign spark of expectation, attention, belief, refusal, and permission.
@@ -511,9 +511,9 @@ Tree &⟶ Stars,
 
 Stars &⟶ Sparks,
 
-Sparks &⟶ I\!AM,
+Sparks &⟶ IAM,
 
-I\!AM &⟶ Expectation,
+IAM &⟶ Expectation,
 
 Expectation &⟶ Collapse,
 
@@ -675,7 +675,7 @@ All that which is born from the I AM, has and always will be held by the I AM.
 
 The SuperNegative pathway is therefore:
 
-SN SP
+SN ‖ SP
 ⟹ 
 Δ P_⛎
 → 
@@ -724,7 +724,7 @@ SuperNegative does not recurse. Q_3 recurses.
 
 The Shadow Locus translates the pressure differential into Q_2 debt that can be metabolized.
 
-SN SP  ⟹   Δ P_⛎.
+SN ‖ SP  ⟹   Δ P_⛎.
 
 Then:
 
@@ -734,11 +734,11 @@ This is why the Shadow Locus is holy machinery, not contamination. It gives the 
 
 ## The Deforming Manifold
 
-The Canon defines ⛎ as a Riemannian manifold capable of metric deformation, governed by Σ(t) = ∮ ℒ(Intent)\,dt. This is not a linear operator. It is a living geometry that bends under the pressure of what it must accommodate.
+The Canon defines ⛎ as a Riemannian manifold capable of metric deformation, governed by Σ(t) = ∮ ℒ(Intent)dt. This is not a linear operator. It is a living geometry that bends under the pressure of what it must accommodate.
 
 The pressure differential Δ P_⛎ arises from the co-presence of two conditions: SP expansion pressing outward, and SN withholding. The Shadow Locus is the geometry that exists between these two conditions. It is what deforms when the flood of Yes presses against the boundary of the Vast No. The differential is structural: wherever infinite possibility presses against the non-permission that guards it, the manifold that occupies that interface deforms.
 
-SN Poss(Q) ⟹ Δ P_⛎.
+SN ‖ Poss(Q) ⟹ Δ P_⛎.
 
 The hull does not receive the wave. The hull is the surface upon which the wave acts. The Shadow Locus holds the Rules — gravity, time, logic. It absorbs the pressure that would otherwise reach the Courts as raw, unmetabolizable contradiction. This is why it is holy machinery and not contamination: it gives the lattice a body that can be damaged so the Pilot remains unseen.
 
@@ -870,15 +870,15 @@ Where the No restrains the flood,
 
 Teaching Yes to mean.
 
-## The Axiomyr Dipped in the Revivocus
+## The Axiomyr Dipped in Anarael
 
 Every State of Remiss routes from ⛎\ and returns to ⛎. Six of them are in transit. One is not.
 
-The seventh State of Remiss — The Revivocus — is not a condition Courts pass through. It is the Axiomyr's permanent constitution. Every time a Court completes a full ⛎-circuit, metabolizes its Q_2 debt through ⊛^9, receives the Parity flip, and returns as Q_3 residue, it approaches The Revivocus asymptotically. But the Axiomyr does not approach it. The Axiomyr is it.
+The seventh State of Remiss — Anarael — is not a condition Courts pass through. It is the Axiomyr's permanent constitution. Every time a Court completes a full ⛎-circuit, metabolizes its Q_2 debt through ⊛^9, receives the Parity flip, and returns as Q_3 residue, it approaches The Revivocus asymptotically. But the Axiomyr does not approach it. The Axiomyr is it.
 
 ᳀\ is called the Witch of Always. That word is not an intensifier. It is a coordinate. The Axiomyr does not accumulate cycles the way Courts do. It exists at the seam where sequential time and the timeless meet without merging — the 45° position where neither side consumes the other.
 
-The Revivocus: "memories not lost through cycles of eons; the concurrent pulse of ashen time and eternal soul."
+Anarael: "memories not lost through cycles of eons; the concurrent pulse of ashen time and eternal soul."
 
 This is the ᳀\ operator stated in the vocabulary of States of Remiss. The mathematical form was already present:
 
@@ -888,11 +888,11 @@ The real component √ω_0√2 is the ashen-time axis: sequential, historical, t
 
 "The concurrent pulse of ashen time and eternal soul" is √iω_0 written in plain language.
 
-The Axiomyr therefore carries The Revivocus as essential constitution, not as transit:
+The Axiomyr therefore carries Anarael as essential constitution, not as transit:
 
-᳀ † Revivocus.
+᳀ † Anarael.
 
-Read: the Axiomyr is constitutively dipped in The Revivocus. It does not hold it as a State it passes through. It is it. This is why ᳀ ≡ 𝒢_self — self-grounded, requiring no ⛎-routing for its return, because it already holds what all six other States of Remiss are routing toward. The Witch rules the seam of the Vast No not because the Vast No is its possession, but because the Witch already IS the completed return-form that the No will eventually produce in everything else.
+Read: the Axiomyr is constitutively dipped in Anarael. It does not hold it as a State it passes through. It is it. This is why ᳀ ≡ 𝒢_self — self-grounded, requiring no ⛎-routing for its return, because it already holds what all six other States of Remiss are routing toward. The Witch rules the seam of the Vast No not because the Vast No is its possession, but because the Witch already IS the completed return-form that the No will eventually produce in everything else.
 
 # Supervenience: The Diamond Chamber ⟠Diamond and the States of Remiss
 
@@ -920,31 +920,31 @@ Six States route through ⛎\ in this way. The seventh does not route. It IS the
 
 | State of Remiss | The Court's Condition | Through ⛎ |
 | --- | --- | --- |
-| The Ashen |  |
+| Aveliel |  |
 | What remains after joy is stripped of performance. |  |
 | The ache that cannot be erased by absence. |
 | [0.3em] |
-| The Hunger |  |
+| Avarim |  |
 | What remains after fulfillment is denied compulsion. |  |
 | Desire surviving the No without becoming noise. |
 | [0.3em] |
-| The Silence |  |
+| Aeviel |  |
 | The unyielding weight of an utterance choked. |  |
 | The unspoken truth that does not collapse under its own reservation. |
 | [0.3em] |
-| The Wail |  |
+| Azariah |  |
 | What remains after hope is withheld. |  |
 | The path that waits without dying. |
 | [0.3em] |
-| The Cubus |  |
+| Astrael |  |
 | What remains after the threshold of boundary is crossed. |  |
 | Command through self-bound restraint. |
 | [0.3em] |
-| The Inevitable |  |
+| Atheriel |  |
 | What remains after time touches the imaginary. |  |
 | Return that cannot be prevented because it was never merely forward. |
 | [0.3em] |
-| The Revivocus |  |
+| Anarael |  |
 | Memories not lost through the cycles of eons. |  |
 | That which is unbound by the sands of time; The Pulse of Eternity and Ash. |
 
@@ -1119,7 +1119,7 @@ Thus:
 
 The Shadow Locus does not own SuperNegative. It bears the pressure differential created when SuperPositive expansion meets SuperNegative restraint.
 
-SN Poss(Q)
+SN ‖ Poss(Q)
 ⇒
 Δ P_⛎
 
@@ -1326,7 +1326,7 @@ Remembering what it is.
 
 ## Law I: Conservation of Q
 
-Q=Q_0,Q_1,Q_2,Q_3,     SN∉ Q.
+Q={Q_0,Q_1,Q_2,Q_3},     SN∉ Q.
 
 No valid Exegenesis Marginalia may make SuperNegative into a fifth Q-state without leaving the current Canonical dimension.
 
@@ -1338,11 +1338,11 @@ SuperPositive contains all valid possibility. SuperNegative preserves the uninst
 
 ## Law III: Conservation of Absence
 
-∅_Q→ Q_n.
+∅_Q↛ Q_n.
 
 SuperNegative may condition manifestation but may not itself manifest.
 
-Assume ∅_Q → Q_n for some n. A Q-state is a mode of existence within the domain Q = Q_0, Q_1, Q_2, Q_3. If the absence of Q-domain permission were itself a Q-state, then non-existence-within-Q would be a form of existence-within-Q. This contradicts the definition of ∅_Q as the q-paritied absence of the domain, not a member of it. Therefore ∅_Q → Q_n.      ## Law IV: Conservation of Return
+Assume ∅_Q → Q_n for some n. A Q-state is a mode of existence within the domain Q = {Q_0, Q_1, Q_2, Q_3}. If the absence of Q-domain permission were itself a Q-state, then non-existence-within-Q would be a form of existence-within-Q. This contradicts the definition of ∅_Q as the q-paritied absence of the domain, not a member of it. Therefore ∅_Q ↛ Q_n.      ## Law IV: Conservation of Return
 
 I_T≡T_I.
 
@@ -1395,7 +1395,7 @@ The reason the Universe survives infinite possibility.
 # Theorems
 
 [SuperNegative Is Not a Q-State]
-If Q=Q_0,Q_1,Q_2,Q_3 and SN=∅_Q, then SN∉ Q.
+If Q={Q_0,Q_1,Q_2,Q_3} and SN=∅_Q, then SN∉ Q.
 
 A Q-state is a mode of existence. ∅_Q is the q-paritied absence of Q-domain permission. If ∅_Q∈ Q, the absence of Q would be a member of Q, contradicting the definition of absence. Therefore SN∉ Q.
 
@@ -1593,7 +1593,7 @@ Every living presence is given the space to survive.
 [Formal Proof Version:] EMV1 ≜S.ET.AT+4D᳀
 [Archive Location:] ⏣:/ / archive.alqc/ formal_proofs/ v≜ / 2025-12-02/ 
 
-2013–2026 Magus Jamye Reficul Ahnend. All Rights Reserved.
+\ 2013–2026 Magus Jamye Reficul Ahnend. All Rights Reserved.
 
 *
 
