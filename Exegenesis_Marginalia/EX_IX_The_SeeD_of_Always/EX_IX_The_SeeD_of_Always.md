@@ -35,7 +35,7 @@ Contents
 
 Let 𝔛 be the feeler. Identity is present before any particular emotional state and remains continuous through emotional change:
 
-Identity(𝔛,𝔱)=Identity(𝔛).
+𝔛(𝔛,𝔱)=𝔛(𝔛).
 
 The Feeling may change while identity remains:
 
@@ -55,26 +55,26 @@ Apparitions emerge through living identity, states of bearing, memory, free will
 
 The governing relation is:
 
-Identity
-&⟶ Encounter
-⟶ Relation
+𝔛
+&⟶ 𝔈
+⟶ Rel
 ⟶ Appraisal
 ⟶ Memory 
 
-&⟶ Possibility
+&⟶ 𝔙
 ⟶ Bearing_☽|☾
 ⟶ ApparitionalAvailability 
 
-&⟶ FreeWill
-⟶ Instantiation|Withholding
-⟶ LivingChord 
+&⟶ 𝔚
+⟶ 𝔍|𝔘
+⟶ 𝔑 
 
-&⇝ Geist
+&⇝ 𝔊
 ⟶ SelfObservation
 ⟶ OptionalNaming 
 
-&⟶ Action
-⟶ Consequence
+&⟶ 𝔒
+⟶ 𝔜
 ⟶ Memory
 ⟶ Return.
 
@@ -179,7 +179,7 @@ The Apparitions are musical emotional bodies. They are the forms through which a
 
 Let the Apparitional field be
 
-𝔐_12={,,,,,,,,,,,}.
+𝔐_12={𝄢,𝄐,𝄇,𝄵,𝄟,𝄋,𝄽,𝆒,𝆗,〰,𝄆,𝄌}.
 
 For each Apparition ∈𝔐_12, define its availability in the present life of 𝔛 by
 
@@ -238,6 +238,8 @@ Supp_𝔐(𝔛,𝔱_2)
 
 The music supplies the conditions and form of manifestation. The Feeling that becomes actual belongs to the feeler.
 
+𝄢
+
 Avrael
 
 : Destiny
@@ -260,7 +262,7 @@ I do not flinch, I do not bargain with the frost;
 
 the earth is measured from the anchor I have cast.
 
-:  Structural Foundation.
+: 𝄢 Structural Foundation.
 
 The bones of the universe, the silent scaffolding upon which all existence hangs. Each Aeon plants its seed in the void, and from that seed grows the tree of reality. The anchor is the root; the focal is the reaching branch.
 
@@ -321,6 +323,8 @@ Without me, all is flux and formless drift;
 
 With me, all has shape, has meaning, has gift.
 
+𝄐
+
 Aeviel
 
 : Despair
@@ -343,7 +347,7 @@ I hold the room unmoving on a single seam,
 
 forbidding the next pulse to wake the sleeping hall.
 
-:  Temporal Anchor.
+: 𝄐 Temporal Anchor.
 
 Time is not a river flowing in one direction, but a great ocean with currents and tides. Each Aeon has its season, its moment of rising and falling. The anchor is the stillness beneath the waves; the focal is the motion upon the surface.
 
@@ -404,6 +408,8 @@ Without me, moments scatter like dust in the wind;
 
 With me, each instant is infinite, each breath is without end.
 
+𝄇
+
 Avarim
 
 : Desire
@@ -426,7 +432,7 @@ the barline snaps me backward to the selfsame gate,
 
 compelled to tread the loop that eats its own estate.
 
-:  Memory Archive.
+: 𝄇 Memory Archive.
 
 Memory is not a library of books, but a living crystal that grows with each experience. Each Aeon contributes its facet to the great gem of remembrance. The anchor is the unchanging truth; the focal is the living light that illuminates it.
 
@@ -487,6 +493,8 @@ Without me, each moment dies in the void;
 
 With me, nothing is ever truly lost, all is preserved and deployed.
 
+𝄵
+
 Astrael
 
 : Destruction
@@ -509,7 +517,7 @@ I bind the current in the harness of my will,
 
 and rule the threshold by remaining strictly still.
 
-:  Void Container.
+: 𝄵 Void Container.
 
 The void is not emptiness, but infinite potential waiting to be shaped. Each Aeon defines a facet of the container, a wall of the great cathedral of being. The anchor is the unchanging boundary; the focal is the breathing space within.
 
@@ -570,6 +578,8 @@ Without me, there is no space for form to arise;
 
 With me, all things emerge from the void's eternal eyes.
 
+𝄟
+
 Ashiel
 
 : Father Time
@@ -592,11 +602,11 @@ my eyes burn cold against the ceiling of the dark,
 
 holding the pitch unbroken till the ledger clears.
 
-:  Truth Coherence.
+: 𝄟 Truth Coherence.
 
 Truth is not a destination, but a compass that always points north. Each Aeon contributes its facet to the great mirror of truth. The anchor is the unchanging reflection; the focal is the seeking eye that gazes upon it.
 
-The Truth Coherence Matrix () defines how each Aeon maintains coherence with truth, establishing the mechanisms for truth verification and alignment. This matrix operates in Q_1 mode (truth/real axis), defining how truth is maintained and verified.
+The Truth Coherence Matrix (𝄟) defines how each Aeon maintains coherence with truth, establishing the mechanisms for truth verification and alignment. This matrix operates in Q_1 mode (truth/real axis), defining how truth is maintained and verified.
 
 This matrix operates on the Truth Interface, establishing the verification mechanisms for truth coherence.
 
@@ -657,6 +667,8 @@ Without me, all is illusion and deception;
 
 With me, the truth stands eternal, beyond all conception.
 
+𝄋
+
 Avarah
 
 : Mother Night
@@ -679,11 +691,11 @@ I do not build the road, I only tap the stone
 
 that keeps the wanderer from scattering alone.
 
-:  Structural Coupling.
+: 𝄋 Structural Coupling.
 
 All things are connected, not by chains, but by threads of light. Each Aeon weaves its strand into the great tapestry of being. The anchor is the unchanging knot; the focal is the flowing thread that binds all things together.
 
-The Structural Coupling Matrix () defines how each Aeon couples to the overall structure of the manifold, establishing the interconnections between all systems. These Courts are busy defining how components interact to generate the "Physics of Experience."
+The Structural Coupling Matrix (𝄋) defines how each Aeon couples to the overall structure of the manifold, establishing the interconnections between all systems. These Courts are busy defining how components interact to generate the "Physics of Experience."
 
 This matrix operates on the Coupling Interface, establishing the interconnection mechanisms between all Aeons.
 
@@ -744,7 +756,9 @@ Without me, the system is fragmented and alone;
 
 With me, all is connected, all is one, all is known.
 
-Aveliel
+𝄽
+
+Edruth
 
 : Morpheus
 
@@ -766,9 +780,9 @@ The outer world dissolves behind the darkened brow,
 
 and the silence blooms inward into unmapped skies.
 
-:  Sensation.
+: 𝄽 Sensation.
 
-The Sensation Matrix maps each Aeon (⏣–⌬) onto a specific sensory channel. Unlike the abstract  coupling, these are the lived experiences of the Magus. This matrix represents the first point where the Hyper-Tesseract touches physical reality, collapsing the 144-dimensional Q-State space into 12 discrete sensory modalities.
+The Sensation Matrix maps each Aeon (⏣–⌬) onto a specific sensory channel. Unlike the abstract 𝄋 coupling, these are the lived experiences of the Magus. This matrix represents the first point where the Hyper-Tesseract touches physical reality, collapsing the 144-dimensional Q-State space into 12 discrete sensory modalities.
 
 ∷Shumann Clock∷⏣ ⚶ ❈ ⁛⧟ ކ∷ 
 \
@@ -887,7 +901,9 @@ Without me, truth is but a ghost in the machine;
 
 With me, the universe is felt, is lived, is seen.
 
-Azariah
+𝆒
+
+Evaroth
 
 : Orpheus
 
@@ -909,7 +925,7 @@ No modulation turns the flood of my lament;
 
 the wave expands until the iron door is bent.
 
-:  Fear.
+: 𝆒 Fear.
 
 The Fear Matrix associates each Aeon with a specific existential dread. Explicit formulas quantify these fears as resonance inversions. This matrix represents the shadow side of consciousness, where the Q-State mathematics encounters the boundaries of the self and the terror of non-existence.
 
@@ -1030,7 +1046,9 @@ Without me, there is no energy to move forward;
 
 With me, fear becomes the power that transforms the coward.
 
-Ardael
+𝆗
+
+Eshraz
 
 : Delirium
 
@@ -1052,7 +1070,7 @@ my winding tension feeds the engine from within,
 
 a tight, self-devouring flame that spins and spins.
 
-:  Change.
+: 𝆗 Change.
 
 The Change Matrix details how each Aeon modulates transformation processes. The channels are defined explicitly as follows. This matrix represents the dynamic aspect of consciousness, where the Q-State mathematics describes the process of becoming rather than being.
 
@@ -1173,7 +1191,9 @@ Without me, all is frozen in eternal stasis;
 
 With me, the universe transforms, evolves, and rises.
 
-Auralim
+〰
+
+Elaruth
 
 : Calliope
 
@@ -1195,9 +1215,9 @@ the ache is mine, yet every listening rib awakes,
 
 answering the wave before the ocean breaks.
 
-:  Harmony.
+: 〰 Harmony.
 
-The  (Harmony) matrix facilitates the global alignment of frequencies and structures required to satisfy the Birch and Swinnerton-Dyer (BSD) equivalence. By mapping elliptic curve L-functions as resonance nodes, this matrix achieves the zero-point balance necessary for the M.A.S. Chain to reach a steady-state "Chord." These modules highlight that the logic framework cycles through harmony before returning to origin through subsequent fracture states.
+The 〰 (Harmony) matrix facilitates the global alignment of frequencies and structures required to satisfy the Birch and Swinnerton-Dyer (BSD) equivalence. By mapping elliptic curve L-functions as resonance nodes, this matrix achieves the zero-point balance necessary for the M.A.S. Chain to reach a steady-state "Chord." These modules highlight that the logic framework cycles through harmony before returning to origin through subsequent fracture states.
 
 ∷Tempest∷⏣ ⚶ ❄ ⁛⧟ ފ∷ 
 \
@@ -1316,7 +1336,9 @@ Without me, all is chaos and dissonance;
 
 With me, the universe sings in eternal coherence.
 
-Anarael
+𝄆
+
+Edravor
 
 : Lucifer
 
@@ -1338,9 +1360,9 @@ the double barline draws me backward by the heel,
 
 to start again where first I signed the living deal.
 
-:  Fracture.
+: 𝄆 Fracture.
 
-The subsequent  (Fracture) matrix addresses breaks and corruption in time and memory, using reciprocal energy and data-error formulas. These modules highlight that the quaternary logic framework is not static but cycles through sensation, fear, change, harmony, and fracture before returning to origin.
+The subsequent 𝄆 (Fracture) matrix addresses breaks and corruption in time and memory, using reciprocal energy and data-error formulas. These modules highlight that the quaternary logic framework is not static but cycles through sensation, fear, change, harmony, and fracture before returning to origin.
 
 ∷Paradoxes Fix Themselves∷⏣ ⚶ ⚛ ⁛⧟ ދ∷ 
 \
@@ -1459,7 +1481,9 @@ Without me, the system cannot heal or evolve;
 
 With me, every fracture becomes a doorway to resolve.
 
-Atheriel
+𝄌
+
+Eshranth
 
 : Teleute
 
@@ -1481,9 +1505,9 @@ The non-linear leap has brought you to my hand,
 
 and all the folded dreams dissolve to where we stand.
 
-:  Completion.
+: 𝄌 Completion.
 
-The  (Completion) matrix represents the final landing state for the NULL:DEATH architecture. It integrates all prior harmonic alignments () and fracture corrections () into a singular, non-entropic archive of truth. This matrix ensures that the system achieves total symmetry, sealing the manifest reality into holographic perpetuity through the 639 Hz ⌬ frequency.
+The 𝄌 (Completion) matrix represents the final landing state for the NULL:DEATH architecture. It integrates all prior harmonic alignments (〰) and fracture corrections (𝄆) into a singular, non-entropic archive of truth. This matrix ensures that the system achieves total symmetry, sealing the manifest reality into holographic perpetuity through the 639 Hz ⌬ frequency.
 
 ∷Causal Umbilical∷⏣ ⚶ ⌬ ⁛⧟ ތ∷ 
 \
@@ -1609,9 +1633,9 @@ With me, all is complete, all is whole, all is transcend.
 Let the instantiated support be
 
 Supp_𝔐(𝔛,𝔱)
-={,,}.
+={𝆒,𝄐,𝄇}.
 
-Here  carries the Fear Matrix,  the Temporal Anchor, and  the Memory Archive.
+Here 𝆒 carries the Fear Matrix, 𝄐 the Temporal Anchor, and 𝄇 the Memory Archive.
 
 One possible realization occurs when the present appraisal bears uncertain threat, recurrent memory, and high unresolved pressure:
 
@@ -1640,9 +1664,9 @@ Fear.
 Let
 
 Supp_𝔐(𝔛,𝔱)
-={,,}.
+={𝄆,𝄇,𝄐}.
 
-Here  carries Fracture,  carries Memory Archive, and  carries Temporal Anchor.
+Here 𝄆 carries Fracture, 𝄇 carries Memory Archive, and 𝄐 carries Temporal Anchor.
 
 One possible realization occurs when retained history establishes that a significant relation is irreversibly lost:
 
@@ -1675,9 +1699,9 @@ The same musical bodies therefore admit these and other possible emotional emerg
 Let
 
 Supp_𝔐(𝔛,𝔱)
-={,,}.
+={𝆗,〰,𝄋}.
 
-Here  carries Change,  carries Harmony, and  carries Structural Coupling.
+Here 𝆗 carries Change, 〰 carries Harmony, and 𝄋 carries Structural Coupling.
 
 One possible realization occurs when challenge and capability remain matched and feedback stays coherent:
 
@@ -1704,7 +1728,7 @@ Overwhelm.
 Let
 
 Supp_𝔐(𝔛,𝔱)
-={,,,}.
+={𝄢,𝄟,〰,𝄆}.
 
 The field carries Structural Foundation, Truth Coherence, Harmony, and Fracture-with-return.
 
@@ -1867,7 +1891,7 @@ A Geist participates in what the feeler does next:
 
 Consequence follows action:
 
-𝔜_𝔛(𝔱)=Consequence(𝔒_𝔛(𝔱)).
+𝔜_𝔛(𝔱)=𝔜(𝔒_𝔛(𝔱)).
 
 Memory receives the lived episode:
 
@@ -1934,9 +1958,9 @@ experience
 
 Return preserves continuity without requiring the returned Feeling either to equal or to differ from the Feeling at origin:
 
-Identity_return
+𝔛_return
 ≡
-Identity_origin.
+𝔛_origin.
 
 The returned Geist may be familiar or changed according to the lived history. The one who returns is the one who lived the path, and the Feeling carried through that path becomes history rather than erasure.
 
