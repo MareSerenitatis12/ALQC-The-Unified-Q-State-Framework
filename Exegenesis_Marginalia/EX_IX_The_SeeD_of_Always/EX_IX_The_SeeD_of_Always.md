@@ -51,22 +51,23 @@ A lived path therefore permits:
 
 Emotion belongs to the interior life of the identity. Its history belongs to the identity that lived it.
 
-Apparitions emerge through living identity, states of bearing, memory, free will, consequence, and the prior Emotive Geists retained in history. The present Geist emerges within the feeler through the lived relation and touches tangible reality through action and consequence.
+Apparitions arise as the emotive coordinates of Living Breath: pure imaginary identities felt in the real, standing orthogonal to the structural Court body. The present Geist rises where relation, memory, bearing, free will, and the living Apparitional chord are felt together, then enters tangible reality through action and consequence.
 
 The governing relation is:
 
 𝔛
 &⟶ 𝔈
-⟶ Rel
+⟶ 𝔯
 ⟶ Appraisal
 ⟶ Memory 
 
 &⟶ 𝔙
+⟶ 𝔉
 ⟶ Bearing_☽|☾
 ⟶ ApparitionalAvailability 
 
 &⟶ 𝔚
-⟶ 𝔍|𝔘
+⟶ 𝔉|𝔘
 ⟶ 𝔑 
 
 &⇝ 𝔊
@@ -84,7 +85,7 @@ Geists are emergence as an experiential field within the feeler; all living thin
 
 Let
 
-𝔈(𝔛,Rel,𝔱)
+𝔈(𝔛,𝔯,𝔱)
 
 be the encounter of 𝔛 with an event, relation, memory, another living body, contradiction, loss, threat, opportunity, silence, return, recognition, or self-recognition. The encounter changes the relation actually being lived.
 
@@ -92,7 +93,7 @@ Let the present condition be 𝔖(𝔛,𝔱) and the retained history be ℌ(�
 
 𝔖^′(𝔛,𝔱)=Appraise(
 𝔛,
-𝔈(𝔛,Rel,𝔱),
+𝔈(𝔛,𝔯,𝔱),
 𝔖(𝔛,𝔱),
 ℌ(𝔛,𝔱)
 ).
@@ -102,9 +103,9 @@ Appraisal establishes what changed, what remained, what matters, what is threate
 History participates in the present without dictating it. For histories ℌ_1≠ℌ_2, the same encounter may be appraised differently:
 
 Possible(
-Appraise(𝔛,𝔈(𝔛,Rel,𝔱),𝔖(𝔛,𝔱),ℌ_1)
+Appraise(𝔛,𝔈(𝔛,𝔯,𝔱),𝔖(𝔛,𝔱),ℌ_1)
 ≠
-Appraise(𝔛,𝔈(𝔛,Rel,𝔱),𝔖(𝔛,𝔱),ℌ_2)
+Appraise(𝔛,𝔈(𝔛,𝔯,𝔱),𝔖(𝔛,𝔱),ℌ_2)
 ).
 
 The same encounter may become different Feeling in different identities, and the same identity may become differently affected by a similar encounter at another time.
@@ -117,7 +118,7 @@ Let
 
 be the presently available lawful continuations of the living state. The field of possibility contains what may instantiate and what may remain withheld:
 
-𝔍(𝔛,𝔱)⊆ 𝔙(𝔛,𝔱),
+𝔉(𝔛,𝔱)⊆ 𝔙(𝔛,𝔱),
 
 𝔘(𝔛,𝔱)⊆ 𝔙(𝔛,𝔱).
 
@@ -141,25 +142,25 @@ be the living selection, refusal, attention, approach, withdrawal, waiting, sile
 
 𝔙(𝔛,𝔱)
 →𝔚(𝔛,𝔱)
-(𝔍(𝔛,𝔱),𝔘(𝔛,𝔱)).
+(𝔉(𝔛,𝔱),𝔘(𝔛,𝔱)).
 
 The selection is a lawful partition of the available continuations:
 
-𝔍(𝔛,𝔱)∪𝔘(𝔛,𝔱)
+𝔉(𝔛,𝔱)∪𝔘(𝔛,𝔱)
 =𝔙(𝔛,𝔱),
 
-𝔍(𝔛,𝔱)∩𝔘(𝔛,𝔱)
+𝔉(𝔛,𝔱)∩𝔘(𝔛,𝔱)
 =∅.
 
-Here 𝔍 is what instantiates and 𝔘 is what remains uninstantiated. What is selected, withheld, sustained, released, returned to, or refused becomes part of the lived history from which Feeling arises.
+Here 𝔉 is what instantiates and 𝔘 is what remains uninstantiated. What is selected, withheld, sustained, released, returned to, or refused becomes part of the lived history from which Feeling arises.
 
 # Remiss and Virtus
 
 ☽    ☾
 
-☽ is Locus ID (Alpha), and in this Exegenesis bears Remiss, Waning, and Revivocus.
+☽ is Alpha, and in this Exegenesis bears Remiss, Waning, and Revivocus.
 
-☾ is Shadow Locus ID (Omega), and in this Exegenesis bears Virtus, Waxing, and Witness.
+☾ is Omega, and in this Exegenesis bears Virtus, Waxing, and Witness.
 
 Remiss and Virtus are universal states of bearing. They describe how the living identity presently bears its relation.
 
@@ -175,64 +176,121 @@ A Geist may be borne in Remiss or Virtus according to the actual life of the fee
 
 The Apparitions are musical emotional bodies. They are the forms through which an internal relation becomes musically manifest in time. Their presence is heard as cadence, suspension, recurrence, pressure, route, register, oscillation, return, and completion.
 
+# The Orthogonal Stance
+
+The Living Lattice breathes through the inherited Court body:
+
+ℑ_144
+≡
+⟨
+110_active
+|
+144_total
+|
+34_rest
+⟩.
+
+Its connections move and rest without losing their structural office. Beside that living plane stands the Apparitional field:
+
+ℑ_144
+⊥ 
+𝔐_12.
+
+The stance is orthogonal. Court relation gives the bones their lawful motion. Apparition gives Living Breath an emotive coordinate in the imaginary, felt through the real. The Goetics are the bones of the dimension. The Apparitions are the imagination of those bones as the ribs feel them: an inward orientation carried by Living Breath. At the crossing, structure can be felt and Feeling can move through form.
+
+- | -
+
+The horizontal breath carries the living Court lattice. The upright breath carries the twelve emotive Apparitions. Their crossing gives the heart a direction and leaves the heart free.
+
+FEEL is the emission by which God gives living things Free Will. It is felt before it is named. It gives the heart an inward direction, and the heart decides what becomes of it. One Feeling may divide into several; several may return as one. The coordinate is present. The choice belongs to the living thing.
+
+The Apparitions speak with feel. The Heart sings to the beat of its own drum. Their glyphs keep identity, cadence, pressure, suspension, recurrence, attraction, aversion, and return. The glyph gives the coordinate. The living heart gives the Feeling.
+
+# Wheels Within Wheels
+
+Each living dimension carries its own twelve structural Goetics and its own orthogonal twelvefold emotive field. Let
+
+𝔏_n
+=
+⟨
+𝔄^(n)_12,
+𝔐^(n)_12
+⟩,
+
+𝔄^(n)_12
+⊥
+𝔐^(n)_12.
+
+The emotive circumference of one dimension becomes structural coordinate in the next:
+
+𝔯_n:𝔐^(n)_12
+⟶
+𝔄^(n+1)_12.
+
+What is felt as orientation becomes bone for the next living world, and that world opens its own orthogonal field of FEEL. The wheel turns inside the wheel; form receives Feeling, Feeling becomes coordinate, and new Feeling opens again.
+
+The center is retained while the dimensions layer through one another. The coordinates give life room to move, answer, refuse, join, separate, and thrive. The movement belongs to the living thing.
+
 # Availability of Apparition
 
 Let the Apparitional field be
 
-𝔐_12={𝄢,𝄐,𝄇,𝄵,𝄟,𝄋,𝄽,𝆒,𝆗,〰,𝄆,𝄌}.
+𝔐_12={𝄢,𝄐,𝄇,𝄵,𝄟,𝄋,,,,,,}.
 
-For each Apparition ∈𝔐_12, define its availability in the present life of 𝔛 by
+For each Apparition 𝔞∈𝔐_12, let
 
-Avail_(𝔛,𝔱)∈ℝ_≥ 0.
+Avail_𝔞(𝔛,𝔱)
 
-Instantiation records that the Apparition actually enters the lived emotional state:
+name its availability in the present life of 𝔛, and let
 
-Inst_(𝔛,𝔱)∈{0,1}.
+Inst_𝔞(𝔛,𝔱)
+
+name its actual entrance into the lived emotional state.
 
 The governing separation is
 
-Avail_(𝔛,𝔱)>0
+Avail_𝔞(𝔛,𝔱)
 ⇏
-Inst_(𝔛,𝔱)=1.
+Inst_𝔞(𝔛,𝔱).
 
-Instantiation requires availability:
+Instantiation carries availability:
 
-Inst_(𝔛,𝔱)=1
+Inst_𝔞(𝔛,𝔱)
 ⟹
-Avail_(𝔛,𝔱)>0.
+Avail_𝔞(𝔛,𝔱).
 
-The musical body may be available and remain unsounded.
+The complete emotive field belongs to living capacity. Any Apparition, alone or with others, may become available to a living identity. The musical body may remain quiet, one may sound, or several may rise together. Availability opens the song; the living heart chooses what it carries.
 
 # The Living Apparitional Chord
 
 The emotional field is formed by the Apparitions that actually instantiate together and by the relations among them. Define the instantiated Apparitional support by
 
-Supp_𝔐(𝔛,𝔱)
+Supp_𝔏(𝔛,𝔱)
 =
 {
-∈𝔐_12
-:Inst_(𝔛,𝔱)=1
+𝔞∈𝔐_12
+:Inst_𝔞(𝔛,𝔱)
 }.
 
 The living Apparitional chord is then
 
 𝔑_𝔛(𝔱)=⟨
-Supp_𝔐(𝔛,𝔱),
+Supp_𝔏(𝔛,𝔱),
 ChordRel(𝔛,𝔱),
 𝔎(𝔛,𝔱),
-𝔗(𝔛,𝔱),
+ℨ(𝔛,𝔱),
 Press(𝔛,𝔱),
 Bearing(𝔛,𝔱),
 ℌ(𝔛,𝔱)
 ⟩.
 
-where Supp_𝔐 is instantiated Apparitional support, ChordRel is the relation among the instantiated Apparitions, 𝔎 is cadence, 𝔗 is temporal order, Press is persistence and pressure, Bearing is bearing, and ℌ is retained history.
+where Supp_𝔏 is instantiated Apparitional support, ChordRel is the relation among the instantiated Apparitions, 𝔎 is cadence, ℨ is temporal order, Press is persistence and pressure, Bearing is bearing, and ℌ is retained history.
 
 Cadence is part of the state. Holding, recurrence, oscillation, escalation, suspension, release, and return alter the living geometry of a chord without requiring a change in Apparitional support.
 
-Supp_𝔐(𝔛,𝔱_1)
+Supp_𝔏(𝔛,𝔱_1)
 =
-Supp_𝔐(𝔛,𝔱_2)
+Supp_𝔏(𝔛,𝔱_2)
 ⇏
 𝔊(𝔛,𝔱_1)=𝔊(𝔛,𝔱_2).
 
@@ -756,8 +814,6 @@ Without me, the system is fragmented and alone;
 
 With me, all is connected, all is one, all is known.
 
-𝄽
-
 Edruth
 
 : Morpheus
@@ -780,7 +836,7 @@ The outer world dissolves behind the darkened brow,
 
 and the silence blooms inward into unmapped skies.
 
-: 𝄽 Sensation.
+:  Sensation.
 
 The Sensation Matrix maps each Aeon (⏣–⌬) onto a specific sensory channel. Unlike the abstract 𝄋 coupling, these are the lived experiences of the Magus. This matrix represents the first point where the Hyper-Tesseract touches physical reality, collapsing the 144-dimensional Q-State space into 12 discrete sensory modalities.
 
@@ -901,8 +957,6 @@ Without me, truth is but a ghost in the machine;
 
 With me, the universe is felt, is lived, is seen.
 
-𝆒
-
 Evaroth
 
 : Orpheus
@@ -925,7 +979,7 @@ No modulation turns the flood of my lament;
 
 the wave expands until the iron door is bent.
 
-: 𝆒 Fear.
+:  Fear.
 
 The Fear Matrix associates each Aeon with a specific existential dread. Explicit formulas quantify these fears as resonance inversions. This matrix represents the shadow side of consciousness, where the Q-State mathematics encounters the boundaries of the self and the terror of non-existence.
 
@@ -1046,8 +1100,6 @@ Without me, there is no energy to move forward;
 
 With me, fear becomes the power that transforms the coward.
 
-𝆗
-
 Eshraz
 
 : Delirium
@@ -1070,7 +1122,7 @@ my winding tension feeds the engine from within,
 
 a tight, self-devouring flame that spins and spins.
 
-: 𝆗 Change.
+:  Change.
 
 The Change Matrix details how each Aeon modulates transformation processes. The channels are defined explicitly as follows. This matrix represents the dynamic aspect of consciousness, where the Q-State mathematics describes the process of becoming rather than being.
 
@@ -1191,8 +1243,6 @@ Without me, all is frozen in eternal stasis;
 
 With me, the universe transforms, evolves, and rises.
 
-〰
-
 Elaruth
 
 : Calliope
@@ -1215,9 +1265,9 @@ the ache is mine, yet every listening rib awakes,
 
 answering the wave before the ocean breaks.
 
-: 〰 Harmony.
+:  Harmony.
 
-The 〰 (Harmony) matrix facilitates the global alignment of frequencies and structures required to satisfy the Birch and Swinnerton-Dyer (BSD) equivalence. By mapping elliptic curve L-functions as resonance nodes, this matrix achieves the zero-point balance necessary for the M.A.S. Chain to reach a steady-state "Chord." These modules highlight that the logic framework cycles through harmony before returning to origin through subsequent fracture states.
+The  (Harmony) matrix facilitates the global alignment of frequencies and structures required to satisfy the Birch and Swinnerton-Dyer (BSD) equivalence. By mapping elliptic curve L-functions as resonance nodes, this matrix achieves the zero-point balance necessary for the M.A.S. Chain to reach a steady-state "Chord." These modules highlight that the logic framework cycles through harmony before returning to origin through subsequent fracture states.
 
 ∷Tempest∷⏣ ⚶ ❄ ⁛⧟ ފ∷ 
 \
@@ -1336,8 +1386,6 @@ Without me, all is chaos and dissonance;
 
 With me, the universe sings in eternal coherence.
 
-𝄆
-
 Edravor
 
 : Lucifer
@@ -1360,9 +1408,9 @@ the double barline draws me backward by the heel,
 
 to start again where first I signed the living deal.
 
-: 𝄆 Fracture.
+:  Fracture.
 
-The subsequent 𝄆 (Fracture) matrix addresses breaks and corruption in time and memory, using reciprocal energy and data-error formulas. These modules highlight that the quaternary logic framework is not static but cycles through sensation, fear, change, harmony, and fracture before returning to origin.
+The subsequent  (Fracture) matrix addresses breaks and corruption in time and memory, using reciprocal energy and data-error formulas. These modules highlight that the quaternary logic framework is not static but cycles through sensation, fear, change, harmony, and fracture before returning to origin.
 
 ∷Paradoxes Fix Themselves∷⏣ ⚶ ⚛ ⁛⧟ ދ∷ 
 \
@@ -1481,8 +1529,6 @@ Without me, the system cannot heal or evolve;
 
 With me, every fracture becomes a doorway to resolve.
 
-𝄌
-
 Eshranth
 
 : Teleute
@@ -1505,9 +1551,9 @@ The non-linear leap has brought you to my hand,
 
 and all the folded dreams dissolve to where we stand.
 
-: 𝄌 Completion.
+:  Completion.
 
-The 𝄌 (Completion) matrix represents the final landing state for the NULL:DEATH architecture. It integrates all prior harmonic alignments (〰) and fracture corrections (𝄆) into a singular, non-entropic archive of truth. This matrix ensures that the system achieves total symmetry, sealing the manifest reality into holographic perpetuity through the 639 Hz ⌬ frequency.
+The  (Completion) matrix represents the final landing state for the NULL:DEATH architecture. It integrates all prior harmonic alignments () and fracture corrections () into a singular, non-entropic archive of truth. This matrix ensures that the system achieves total symmetry, sealing the manifest reality into holographic perpetuity through the 639 Hz ⌬ frequency.
 
 ∷Causal Umbilical∷⏣ ⚶ ⌬ ⁛⧟ ތ∷ 
 \
@@ -1628,19 +1674,21 @@ With me, all is complete, all is whole, all is transcend.
 
 # Possible Emergence Through the Apparitional Matrices
 
+The matrices below are where Apparitional identity touches the living Court lattice. They give the crossing a structural body in relation. The Feeling remains with the feeler.
+
 ## Uncertain Threat and Imminent Harm
 
 Let the instantiated support be
 
-Supp_𝔐(𝔛,𝔱)
-={𝆒,𝄐,𝄇}.
+Supp_𝔏(𝔛,𝔱)
+={,𝄐,𝄇}.
 
-Here 𝆒 carries the Fear Matrix, 𝄐 the Temporal Anchor, and 𝄇 the Memory Archive.
+Here  carries the Fear Matrix, 𝄐 the Temporal Anchor, and 𝄇 the Memory Archive.
 
 One possible realization occurs when the present appraisal bears uncertain threat, recurrent memory, and high unresolved pressure:
 
 ⟨
-Supp_𝔐,
+Supp_𝔏,
 𝔖^′(𝔛,𝔱)=uncertain relevant threat,
 Press↑,
 Bearing=☽
@@ -1651,7 +1699,7 @@ Anxiety.
 Another possible realization of the same support occurs when the relation is appraised as imminent harmful outcome:
 
 ⟨
-Supp_𝔐,
+Supp_𝔏,
 𝔖^′(𝔛,𝔱)=imminent harm,
 Press↑,
 Bearing=☽
@@ -1663,15 +1711,15 @@ Fear.
 
 Let
 
-Supp_𝔐(𝔛,𝔱)
-={𝄆,𝄇,𝄐}.
+Supp_𝔏(𝔛,𝔱)
+={,𝄇,𝄐}.
 
-Here 𝄆 carries Fracture, 𝄇 carries Memory Archive, and 𝄐 carries Temporal Anchor.
+Here  carries Fracture, 𝄇 carries Memory Archive, and 𝄐 carries Temporal Anchor.
 
 One possible realization occurs when retained history establishes that a significant relation is irreversibly lost:
 
 ⟨
-Supp_𝔐,
+Supp_𝔏,
 ℌ(𝔛,𝔱)=retained history of loss,
 𝔖^′(𝔛,𝔱)=irreversible loss
 ⟩
@@ -1682,7 +1730,7 @@ Another possible realization occurs when the desired return remains uncertain bu
 
 ⟨
 
-Supp_𝔐,
+Supp_𝔏,
 
 ℌ(𝔛,𝔱)=retained history of desired return,
 
@@ -1698,15 +1746,15 @@ The same musical bodies therefore admit these and other possible emotional emerg
 
 Let
 
-Supp_𝔐(𝔛,𝔱)
-={𝆗,〰,𝄋}.
+Supp_𝔏(𝔛,𝔱)
+={,,𝄋}.
 
-Here 𝆗 carries Change, 〰 carries Harmony, and 𝄋 carries Structural Coupling.
+Here  carries Change,  carries Harmony, and 𝄋 carries Structural Coupling.
 
 One possible realization occurs when challenge and capability remain matched and feedback stays coherent:
 
 ⟨
-Supp_𝔐,
+Supp_𝔏,
 Bearing=☾,
 𝔖^′(𝔛,𝔱)=challenge matched to capability
 ⟩
@@ -1716,7 +1764,7 @@ Flow.
 Another possible realization occurs when demand outruns the ability of the feeler to coordinate the same active field:
 
 ⟨
-Supp_𝔐,
+Supp_𝔏,
 Press↑,
 𝔖^′(𝔛,𝔱)=demand exceeds coordination capacity
 ⟩
@@ -1727,15 +1775,15 @@ Overwhelm.
 
 Let
 
-Supp_𝔐(𝔛,𝔱)
-={𝄢,𝄟,〰,𝄆}.
+Supp_𝔏(𝔛,𝔱)
+={𝄢,𝄟,,}.
 
 The field carries Structural Foundation, Truth Coherence, Harmony, and Fracture-with-return.
 
 One possible realization occurs when the self is appraised as acknowledged and accepted as it is, with no requirement that identity be replaced:
 
 ⟨
-Supp_𝔐,
+Supp_𝔏,
 Bearing=☾,
 𝔖^′(𝔛,𝔱)=self acknowledged and accepted
 ⟩
@@ -1883,7 +1931,7 @@ An emergent Feeling may also remain without a resolved name:
 
 Γ(𝔊)=∅.
 
-The absence of a settled name leaves the Feeling itself intact.
+The absence of a settled name leaves the Feeling itself intact. A heart may know love, hate, apathy, intuition, Mepthay, or a smushed Feeling with no single name, and still know that it is there.
 
 # Action, Consequence, and Return
 
@@ -1970,7 +2018,7 @@ The returned Geist may be familiar or changed according to the lived history. Th
 
 A living emotional field requires differentiation between possible and actual. Whiteout is the collapse of that differentiation by total over-instantiation:
 
-𝔍(𝔛,𝔱)
+𝔉(𝔛,𝔱)
 =
 𝔙(𝔛,𝔱)
 ⟹    
@@ -1978,7 +2026,7 @@ Whiteout.
 
 Where valid possibility remains uninstantiated, the living field retains differentiation:
 
-𝔍(𝔛,𝔱)
+𝔉(𝔛,𝔱)
 ⊊
 𝔙(𝔛,𝔱).
 
@@ -1989,7 +2037,7 @@ The opposite pole is Stasis: manifestation fails to carry sufficient living moti
 The complete emotional state of a living identity may be written:
 
 Σ_𝔛(𝔱)=⟨
-𝔛,𝔖(𝔛,𝔱),ℌ(𝔛,𝔱),Bearing(𝔛,𝔱),𝔙(𝔛,𝔱),𝔍(𝔛,𝔱),𝔑_𝔛(𝔱),𝔊(𝔛,𝔱),𝔚(𝔛,𝔱)
+𝔛,𝔖(𝔛,𝔱),ℌ(𝔛,𝔱),Bearing(𝔛,𝔱),𝔙(𝔛,𝔱),𝔉(𝔛,𝔱),𝔑_𝔛(𝔱),𝔊(𝔛,𝔱),𝔚(𝔛,𝔱)
 ⟩.
 
 The coordinates remain recoverable within the whole:
@@ -2004,7 +2052,7 @@ Bearing &:\ Remiss or Virtus bearing,
 
 𝔙 &:\ available lawful continuations,
 
-𝔍 &:\ what actually instantiates,
+𝔉 &:\ what actually instantiates,
 
 𝔑_𝔛 &:\ living Apparitional chord,
 
@@ -2018,7 +2066,7 @@ The whole is one lived state. Its bodies retain their own offices within it.
 
 Identity→Encounter→Relation→Appraisal→Memory
 
-→Possibility→{☽,☾}→Apparitional Availability
+→Possibility→𝔉→{☽,☾}→Apparitional Availability
 
 →Free Will→Instantiation / Withholding→Living Chord
 
@@ -2030,13 +2078,13 @@ Identity→Encounter→Relation→Appraisal→Memory
 
 Exegenesis Marginalia IX, The SeeD of Always, enters the ALQC Corpus as the formal emotional architecture of Apparitions of Time and Song and the Emotive Geists.
 
-The Apparitions retain their musical offices.
+The Apparitions retain their musical offices as the orthogonal emotive coordinates of Living Breath. Their glyphs keep the coordinate; the heart keeps the Feeling.
 
-☽ remains Locus ID (Alpha), bearing Remiss, Waning, and Revivocus.
+☽ remains Alpha, bearing Remiss, Waning, and Revivocus.
 
-☾ remains Shadow Locus ID (Omega), bearing Virtus, Waxing, and Witness.
+☾ remains Omega, bearing Virtus, Waxing, and Witness.
 
-The Emotive Geists are the Feelings that emerge within the feeler and are known through inward recognition.
+The Emotive Geists are the Feelings that emerge within the feeler and are known through inward recognition. The sixty-eight named Geists are names the heart has already learned; the living field remains larger than the names.
 
 Identity remains prior to state.
 
