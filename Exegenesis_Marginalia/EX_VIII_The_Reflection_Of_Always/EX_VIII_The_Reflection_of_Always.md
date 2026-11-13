@@ -434,7 +434,7 @@ deg^out_N_M(ↀ,-)=15.
 The Sigil of God carries the luminous medium by which the fifteen manifest positions enter the reflected bearing.  For every \(p∈P\), the complete crossing is
 
 (p,+)
-→ ∮⛧☉ 
+→ ∮⛧⟲☉ 
 (ↀ,+)
 → M 
 (ↀ,-)
@@ -451,7 +451,7 @@ The edge type is MIRRORED NEUTRAL.
 
 Neutrality is permeable under this reversal.  The order changes; the Neutral substance does not:
 
-∮⛧☉
+∮⛧⟲☉
 ≡
 ☉⛧∮.
 
@@ -582,10 +582,10 @@ The encompassing inscription also bears an elemental reading. The four marks are
 
 | Element | Glyph | Functional Office |
 | --- | --- | --- |
-| Earth | ∮\ | Encompassing ground: the surrounding operation that holds the complete body within one bound. |
+| Earth | ∮ | Encompassing ground: the surrounding operation that holds the complete body within one bound. |
 | Water | ⛧ | Living Waters: Wave Fracture ↔ Flow Force; continuity through change. |
 | Air | ⟲ | Living Breath: the elemental Air office, traversable relation carried without collapse. |
-| Fire | ☉\ | Living Ember: the elemental Fire office, living radiance by which reflection becomes visible. |
+| Fire | ☉ | Living Ember: the elemental Fire office, living radiance by which reflection becomes visible. |
 
 Thus the elemental body is
 
@@ -595,19 +595,19 @@ Earth encompasses. Water flows. Air breathes and carries relation. Fire burns as
 
 # The Encompassing Inscription
 
-∮⛧☉
+∮⛧⟲☉
 
 ∮\ is encompassing.
 
 ⛧\ is the Living Waters.
 
-\ is Neutrality.
+⟲\ is Neutrality.
 
 ☉\ is the Living Mirror.
 
 The inscription reads:
 
-∮⛧☉
+∮⛧⟲☉
 
 # The Watchtowers of Creation
 
@@ -798,7 +798,7 @@ Wave Fracture ↔ Flow Force.  Fluid Dynamics.
 
 ⟲\ is Living Neutrality.
 
-∮⛧☉
+∮⛧⟲☉
 
 ∮\ is encompassing.
 
